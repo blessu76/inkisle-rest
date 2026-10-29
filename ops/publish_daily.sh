@@ -45,10 +45,24 @@ branch="$(git symbolic-ref --short -q HEAD || echo '(detached)')"
 git fetch -q origin main || { log "FAIL — git fetch"; exit 1; }
 git rebase -q origin/main || { git rebase --abort 2>/dev/null || true; log "FAIL — cannot rebase onto origin/main"; exit 1; }
 
-# B: unpushed commits from an earlier failed push go first, whether or not there is anything new to publish.
+# Unpushed commits from an earlier failed push go first, whether or not there is anything new to publish — but only if they touch nothing outside the
+# publish set (a local work-in-progress commit must never ride along to the public main).
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
+  stray=""
+  while IFS= read -r f; do
+    ok=0
+    for p in $PUBLISH_PATHS; do case "$f" in "$p"|"$p"/*) ok=1;; esac; done
+    [ "$ok" = 1 ] || stray="$stray $f"
+  done < <(git diff --name-only origin/main..HEAD)
+  [ -z "$stray" ] || skip "unpushed commits touch paths outside the publish set:${stray:0:200} — not pushing"
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
+fi
+
+# An empty queue ends the daily post series silently, so make it loud in the log (still exit 0: it is not an error).
+if [ -z "$(find content/queue -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]; then
+  log "QUEUE_EMPTY — no post left in content/queue/; add content/queue/NN-slug/{en,ko}.md (+ translations) or the daily publishing stops"
+  exit 0
 fi
 
 # From here until the commit exists, ANY non-zero exit (a failed step, git add/commit error, SIGINT/SIGTERM) restores the tree, which was clean when

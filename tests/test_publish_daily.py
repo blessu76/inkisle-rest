@@ -178,6 +178,28 @@ class PublishDaily(unittest.TestCase):
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertEqual(out.read_text().strip(), "0")
 
+    def test_empty_queue_warns_loudly_and_exits_zero(self):
+        shutil.rmtree(self.clone / "content" / "queue")
+        git(self.clone, "add", "-A")
+        git(self.clone, "commit", "-qm", "queue consumed")
+        git(self.clone, "push", "-q", "origin", "main")
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("QUEUE_EMPTY", r.stdout)
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+
+    def test_unpushed_commit_outside_the_publish_set_is_not_pushed(self):
+        (self.clone / "wip.txt").write_text("not for publication")
+        git(self.clone, "add", "wip.txt")
+        git(self.clone, "commit", "-qm", "wip")
+        before = self.origin_head()
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("SKIP", r.stdout)
+        self.assertIn("wip.txt", r.stdout)
+        self.assertEqual(self.origin_head(), before)
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+
     def test_failed_push_is_retried_by_the_next_run_even_with_nothing_to_publish(self):
         hook = self.origin / "hooks" / "pre-receive"
         hook.write_text("#!/bin/sh\nexit 1\n")

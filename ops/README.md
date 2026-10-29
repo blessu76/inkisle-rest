@@ -13,7 +13,8 @@ the script ran (HH:MM KST); a future time is refused.
 
 - Runs in a **dedicated publish clone**: `INKISLE_PUBLISH_DIR` (default `~/Developer/inkisle-rest`). That clone must stay on `main` with a clean tree and
   must not be a place where anyone (or any agent) works on feature branches. On any other branch, or with uncommitted changes, the run logs `SKIP` and exits 0.
-- A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due.
+- A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due — but only if those commits touch nothing outside the publish set; otherwise `SKIP` (a local work-in-progress commit never rides along to main).
+- An empty queue logs `QUEUE_EMPTY` (exit 0). Check the log for `SKIP`/`FAIL`/`QUEUE_EMPTY` regularly — they do not alert anyone.
 - Publishing is atomic: if `publish_post.py` (build + sitemap check), the green gate or the path check fails, the tree is reset to where it started
   (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
 - One run at a time (`.git/publish.lock`; a lock from a dead process or older than 3 h is taken over). A second run logs `SKIP — another publish run is in progress`.
@@ -40,7 +41,7 @@ launchctl kickstart gui/$(id -u)/rest.ipe.inkisle-publish        # run once now 
 ```
 
 Uninstall: `launchctl bootout gui/$(id -u)/rest.ipe.inkisle-publish && rm ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist`.
-Log: `tail -f ~/Library/Logs/inkisle-publish.log` (lines: `SKIP`, `FAIL`, `ROLLBACK`, `committed`, `pushed`).
+Log: `tail -f ~/Library/Logs/inkisle-publish.log` (lines: `SKIP`, `FAIL`, `ROLLBACK`, `QUEUE_EMPTY`, `committed`, `pushed`).
 
 Before relying on it: the queue (`content/queue/`) has posts and their translations exist (docs/TRANSLATION.md). When the queue is empty the job does
 nothing and exits 0 — write new posts into `content/queue/NN-slug/` (NN keeps the order).
