@@ -1,6 +1,248 @@
 {
  "releases": [
   {
+   "id": "1.0.0-5",
+   "version": "1.0.0",
+   "build": "5",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 5: a new supporter card",
+    "ko": "빌드 5: 새 후원자 카드",
+    "ja": "ビルド5:新しいサポーターカード",
+    "zh": "构建 5:全新的支持者卡片",
+    "es": "Compilación 5: una nueva tarjeta de aportante",
+    "fr": "Version 5 : une nouvelle carte de soutien",
+    "de": "Build 5: eine neue Unterstützerkarte",
+    "pt": "Build 5: um novo cartão de apoiador",
+    "ru": "Сборка 5: новая карточка поддержавшего",
+    "ar": "الإصدار 5: بطاقة جديدة للداعمين",
+    "hi": "बिल्ड 5: सहयोगी का नया कार्ड",
+    "id": "Build 5: kartu pendukung baru"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 to 4, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1~4의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1〜4の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 至 4 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 a 4, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 à 4, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 4 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 a 4, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В ней всё из сборок 1–4 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-30. يضم محتوى الإصدارات من 1 إلى 4 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 4 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 sampai 4, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "A new supporter card design, laid out like a nautical chart window.",
+     "The time of day and the border change with the supporter's tier.",
+     "The card can be shared to social media.",
+     "Supporting the game gives no advantage in play. It only adds a thank-you mark."
+    ],
+    "ko": [
+     "후원자 카드를 새로 디자인했습니다. 해도(海圖) 창처럼 구성했습니다.",
+     "후원 등급에 따라 시간대와 테두리가 달라집니다.",
+     "카드를 SNS 로 공유할 수 있습니다.",
+     "후원은 게임 플레이에 이득을 주지 않습니다. 감사 표식만 더해집니다."
+    ],
+    "ja": [
+     "サポーターカードを新しくデザインしました。海図の窓のような構成です。",
+     "サポートの段階によって時間帯と縁取りが変わります。",
+     "カードをSNSで共有できます。",
+     "サポートはゲームを有利にしません。感謝のしるしが加わるだけです。"
+    ],
+    "zh": [
+     "重新设计了支持者卡片,版式像一扇海图窗口。",
+     "时间段和边框会随支持等级而变化。",
+     "卡片可以分享到社交媒体。",
+     "支持本游戏不会带来游戏内优势,只会增加一个感谢标记。"
+    ],
+    "es": [
+     "Nuevo diseño de la tarjeta de aportante, con la forma de una ventana de carta náutica.",
+     "La hora del día y el borde cambian según el nivel de apoyo.",
+     "La tarjeta se puede compartir en redes sociales.",
+     "Apoyar el juego no da ninguna ventaja al jugar. Solo añade una marca de agradecimiento."
+    ],
+    "fr": [
+     "Nouveau design de la carte de soutien, composée comme une fenêtre de carte marine.",
+     "L'heure du jour et la bordure changent selon le niveau de soutien.",
+     "La carte peut être partagée sur les réseaux sociaux.",
+     "Soutenir le jeu ne donne aucun avantage en partie. Cela ajoute seulement une marque de remerciement."
+    ],
+    "de": [
+     "Neues Design der Unterstützerkarte, aufgebaut wie ein Seekartenfenster.",
+     "Tageszeit und Rahmen ändern sich je nach Unterstützungsstufe.",
+     "Die Karte lässt sich in sozialen Netzwerken teilen.",
+     "Die Unterstützung verschafft im Spiel keinen Vorteil. Sie fügt nur ein Dankeszeichen hinzu."
+    ],
+    "pt": [
+     "Novo design do cartão de apoiador, montado como uma janela de carta náutica.",
+     "O horário do dia e a borda mudam conforme o nível de apoio.",
+     "O cartão pode ser compartilhado nas redes sociais.",
+     "Apoiar o jogo não dá vantagem na partida. Apenas acrescenta uma marca de agradecimento."
+    ],
+    "ru": [
+     "Новый дизайн карточки поддержавшего — в виде окна морской карты.",
+     "Время суток и рамка меняются в зависимости от уровня поддержки.",
+     "Карточкой можно поделиться в соцсетях.",
+     "Поддержка игры не даёт преимуществ в бою. Она лишь добавляет знак благодарности."
+    ],
+    "ar": [
+     "تصميم جديد لبطاقة الداعم، مرتّبة مثل نافذة خريطة بحرية.",
+     "يتغير وقت اليوم والإطار بحسب مستوى الدعم.",
+     "يمكن مشاركة البطاقة على وسائل التواصل الاجتماعي.",
+     "دعم اللعبة لا يمنح أي أفضلية أثناء اللعب. إنه يضيف علامة شكر فقط."
+    ],
+    "hi": [
+     "सहयोगी कार्ड का नया डिज़ाइन, समुद्री नक़्शे की खिड़की जैसा।",
+     "सहयोग के स्तर के अनुसार दिन का समय और किनारा बदलता है।",
+     "कार्ड को सोशल मीडिया पर साझा किया जा सकता है।",
+     "खेल का सहयोग करने से खेलने में कोई फ़ायदा नहीं मिलता। इससे सिर्फ़ धन्यवाद का एक निशान जुड़ता है।"
+    ],
+    "id": [
+     "Desain kartu pendukung baru, ditata seperti jendela peta laut.",
+     "Waktu hari dan bingkai berubah sesuai tingkat dukungan.",
+     "Kartu bisa dibagikan ke media sosial.",
+     "Mendukung game ini tidak memberi keuntungan dalam bermain. Hanya menambah tanda terima kasih."
+    ]
+   }
+  },
+  {
+   "id": "1.0.0-4",
+   "version": "1.0.0",
+   "build": "4",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 4: tide items, in-app purchases and a difficulty pass",
+    "ko": "빌드 4: 밀물 아이템, 인앱 구매, 난이도 조정",
+    "ja": "ビルド4:満ち潮アイテム、アプリ内課金、難易度調整",
+    "zh": "构建 4:潮汐道具、应用内购买、难度调整",
+    "es": "Compilación 4: objetos de marea, compras dentro de la app y ajuste de dificultad",
+    "fr": "Version 4 : objets de marée, achats intégrés et réglage de la difficulté",
+    "de": "Build 4: Flutgegenstände, In-App-Käufe und Schwierigkeitsanpassung",
+    "pt": "Build 4: itens de maré, compras no app e ajuste de dificuldade",
+    "ru": "Сборка 4: предметы прилива, покупки в приложении и настройка сложности",
+    "ar": "الإصدار 4: عناصر المد، والشراء داخل التطبيق، وضبط الصعوبة",
+    "hi": "बिल्ड 4: ज्वार आइटम, ऐप में खरीदारी, कठिनाई में बदलाव",
+    "id": "Build 4: item pasang, pembelian dalam aplikasi, dan penyesuaian kesulitan"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 to 3, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1~3의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1〜3の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 至 3 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 a 3, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 à 3, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 3 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 a 3, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В ней всё из сборок 1–3 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-30. يضم محتوى الإصدارات من 1 إلى 3 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 3 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 sampai 3, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Tide items, a new kind of item you can use in battle.",
+     "In-app purchases: tide items in packs of 5 and 15, and a supporter option.",
+     "Restore purchases.",
+     "Difficulty adjusted.",
+     "Fixed the -N numbers overlapping each other.",
+     "Supporting the game gives no advantage in play. It only adds a thank-you mark."
+    ],
+    "ko": [
+     "전투에서 쓰는 새 아이템 「밀물」이 생겼습니다.",
+     "인앱 구매: 밀물 5개·15개 묶음과 후원 항목.",
+     "구매 복원.",
+     "난이도를 조정했습니다.",
+     "−N 숫자가 서로 겹치던 문제를 고쳤습니다.",
+     "후원은 게임 플레이에 이득을 주지 않습니다. 감사 표식만 더해집니다."
+    ],
+    "ja": [
+     "戦闘で使える新しいアイテム「満ち潮」を追加しました。",
+     "アプリ内課金:満ち潮の5個・15個セットと、サポート項目。",
+     "購入の復元。",
+     "難易度を調整しました。",
+     "−N の数字が重なる問題を修正しました。",
+     "サポートはゲームを有利にしません。感謝のしるしが加わるだけです。"
+    ],
+    "zh": [
+     "新增战斗中可用的道具“潮汐”。",
+     "应用内购买:5 个和 15 个装的潮汐,以及支持选项。",
+     "恢复购买。",
+     "调整了难度。",
+     "修复了 −N 数字相互重叠的问题。",
+     "支持本游戏不会带来游戏内优势,只会增加一个感谢标记。"
+    ],
+    "es": [
+     "Los objetos de marea, un nuevo tipo de objeto para usar en combate.",
+     "Compras dentro de la app: marea en paquetes de 5 y 15, y una opción de apoyo.",
+     "Restaurar compras.",
+     "Dificultad ajustada.",
+     "Corregido el solapamiento de los números −N.",
+     "Apoyar el juego no da ninguna ventaja al jugar. Solo añade una marca de agradecimiento."
+    ],
+    "fr": [
+     "Les objets de marée, un nouveau type d'objet à utiliser au combat.",
+     "Achats intégrés : marée par lots de 5 et 15, et une option de soutien.",
+     "Restauration des achats.",
+     "Difficulté ajustée.",
+     "Correction des nombres −N qui se chevauchaient.",
+     "Soutenir le jeu ne donne aucun avantage en partie. Cela ajoute seulement une marque de remerciement."
+    ],
+    "de": [
+     "Flutgegenstände, eine neue Art von Gegenstand für den Kampf.",
+     "In-App-Käufe: Flut in Paketen zu 5 und 15 sowie eine Unterstützungsoption.",
+     "Käufe wiederherstellen.",
+     "Schwierigkeit angepasst.",
+     "Die sich überlagernden −N-Zahlen wurden behoben.",
+     "Die Unterstützung verschafft im Spiel keinen Vorteil. Sie fügt nur ein Dankeszeichen hinzu."
+    ],
+    "pt": [
+     "Itens de maré, um novo tipo de item para usar em batalha.",
+     "Compras no app: maré em pacotes de 5 e 15, e uma opção de apoio.",
+     "Restaurar compras.",
+     "Dificuldade ajustada.",
+     "Corrigidos os números −N que se sobrepunham.",
+     "Apoiar o jogo não dá vantagem na partida. Apenas acrescenta uma marca de agradecimento."
+    ],
+    "ru": [
+     "Предметы прилива — новый вид предметов для боя.",
+     "Покупки в приложении: прилив наборами по 5 и 15 и вариант поддержки.",
+     "Восстановление покупок.",
+     "Сложность скорректирована.",
+     "Исправлено наложение чисел −N друг на друга.",
+     "Поддержка игры не даёт преимуществ в бою. Она лишь добавляет знак благодарности."
+    ],
+    "ar": [
+     "عناصر المد، نوع جديد من العناصر يُستخدم في المعركة.",
+     "الشراء داخل التطبيق: المد في حزم من 5 و15، وخيار للدعم.",
+     "استعادة المشتريات.",
+     "تم ضبط الصعوبة.",
+     "تم إصلاح تداخل أرقام −N.",
+     "دعم اللعبة لا يمنح أي أفضلية أثناء اللعب. إنه يضيف علامة شكر فقط."
+    ],
+    "hi": [
+     "ज्वार आइटम, लड़ाई में इस्तेमाल होने वाला नया आइटम।",
+     "ऐप में खरीदारी: 5 और 15 के पैक में ज्वार, और सहयोग का विकल्प।",
+     "खरीदारी बहाल करें।",
+     "कठिनाई में बदलाव किया गया।",
+     "आपस में चढ़ जाने वाले −N अंकों की समस्या ठीक की गई।",
+     "खेल का सहयोग करने से खेलने में कोई फ़ायदा नहीं मिलता। इससे सिर्फ़ धन्यवाद का एक निशान जुड़ता है।"
+    ],
+    "id": [
+     "Item pasang, jenis item baru yang bisa dipakai dalam pertempuran.",
+     "Pembelian dalam aplikasi: pasang dalam paket 5 dan 15, serta opsi dukungan.",
+     "Pulihkan pembelian.",
+     "Tingkat kesulitan disesuaikan.",
+     "Memperbaiki angka −N yang saling bertumpuk.",
+     "Mendukung game ini tidak memberi keuntungan dalam bermain. Hanya menambah tanda terima kasih."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-3",
    "version": "1.0.0",
    "build": "3",
