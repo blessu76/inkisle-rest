@@ -1,21 +1,73 @@
 #!/bin/bash
-# Daily publish — DRAFT, not installed. Publishes the next queued post (one per day, 19:00 KST), builds, checks, commits, pushes, pings IndexNow.
-# Install notes: ops/README.md. Needs: python3, git (push access to origin), network for IndexNow.
+# Daily publish (one post a day, 19:00 KST): pull -> push leftovers -> publish_post --daily -> green gate -> commit -> push -> live check -> IndexNow.
+# Install notes: ops/README.md. Needs: python3, git (non-interactive push access to origin), network for IndexNow.
+#
+# Safety rules
+#   - Runs only in a dedicated publish clone (INKISLE_PUBLISH_DIR, default ~/Developer/inkisle-rest) that is checked out on `main` with a clean tree;
+#     otherwise it does nothing and exits 0 (see the log). Never point it at a clone where feature branches / work in progress live.
+#   - Local commits not yet on origin/main (a previous push failed) are pushed first, even when there is nothing new to publish.
+#   - Publishing is all-or-nothing: if publish_post, the green gate or the path check fails, the tree is reset to the commit it started from.
+#   - Only the paths a publish creates are staged (never `git add -A`).
+# Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow).
 set -euo pipefail
-REPO="${INKISLE_REPO:-$HOME/Developer/inkisle-rest}"
-cd "$REPO"
 export TZ=Asia/Seoul
-git pull --rebase --autostash origin main
-python3 scripts/publish_post.py --daily                  # no-op (exit 0) if today already has a post or the queue is empty
-if [ -z "$(git status --porcelain)" ]; then echo "nothing to publish"; exit 0; fi
-bash scripts/check.sh                                    # green gate: refuse to push a red build
-slug="$(git status --porcelain content/journal | sed -n 's#.*content/journal/\([^/]*\)/.*#\1#p' | sort -u | head -1)"
-git add -A
+log() { echo "[$(date '+%Y-%m-%d %H:%M:%S') KST] publish_daily: $*"; }
+skip() { log "SKIP — $*"; exit 0; }
+
+REPO="${INKISLE_PUBLISH_DIR:-$HOME/Developer/inkisle-rest}"
+CHECK_CMD="${INKISLE_CHECK_CMD:-bash scripts/check.sh}"
+# Everything publish_post.py + build_site.py may create or change. Anything else in the tree after a publish means abort.
+PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh es fr de pt ru ar hi id"
+
+[ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
+cd "$REPO"
+branch="$(git symbolic-ref --short -q HEAD || echo '(detached)')"
+[ "$branch" = "main" ] || skip "branch is '$branch', not main"
+[ -z "$(git status --porcelain)" ] || skip "working tree is not clean"
+
+git fetch -q origin main || { log "FAIL — git fetch"; exit 1; }
+git rebase -q origin/main || { git rebase --abort 2>/dev/null || true; log "FAIL — cannot rebase onto origin/main"; exit 1; }
+
+# B: unpushed commits from an earlier failed push go first, whether or not there is anything new to publish.
+if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
+  log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
+  git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
+fi
+
+# C: from here on a failure restores the tree (it was clean when we started).
+base="$(git rev-parse HEAD)"
+rollback() { git reset -q --hard "$base"; git clean -fdq; log "ROLLBACK — tree restored to ${base:0:7}"; }
+
+if ! out="$(python3 scripts/publish_post.py --daily 2>&1)"; then
+  echo "$out"; rollback; log "FAIL — publish_post"; exit 1
+fi
+echo "$out"
+if [ -z "$(git status --porcelain)" ]; then log "nothing to publish"; exit 0; fi
+slug="$(echo "$out" | sed -n 's/^publish_post: \([^ ]*\) at .*/\1/p' | head -1)"
+[ -n "$slug" ] || { rollback; log "FAIL — changes without a published slug"; exit 1; }
+
+if ! bash -c "$CHECK_CMD"; then rollback; log "FAIL — green gate"; exit 1; fi
+
+add=""
+for p in $PUBLISH_PATHS; do [ -e "$p" ] && add="$add $p"; done   # a path that does not exist (e.g. a language dir in a small test site) is not an error
+# shellcheck disable=SC2086
+git add -A -- $add                                              # -A is limited to these paths so that queue deletions are staged
+if [ -n "$(git status --porcelain | grep -v '^[MADR] ')" ]; then
+  git status --short; rollback; log "FAIL — unexpected paths outside the publish set"; exit 1
+fi
+if git diff --cached --name-only --diff-filter=D | grep -qv '^content/queue/'; then
+  rollback; log "FAIL — unexpected deleted files"; exit 1
+fi
 git diff --cached --stat | tail -1
-git diff --cached --name-only --diff-filter=D | grep -v '^content/queue/' && { echo "unexpected deleted files — abort"; exit 1; } || true
 git commit -q -m "journal: publish ${slug} ($(date '+%Y-%m-%d %H:%M') KST)"
-git push origin HEAD:main
-# IndexNow only after the deploy is live: wait for Pages, then submit the new URLs.
+log "committed ${slug}"
+git push -q origin HEAD:main || { log "FAIL — push (commit kept locally; the next run pushes it first)"; exit 1; }
+log "pushed ${slug}"
+
+[ "${INKISLE_SKIP_NET:-0}" = "1" ] && exit 0
+# IndexNow only after the deploy is live: wait for Pages, then submit the new post in every language plus the home and journal pages.
 sleep 120
-python3 scripts/check_sitemap.py --live || echo "live check failed — retry later: python3 scripts/check_sitemap.py --live"
-python3 scripts/indexnow.py "https://inkisle.ipe.rest/journal/${slug}/" "https://inkisle.ipe.rest/ko/journal/${slug}/" "https://inkisle.ipe.rest/journal/" || true
+python3 scripts/check_sitemap.py --live || log "live check failed — retry later: python3 scripts/check_sitemap.py --live"
+urls="$(echo "$out" | sed -n 's/^  \(https:\/\/[^ ]*\)$/\1/p') https://inkisle.ipe.rest/ https://inkisle.ipe.rest/journal/"
+# shellcheck disable=SC2086
+python3 scripts/indexnow.py $urls || log "IndexNow failed (not critical)"
