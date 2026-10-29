@@ -1,22 +1,37 @@
-# Daily publish automation (draft — nothing here is installed)
+# Daily publish automation (not installed by this repo)
 
 Policy: **one post a day at 19:00 KST** while the app is unreleased (Davy, 2026-10-29). The publish time recorded in each post is the real time
 the script ran (HH:MM KST); a future time is refused.
 
 | File | Role |
 |---|---|
-| `publish_daily.sh` | pull → `publish_post.py --daily` → green gate → commit → push → live check → IndexNow |
-| `rest.ipe.inkisle-publish.plist.draft` | launchd job, 19:00 every day |
+| `publish_daily.sh` | safety checks → push leftovers → `publish_post.py --daily` → green gate → commit → push → live check → IndexNow |
+| `rest.ipe.inkisle-publish.plist` | launchd job, 19:00 every day, log `~/Library/Logs/inkisle-publish.log` |
 
-Install (by the room lead, after the GitHub remote and Pages exist):
+## Safety rules (tests: `tests/test_publish_daily.py`)
+
+- Runs in a **dedicated publish clone**: `INKISLE_PUBLISH_DIR` (default `~/Developer/inkisle-rest`). That clone must stay on `main` with a clean tree and
+  must not be a place where anyone (or any agent) works on feature branches. On any other branch, or with uncommitted changes, the run logs `SKIP` and exits 0.
+- A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due.
+- Publishing is atomic: if `publish_post.py` (build + sitemap check), the green gate or the path check fails, the tree is reset to where it started
+  (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
+- Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
+- IndexNow gets the new post in every published language plus `/` and `/journal/`.
+
+## Install (by the room lead, once; the repo never does this itself)
+
+1. Make the publish clone: `git clone https://github.com/blessu76/inkisle-rest.git ~/Developer/inkisle-rest` (must be on `main`; `git push` must work non-interactively).
+2. The Mac's time zone must be KST (launchd's 19:00 is local time).
+3. Install and load:
 
 ```
-mkdir -p ~/.ipe/logs
-cp ops/rest.ipe.inkisle-publish.plist.draft ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist
+cp ops/rest.ipe.inkisle-publish.plist ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist
 launchctl kickstart -k gui/$(id -u)/rest.ipe.inkisle-publish     # run once now (only if you want a post now)
 ```
 
-Before relying on it: confirm the queue (`content/queue/`) has posts, translations are added for queued posts (docs/TRANSLATION.md), and
-`git push` works non-interactively from that account. When the queue is empty the job does nothing and exits 0 — write new posts into
-`content/queue/NN-slug/` (NN keeps the order).
+Uninstall: `launchctl bootout gui/$(id -u)/rest.ipe.inkisle-publish && rm ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist`.
+Log: `tail -f ~/Library/Logs/inkisle-publish.log` (lines: `SKIP`, `FAIL`, `ROLLBACK`, `committed`, `pushed`).
+
+Before relying on it: the queue (`content/queue/`) has posts and their translations exist (docs/TRANSLATION.md). When the queue is empty the job does
+nothing and exits 0 — write new posts into `content/queue/NN-slug/` (NN keeps the order).

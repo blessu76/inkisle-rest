@@ -136,5 +136,22 @@ class PublishDaily(unittest.TestCase):
         self.assertIn("SKIP", r.stdout)
 
 
+class OpsFiles(unittest.TestCase):
+    def test_deploy_workflow_settings(self):
+        y = (REPO / ".github" / "workflows" / "deploy.yml").read_text(encoding="utf-8")
+        self.assertIn("cancel-in-progress: false", y)
+        self.assertNotIn("cancel-in-progress: true", y)
+        check = y.split("  check:")[1].split("  deploy:")[0]
+        self.assertIn("permissions:\n      contents: read", check)
+
+    def test_plist(self):
+        p = (REPO / "ops" / "rest.ipe.inkisle-publish.plist").read_text(encoding="utf-8")
+        self.assertIn("<key>Hour</key><integer>19</integer>", p)
+        self.assertIn("Library/Logs/inkisle-publish.log", p)
+        self.assertIn("INKISLE_PUBLISH_DIR", p)
+        if shutil.which("plutil"):
+            self.assertEqual(subprocess.run(["plutil", "-lint", str(REPO / "ops" / "rest.ipe.inkisle-publish.plist")], capture_output=True).returncode, 0)
+
+
 if __name__ == "__main__":
     unittest.main()

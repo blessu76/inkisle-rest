@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Not installed by the repo; the room lead installs it (ops/README.md). Daily 19:00 — StartCalendarInterval uses the Mac's LOCAL time, so the Mac's time zone must be KST (TZ below only affects the script). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>rest.ipe.inkisle-publish</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/davy.kim/Developer/inkisle-rest/ops/publish_daily.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string><key>TZ</key><string>Asia/Seoul</string><key>INKISLE_PUBLISH_DIR</key><string>/Users/davy.kim/Developer/inkisle-rest</string></dict>
+  <key>StandardOutPath</key><string>/Users/davy.kim/Library/Logs/inkisle-publish.log</string>
+  <key>StandardErrorPath</key><string>/Users/davy.kim/Library/Logs/inkisle-publish.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>
