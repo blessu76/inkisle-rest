@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 SITE = "https://inkisle.ipe.rest"
-ASSET_V = "20261029d"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
+ASSET_V = "20261029e"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
 KST = dt.timezone(dt.timedelta(hours=9))
 PAGES_UPDATED = "2026-10-29"  # sitemap lastmod of about / privacy — bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"

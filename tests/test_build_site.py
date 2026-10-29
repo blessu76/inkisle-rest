@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -249,16 +250,16 @@ class Releases(unittest.TestCase):
         (self.root / "content" / "releases.json").write_text(json.dumps({"releases": entries}), encoding="utf-8")
 
     def test_page_menu_and_footer_in_every_language(self):
-        build(self.root)
-        for rel in ("releases/index.html", "ko/releases/index.html"):
-            h = (self.root / rel).read_text(encoding="utf-8")
-            self.assertIn('class="card release"', h)
-            self.assertNotIn("<h1></h1>", h)
-        home = (self.root / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<a href="/releases/">Release notes</a>', home.split("</header>")[0])
-        self.assertIn('<a href="/releases/">Release notes</a>', home.split("</main>")[1])
-        ko = (self.root / "ko/index.html").read_text(encoding="utf-8")
-        self.assertIn('<a href="/ko/releases/">릴리즈 노트</a>', ko.split("</header>")[0])
+        # the committed site (check.sh proves it is up to date) in all 12 languages
+        for lang in bs.LANGS:
+            link = '<a href="%s">' % bs.path_releases(lang)
+            home = (REPO / bs.path_home(lang).lstrip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn(link, home.split("</header>")[0], lang)
+            self.assertIn(link, home.split("</main>")[1], lang)
+            page = (REPO / bs.path_releases(lang).lstrip("/") / "index.html").read_text(encoding="utf-8")
+            self.assertIn('class="card release"', page, lang)
+            self.assertIn('<a href="%s" aria-current="page">' % bs.path_releases(lang), page, lang)
+            self.assertIn('<html lang="%s"' % lang, page)
 
     def test_current_page_is_marked_in_menu(self):
         build(self.root)
@@ -327,6 +328,8 @@ class Releases(unittest.TestCase):
 
 
 NODE = shutil.which("node")
+# CI must never skip the language-pick tests silently
+NEED_NODE = unittest.skipUnless(NODE or os.environ.get("CI"), "node not installed")
 
 
 class LanguagePick(unittest.TestCase):
@@ -342,29 +345,30 @@ class LanguagePick(unittest.TestCase):
             "vm.runInNewContext(%s,sb);console.log(JSON.stringify(out));"
         ) % (json.dumps(saved), "true" if broken_storage else "false", json.dumps(path), json.dumps(languages),
              json.dumps(languages[0] if languages else ""), json.dumps(script))
+        self.assertTrue(NODE, "node is required in CI")
         r = subprocess.run([NODE, "-e", harness], capture_output=True, text=True, timeout=20)
         self.assertEqual(r.returncode, 0, r.stderr)
         return json.loads(r.stdout)
 
-    @unittest.skipUnless(NODE, "node not installed")
+    @NEED_NODE
     def test_follows_browser_language(self):
         for langs, want in ((["ko-KR", "en-US"], "/ko/?a=1#h"), (["zh-TW"], "/zh/?a=1#h"), (["pt-BR"], "/pt/?a=1#h"), (["fr"], "/fr/?a=1#h"),
-                            (["ar-EG", "en"], "/ar/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
+                            (["ar-EG", "en"], "/ar/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"), (["in"], "/id/?a=1#h"), (["in-ID", "en"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
             self.assertEqual(self.run_pick(langs), want, langs)
 
-    @unittest.skipUnless(NODE, "node not installed")
+    @NEED_NODE
     def test_english_and_unknown_stay_on_the_english_root(self):
         for langs in (["en-US"], ["en"], ["sv", "nb"], ["xx-YY"], [""], []):
             self.assertIsNone(self.run_pick(langs), langs)
 
-    @unittest.skipUnless(NODE, "node not installed")
+    @NEED_NODE
     def test_saved_choice_wins_and_survives_blocked_storage(self):
         self.assertIsNone(self.run_pick(["ko-KR"], saved="en"))
         self.assertEqual(self.run_pick(["en-US"], saved="ja"), "/ja/?a=1#h")
         self.assertEqual(self.run_pick(["ko-KR"], saved="klingon"), "/ko/?a=1#h")  # unknown saved value ignored
         self.assertEqual(self.run_pick(["ko-KR"], broken_storage=True), "/ko/?a=1#h")  # storage throws -> still works
 
-    @unittest.skipUnless(NODE, "node not installed")
+    @NEED_NODE
     def test_only_runs_on_the_root(self):
         self.assertIsNone(self.run_pick(["ko-KR"], path="/about/"))
         self.assertIsNone(self.run_pick(["ko-KR"], path="/ko/"))

@@ -12,6 +12,8 @@
       var L=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
       for(var i=0;i<L.length&&!to;i++){
         var c=String(L[i]||'').toLowerCase().replace(/_/g,'-');
+        /* legacy codes: Android/old browsers say "in" for Indonesian. Traditional Chinese (zh-Hant) has no pages yet, so it goes to zh. */
+        if(c.split('-')[0]==='in')c='id'+c.slice(2);
         if(S.indexOf(c)>=0)to=c;else if(S.indexOf(c.split('-')[0])>=0)to=c.split('-')[0];
       }
     }
