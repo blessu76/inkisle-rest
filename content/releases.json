@@ -26,6 +26,8 @@
      "An information screen with the app version and a link to the privacy policy.",
      "Smoother play between stages: a short result sheet, a preview of the next stage, and a marker when you missed a star by only a little.",
      "A teaser for the next sea, which is not playable yet.",
+     "When you come back to the chart after a stage, the next stage glows softly for a moment, then the glow goes away. It does not show if reduce-motion is on.",
+     "Leaving a stage with the phone's back button or swipe gesture also brings you back to the chart with the right effect.",
      "Not checked yet: the app has not been run on a real iPhone or Android phone from a store build."
     ],
     "ko": [
@@ -39,6 +41,8 @@
      "앱 버전과 개인정보처리방침 링크가 있는 정보 화면.",
      "판과 판 사이를 더 매끄럽게: 간단한 결과 창, 다음 판 미리 보기, 별을 아깝게 놓쳤을 때의 표시.",
      "아직 플레이할 수 없는 다음 해역 예고.",
+     "판을 마치고 해도로 돌아오면 다음 판이 잠깐 숨쉬듯 은은하게 빛나다가 사라집니다. 동작 줄이기를 켜 두면 표시되지 않습니다.",
+     "휴대폰의 뒤로 가기 버튼이나 스와이프로 판에서 나가도 해도로 돌아오는 연출이 알맞게 나옵니다.",
      "아직 확인하지 못한 것: 스토어용 빌드를 실제 아이폰이나 안드로이드 폰에서 돌려 보지 않았습니다."
     ]
    }
