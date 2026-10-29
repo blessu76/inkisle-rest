@@ -45,5 +45,11 @@
  "fact3": "Funktioniert offline: Kein Konto und kein Netzwerk nötig.",
  "fact4": "Minimalistische Vektorgrafik; jede Seite hat ihre eigene Farbe und Flaggenform, sodass das Spiel auch ohne Farben lesbar bleibt.",
  "fact5": "Zuerst für iOS geplant, Android wird parallel entwickelt. Noch kein Veröffentlichungsdatum.",
- "about_cta": "Über das Spiel"
+ "about_cta": "Über das Spiel",
+ "nav_releases": "Versionshinweise",
+ "releases_title": "Versionshinweise",
+ "releases_desc": "Was sich in jedem Build ändert, den wir vor der öffentlichen Veröffentlichung auf TestFlight hochladen, in einfachen Worten.",
+ "rel_status_prep": "TestFlight in Vorbereitung",
+ "rel_status_tf": "Auf TestFlight",
+ "rel_en_note": "Dieser Eintrag ist nur auf Englisch verfügbar."
 }

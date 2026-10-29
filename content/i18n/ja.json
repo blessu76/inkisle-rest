@@ -45,5 +45,11 @@
  "fact3": "オフラインで動作。アカウントもネットワークも不要です。",
  "fact4": "ミニマルなベクターアート。陣営ごとに色と旗の形が異なるので、色がわからなくても見分けられます。",
  "fact5": "まずiOS向けを予定し、Androidも並行して開発します。発売日は未定です。",
- "about_cta": "ゲームについて"
+ "about_cta": "ゲームについて",
+ "nav_releases": "リリースノート",
+ "releases_title": "リリースノート",
+ "releases_desc": "正式リリースの前に TestFlight に上げるビルドごとに、何が変わったかをやさしい言葉で書きます。",
+ "rel_status_prep": "TestFlight 準備中",
+ "rel_status_tf": "TestFlight で配信中",
+ "rel_en_note": "この項目は英語のみです。"
 }

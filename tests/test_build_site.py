@@ -232,5 +232,98 @@ class RealRepo(unittest.TestCase):
         self.assertEqual(keys[0].read_text().strip(), keys[0].stem)
 
 
+class Releases(unittest.TestCase):
+    def setUp(self):
+        self.root = make_site()
+        self.addCleanup(shutil.rmtree, self.root, True)
+
+    def entry(self, **kw):
+        e = {"id": "1.0.0-2", "version": "1.0.0", "build": "2", "status": "testflight", "date": "2026-11-02",
+             "title": {"en": "Build 2", "ko": "빌드 2"}, "intro": {"en": "Intro.", "ko": "소개."},
+             "notes": {"en": ["Fixed **a thing**."], "ko": ["고쳤습니다."]}}
+        e.update(kw)
+        return e
+
+    def write(self, entries):
+        (self.root / "content" / "releases.json").write_text(json.dumps({"releases": entries}), encoding="utf-8")
+
+    def test_page_menu_and_footer_in_every_language(self):
+        build(self.root)
+        for rel in ("releases/index.html", "ko/releases/index.html"):
+            h = (self.root / rel).read_text(encoding="utf-8")
+            self.assertIn('class="card release"', h)
+            self.assertNotIn("<h1></h1>", h)
+        home = (self.root / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/releases/">Release notes</a>', home.split("</header>")[0])
+        self.assertIn('<a href="/releases/">Release notes</a>', home.split("</main>")[1])
+        ko = (self.root / "ko/index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/ko/releases/">릴리즈 노트</a>', ko.split("</header>")[0])
+
+    def test_current_page_is_marked_in_menu(self):
+        build(self.root)
+        h = (self.root / "releases/index.html").read_text(encoding="utf-8")
+        self.assertIn('<a href="/releases/" aria-current="page">Release notes</a>', h)
+
+    def test_first_entry_is_testflight_preparing_without_dates_or_prices(self):
+        rel = json.loads((REPO / "content" / "releases.json").read_text(encoding="utf-8"))["releases"]
+        self.assertEqual(rel[0]["status"], "prep")
+        self.assertEqual(rel[0]["date"], "")
+        text = json.dumps(rel[0], ensure_ascii=False).lower()
+        for bad in ("$", "price", "free", "release date", "가격", "무료", "커밋"):
+            self.assertNotIn(bad, text)
+
+    def test_missing_language_falls_back_to_english_and_says_so(self):
+        build(self.root)
+        # the test site only has en + ko, so check fallback with a fake third language entry rendered by hand
+        ctx, errs = bs.make_ctx(self.root, NOW)
+        self.assertEqual(errs, [])
+        ctx.langs.append("ja")
+        ctx.i18n["ja"] = json.loads((REPO / "content/i18n/ja.json").read_text(encoding="utf-8"))
+        path, h = bs.build_releases(ctx, "ja")
+        self.assertEqual(path, "/ja/releases/")
+        self.assertIn(ctx.releases[0]["title"]["en"], h)
+        self.assertIn(ctx.i18n["ja"]["rel_en_note"], h)
+        self.assertIn('lang="en" dir="ltr"', h)
+        self.assertIn('<html lang="ja"', h)
+
+    def test_newest_first_status_badge_and_markdown(self):
+        self.write([self.entry(), self.entry(id="1.0.0-1", build="1", status="prep", date="")])
+        build(self.root)
+        h = (self.root / "releases/index.html").read_text(encoding="utf-8")
+        self.assertLess(h.index('id="1.0.0-2"'), h.index('id="1.0.0-1"'))
+        self.assertIn("On TestFlight", h)
+        self.assertIn("Preparing for TestFlight", h)
+        self.assertIn("<strong>a thing</strong>", h)
+        self.assertIn('<time datetime="2026-11-02">2026-11-02</time>', h)
+
+    def test_validation_errors(self):
+        for bad, frag in ((self.entry(status="live"), "status"), (self.entry(date="Nov 2"), "date"),
+                          (self.entry(notes={"en": ["x"]}), "notes.ko missing"), (self.entry(notes={"en": [], "ko": ["x"]}), "notes.en"),
+                          (self.entry(title={"en": "T", "ko": "T", "xx": "T"}), "unknown language"),
+                          (self.entry(notes={"en": ["see /Users/x"], "ko": ["x"]}), "forbidden"), (self.entry(id="a b"), "id")):
+            self.write([bad])
+            _, errs = bs.load_releases(self.root)
+            self.assertTrue(any(frag in e for e in errs), (frag, errs))
+        self.write([self.entry(), self.entry()])
+        self.assertTrue(any("duplicated" in e for e in bs.load_releases(self.root)[1]))
+        (self.root / "content" / "releases.json").unlink()
+        self.assertTrue(any("missing" in e for e in bs.load_releases(self.root)[1]))
+
+    def test_sitemap_hreflang_llms(self):
+        ctx = build(self.root)
+        sm = (self.root / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("<loc>https://inkisle.ipe.rest/releases/</loc>", sm)
+        self.assertIn("<loc>https://inkisle.ipe.rest/ko/releases/</loc>", sm)
+        h = (self.root / "releases/index.html").read_text(encoding="utf-8")
+        self.assertIn('hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"', h)
+        self.assertIn('hreflang="x-default" href="https://inkisle.ipe.rest/releases/"', h)
+        self.assertIn('<link rel="canonical" href="https://inkisle.ipe.rest/releases/">', h)
+        self.assertIn("/releases/", (self.root / "llms.txt").read_text(encoding="utf-8"))
+        import check_sitemap
+        errs, _ = check_sitemap.check(self.root, NOW)
+        self.assertEqual(errs, [])
+        self.assertTrue(ctx.releases)
+
+
 if __name__ == "__main__":
     unittest.main()

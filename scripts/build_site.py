@@ -5,11 +5,13 @@ Sources
   content/i18n/<lang>.json              UI strings + home copy (same keys in every language, see KEYS)
   content/pages/<lang>/about.md         about / privacy (front matter title+description, Markdown body,
   content/pages/<lang>/privacy.md       placeholders {{OPERATOR}} {{EMAIL}} {{EFFECTIVE}})
+  content/releases.json                 TestFlight release notes, newest first (one entry per build; en + ko required, other
+                                        languages optional — a language without its own text shows the en text)
   content/journal/<slug>/<lang>.md      PUBLISHED posts (front matter + Markdown). Queue lives in content/queue/ and is never built.
 
 Output (generated — never edit by hand)
   en lives at the root, every other language under /<lang>/:
-  /  /about/  /privacy/  /journal/  /journal/page/N/  /journal/<slug>/  /journal/feed.xml
+  /  /about/  /privacy/  /releases/  /journal/  /journal/page/N/  /journal/<slug>/  /journal/feed.xml
   /<lang>/ ...same...    (ko also has /ko/journal/feed.xml)
   sitemap.xml  robots.txt  llms.txt  404.html
 
@@ -30,7 +32,7 @@ import sys
 from pathlib import Path
 
 SITE = "https://inkisle.ipe.rest"
-ASSET_V = "20261029b"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
+ASSET_V = "20261029c"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
 KST = dt.timezone(dt.timedelta(hours=9))
 PAGES_UPDATED = "2026-10-29"  # sitemap lastmod of about / privacy — bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
@@ -55,8 +57,9 @@ KEYS = (
     "empty published_on ai_note ai_orig rss prev next page crumb_home other_langs footer_line back_journal post_no "
     "journal_title journal_desc home_title home_desc hero_h1 hero_lead hero_note "
     "card1_h card1_p card2_h card2_p card3_h card3_p latest_h follow_h follow_p facts_h fact1 fact2 fact3 fact4 fact5 "
-    "about_cta"
+    "about_cta nav_releases releases_title releases_desc rel_status_prep rel_status_tf rel_en_note"
 ).split()
+RELEASE_STATUS = ("prep", "testflight")
 REQUIRED_POST = ("title", "description", "slug", "lang", "category", "published")
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 PUB_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})\+09:00$")
@@ -81,6 +84,10 @@ def path_home(lang):
 
 def path_page(lang, slug):
     return "%s/%s/" % (lp(lang), slug)
+
+
+def path_releases(lang):
+    return path_page(lang, "releases")
 
 
 def path_journal(lang, page=1):
@@ -281,6 +288,51 @@ def load_pages(root):
     return pages, errs
 
 
+def load_releases(root):
+    """-> (entries newest first, errors). entry = {id, version, build, status, date, title{lang}, intro{lang}, notes{lang: [..]}}"""
+    f = Path(root) / "content" / "releases.json"
+    if not f.is_file():
+        return [], ["content/releases.json: missing"]
+    try:
+        raw = json.loads(f.read_text(encoding="utf-8"))["releases"]
+    except (ValueError, KeyError, TypeError) as ex:
+        return [], ["content/releases.json: %s" % ex]
+    errs, out, seen = [], [], set()
+    for i, e in enumerate(raw):
+        tag = "releases.json[%d]" % i
+        if not isinstance(e, dict):
+            errs.append("%s: not an object" % tag); continue
+        tag = "releases.json %s" % e.get("id", i)
+        if not re.match(r"^[A-Za-z0-9._-]+$", str(e.get("id", ""))) or e["id"] in seen:
+            errs.append("%s: id missing, malformed or duplicated" % tag)
+        seen.add(e.get("id"))
+        if e.get("status") not in RELEASE_STATUS:
+            errs.append("%s: status must be one of %s" % (tag, "/".join(RELEASE_STATUS)))
+        if not str(e.get("version", "")).strip():
+            errs.append("%s: version missing" % tag)
+        if e.get("date") and not re.match(r"^\d{4}-\d{2}-\d{2}$", e["date"]):
+            errs.append("%s: date must look like 2026-10-29 (or be empty)" % tag)
+        for field in ("title", "intro", "notes"):
+            v = e.get(field)
+            if not isinstance(v, dict):
+                errs.append("%s: %s must be an object keyed by language" % (tag, field)); continue
+            for need in MAIN_LANGS:
+                if not v.get(need):
+                    errs.append("%s: %s.%s missing" % (tag, field, need))
+            for l, val in v.items():
+                if l not in LANGS:
+                    errs.append("%s: %s has unknown language %r" % (tag, field, l)); continue
+                items = val if field == "notes" else [val]
+                if not isinstance(items, list) or not all(isinstance(x, str) and x.strip() for x in items):
+                    errs.append("%s: %s.%s must be %s" % (tag, field, l, "a list of non-empty strings" if field == "notes" else "a non-empty string"))
+                    continue
+                for bad in FORBIDDEN:
+                    if any(bad in x for x in items):
+                        errs.append("%s: %s.%s has forbidden text %r" % (tag, field, l, bad))
+        out.append(e)
+    return out, errs
+
+
 def parse_published(v):
     m = PUB_RE.match(v)
     if not m:
@@ -392,8 +444,9 @@ def theme_script():
 
 
 class Ctx:
-    def __init__(self, root, i18n, pages, posts, langs, now):
+    def __init__(self, root, i18n, pages, posts, langs, now, releases=()):
         self.root, self.i18n, self.pages, self.posts, self.langs, self.now = root, i18n, pages, posts, langs, now
+        self.releases = list(releases)
 
     def t(self, lang, key):
         return self.i18n[lang][key]
@@ -445,7 +498,7 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
     switch = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>' % (
         esc(pth), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0])) for l, pth in alt.items())
     navlinks = [(path_home(lang), t("nav_home"), "home"), (path_journal(lang), t("nav_journal"), "journal"),
-                (path_page(lang, "about"), t("nav_about"), "about")]
+                (path_releases(lang), t("nav_releases"), "releases"), (path_page(lang, "about"), t("nav_about"), "about")]
     nav_html = "".join('<a href="%s"%s>%s</a>' % (esc(h), ' aria-current="page"' if nav == k else "", esc(label)) for h, label, k in navlinks)
     header = ('<header class="site-header"><div class="wrap bar"><a class="brand" href="%s" aria-label="Inkisle">'
               '<img src="/assets/logo.svg" alt="" width="28" height="28"><span>InkIsle</span></a>'
@@ -456,9 +509,10 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
               '</div></div></header>') % (esc(path_home(lang)), nav_html, esc(t("lang_label")), esc(name), switch,
                                          esc(t("theme_dark")), esc(t("theme_dark")), esc(t("theme_light")))
     footer = ('<footer class="site-footer"><div class="wrap"><p class="foot-tag">%s <a href="https://ipe.rest/">ipe.rest</a></p>'
-              '<p class="foot-links"><a href="%s">%s</a> · <a href="%s">%s</a> · <a href="%s">%s</a>%s</p>'
+              '<p class="foot-links"><a href="%s">%s</a> · <a href="%s">%s</a> · <a href="%s">%s</a> · <a href="%s">%s</a>%s</p>'
               '<p class="foot-small">© 2026 ipe() · %s</p></div></footer>') % (
-        esc(t("footer_line")), esc(path_journal(lang)), esc(t("nav_journal")), esc(path_page(lang, "about")), esc(t("nav_about")),
+        esc(t("footer_line")), esc(path_journal(lang)), esc(t("nav_journal")), esc(path_releases(lang)), esc(t("nav_releases")),
+        esc(path_page(lang, "about")), esc(t("nav_about")),
         esc(path_page(lang, "privacy")), esc(t("nav_privacy")),
         (' · <a href="%s">%s</a>' % (esc(path_feed(lang)), esc(t("rss")))) if lang in ("en", "ko") else "", esc(t("status_badge")))
     return ('<!doctype html>\n<!-- %s -->\n<html lang="%s" dir="%s" data-ads="off"><head>%s</head><body>'
@@ -552,6 +606,33 @@ def build_page(ctx, lang, slug):
                                          desc=meta["description"], body=body, graph=graph, alt=alt, nav=slug if slug == "about" else "")
 
 
+def build_releases(ctx, lang):
+    t = lambda k: ctx.t(lang, k)  # noqa: E731
+    crumbs = [(path_home(lang), t("crumb_home")), (None, t("releases_title"))]
+    cards = []
+    for e in ctx.releases:
+        own = lang in e["notes"] and lang in e["title"] and lang in e["intro"]
+        src = lang if own else "en"
+        build = "%s (%s)" % (e["version"], e["build"]) if e.get("build") else e["version"]
+        status = t("rel_status_tf" if e["status"] == "testflight" else "rel_status_prep")
+        date = ' · <time datetime="%s">%s</time>' % (esc(e["date"]), esc(e["date"])) if e.get("date") else ""
+        # text in a fallback language is marked so screen readers and translators pick the right voice
+        attrs = "" if own else ' lang="en" dir="ltr"'
+        note = "" if own else '<p class="rel-fallback">%s</p>' % esc(t("rel_en_note"))
+        cards.append('<article class="card release" id="%s"><p class="meta"><span class="badge">%s</span> %s%s</p>'
+                     '<h2%s>%s</h2>%s<p%s>%s</p><ul%s>%s</ul></article>' % (
+                         esc(e["id"]), esc(status), esc(build), date, attrs, esc(e["title"][src]), note, attrs, esc(e["intro"][src]), attrs,
+                         "".join("<li>%s</li>" % inline(x) for x in e["notes"][src])))
+    body = '%s<h1>%s</h1><p class="lead">%s</p><div class="releases">%s</div>' % (
+        breadcrumb_html(crumbs), esc(t("releases_title")), esc(t("releases_desc")), "".join(cards))
+    page_ld = {"@type": "CollectionPage", "@id": url(path_releases(lang)) + "#page", "url": url(path_releases(lang)),
+               "name": t("releases_title"), "description": t("releases_desc"), "inLanguage": lang, "isPartOf": {"@id": SITE + "/#website"}}
+    graph = [ORG, website_ld(lang, ctx), page_ld, breadcrumb_ld(crumbs)]
+    alt = {l: path_releases(l) for l in ctx.langs}
+    return path_releases(lang), render(ctx, lang, path=path_releases(lang), title="%s — Inkisle" % t("releases_title"),
+                                       desc=t("releases_desc"), body=body, graph=graph, alt=alt, nav="releases")
+
+
 def build_list(ctx, lang, page):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     nums = ctx.numbers()
@@ -638,6 +719,10 @@ def lastmod_site(ctx):
     return max([p["published"].strftime("%Y-%m-%d") for p in ctx.posts] + [PAGES_UPDATED])
 
 
+def lastmod_releases(ctx):
+    return max([e["date"] for e in ctx.releases if e.get("date")] + [PAGES_UPDATED])
+
+
 def sitemap_entries(ctx):
     """[(path, lastmod, {lang: path})]"""
     ents = []
@@ -652,6 +737,10 @@ def sitemap_entries(ctx):
         for slug in ("about", "privacy"):
             if (l, slug) in ctx.pages:
                 ents.append((path_page(l, slug), PAGES_UPDATED, {x: path_page(x, slug) for x in ctx.langs if (x, slug) in ctx.pages}))
+    ents.append((path_releases("en"), lastmod_releases(ctx), {l: path_releases(l) for l in ctx.langs}))
+    for l in ctx.langs:
+        if l != "en":
+            ents.append((path_releases(l), lastmod_releases(ctx), {x: path_releases(x) for x in ctx.langs}))
     for l in ctx.langs:
         n = len(posts_in(ctx, l))
         if n or l == "en":
@@ -697,6 +786,7 @@ def build_llms(ctx):
     rows += ["", "## Pages", "", "- [Home](%s/): %s" % (SITE, en["hero_lead"]),
              "- [About](%s%s): what Inkisle is and who makes it" % (SITE, path_page("en", "about")),
              "- [Privacy Policy](%s%s)" % (SITE, path_page("en", "privacy")),
+             "- [Release notes](%s%s): what is in each TestFlight build, in plain words" % (SITE, path_releases("en")),
              "- [Journal](%s%s): the production journal" % (SITE, path_journal("en")),
              "- [RSS](%s%s)" % (SITE, path_feed("en")), "", "## Journal posts (English)", ""]
     for p in posts_in(ctx, "en"):
@@ -734,7 +824,8 @@ def make_ctx(root, now=None, require_all=False):
     i18n, errs = load_i18n(root)
     pages, e2 = load_pages(root)
     posts, e3 = load_posts(root, now)
-    errs += e2 + e3 + queue_errors(root)
+    releases, e4 = load_releases(root)
+    errs += e2 + e3 + e4 + queue_errors(root)
     langs = [l for l in LANGS if l in i18n and (l, "about") in pages and (l, "privacy") in pages]
     if "en" not in langs or "ko" not in langs:
         errs.append("en and ko must both be complete (i18n + about + privacy)")
@@ -749,7 +840,7 @@ def make_ctx(root, now=None, require_all=False):
     for p in posts:
         p["langs"] = {l: v for l, v in p["langs"].items() if l in langs}
     posts = [p for p in posts if p["langs"]]
-    return Ctx(root, i18n, pages, posts, langs, now), errs
+    return Ctx(root, i18n, pages, posts, langs, now, releases), errs
 
 
 def build_all(ctx):
@@ -763,6 +854,7 @@ def build_all(ctx):
         put(*build_home(ctx, l))
         for slug in ("about", "privacy"):
             put(*build_page(ctx, l, slug))
+        put(*build_releases(ctx, l))
         for pg in range(1, pages_count(len(posts_in(ctx, l))) + 1):
             put(*build_list(ctx, l, pg))
         for p in ctx.posts:
@@ -780,7 +872,7 @@ def build_all(ctx):
 
 def clean(root):
     root = Path(root)
-    for name in ["journal", "about", "privacy"] + [l for l in LANGS if l != "en"]:
+    for name in ["journal", "about", "privacy", "releases"] + [l for l in LANGS if l != "en"]:
         d = root / name
         if d.is_dir():
             shutil.rmtree(d)

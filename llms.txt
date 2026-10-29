@@ -17,6 +17,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 - [Home](https://inkisle.ipe.rest/): Inkisle is a quick island-conquest strategy game for your phone. Drag fleets from your islands to the next one: the bigger number takes the island and the ink spreads in your color. Each stage takes a few minutes.
 - [About](https://inkisle.ipe.rest/about/): what Inkisle is and who makes it
 - [Privacy Policy](https://inkisle.ipe.rest/privacy/)
+- [Release notes](https://inkisle.ipe.rest/releases/): what is in each TestFlight build, in plain words
 - [Journal](https://inkisle.ipe.rest/journal/): the production journal
 - [RSS](https://inkisle.ipe.rest/journal/feed.xml)
 

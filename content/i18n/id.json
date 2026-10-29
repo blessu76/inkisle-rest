@@ -45,5 +45,11 @@
  "fact3": "Bisa dimainkan offline: tanpa akun dan tanpa jaringan.",
  "fact4": "Seni vektor minimalis; tiap pihak punya warna dan bentuk bendera sendiri sehingga tetap terbaca tanpa warna.",
  "fact5": "Direncanakan untuk iOS lebih dulu, dengan Android dikembangkan bersamaan. Belum ada tanggal rilis.",
- "about_cta": "Tentang game ini"
+ "about_cta": "Tentang game ini",
+ "nav_releases": "Catatan rilis",
+ "releases_title": "Catatan rilis",
+ "releases_desc": "Apa yang berubah di setiap build yang kami unggah ke TestFlight sebelum rilis publik, dengan kata-kata sederhana.",
+ "rel_status_prep": "Menyiapkan TestFlight",
+ "rel_status_tf": "Di TestFlight",
+ "rel_en_note": "Entri ini hanya tersedia dalam bahasa Inggris."
 }

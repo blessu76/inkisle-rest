@@ -45,5 +45,11 @@
  "fact3": "支持离线：无需账号，也无需联网。",
  "fact4": "极简矢量美术；每一方都有自己的颜色和旗帜形状，即使不看颜色也能分辨。",
  "fact5": "计划先推出 iOS 版，Android 版同步开发。暂无发布日期。",
- "about_cta": "了解游戏"
+ "about_cta": "了解游戏",
+ "nav_releases": "发布说明",
+ "releases_title": "发布说明",
+ "releases_desc": "在正式发布之前,每个上传到 TestFlight 的构建有哪些变化,用通俗的话写下来。",
+ "rel_status_prep": "TestFlight 准备中",
+ "rel_status_tf": "已上传 TestFlight",
+ "rel_en_note": "此条目仅提供英文。"
 }

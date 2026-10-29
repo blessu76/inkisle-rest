@@ -45,5 +45,11 @@
  "fact3": "Funciona sin conexión: no hace falta cuenta ni red.",
  "fact4": "Arte vectorial minimalista; cada bando tiene su propio color y forma de bandera, así que se distingue también sin color.",
  "fact5": "Previsto primero para iOS, con Android desarrollándose en paralelo. Aún sin fecha de lanzamiento.",
- "about_cta": "Sobre el juego"
+ "about_cta": "Sobre el juego",
+ "nav_releases": "Notas de versión",
+ "releases_title": "Notas de versión",
+ "releases_desc": "Qué cambió en cada compilación que subimos a TestFlight antes del lanzamiento público, con palabras sencillas.",
+ "rel_status_prep": "Preparando TestFlight",
+ "rel_status_tf": "En TestFlight",
+ "rel_en_note": "Esta entrada solo está disponible en inglés."
 }

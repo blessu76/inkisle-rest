@@ -45,5 +45,11 @@
  "fact3": "Fonctionne hors ligne : ni compte ni réseau nécessaires.",
  "fact4": "Graphismes vectoriels minimalistes ; chaque camp a sa couleur et la forme de son drapeau, pour rester lisible même sans les couleurs.",
  "fact5": "Prévu d'abord sur iOS, avec Android développé en parallèle. Pas encore de date de sortie.",
- "about_cta": "À propos du jeu"
+ "about_cta": "À propos du jeu",
+ "nav_releases": "Notes de version",
+ "releases_title": "Notes de version",
+ "releases_desc": "Ce qui change dans chaque build mis sur TestFlight avant la sortie publique, expliqué simplement.",
+ "rel_status_prep": "TestFlight en préparation",
+ "rel_status_tf": "Sur TestFlight",
+ "rel_en_note": "Cette entrée n'est disponible qu'en anglais."
 }

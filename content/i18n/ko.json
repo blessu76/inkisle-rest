@@ -45,5 +45,11 @@
  "fact3": "오프라인으로 동작합니다. 계정도 네트워크도 필요 없습니다.",
  "fact4": "미니멀 벡터 아트. 진영마다 색과 깃발 모양이 달라 색을 구분하지 못해도 읽힙니다.",
  "fact5": "iOS를 먼저 내는 것을 계획하고 있고, 안드로이드도 함께 개발 중입니다. 출시일은 아직 없습니다.",
- "about_cta": "게임 소개"
+ "about_cta": "게임 소개",
+ "nav_releases": "릴리즈 노트",
+ "releases_title": "릴리즈 노트",
+ "releases_desc": "정식 출시 전에 TestFlight에 올리는 빌드마다 무엇이 바뀌었는지 쉬운 말로 적습니다.",
+ "rel_status_prep": "TestFlight 준비 중",
+ "rel_status_tf": "TestFlight 배포됨",
+ "rel_en_note": "이 항목은 영어로만 제공됩니다."
 }
