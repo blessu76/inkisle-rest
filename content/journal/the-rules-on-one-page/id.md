@@ -9,9 +9,11 @@ keywords: Inkisle, aturan permainan, penaklukan pulau, mesin deterministik, desa
 image_alt: Pulau-pulau dengan angka pasukan dan rute putus-putus tempat armada bergerak di antara pulau.
 published: 2026-10-30T05:40+09:00
 ---
-Game strategi yang bagus bisa dijelaskan dalam satu menit. Ini upaya kami menjelaskan aturan Inkisle dalam satu halaman. **Setiap angka di sini adalah nilai awal dari dokumen desain.** Kami memperkirakan sebagian akan berubah setelah pengujian, dan tulisan-tulisan berikutnya dalam seri ini akan menunjukkan mana yang sudah berubah.
+Game strategi yang bagus bisa dijelaskan dalam satu menit. Ini upaya kami menjelaskan aturan Inkisle dalam satu halaman. **Setiap angka di sini adalah nilai awal dari dokumen desain.** Kami memperkirakan sebagian akan berubah setelah pengujian.
 
 ## Pulau menghasilkan pasukan
+
+Angka-angka di bawah ini berlaku untuk pulau biasa. Ada empat jenis pulau seluruhnya, dan nilai awal tiga lainnya adalah: **pulau kecil** menghasilkan 1 pasukan setiap 1,6 detik dengan batas 25; **pulau besar** 1 pasukan setiap 0,6 detik dengan batas 80; **benteng** 1 pasukan setiap 2 detik dengan batas 60 dan pengali pertahanan 1,5.
 
 - Setiap pulau yang kamu miliki menambah **1 pasukan per detik** (satu "tick" adalah 100 ms, jadi satu pasukan setiap 10 tick).
 - Ada **batas** 45. Melewati batas, pulau berhenti berproduksi, dan pasukan berlebih dari bala bantuan turun kembali ke batas dengan laju 1 per detik. Ini mencegahmu menumpuk semuanya di satu pulau lalu menunggu.

@@ -9,9 +9,11 @@ keywords: Inkisle, règles du jeu, conquête d'îles, moteur déterministe, conc
 image_alt: Des îles avec des nombres de troupes et des routes en pointillés où voyagent les flottes entre elles.
 published: 2026-10-30T05:40+09:00
 ---
-Les bons jeux de stratégie s'expliquent en une minute. Voici notre tentative d'expliquer les règles d'Inkisle sur une page. **Chaque nombre ici est une valeur de départ tirée du document de conception.** Nous comptons en changer certains après les tests, et les articles suivants de cette série montreront lesquels ont déjà changé.
+Les bons jeux de stratégie s'expliquent en une minute. Voici notre tentative d'expliquer les règles d'Inkisle sur une page. **Chaque nombre ici est une valeur de départ tirée du document de conception.** Nous comptons en changer certains après les tests.
 
 ## Les îles produisent des troupes
+
+Les nombres ci-dessous valent pour l'île normale. Il y a quatre types d'îles en tout, et les valeurs de départ des trois autres sont : la **petite île** produit 1 troupe toutes les 1,6 secondes avec un plafond de 25 ; la **grande île** produit 1 troupe toutes les 0,6 secondes avec un plafond de 80 ; la **forteresse** produit 1 troupe toutes les 2 secondes avec un plafond de 60 et un coefficient de défense de 1,5.
 
 - Chaque île que vous possédez ajoute **1 troupe par seconde** (un « tick » dure 100 ms, soit une troupe tous les 10 ticks).
 - Il y a un **plafond** de 45. Au-delà, l'île cesse de produire, et les troupes en trop issues des renforts retombent vers le plafond à raison de 1 par seconde. Cela vous empêche de tout empiler sur une seule île et d'attendre.

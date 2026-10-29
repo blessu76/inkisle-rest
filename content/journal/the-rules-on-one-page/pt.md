@@ -9,9 +9,11 @@ keywords: Inkisle, regras do jogo, conquista de ilhas, motor determinístico, de
 image_alt: Ilhas com números de tropas e rotas pontilhadas por onde as frotas viajam entre elas.
 published: 2026-10-30T05:40+09:00
 ---
-Bons jogos de estratégia podem ser explicados em um minuto. Esta é a nossa tentativa de explicar as regras do Inkisle numa página. **Todos os números aqui são valores iniciais do documento de design.** Esperamos mudar alguns depois dos testes, e os próximos posts desta série mostrarão quais já mudaram.
+Bons jogos de estratégia podem ser explicados em um minuto. Esta é a nossa tentativa de explicar as regras do Inkisle numa página. **Todos os números aqui são valores iniciais do documento de design.** Esperamos mudar alguns depois dos testes.
 
 ## As ilhas produzem tropas
+
+Os números abaixo valem para a ilha normal. Há quatro tipos de ilha no total, e os valores iniciais das outras três são: a **ilha pequena** produz 1 tropa a cada 1,6 segundo com limite de 25; a **ilha grande** produz 1 tropa a cada 0,6 segundo com limite de 80; a **fortaleza** produz 1 tropa a cada 2 segundos com limite de 60 e multiplicador de defesa de 1,5.
 
 - Cada ilha que você possui acrescenta **1 tropa por segundo** (um "tick" são 100 ms, ou seja, uma tropa a cada 10 ticks).
 - Há um **limite** de 45. Passado o limite, a ilha para de produzir, e as tropas extras vindas de reforços voltam ao limite a 1 por segundo. Isso impede que você empilhe tudo numa ilha só e fique esperando.

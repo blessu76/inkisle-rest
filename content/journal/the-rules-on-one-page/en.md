@@ -8,9 +8,11 @@ keywords: Inkisle, game rules, island conquest, deterministic engine, game desig
 image_alt: Islands with troop numbers and dotted routes where fleets travel between them.
 published: 2026-10-30T05:40+09:00
 ---
-Good strategy games can be explained in a minute. This is our attempt at Inkisle's rules, on one page. **Every number here is a starting value from the design document.** We expect to change some of them after testing, and the posts later in this series show which ones already changed.
+Good strategy games can be explained in a minute. This is our attempt at Inkisle's rules, on one page. **Every number here is a starting value from the design document.** We expect to change some of them after testing.
 
 ## Islands make troops
+
+The numbers below are for the normal island. There are four kinds of island in all, and the starting values of the other three are: a **small island** makes 1 troop every 1.6 seconds with a cap of 25; a **big island** makes 1 troop every 0.6 seconds with a cap of 80; a **fortress** makes 1 troop every 2 seconds with a cap of 60 and a defense multiplier of 1.5.
 
 - Each island you own adds **1 troop per second** (a "tick" is 100 ms, so one troop every 10 ticks).
 - There is a **cap** of 45. Past the cap an island stops producing, and extra troops from reinforcements drain back to the cap at 1 per second. That stops you from piling everything on one island and waiting.

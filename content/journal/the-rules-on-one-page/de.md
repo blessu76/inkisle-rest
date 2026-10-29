@@ -9,9 +9,11 @@ keywords: Inkisle, Spielregeln, Inseleroberung, deterministische Engine, Spielde
 image_alt: Inseln mit Truppenzahlen und gepunkteten Routen, auf denen Flotten zwischen ihnen reisen.
 published: 2026-10-30T05:40+09:00
 ---
-Gute Strategiespiele lassen sich in einer Minute erklären. Dies ist unser Versuch, die Regeln von Inkisle auf einer Seite zu erklären. **Jede Zahl hier ist ein Startwert aus dem Designdokument.** Wir erwarten, einige davon nach den Tests zu ändern, und die späteren Beiträge dieser Serie zeigen, welche sich schon geändert haben.
+Gute Strategiespiele lassen sich in einer Minute erklären. Dies ist unser Versuch, die Regeln von Inkisle auf einer Seite zu erklären. **Jede Zahl hier ist ein Startwert aus dem Designdokument.** Wir erwarten, einige davon nach den Tests zu ändern.
 
 ## Inseln erzeugen Truppen
+
+Die Zahlen unten gelten für die normale Insel. Es gibt insgesamt vier Inselarten, und die Startwerte der anderen drei sind: Die **kleine Insel** erzeugt alle 1,6 Sekunden 1 Truppe bei einer Obergrenze von 25; die **große Insel** alle 0,6 Sekunden 1 Truppe bei einer Obergrenze von 80; die **Festung** alle 2 Sekunden 1 Truppe bei einer Obergrenze von 60 und einem Verteidigungsmultiplikator von 1,5.
 
 - Jede Insel, die du besitzt, bringt **1 Truppe pro Sekunde** (ein „Tick“ sind 100 ms, also eine Truppe alle 10 Ticks).
 - Es gibt eine **Obergrenze** von 45. Darüber hinaus produziert die Insel nicht mehr, und überschüssige Truppen aus Verstärkungen fließen mit 1 pro Sekunde auf die Obergrenze zurück. So verhindert das Spiel, dass du alles auf einer Insel stapelst und wartest.
