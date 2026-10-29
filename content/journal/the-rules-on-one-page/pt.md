@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, regras do jogo, conquista de ilhas, motor determinístico, design de jogos, regras de conquista
 image_alt: Ilhas com números de tropas e rotas pontilhadas por onde as frotas viajam entre elas.
+published: 2026-10-30T05:40+09:00
 ---
 Bons jogos de estratégia podem ser explicados em um minuto. Esta é a nossa tentativa de explicar as regras do Inkisle numa página. **Todos os números aqui são valores iniciais do documento de design.** Esperamos mudar alguns depois dos testes, e os próximos posts desta série mostrarão quais já mudaram.
 

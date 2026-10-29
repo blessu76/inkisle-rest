@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game rules, island conquest, deterministic engine, game design, capture rules
 image_alt: Islands with troop numbers and dotted routes where fleets travel between them.
+published: 2026-10-30T05:40+09:00
 ---
 Good strategy games can be explained in a minute. This is our attempt at Inkisle's rules, on one page. **Every number here is a starting value from the design document.** We expect to change some of them after testing, and the posts later in this series show which ones already changed.
 

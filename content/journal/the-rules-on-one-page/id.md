@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, aturan permainan, penaklukan pulau, mesin deterministik, desain game, aturan penaklukan
 image_alt: Pulau-pulau dengan angka pasukan dan rute putus-putus tempat armada bergerak di antara pulau.
+published: 2026-10-30T05:40+09:00
 ---
 Game strategi yang bagus bisa dijelaskan dalam satu menit. Ini upaya kami menjelaskan aturan Inkisle dalam satu halaman. **Setiap angka di sini adalah nilai awal dari dokumen desain.** Kami memperkirakan sebagian akan berubah setelah pengujian, dan tulisan-tulisan berikutnya dalam seri ini akan menunjukkan mana yang sudah berubah.
 

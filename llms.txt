@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [The rules on one page: islands, troops, capture](https://inkisle.ipe.rest/journal/the-rules-on-one-page/) — 2026-10-30 — Inkisle's whole rule set on one page: how islands produce troops, how fleets fly, how capture is calculated, and how a match ends. Starting values, before testing.
 - [Four game ideas, one core: why we chose island conquest](https://inkisle.ipe.rest/journal/why-island-conquest/) — 2026-10-29 — We drafted four concepts for our next game. All four shared one core, sending troops between nodes. Here is why we kept the core, dropped the story and put it on the sea.
 
 ## Languages

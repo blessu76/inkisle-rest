@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, règles du jeu, conquête d'îles, moteur déterministe, conception de jeu, règles de conquête
 image_alt: Des îles avec des nombres de troupes et des routes en pointillés où voyagent les flottes entre elles.
+published: 2026-10-30T05:40+09:00
 ---
 Les bons jeux de stratégie s'expliquent en une minute. Voici notre tentative d'expliquer les règles d'Inkisle sur une page. **Chaque nombre ici est une valeur de départ tirée du document de conception.** Nous comptons en changer certains après les tests, et les articles suivants de cette série montreront lesquels ont déjà changé.
 

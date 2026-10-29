@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spielregeln, Inseleroberung, deterministische Engine, Spieldesign, Eroberungsregeln
 image_alt: Inseln mit Truppenzahlen und gepunkteten Routen, auf denen Flotten zwischen ihnen reisen.
+published: 2026-10-30T05:40+09:00
 ---
 Gute Strategiespiele lassen sich in einer Minute erklären. Dies ist unser Versuch, die Regeln von Inkisle auf einer Seite zu erklären. **Jede Zahl hier ist ein Startwert aus dem Designdokument.** Wir erwarten, einige davon nach den Tests zu ändern, und die späteren Beiträge dieser Serie zeigen, welche sich schon geändert haben.
 
