@@ -24,7 +24,14 @@ the script ran (HH:MM KST); a future time is refused.
 
 1. Make the publish clone: `git clone https://github.com/blessu76/inkisle-rest.git ~/Developer/inkisle-rest` (must be on `main`; `git push` must work non-interactively).
 2. The Mac's time zone must be KST (launchd's 19:00 is local time).
-3. Install and load:
+3. Check that pushing works the way launchd will do it (no terminal, no prompt):
+
+```
+git -C ~/Developer/inkisle-rest push --dry-run origin HEAD:main     # must succeed without asking for anything (osxkeychain / ssh key / gh credential helper)
+```
+
+   [Whether the keychain is reachable from the LaunchAgent session itself is only proven by the first real 19:00 run — watch the log that day.]
+4. Install and load:
 
 ```
 bash ops/install_launchd.sh                                      # renders + lints; loads nothing

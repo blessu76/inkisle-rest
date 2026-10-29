@@ -12,6 +12,7 @@
 # Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow).
 set -euo pipefail
 export TZ=Asia/Seoul
+export GIT_TERMINAL_PROMPT=0     # under launchd nobody can type a password: fail instead of hanging
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S') KST] publish_daily: $*"; }
 skip() { log "SKIP — $*"; exit 0; }
 

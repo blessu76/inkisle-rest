@@ -12,7 +12,7 @@
   <key>StartCalendarInterval</key>
   <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
   <key>EnvironmentVariables</key>
-  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string><key>TZ</key><string>Asia/Seoul</string><key>INKISLE_PUBLISH_DIR</key><string>__HOME__/Developer/inkisle-rest</string></dict>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string><key>TZ</key><string>Asia/Seoul</string><key>GIT_TERMINAL_PROMPT</key><string>0</string><key>INKISLE_PUBLISH_DIR</key><string>__HOME__/Developer/inkisle-rest</string></dict>
   <key>StandardOutPath</key><string>__HOME__/Library/Logs/inkisle-publish.log</string>
   <key>StandardErrorPath</key><string>__HOME__/Library/Logs/inkisle-publish.log</string>
   <key>RunAtLoad</key><false/>

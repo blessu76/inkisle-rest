@@ -172,6 +172,12 @@ class PublishDaily(unittest.TestCase):
         self.run_script(check_cmd="false")
         self.assertFalse((self.clone / ".git" / "publish.lock").exists())
 
+    def test_git_never_prompts_for_credentials(self):
+        out = self.tmp / "env.txt"
+        r = self.run_script(check_cmd='echo "$GIT_TERMINAL_PROMPT" > %s' % out)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(out.read_text().strip(), "0")
+
     def test_failed_push_is_retried_by_the_next_run_even_with_nothing_to_publish(self):
         hook = self.origin / "hooks" / "pre-receive"
         hook.write_text("#!/bin/sh\nexit 1\n")
@@ -207,6 +213,7 @@ class OpsFiles(unittest.TestCase):
         self.assertIn("<key>Hour</key><integer>19</integer>", t)
         self.assertIn("__HOME__/Library/Logs/inkisle-publish.log", t)
         self.assertIn("INKISLE_PUBLISH_DIR", t)
+        self.assertIn("<key>GIT_TERMINAL_PROMPT</key><string>0</string>", t)
         tmp = Path(tempfile.mkdtemp(prefix="inkisle-ld-"))
         self.addCleanup(shutil.rmtree, tmp, True)
         env = {**os.environ, "INKISLE_LAUNCH_AGENTS_DIR": str(tmp / "LA"), "INKISLE_HOME": str(tmp / "home")}
