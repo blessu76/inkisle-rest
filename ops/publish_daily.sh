@@ -6,7 +6,7 @@
 #   - Runs only in a dedicated publish clone (INKISLE_PUBLISH_DIR, default ~/Developer/inkisle-rest) that is checked out on `main` with a clean tree;
 #     otherwise it does nothing and exits 0 (see the log). Never point it at a clone where feature branches / work in progress live.
 #   - Local commits not yet on origin/main (a previous push failed) are pushed first, even when there is nothing new to publish.
-#   - Publishing is all-or-nothing: if publish_post, the green gate or the path check fails, the tree is reset to the commit it started from.
+#   - Publishing is all-or-nothing: if anything before the commit fails (publish_post, the green gate, the path check, git add/commit, SIGTERM), the tree is reset to the commit it started from.
 #   - Only the paths a publish creates are staged (never `git add -A`).
 # Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow).
 set -euo pipefail
@@ -34,9 +34,14 @@ if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
 fi
 
-# C: from here on a failure restores the tree (it was clean when we started).
+# From here until the commit exists, ANY non-zero exit (a failed step, git add/commit error, SIGINT/SIGTERM) restores the tree, which was clean when
+# we started — otherwise a half-published dirty tree would make every later run SKIP silently.
 base="$(git rev-parse HEAD)"
-rollback() { git reset -q --hard "$base"; git clean -fdq; log "ROLLBACK — tree restored to ${base:0:7}"; }
+stage=prepublish
+rollback() { git reset -q --hard "$base"; git clean -fdq; stage=rolledback; log "ROLLBACK — tree restored to ${base:0:7}"; }
+on_exit() { local rc=$?; if [ "$rc" -ne 0 ] && [ "$stage" = prepublish ]; then rollback; fi; }
+trap on_exit EXIT
+trap 'log "signal received"; exit 143' INT TERM
 
 if ! out="$(python3 scripts/publish_post.py --daily 2>&1)"; then
   echo "$out"; rollback; log "FAIL — publish_post"; exit 1
@@ -60,6 +65,7 @@ if git diff --cached --name-only --diff-filter=D | grep -qv '^content/queue/'; t
 fi
 git diff --cached --stat | tail -1
 git commit -q -m "journal: publish ${slug} ($(date '+%Y-%m-%d %H:%M') KST)"
+stage=committed                                                  # from now on a failure keeps the commit; the next run pushes it first
 log "committed ${slug}"
 git push -q origin HEAD:main || { log "FAIL — push (commit kept locally; the next run pushes it first)"; exit 1; }
 log "pushed ${slug}"

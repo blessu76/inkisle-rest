@@ -115,6 +115,31 @@ class PublishDaily(unittest.TestCase):
         self.assertFalse((self.clone / "stray.txt").exists())
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
 
+    def test_commit_failure_rolls_back_the_staged_tree(self):
+        hook = self.clone / ".git" / "hooks" / "pre-commit"
+        hook.write_text("#!/bin/sh\nexit 1\n")
+        hook.chmod(0o755)
+        before = self.head()
+        r = self.run_script()
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("ROLLBACK", r.stdout)
+        self.assertEqual(self.head(), before)
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+        hook.unlink()
+        r = self.run_script()  # not stuck: the next run publishes normally
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertTrue((self.clone / "content/journal/next-one/en.md").is_file())
+
+    def test_sigterm_during_the_gate_rolls_back(self):
+        before = self.head()
+        r = self.run_script(check_cmd="kill -TERM $PPID")
+        self.assertEqual(r.returncode, 143, r.stdout + r.stderr)
+        self.assertIn("ROLLBACK", r.stdout)
+        self.assertEqual(self.head(), before)
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+
     def test_failed_push_is_retried_by_the_next_run_even_with_nothing_to_publish(self):
         hook = self.origin / "hooks" / "pre-receive"
         hook.write_text("#!/bin/sh\nexit 1\n")
