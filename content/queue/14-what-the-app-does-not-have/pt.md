@@ -13,14 +13,14 @@ Muito do que faz um app ser agradável é o que ele **não** faz. Para o primeir
 ## Sem conta, sem anúncios, sem rastreamento
 
 - **Sem conta.** Você abre o app e joga. Não há cadastro nem login.
-- **Sem anúncios e sem ferramentas de rastreamento.** A lista de pacotes externos do app é curta: um para guardar pequenas configurações no celular, um para tocar sons e um para abrir uma página da web. Não há nela nenhum pacote de publicidade, nenhum pacote de análise e nenhum pacote de login.
+- **Sem anúncios e sem ferramentas de rastreamento.** A lista de pacotes externos do app é curta: um para guardar pequenas configurações no celular, um para tocar sons e um para abrir uma página da web. Há também um pacote de fonte de ícones, que não tem relação com rastreamento. Não há nela nenhum pacote de publicidade, nenhum pacote de análise e nenhum pacote de login.
 - **O progresso fica no celular.** As estrelas salvas e a configuração de som são guardadas localmente e não são enviadas a lugar nenhum.
 
-O app tem uma tela de informações com um link para a política de privacidade, que é a mesma página que está neste site. A única coisa que toca a rede é abrir essa página, e isso só acontece quando o jogador toca nela. A política foi escrita primeiro para este site, então ainda precisa ser revisada e atualizada para cobrir o app antes de qualquer envio a uma loja.
+O app tem uma tela de informações com um link para a política de privacidade, que é a mesma página que está neste site. A única coisa que toca a rede é abrir essa página, e isso só acontece quando o jogador toca nela.
 
 ## Uma base de código, duas plataformas
 
-O Inkisle é feito com Flutter, então **iOS e Android são desenvolvidos juntos** a partir do mesmo código, e toda mudança é testada nos dois. O plano é **lançar primeiro no iOS**. Mesmo assim, compilamos e testamos o Android o tempo todo, para que ele não vire um segundo projeto mais tarde. O jogo fica travado na orientação vertical nos dois. As versões mínimas são iOS 13 e Android API nível 24.
+O Inkisle é feito com Flutter, então **iOS e Android são desenvolvidos juntos** a partir do mesmo código. Toda mudança passa por formatação de código, análise estática e testes automáticos sobre esse código compartilhado. O plano é começar por uma única plataforma. Mesmo assim, compilamos e testamos o Android o tempo todo, para que ele não vire um segundo projeto mais tarde. O jogo fica travado na orientação vertical nos dois. As versões mínimas são iOS 13 e Android API nível 24.
 
 ## O ícone
 

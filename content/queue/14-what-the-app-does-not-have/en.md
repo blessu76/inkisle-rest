@@ -12,14 +12,14 @@ A lot of what makes an app feel good is what it does **not** do. For the first r
 ## No account, no ads, no tracking
 
 - **No account.** You open the app and play. There is no sign-up and no sign-in.
-- **No ads and no tracking tools.** The app's list of outside packages is short: one to save small settings on the phone, one to play sounds, and one to open a web page. There is no advertising package, no analytics package and no sign-in package in it.
+- **No ads and no tracking tools.** The app's list of outside packages is short: one to save small settings on the phone, one to play sounds, and one to open a web page. It also includes a package for the icon font, which has nothing to do with tracking. There is no advertising package, no analytics package and no sign-in package in it.
 - **Progress stays on the phone.** The saved stars and the sound setting are stored locally and are not sent anywhere.
 
-The app has an information screen with a link to the privacy policy, which is the same page that is on this website. The one thing that touches the network is opening that page, and it only happens when the player taps it. The policy was written for this website first, so it still has to be checked and updated to cover the app before anything is sent to a store.
+The app has an information screen with a link to the privacy policy, which is the same page that is on this website. The one thing that touches the network is opening that page, and it only happens when the player taps it.
 
 ## One codebase, two platforms
 
-Inkisle is built with Flutter, so **iOS and Android are developed together** from the same code, and every change is tested for both. The plan is to **release on iOS first**. We still build and test Android the whole time, so that it does not become a second project later. The game is locked to portrait orientation on both. The minimum versions are iOS 13 and Android API level 24.
+Inkisle is built with Flutter, so **iOS and Android are developed together** from the same code. Every change goes through code formatting, static analysis and automated tests on that shared code. The plan is to start with one platform first. We still build and test Android the whole time, so that it does not become a second project later. The game is locked to portrait orientation on both. The minimum versions are iOS 13 and Android API level 24.
 
 ## The icon
 

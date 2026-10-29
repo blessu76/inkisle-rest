@@ -13,14 +13,14 @@ Banyak hal yang membuat sebuah aplikasi terasa nyaman adalah apa yang **tidak** 
 ## Tanpa akun, tanpa iklan, tanpa pelacakan
 
 - **Tanpa akun.** Kamu membuka aplikasi dan bermain. Tidak ada pendaftaran dan tidak ada masuk.
-- **Tanpa iklan dan tanpa alat pelacak.** Daftar paket luar aplikasi ini pendek: satu untuk menyimpan pengaturan kecil di ponsel, satu untuk memutar suara, dan satu untuk membuka halaman web. Di dalamnya tidak ada paket iklan, tidak ada paket analitik, dan tidak ada paket masuk.
+- **Tanpa iklan dan tanpa alat pelacak.** Daftar paket luar aplikasi ini pendek: satu untuk menyimpan pengaturan kecil di ponsel, satu untuk memutar suara, dan satu untuk membuka halaman web. Ada juga satu paket font ikon, yang tidak berkaitan dengan pelacakan. Di dalamnya tidak ada paket iklan, tidak ada paket analitik, dan tidak ada paket masuk.
 - **Progres tetap di ponsel.** Bintang yang tersimpan dan pengaturan suara disimpan secara lokal dan tidak dikirim ke mana pun.
 
-Aplikasi ini memiliki layar informasi dengan tautan ke kebijakan privasi, yaitu halaman yang sama dengan yang ada di situs web ini. Satu-satunya hal yang menyentuh jaringan adalah membuka halaman itu, dan itu hanya terjadi ketika pemain mengetuknya. Kebijakan itu pertama kali ditulis untuk situs web ini, jadi masih harus diperiksa dan diperbarui agar mencakup aplikasi sebelum apa pun dikirim ke toko aplikasi.
+Aplikasi ini memiliki layar informasi dengan tautan ke kebijakan privasi, yaitu halaman yang sama dengan yang ada di situs web ini. Satu-satunya hal yang menyentuh jaringan adalah membuka halaman itu, dan itu hanya terjadi ketika pemain mengetuknya.
 
 ## Satu basis kode, dua platform
 
-Inkisle dibuat dengan Flutter, sehingga **iOS dan Android dikembangkan bersama** dari kode yang sama, dan setiap perubahan diuji untuk keduanya. Rencananya adalah **rilis di iOS lebih dulu**. Kami tetap membangun dan menguji Android sepanjang waktu, supaya tidak menjadi proyek kedua di kemudian hari. Game dikunci pada orientasi potret di keduanya. Versi minimumnya adalah iOS 13 dan Android API level 24.
+Inkisle dibuat dengan Flutter, sehingga **iOS dan Android dikembangkan bersama** dari kode yang sama. Setiap perubahan melewati pemformatan kode, analisis statis, dan tes otomatis pada kode bersama itu. Rencananya adalah memulai dari satu platform lebih dulu. Kami tetap membangun dan menguji Android sepanjang waktu, supaya tidak menjadi proyek kedua di kemudian hari. Game dikunci pada orientasi potret di keduanya. Versi minimumnya adalah iOS 13 dan Android API level 24.
 
 ## Ikon
 
