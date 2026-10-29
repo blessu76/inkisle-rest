@@ -200,6 +200,21 @@ class PublishDaily(unittest.TestCase):
         self.assertEqual(self.origin_head(), before)
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
 
+    def test_failing_rollback_is_logged_loudly_and_still_releases_the_lock(self):
+        # an index.lock makes `git reset --hard` fail, simulating a rollback that cannot complete
+        r = self.run_script(check_cmd="touch .git/index.lock; false")
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+        self.assertIn("ROLLBACK FAILED", r.stdout)
+        self.assertFalse((self.clone / ".git" / "publish.lock").exists())
+        # same through the EXIT trap (error after the gate, e.g. SIGTERM)
+        (self.clone / ".git" / "index.lock").unlink()
+        git(self.clone, "reset", "-q", "--hard")
+        git(self.clone, "clean", "-fdq")
+        r = self.run_script(check_cmd="touch .git/index.lock; kill -TERM $PPID")
+        self.assertEqual(r.returncode, 143, r.stdout + r.stderr)
+        self.assertIn("ROLLBACK FAILED", r.stdout)
+        self.assertFalse((self.clone / ".git" / "publish.lock").exists())
+
     def test_failed_push_is_retried_by_the_next_run_even_with_nothing_to_publish(self):
         hook = self.origin / "hooks" / "pre-receive"
         hook.write_text("#!/bin/sh\nexit 1\n")

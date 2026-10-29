@@ -69,8 +69,16 @@ fi
 # we started — otherwise a half-published dirty tree would make every later run SKIP silently.
 base="$(git rev-parse HEAD)"
 stage=prepublish
-rollback() { git reset -q --hard "$base"; git clean -fdq; stage=rolledback; log "ROLLBACK — tree restored to ${base:0:7}"; }
-on_exit() { local rc=$?; if [ "$rc" -ne 0 ] && [ "$stage" = prepublish ]; then rollback; fi; rm -rf "$lock"; }
+# A failing rollback must neither stop the script (set -e) nor keep the lock: it is logged loudly and the tree stays dirty for a human (later runs SKIP).
+rollback() {
+  local ok=1
+  git reset -q --hard "$base" || ok=0
+  git clean -fdq || ok=0
+  stage=rolledback
+  if [ "$ok" = 1 ]; then log "ROLLBACK — tree restored to ${base:0:7}"
+  else log "ROLLBACK FAILED — the working tree in $REPO is NOT clean; fix by hand (git status; git reset --hard ${base:0:7}; git clean -fd) or every later run SKIPs"; fi
+}
+on_exit() { local rc=$?; rm -rf "$lock"; if [ "$rc" -ne 0 ] && [ "$stage" = prepublish ]; then rollback; fi; }
 trap on_exit EXIT
 trap 'log "signal received"; exit 143' INT TERM
 
