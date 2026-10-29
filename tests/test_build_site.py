@@ -266,13 +266,32 @@ class Releases(unittest.TestCase):
         h = (self.root / "releases/index.html").read_text(encoding="utf-8")
         self.assertIn('<a href="/releases/" aria-current="page">Release notes</a>', h)
 
-    def test_first_entry_is_testflight_preparing_without_dates_or_prices(self):
+    def test_real_entries_keep_status_dates_order_and_no_prices(self):
         rel = json.loads((REPO / "content" / "releases.json").read_text(encoding="utf-8"))["releases"]
-        self.assertEqual(rel[0]["status"], "prep")
-        self.assertEqual(rel[0]["date"], "")
-        text = json.dumps(rel[0], ensure_ascii=False).lower()
-        for bad in ("$", "price", "free", "release date", "가격", "무료", "커밋"):
-            self.assertNotIn(bad, text)
+        self.assertTrue(rel)
+        # a "prep" (preparing) build has no date; a "testflight" build has an ISO date
+        for r in rel:
+            if r["status"] == "prep":
+                self.assertEqual(r["date"], "", r["id"])
+            else:
+                self.assertRegex(r["date"], r"^\d{4}-\d{2}-\d{2}$", r["id"])
+        # newest first: dated builds come before any preparing build, in descending date order,
+        # and build numbers descend
+        seen_prep = False
+        for r in rel:
+            if r["status"] == "prep":
+                seen_prep = True
+            else:
+                self.assertFalse(seen_prep, "dated entry %s listed after a preparing build" % r["id"])
+        dated = [r for r in rel if r["status"] != "prep"]
+        self.assertEqual([r["date"] for r in dated], sorted((r["date"] for r in dated), reverse=True))
+        builds = [int(r["build"]) for r in rel]
+        self.assertEqual(builds, sorted(builds, reverse=True))
+        # no prices, release dates or commit talk in any entry
+        for r in rel:
+            text = json.dumps(r, ensure_ascii=False).lower()
+            for bad in ("$", "price", "free", "release date", "가격", "무료", "커밋"):
+                self.assertNotIn(bad, text, r["id"])
 
     def test_missing_language_falls_back_to_english_and_says_so(self):
         build(self.root)

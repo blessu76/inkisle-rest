@@ -1,6 +1,31 @@
 {
  "releases": [
   {
+   "id": "1.0.0-2",
+   "version": "1.0.0",
+   "build": "2",
+   "status": "testflight",
+   "date": "2026-10-29",
+   "title": {
+    "en": "Build 2: first TestFlight build",
+    "ko": "빌드 2: 첫 TestFlight 빌드"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 29, 2026. It has the contents of build 1, plus the fix below.",
+    "ko": "2026년 10월 29일 TestFlight 에 올라간 빌드입니다. 빌드 1의 내용에 아래 수정이 더해졌습니다."
+   },
+   "notes": {
+    "en": [
+     "Fixed: on the very first stage the map (the islands) did not show and the screen was empty. The islands now appear.",
+     "More careful checks before release: before each upload, the real app is now run automatically up to the first stage."
+    ],
+    "ko": [
+     "고침: 첫 판에서 지도(섬)가 보이지 않고 빈 화면이던 문제를 고쳤습니다. 이제 섬이 제대로 보입니다.",
+     "출시 전 점검을 더 꼼꼼히 했습니다: 업로드 전에 실제 앱을 자동으로 첫 판까지 실행해 확인합니다."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-1",
    "version": "1.0.0",
    "build": "1",
