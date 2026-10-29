@@ -34,5 +34,5 @@ Wir haben hier einen Fehler ausgeliefert und behoben: Das adaptive Icon wurde do
 
 ## Was wir nicht geprüft haben
 
-- Wir haben die App nicht auf einem **echten iPhone oder Android-Handy** mit einem Store-Build laufen lassen und sie bei keinem der beiden Stores eingereicht. Dinge wie die Store-Prüfung, App-Bildschirme in anderen Sprachen und das Aussehen des Icons in verschiedenen Launchern sind noch offen.
+- Build 2 wurde am 2026-10-29 auf TestFlight hochgeladen (die einzige in den Versionshinweisen verzeichnete Verteilung ist dieser iOS-Build). Wir haben die App bei keinem der beiden Stores offiziell eingereicht und nicht bestätigt, wie viel sie auf einem **echten iPhone oder Android-Handy** schon benutzt wurde. Dinge wie die Store-Prüfung, App-Bildschirme in anderen Sprachen und das Aussehen des Icons in verschiedenen Launchern sind noch offen.
 - „Kein Tracking" beschreibt, was in unserem eigenen Code und unserer Paketliste steht. Die Pakete, von denen wir abhängen, haben wir über das Lesen ihrer Beschreibungen hinaus nicht geprüft.

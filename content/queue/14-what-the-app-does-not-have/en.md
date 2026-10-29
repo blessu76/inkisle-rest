@@ -33,5 +33,5 @@ We shipped a bug here and fixed it: the adaptive icon was being shrunk twice (on
 
 ## What we have not checked
 
-- We have not run the app on a **real iPhone or Android phone** from a store build, and we have not submitted it to either store. Things like store review, in-app screens in other languages and how the icon looks on different launchers are still open.
+- Build 2 went up on TestFlight on 2026-10-29 (the only distribution recorded in the release notes is this iOS build). We have not formally submitted the app to either store, and we have not confirmed how much it has been used on a **real iPhone or Android phone**. Things like store review, in-app screens in other languages and how the icon looks on different launchers are still open.
 - "No tracking" describes what is in our own code and package list. We have not audited the packages we depend on beyond reading their descriptions.

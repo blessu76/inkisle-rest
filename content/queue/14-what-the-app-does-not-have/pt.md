@@ -34,5 +34,5 @@ Lançamos um bug aqui e o corrigimos: o ícone adaptativo estava sendo reduzido 
 
 ## O que não verificamos
 
-- Não executamos o app em um **iPhone ou celular Android de verdade** a partir de um build de loja, e não o enviamos a nenhuma das duas lojas. Coisas como a revisão das lojas, as telas do app em outros idiomas e a aparência do ícone em diferentes launchers ainda estão em aberto.
+- O build 2 foi enviado ao TestFlight em 2026-10-29 (a única distribuição registrada nas notas de versão é este build de iOS). Não enviamos o app formalmente a nenhuma das duas lojas, e não confirmamos quanto ele foi usado em um **iPhone ou celular Android de verdade**. Coisas como a revisão das lojas, as telas do app em outros idiomas e a aparência do ícone em diferentes launchers ainda estão em aberto.
 - "Sem rastreamento" descreve o que há no nosso próprio código e na nossa lista de pacotes. Não auditamos os pacotes de que dependemos além de ler as suas descrições.

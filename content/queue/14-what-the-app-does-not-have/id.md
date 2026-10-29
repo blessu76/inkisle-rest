@@ -34,5 +34,5 @@ Kami pernah merilis bug di sini dan sudah memperbaikinya: ikon adaptif diperkeci
 
 ## Yang belum kami periksa
 
-- Kami belum menjalankan aplikasi di **iPhone atau ponsel Android sungguhan** dari build toko, dan belum mengirimkannya ke toko mana pun. Hal-hal seperti peninjauan toko, layar aplikasi dalam bahasa lain, dan tampilan ikon di berbagai launcher masih terbuka.
+- Build 2 diunggah ke TestFlight pada 2026-10-29 (satu-satunya distribusi yang tercatat di catatan rilis adalah build iOS ini). Kami belum mengirimkan aplikasi secara resmi ke toko mana pun, dan belum memastikan seberapa banyak aplikasi ini sudah dipakai di **iPhone atau ponsel Android sungguhan**. Hal-hal seperti peninjauan toko, layar aplikasi dalam bahasa lain, dan tampilan ikon di berbagai launcher masih terbuka.
 - "Tanpa pelacakan" menggambarkan apa yang ada di kode kami sendiri dan daftar paket kami. Kami belum mengaudit paket-paket yang kami andalkan selain membaca deskripsinya.

@@ -34,5 +34,5 @@ Nous avons livré un bug ici et l'avons corrigé : l'icône adaptative était r�
 
 ## Ce que nous n'avons pas vérifié
 
-- Nous n'avons pas fait tourner l'appli sur un **vrai iPhone ou téléphone Android** à partir d'une version de boutique, et nous ne l'avons soumise à aucune des deux boutiques. Des points comme la validation par les boutiques, les écrans de l'appli dans d'autres langues et l'aspect de l'icône sur différents lanceurs restent ouverts.
+- La version 2 a été mise en ligne sur TestFlight le 2026-10-29 (la seule distribution consignée dans les notes de version est cette version iOS). Nous n'avons soumis l'appli officiellement à aucune des deux boutiques, et nous n'avons pas vérifié dans quelle mesure elle a été utilisée sur un **vrai iPhone ou téléphone Android**. Des points comme la validation par les boutiques, les écrans de l'appli dans d'autres langues et l'aspect de l'icône sur différents lanceurs restent ouverts.
 - « Pas de suivi » décrit ce qui se trouve dans notre propre code et notre liste de paquets. Nous n'avons pas audité les paquets dont nous dépendons au-delà de la lecture de leurs descriptions.

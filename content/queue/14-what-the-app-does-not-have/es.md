@@ -34,5 +34,5 @@ Aquí publicamos un error y lo corregimos: el icono adaptativo se reducía dos v
 
 ## Lo que no hemos comprobado
 
-- No hemos ejecutado la app en un **iPhone o teléfono Android real** con una compilación de tienda, y no la hemos enviado a ninguna de las dos tiendas. Cosas como la revisión de las tiendas, las pantallas de la app en otros idiomas y el aspecto del icono en distintos lanzadores siguen abiertas.
+- La compilación 2 se subió a TestFlight el 2026-10-29 (la única distribución registrada en las notas de versión es esta compilación de iOS). No hemos enviado la app formalmente a ninguna de las dos tiendas, y no hemos confirmado cuánto se ha usado en un **iPhone o teléfono Android real**. Cosas como la revisión de las tiendas, las pantallas de la app en otros idiomas y el aspecto del icono en distintos lanzadores siguen abiertas.
 - "Sin rastreo" describe lo que hay en nuestro propio código y en la lista de paquetes. No hemos auditado los paquetes de los que dependemos más allá de leer sus descripciones.
