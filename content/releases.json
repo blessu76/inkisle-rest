@@ -1,6 +1,163 @@
 {
  "releases": [
   {
+   "id": "1.0.0-3",
+   "version": "1.0.0",
+   "build": "3",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 3: a new look, new sounds and new ways to play",
+    "ko": "빌드 3: 새 모습, 새 소리, 새 조작",
+    "ja": "ビルド3:新しい見た目、新しい音、新しい操作",
+    "zh": "构建 3:新的外观、新的声音、新的操作",
+    "es": "Compilación 3: nuevo aspecto, nuevos sonidos y nuevas formas de jugar",
+    "fr": "Version 3 : nouveau look, nouveaux sons, nouvelles façons de jouer",
+    "de": "Build 3: neues Aussehen, neue Klänge, neue Bedienung",
+    "pt": "Build 3: novo visual, novos sons e novas formas de jogar",
+    "ru": "Сборка 3: новый вид, новые звуки, новое управление",
+    "ar": "الإصدار 3: مظهر جديد وأصوات جديدة وطرق لعب جديدة",
+    "hi": "बिल्ड 3: नया रूप, नई आवाज़ें, खेलने के नए तरीके",
+    "id": "Build 3: tampilan baru, suara baru, cara bermain baru"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 and 2, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1·2의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1・2の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 和 2 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 y 2, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 et 2, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 und 2 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 e 2, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В ней всё из сборок 1 и 2 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-30. يضم محتوى الإصدارين 1 و2 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 और 2 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 dan 2, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "A newly made intro that follows the time of day, day or night, about 15 to 20 seconds long.",
+     "A new look: a watercolor sea, islands with depth, spreading ink, and backgrounds that change with the time of day.",
+     "Sound effects, and a background sound of waves.",
+     "When two fleets' paths overlap, their troops cancel each other out.",
+     "Drag a rectangle to select several islands at once, and quick drags are easier to make.",
+     "A settings button, and the release notes now open inside the app in a web view.",
+     "A progress bar along the top of the screen.",
+     "Fleets now leave as an ink drop with a dotted tail."
+    ],
+    "ko": [
+     "시간대(낮·밤)에 따라 달라지는 인트로를 새로 만들었습니다. 길이는 15~20초입니다.",
+     "새 모습: 수채화 같은 바다, 입체감 있는 섬, 번지는 잉크, 시간대에 따라 바뀌는 배경.",
+     "효과음과 파도 소리 배경음.",
+     "두 함대의 경로가 겹치면 병력이 서로 상쇄됩니다.",
+     "사각형으로 끌어 여러 섬을 한 번에 선택할 수 있고, 빠른 드래그도 더 쉬워졌습니다.",
+     "설정 버튼이 생겼고, 릴리즈 노트를 앱 안의 웹뷰로 열 수 있습니다.",
+     "화면 위쪽에 진행률 막대.",
+     "출격이 잉크 방울과 점선 꼬리로 표시됩니다."
+    ],
+    "ja": [
+     "昼と夜など時間帯に合わせて変わるイントロを新しく作りました。長さは15〜20秒です。",
+     "新しい見た目:水彩画のような海、奥行きのある島、広がるインク、時間帯で変わる背景。",
+     "効果音と、波の音の背景音。",
+     "2つの艦隊の航路が重なると、兵が互いに相殺されます。",
+     "四角形をドラッグして複数の島を一度に選べます。素早いドラッグもしやすくなりました。",
+     "設定ボタンを追加。リリースノートはアプリ内のウェブビューで開きます。",
+     "画面の上部に進行バー。",
+     "出撃はインクのしずくと点線の尾で表示されます。"
+    ],
+    "zh": [
+     "全新制作的开场动画,会随昼夜时段变化,长约 15 到 20 秒。",
+     "新的外观:水彩般的海面、有立体感的岛屿、扩散的墨水,以及随时段变化的背景。",
+     "音效,以及海浪声的背景音。",
+     "两支舰队的航线重叠时,兵力会互相抵消。",
+     "拖出矩形即可一次选中多座岛屿,快速拖动也更容易。",
+     "新增设置按钮,发布说明现在可在应用内的网页视图中打开。",
+     "屏幕顶部新增进度条。",
+     "出击现在显示为墨滴加虚线尾迹。"
+    ],
+    "es": [
+     "Una introducción nueva que sigue la hora del día, de día o de noche, de unos 15 a 20 segundos.",
+     "Un aspecto nuevo: un mar de acuarela, islas con profundidad, tinta que se extiende y fondos que cambian con la hora del día.",
+     "Efectos de sonido y un sonido de fondo de olas.",
+     "Cuando las rutas de dos flotas se superponen, sus tropas se cancelan entre sí.",
+     "Arrastra un rectángulo para seleccionar varias islas a la vez; los arrastres rápidos también son más fáciles.",
+     "Un botón de ajustes, y las notas de versión ahora se abren dentro de la app en una vista web.",
+     "Una barra de progreso en la parte superior de la pantalla.",
+     "Las flotas ahora salen como una gota de tinta con una cola de puntos."
+    ],
+    "fr": [
+     "Une introduction refaite qui suit l'heure de la journée, de jour ou de nuit, d'environ 15 à 20 secondes.",
+     "Un nouveau look : une mer à l'aquarelle, des îles avec du relief, de l'encre qui se répand et des fonds qui changent avec l'heure.",
+     "Des effets sonores et un son de fond de vagues.",
+     "Quand les trajets de deux flottes se chevauchent, leurs troupes s'annulent mutuellement.",
+     "Faites glisser un rectangle pour sélectionner plusieurs îles à la fois ; les glissements rapides sont aussi plus faciles.",
+     "Un bouton de réglages, et les notes de version s'ouvrent désormais dans l'appli, dans une vue web.",
+     "Une barre de progression en haut de l'écran.",
+     "Les flottes partent désormais sous la forme d'une goutte d'encre avec une queue en pointillés."
+    ],
+    "de": [
+     "Ein neu gemachtes Intro, das der Tageszeit folgt, bei Tag oder Nacht, etwa 15 bis 20 Sekunden lang.",
+     "Ein neues Aussehen: ein Aquarell-Meer, Inseln mit Tiefe, sich ausbreitende Tinte und Hintergründe, die sich mit der Tageszeit ändern.",
+     "Soundeffekte und ein Hintergrundgeräusch von Wellen.",
+     "Überschneiden sich die Wege zweier Flotten, heben sich ihre Truppen gegenseitig auf.",
+     "Ein Rechteck aufziehen, um mehrere Inseln auf einmal auszuwählen; schnelle Züge gelingen ebenfalls leichter.",
+     "Eine Einstellungen-Schaltfläche, und die Versionshinweise öffnen sich jetzt in der App in einer Webansicht.",
+     "Ein Fortschrittsbalken am oberen Bildschirmrand.",
+     "Flotten starten jetzt als Tintentropfen mit gepunktetem Schweif."
+    ],
+    "pt": [
+     "Uma introdução nova que acompanha a hora do dia, de dia ou de noite, com cerca de 15 a 20 segundos.",
+     "Um visual novo: um mar de aquarela, ilhas com profundidade, tinta que se espalha e fundos que mudam com a hora do dia.",
+     "Efeitos sonoros e um som de fundo de ondas.",
+     "Quando as rotas de duas frotas se sobrepõem, suas tropas se anulam.",
+     "Arraste um retângulo para selecionar várias ilhas de uma vez; arrastes rápidos também ficam mais fáceis.",
+     "Um botão de configurações, e as notas de versão agora abrem dentro do app em uma visualização web.",
+     "Uma barra de progresso no topo da tela.",
+     "As frotas agora saem como uma gota de tinta com uma cauda pontilhada."
+    ],
+    "ru": [
+     "Заново сделанная заставка, которая зависит от времени суток, дня или ночи, длиной около 15–20 секунд.",
+     "Новый вид: акварельное море, острова с объёмом, растекающиеся чернила и фоны, меняющиеся в зависимости от времени суток.",
+     "Звуковые эффекты и фоновый звук волн.",
+     "Если маршруты двух флотов пересекаются, их войска взаимно гасятся.",
+     "Протяните прямоугольник, чтобы выбрать сразу несколько островов; быстрые протяжки тоже стали проще.",
+     "Кнопка настроек, а заметки о выпуске теперь открываются внутри приложения во встроенном веб-просмотре.",
+     "Полоса прогресса в верхней части экрана.",
+     "Флоты теперь отправляются в виде капли чернил с пунктирным хвостом."
+    ],
+    "ar": [
+     "مقدمة جديدة الصنع تتبع وقت اليوم، نهارًا أو ليلًا، ومدتها نحو 15 إلى 20 ثانية.",
+     "مظهر جديد: بحر بألوان مائية، وجزر ذات عمق، وحبر ينتشر، وخلفيات تتغير مع وقت اليوم.",
+     "مؤثرات صوتية وصوت أمواج في الخلفية.",
+     "عندما يتداخل مساران لأسطولين، يلغي جنودهما بعضهم بعضًا.",
+     "اسحب مستطيلًا لتحديد عدة جزر دفعة واحدة، كما أصبح السحب السريع أسهل.",
+     "زر للإعدادات، وصارت ملاحظات الإصدار تُفتح داخل التطبيق في عرض ويب.",
+     "شريط تقدّم في أعلى الشاشة.",
+     "تنطلق الأساطيل الآن على هيئة قطرة حبر لها ذيل منقّط."
+    ],
+    "hi": [
+     "दिन या रात, समय के हिसाब से बदलने वाला नया बनाया गया इंट्रो, लगभग 15 से 20 सेकंड का।",
+     "नया रूप: जलरंग जैसा समुद्र, गहराई वाले द्वीप, फैलती स्याही, और समय के साथ बदलने वाली पृष्ठभूमि।",
+     "ध्वनि प्रभाव और लहरों की पृष्ठभूमि आवाज़।",
+     "जब दो बेड़ों के रास्ते आपस में मिलते हैं, तो उनके सैनिक एक-दूसरे को बराबर कर देते हैं।",
+     "आयत खींचकर एक साथ कई द्वीप चुनें, और तेज़ ड्रैग भी अब आसान है।",
+     "सेटिंग बटन, और रिलीज़ नोट्स अब ऐप के अंदर वेब व्यू में खुलते हैं।",
+     "स्क्रीन के ऊपर प्रगति पट्टी।",
+     "बेड़े अब स्याही की बूँद और बिंदीदार पूँछ के रूप में निकलते हैं।"
+    ],
+    "id": [
+     "Intro yang dibuat baru dan mengikuti waktu hari, siang atau malam, berdurasi sekitar 15 sampai 20 detik.",
+     "Tampilan baru: laut bergaya cat air, pulau yang terasa berdimensi, tinta yang menyebar, dan latar yang berubah menurut waktu hari.",
+     "Efek suara dan suara latar ombak.",
+     "Saat jalur dua armada tumpang tindih, pasukan mereka saling meniadakan.",
+     "Seret persegi panjang untuk memilih beberapa pulau sekaligus, dan seretan cepat juga lebih mudah.",
+     "Tombol pengaturan, dan catatan rilis kini dibuka di dalam aplikasi lewat tampilan web.",
+     "Bilah kemajuan di bagian atas layar.",
+     "Armada kini berangkat sebagai tetesan tinta dengan ekor putus-putus."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-2",
    "version": "1.0.0",
    "build": "2",
@@ -36,8 +193,8 @@
     "ko": "빌드 1: TestFlight 준비 중"
    },
    "intro": {
-    "en": "Nothing has been uploaded yet. This is what the first build contains so far; the page is updated when a build goes up.",
-    "ko": "아직 업로드한 빌드는 없습니다. 첫 빌드에 지금까지 들어간 내용이며, 빌드가 올라갈 때마다 이 페이지를 갱신합니다."
+    "en": "Build 1 was never uploaded. Its contents went out in build 2, the first TestFlight build; this entry keeps what was planned for it.",
+    "ko": "빌드 1은 업로드하지 않았습니다. 내용은 첫 TestFlight 빌드인 빌드 2에 담겨 나갔고, 이 항목은 빌드 1에 계획했던 내용을 남겨 둔 것입니다."
    },
    "notes": {
     "en": [

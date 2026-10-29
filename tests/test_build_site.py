@@ -302,7 +302,8 @@ class Releases(unittest.TestCase):
         ctx.i18n["ja"] = json.loads((REPO / "content/i18n/ja.json").read_text(encoding="utf-8"))
         path, h = bs.build_releases(ctx, "ja")
         self.assertEqual(path, "/ja/releases/")
-        self.assertIn(ctx.releases[0]["title"]["en"], h)
+        fallback = next(r for r in ctx.releases if "ja" not in r["title"])  # an entry without its own ja text
+        self.assertIn(fallback["title"]["en"], h)
         self.assertIn(ctx.i18n["ja"]["rel_en_note"], h)
         self.assertIn('lang="en" dir="ltr"', h)
         self.assertIn('<html lang="ja"', h)
