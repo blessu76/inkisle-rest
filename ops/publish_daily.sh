@@ -7,6 +7,7 @@
 #     otherwise it does nothing and exits 0 (see the log). Never point it at a clone where feature branches / work in progress live.
 #   - Local commits not yet on origin/main (a previous push failed) are pushed first, even when there is nothing new to publish.
 #   - Publishing is all-or-nothing: if anything before the commit fails (publish_post, the green gate, the path check, git add/commit, SIGTERM), the tree is reset to the commit it started from.
+#   - One run at a time: .git/publish.lock (stale after its process is gone or 3 h).
 #   - Only the paths a publish creates are staged (never `git add -A`).
 # Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow).
 set -euo pipefail
@@ -21,6 +22,21 @@ PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llm
 
 [ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
 cd "$REPO"
+
+# One run at a time (a manual run or `launchctl kickstart` can overlap the 19:00 job). mkdir is atomic; a lock whose process is gone, or that is older
+# than 3 hours, is stale and is taken over.
+lock="$REPO/.git/publish.lock"
+if ! mkdir "$lock" 2>/dev/null; then
+  holder="$(cat "$lock/pid" 2>/dev/null || true)"
+  if { [ -n "$holder" ] && ! kill -0 "$holder" 2>/dev/null; } || [ -n "$(find "$lock" -maxdepth 0 -mmin +180 2>/dev/null)" ]; then
+    log "stale lock (pid ${holder:-?}) — taking over"; rm -rf "$lock"; mkdir "$lock" || skip "could not take the lock"
+  else
+    skip "another publish run is in progress (pid ${holder:-?})"
+  fi
+fi
+echo $$ > "$lock/pid"
+trap 'rm -rf "$lock"' EXIT
+
 branch="$(git symbolic-ref --short -q HEAD || echo '(detached)')"
 [ "$branch" = "main" ] || skip "branch is '$branch', not main"
 [ -z "$(git status --porcelain)" ] || skip "working tree is not clean"
@@ -39,7 +55,7 @@ fi
 base="$(git rev-parse HEAD)"
 stage=prepublish
 rollback() { git reset -q --hard "$base"; git clean -fdq; stage=rolledback; log "ROLLBACK — tree restored to ${base:0:7}"; }
-on_exit() { local rc=$?; if [ "$rc" -ne 0 ] && [ "$stage" = prepublish ]; then rollback; fi; }
+on_exit() { local rc=$?; if [ "$rc" -ne 0 ] && [ "$stage" = prepublish ]; then rollback; fi; rm -rf "$lock"; }
 trap on_exit EXIT
 trap 'log "signal received"; exit 143' INT TERM
 

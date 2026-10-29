@@ -16,6 +16,7 @@ the script ran (HH:MM KST); a future time is refused.
 - A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due.
 - Publishing is atomic: if `publish_post.py` (build + sitemap check), the green gate or the path check fails, the tree is reset to where it started
   (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
+- One run at a time (`.git/publish.lock`; a lock from a dead process or older than 3 h is taken over). A second run logs `SKIP — another publish run is in progress`.
 - Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
 - IndexNow gets the new post in every published language plus `/` and `/journal/`.
 
@@ -28,7 +29,7 @@ the script ran (HH:MM KST); a future time is refused.
 ```
 bash ops/install_launchd.sh                                      # renders + lints; loads nothing
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist
-launchctl kickstart -k gui/$(id -u)/rest.ipe.inkisle-publish     # run once now (only if you want a post now)
+launchctl kickstart gui/$(id -u)/rest.ipe.inkisle-publish        # run once now (only if you want a post now); never with -k: that kills a run in progress
 ```
 
 Uninstall: `launchctl bootout gui/$(id -u)/rest.ipe.inkisle-publish && rm ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist`.

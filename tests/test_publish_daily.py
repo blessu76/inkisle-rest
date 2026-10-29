@@ -140,6 +140,38 @@ class PublishDaily(unittest.TestCase):
         self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
 
+    def test_second_run_while_locked_is_skipped_and_the_lock_is_released_after_a_run(self):
+        lock = self.clone / ".git" / "publish.lock"
+        lock.mkdir()
+        (lock / "pid").write_text(str(os.getpid()))  # a live process
+        before = self.head()
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0)
+        self.assertIn("another publish run is in progress", r.stdout)
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+        self.assertEqual(self.head(), before)
+        self.assertTrue(lock.is_dir())  # not ours: untouched
+        shutil.rmtree(lock)
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertFalse(lock.exists())
+
+    def test_stale_lock_of_a_dead_process_is_taken_over(self):
+        dead = subprocess.Popen(["true"])
+        dead.wait()
+        lock = self.clone / ".git" / "publish.lock"
+        lock.mkdir()
+        (lock / "pid").write_text(str(dead.pid))
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("stale lock", r.stdout)
+        self.assertTrue((self.clone / "content/journal/next-one/en.md").is_file())
+        self.assertFalse(lock.exists())
+
+    def test_lock_is_released_after_a_failed_run(self):
+        self.run_script(check_cmd="false")
+        self.assertFalse((self.clone / ".git" / "publish.lock").exists())
+
     def test_failed_push_is_retried_by_the_next_run_even_with_nothing_to_publish(self):
         hook = self.origin / "hooks" / "pre-receive"
         hook.write_text("#!/bin/sh\nexit 1\n")
