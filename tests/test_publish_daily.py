@@ -188,6 +188,25 @@ class PublishDaily(unittest.TestCase):
         self.assertIn("QUEUE_EMPTY", r.stdout)
         self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
 
+    def test_low_queue_is_logged_with_the_count(self):
+        r = self.run_script()  # fixture queues 2 posts
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("QUEUE_LOW 2", r.stdout)
+
+    def test_comfortable_queue_is_not_flagged(self):
+        q = self.clone / "content" / "queue"
+        for n in (3, 4):
+            d = q / ("0%d-extra-%d" % (n, n))
+            d.mkdir()
+            for lang in ("en", "ko"):
+                (d / (lang + ".md")).write_text(helpers.post_text("extra-%d" % n, lang, "Queued extra %d %s" % (n, lang)), encoding="utf-8")
+        git(self.clone, "add", "-A")
+        git(self.clone, "commit", "-qm", "more queue")
+        git(self.clone, "push", "-q", "origin", "main")
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn("QUEUE_LOW", r.stdout)
+
     def test_unpushed_commit_outside_the_publish_set_is_not_pushed(self):
         (self.clone / "wip.txt").write_text("not for publication")
         git(self.clone, "add", "wip.txt")

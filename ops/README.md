@@ -42,7 +42,7 @@ launchctl kickstart gui/$(id -u)/rest.ipe.inkisle-publish        # run once now 
 ```
 
 Uninstall: `launchctl bootout gui/$(id -u)/rest.ipe.inkisle-publish && rm ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist`.
-Log: `tail -f ~/Library/Logs/inkisle-publish.log` (lines: `SKIP`, `FAIL`, `ROLLBACK`, `QUEUE_EMPTY`, `committed`, `pushed`).
+Log: `tail -f ~/Library/Logs/inkisle-publish.log` (lines: `SKIP`, `FAIL`, `ROLLBACK` / `ROLLBACK FAILED`, `QUEUE_LOW n` (3 or fewer queued), `QUEUE_EMPTY`, `committed`, `pushed`).
 
 Before relying on it: the queue (`content/queue/`) has posts and their translations exist (docs/TRANSLATION.md). When the queue is empty the job does
 nothing and exits 0 — write new posts into `content/queue/NN-slug/` (NN keeps the order).

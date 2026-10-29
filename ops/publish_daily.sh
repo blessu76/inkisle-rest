@@ -65,6 +65,9 @@ if [ -z "$(find content/queue -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]; t
   exit 0
 fi
 
+queued="$(find content/queue -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')"
+[ "$queued" -gt 3 ] || log "QUEUE_LOW $queued — only $queued post(s) queued in content/queue/ (counted before today's publish); write more soon"
+
 # From here until the commit exists, ANY non-zero exit (a failed step, git add/commit error, SIGINT/SIGTERM) restores the tree, which was clean when
 # we started — otherwise a half-published dirty tree would make every later run SKIP silently.
 base="$(git rev-parse HEAD)"
