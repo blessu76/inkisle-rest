@@ -22,6 +22,13 @@ COVERS = {  # slug: (seed, islands, factions in play)
     "a-playable-prototype-in-a-day": (53, 10, ("me", "e1", "e2", "n", "n")),
     "tuning-the-difficulty": (67, 9, ("me", "e1", "e3", "n")),
     "three-rewrites-of-multi-island-attack": (79, 9, ("me", "me", "e1", "n")),
+    "three-ten-second-intros": (83, 8, ("me", "e1", "n")),
+    "ink-that-spreads": (89, 9, ("me", "me", "e2", "n")),
+    "sound-off-by-default": (97, 7, ("me", "e1", "n")),
+    "a-drag-that-forgives": (101, 8, ("me", "e3", "n")),
+    "three-stars-one-rule": (103, 7, ("me", "e2", "n")),
+    "when-saved-data-breaks": (107, 8, ("me", "e1", "e3", "n")),
+    "what-the-app-does-not-have": (109, 6, ("me", "n")),
 }
 
 
