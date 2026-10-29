@@ -263,6 +263,24 @@ class OpsFiles(unittest.TestCase):
         if shutil.which("plutil"):
             self.assertEqual(subprocess.run(["plutil", "-lint", str(tmp / "LA" / "rest.ipe.inkisle-publish.plist")], capture_output=True).returncode, 0)
 
+    def test_install_rejects_unsafe_home_values(self):
+        tmp = Path(tempfile.mkdtemp(prefix="inkisle-ld-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        for bad in ("relative/home", "/a\\b", "/a\nb", "/a#b", "/a&b", "/a|b", ""):
+            env = {**os.environ, "INKISLE_LAUNCH_AGENTS_DIR": str(tmp / "LA"), "INKISLE_HOME": bad}
+            if bad == "":
+                env.pop("INKISLE_HOME")
+                env["HOME"] = "relative"
+            r = subprocess.run(["bash", str(REPO / "ops" / "install_launchd.sh")], capture_output=True, text=True, env=env)
+            self.assertEqual(r.returncode, 1, (bad, r.stdout, r.stderr))
+            self.assertIn("HOME", r.stderr, bad)  # rejected by our own check, not by a later failure
+            self.assertFalse((tmp / "LA" / "rest.ipe.inkisle-publish.plist").exists(), bad)
+
+    def test_template_comment_does_not_contain_the_placeholder(self):
+        t = (REPO / "ops" / "rest.ipe.inkisle-publish.plist.template").read_text(encoding="utf-8")
+        comment = t.split("<!--")[1].split("-->")[0]
+        self.assertNotIn("__HOME__", comment)
+
     def test_no_personal_absolute_paths_in_the_repo(self):
         """Public repo: no /Users/<name>/ or /home/<name>/ anywhere except files that deliberately name the forbidden string."""
         import re

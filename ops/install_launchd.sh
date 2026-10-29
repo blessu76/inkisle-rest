@@ -8,7 +8,8 @@ here="$(cd "$(dirname "$0")" && pwd)"
 home="${INKISLE_HOME:-$HOME}"
 dest_dir="${INKISLE_LAUNCH_AGENTS_DIR:-$HOME/Library/LaunchAgents}"
 dest="$dest_dir/rest.ipe.inkisle-publish.plist"
-case "$home" in *'#'*|*'&'*|*'|'*) echo "install_launchd: unsupported character in HOME path" >&2; exit 1;; esac
+case "$home" in /*) ;; *) echo "install_launchd: HOME must be an absolute path (got '$home')" >&2; exit 1;; esac
+case "$home" in *'#'*|*'&'*|*'|'*|*'\'*|*$'\n'*) echo "install_launchd: unsupported character (# & | backslash newline) in HOME path" >&2; exit 1;; esac
 mkdir -p "$dest_dir" "$home/Library/Logs"
 sed "s#__HOME__#$home#g" "$here/rest.ipe.inkisle-publish.plist.template" > "$dest.tmp"
 if command -v plutil >/dev/null 2>&1 && ! plutil -lint "$dest.tmp" >/dev/null; then

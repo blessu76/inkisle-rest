@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- TEMPLATE: __HOME__ is replaced by ops/install_launchd.sh (launchd does not expand ~ or $HOME). The repo never installs or loads it. Daily 19:00 — StartCalendarInterval uses the Mac's LOCAL time, so the Mac's time zone must be KST (TZ below only affects the script). -->
+<!-- TEMPLATE: the home-directory placeholder below is filled in by ops/install_launchd.sh (launchd does not expand ~ or $HOME). The repo never installs or loads it. Daily 19:00 — StartCalendarInterval uses the Mac's LOCAL time, so the Mac's time zone must be KST (TZ below only affects the script). -->
 <plist version="1.0">
 <dict>
   <key>Label</key><string>rest.ipe.inkisle-publish</string>

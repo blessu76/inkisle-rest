@@ -35,6 +35,7 @@ git -C ~/Developer/inkisle-rest push --dry-run origin HEAD:main     # must succe
 4. Install and load:
 
 ```
+launchctl bootout gui/$(id -u)/rest.ipe.inkisle-publish 2>/dev/null   # only if an older version is already loaded; ignore the error otherwise
 bash ops/install_launchd.sh                                      # renders + lints; loads nothing
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/rest.ipe.inkisle-publish.plist
 launchctl kickstart gui/$(id -u)/rest.ipe.inkisle-publish        # run once now (only if you want a post now); never with -k: that kills a run in progress
