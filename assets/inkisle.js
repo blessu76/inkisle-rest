@@ -1,4 +1,6 @@
 (function(){
+  /* an explicit language choice wins over the browser language the root page follows (see langpick.js) */
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.lang a[hreflang],.foot-langs a[hreflang],.langs a[hreflang]');if(a){try{localStorage.setItem('ink-lang',a.getAttribute('hreflang'))}catch(x){}}});
   var b=document.querySelector('.theme');if(!b)return;
   var root=document.documentElement;
   function dark(){var t=root.getAttribute('data-theme');return t?t==='dark':window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches}

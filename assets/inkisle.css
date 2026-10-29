@@ -99,3 +99,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .release li{margin:.35em 0}
 .rel-fallback{font-size:14px;color:var(--muted);margin:0 0 .4em}
 .release{padding:16px 18px}
+.foot-langs{display:flex;flex-wrap:wrap;gap:4px 14px;margin:.6em 0;font-size:14px}
+.foot-langs a{color:var(--muted)}
+.foot-langs a[aria-current]{color:var(--fg);font-weight:700}

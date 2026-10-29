@@ -1,6 +1,7 @@
 import json
 import re
 import shutil
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -323,6 +324,79 @@ class Releases(unittest.TestCase):
         errs, _ = check_sitemap.check(self.root, NOW)
         self.assertEqual(errs, [])
         self.assertTrue(ctx.releases)
+
+
+NODE = shutil.which("node")
+
+
+class LanguagePick(unittest.TestCase):
+    """The root page follows the browser language (assets/langpick.js, inlined into / only)."""
+
+    def run_pick(self, languages, saved=None, path="/", broken_storage=False):
+        script = re.search(r"<script>(\(function\(\)\{var S=.*?)</script>", (REPO / "index.html").read_text(encoding="utf-8"), re.S).group(1)
+        harness = (
+            "var vm=require('vm');var out=null;var store=%s;var broken=%s;"
+            "var sb={location:{pathname:%s,search:'?a=1',hash:'#h',replace:function(u){out=u}},"
+            "navigator:{languages:%s,language:%s},"
+            "localStorage:{getItem:function(k){if(broken)throw new Error('blocked');return k==='ink-lang'?store:null}}};"
+            "vm.runInNewContext(%s,sb);console.log(JSON.stringify(out));"
+        ) % (json.dumps(saved), "true" if broken_storage else "false", json.dumps(path), json.dumps(languages),
+             json.dumps(languages[0] if languages else ""), json.dumps(script))
+        r = subprocess.run([NODE, "-e", harness], capture_output=True, text=True, timeout=20)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        return json.loads(r.stdout)
+
+    @unittest.skipUnless(NODE, "node not installed")
+    def test_follows_browser_language(self):
+        for langs, want in ((["ko-KR", "en-US"], "/ko/?a=1#h"), (["zh-TW"], "/zh/?a=1#h"), (["pt-BR"], "/pt/?a=1#h"), (["fr"], "/fr/?a=1#h"),
+                            (["ar-EG", "en"], "/ar/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
+            self.assertEqual(self.run_pick(langs), want, langs)
+
+    @unittest.skipUnless(NODE, "node not installed")
+    def test_english_and_unknown_stay_on_the_english_root(self):
+        for langs in (["en-US"], ["en"], ["sv", "nb"], ["xx-YY"], [""], []):
+            self.assertIsNone(self.run_pick(langs), langs)
+
+    @unittest.skipUnless(NODE, "node not installed")
+    def test_saved_choice_wins_and_survives_blocked_storage(self):
+        self.assertIsNone(self.run_pick(["ko-KR"], saved="en"))
+        self.assertEqual(self.run_pick(["en-US"], saved="ja"), "/ja/?a=1#h")
+        self.assertEqual(self.run_pick(["ko-KR"], saved="klingon"), "/ko/?a=1#h")  # unknown saved value ignored
+        self.assertEqual(self.run_pick(["ko-KR"], broken_storage=True), "/ko/?a=1#h")  # storage throws -> still works
+
+    @unittest.skipUnless(NODE, "node not installed")
+    def test_only_runs_on_the_root(self):
+        self.assertIsNone(self.run_pick(["ko-KR"], path="/about/"))
+        self.assertIsNone(self.run_pick(["ko-KR"], path="/ko/"))
+
+    def test_script_only_on_root_and_lists_built_languages(self):
+        root = make_site()
+        self.addCleanup(shutil.rmtree, root, True)
+        build(root)
+        home = (root / "index.html").read_text(encoding="utf-8")
+        self.assertIn('var S=["en", "ko"]', home)
+        for rel in ("ko/index.html", "about/index.html", "releases/index.html", "journal/index.html", "404.html"):
+            self.assertNotIn("ink-lang", (root / rel).read_text(encoding="utf-8"), rel)
+        self.assertEqual(home.count("ink-lang"), 1)
+
+    def test_seo_stays_intact_and_links_visible_without_js(self):
+        root = make_site()
+        self.addCleanup(shutil.rmtree, root, True)
+        build(root)
+        h = (root / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="canonical" href="https://inkisle.ipe.rest/">', h)
+        self.assertIn('hreflang="x-default" href="https://inkisle.ipe.rest/"', h)
+        self.assertNotIn("http-equiv", h)  # no meta refresh
+        foot = h.split("</main>")[1]
+        self.assertIn('<p class="foot-langs"', foot)
+        self.assertIn('href="/ko/" hreflang="ko" lang="ko"', foot)
+        self.assertNotIn("<noscript>", h)
+
+    def test_explicit_choice_is_stored_by_the_language_links(self):
+        js = (REPO / "assets" / "inkisle.js").read_text(encoding="utf-8")
+        self.assertIn("localStorage.setItem('ink-lang'", js)
+        self.assertIn(".lang a[hreflang]", js)
+        self.assertIn(".foot-langs a[hreflang]", js)
 
 
 if __name__ == "__main__":

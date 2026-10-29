@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 SITE = "https://inkisle.ipe.rest"
-ASSET_V = "20261029c"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
+ASSET_V = "20261029d"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
 KST = dt.timezone(dt.timedelta(hours=9))
 PAGES_UPDATED = "2026-10-29"  # sitemap lastmod of about / privacy — bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
@@ -443,6 +443,13 @@ def theme_script():
             "document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>")
 
 
+def langpick_script(root, langs):
+    """The root page's language picker (assets/langpick.js) inlined with the languages this build has."""
+    src = (Path(root) / "assets" / "langpick.js").read_text(encoding="utf-8")
+    src = re.sub(r"/\*.*?\*/", "", src, count=1, flags=re.S)
+    return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
+
+
 class Ctx:
     def __init__(self, root, i18n, pages, posts, langs, now, releases=()):
         self.root, self.i18n, self.pages, self.posts, self.langs, self.now = root, i18n, pages, posts, langs, now
@@ -493,6 +500,8 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
         head.append('<link rel="alternate" type="application/rss+xml" title="Inkisle Journal (%s)" href="%s">' % (lang, path_feed(lang)))
     head.append('<link rel="stylesheet" href="/assets/inkisle.css?v=%s">' % ASSET_V)
     head.append(theme_script())
+    if path == "/":
+        head.append(langpick_script(ctx.root, ctx.langs))
     head.append('<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": graph},
                                                                             ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
     switch = "".join('<li><a href="%s" hreflang="%s" lang="%s"%s>%s</a></li>' % (
@@ -508,13 +517,16 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
               '<button class="theme" type="button" aria-label="%s" data-dark="%s" data-light="%s"><span aria-hidden="true">◐</span></button>'
               '</div></div></header>') % (esc(path_home(lang)), nav_html, esc(t("lang_label")), esc(name), switch,
                                          esc(t("theme_dark")), esc(t("theme_dark")), esc(t("theme_light")))
+    foot_langs = ('<p class="foot-langs" aria-label="%s">%s</p>' % (esc(t("lang_label")), " ".join(
+        '<a href="%s" hreflang="%s" lang="%s"%s>%s</a>' % (esc(pth), l, l, ' aria-current="true"' if l == lang else "", esc(LANGS[l][0]))
+        for l, pth in alt.items()))) if len(alt) > 1 else ""
     footer = ('<footer class="site-footer"><div class="wrap"><p class="foot-tag">%s <a href="https://ipe.rest/">ipe.rest</a></p>'
               '<p class="foot-links"><a href="%s">%s</a> · <a href="%s">%s</a> · <a href="%s">%s</a> · <a href="%s">%s</a>%s</p>'
-              '<p class="foot-small">© 2026 ipe() · %s</p></div></footer>') % (
+              '%s<p class="foot-small">© 2026 ipe() · %s</p></div></footer>') % (
         esc(t("footer_line")), esc(path_journal(lang)), esc(t("nav_journal")), esc(path_releases(lang)), esc(t("nav_releases")),
         esc(path_page(lang, "about")), esc(t("nav_about")),
         esc(path_page(lang, "privacy")), esc(t("nav_privacy")),
-        (' · <a href="%s">%s</a>' % (esc(path_feed(lang)), esc(t("rss")))) if lang in ("en", "ko") else "", esc(t("status_badge")))
+        (' · <a href="%s">%s</a>' % (esc(path_feed(lang)), esc(t("rss")))) if lang in ("en", "ko") else "", foot_langs, esc(t("status_badge")))
     return ('<!doctype html>\n<!-- %s -->\n<html lang="%s" dir="%s" data-ads="off"><head>%s</head><body>'
             '<a class="skip" href="#main">%s</a>%s<main id="main" class="wrap">%s</main>%s'
             '<script src="/assets/inkisle.js?v=%s" defer></script></body></html>\n') % (
