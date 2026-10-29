@@ -20,25 +20,25 @@ Ein Spiel, das weltweit erscheint, braucht früh einen englischen Namen, denn de
 
 ## Zehn Kandidaten, fünf Finalisten
 
-Wir schrieben zehn Kandidaten auf und kürzten auf fünf: **Inkisle**, Tintisle, Isleway, Inkwake und Isletide. Die anderen fünf schieden aus schlichten Gründen aus. Drei kollidierten mit bestehenden Apps oder Spielen mit gleichem oder fast gleichem Namen, einer würde in Suchergebnissen zu anderen Produkten untergehen, und einer deutete kaum ein Spiel an.
+Am Vormittag des 2026-10-29 baten wir um einen englischen Namen, prüften noch am selben Tag Kandidaten und entschieden uns für Inkisle. Wir schrieben zehn Kandidaten auf und kürzten auf fünf: **Inkisle**, Tintisle, Isleway, Inkwake und Isletide. Die anderen fünf schieden aus schlichten Gründen aus. Drei kollidierten mit bestehenden Apps oder Spielen mit gleichem oder fast gleichem Namen, einer würde in Suchergebnissen zu anderen Produkten untergehen, und einer deutete kaum ein Spiel an.
 
 ## Die Prüfung
 
-Für jeden Finalisten suchten wir am 2026-10-29 im US-App-Store, bei Google Play und im .com-Register. Das zeigt nur, ob dieselbe Schreibweise schon verwendet wird. Ähnliche Klänge und Schreibweisen bleiben unentdeckt, und es ist **keine Markenprüfung**.
+Für jeden Finalisten suchten wir am 2026-10-29 im US-App-Store (bei Isletide auch im koreanischen), bei Google Play und im .com-Register. Das zeigt nur, ob dieselbe Schreibweise schon verwendet wird. Ähnliche Klänge und Schreibweisen bleiben unentdeckt, und es ist **keine Markenprüfung**.
 
-- **Inkisle:** Zu der Zeit keine App und kein Spiel mit diesem Namen in einem der beiden Stores. Die .com-Domain ist seit 2004 von jemand anderem registriert.
-- **Tintisle:** der sauberste der fünf, mit freier .com. Im Koreanischen denkt man bei „tint“ aber zuerst an Lip-Tint.
+- **Inkisle:** Zu der Zeit keine App und kein Spiel mit diesem Namen in einem der beiden Stores. Die .com-Domain wurde 2004 registriert und steht uns nicht zur Verfügung.
+- **Tintisle:** der sauberste der fünf, ohne bekannten Registrierungseintrag für die .com (das beweist nicht, dass man sie kaufen kann). Im Koreanischen denkt man bei „tint“ aber zuerst an Lip-Tint.
 - **Isleway:** keine Kollision in den Stores, aber der Name sagt nichts über Einfärben oder Erobern.
 - **Inkwake:** Die .com wurde kürzlich gekauft, und „wake“ kann als Aufwachen gelesen werden.
-- **Isletide:** In einem Store gibt es ein Spiel mit ähnlichem Namen, die Suchen würden sich also vermischen.
+- **Isletide:** Im koreanischen App Store gibt es ein Spiel mit ähnlichem Namen, die Suchen würden sich also vermischen.
 
 ## Warum Inkisle
 
-Die Regel steckt im Namen. Tinte breitet sich aus, und eine Insel nimmt deine Farbe an, wenn du sie erobert hast. Wer das Wort „isle“ nicht kennt, liest trotzdem „ink“ und eine Form. Sieben Buchstaben passen unter ein Icon. Ein Untertitel passt in die 30 Zeichen des Stores: "Tint the sea, take the isles". Wir haben im Koreanischen, Japanischen, Chinesischen, Spanischen und Portugiesischen keine schlechte Bedeutung gefunden, aber diese Prüfungen sind unsere eigene Lesart und keine Begutachtung durch Muttersprachler.
+Die Regel steckt im Namen. Tinte breitet sich aus, und eine Insel nimmt deine Farbe an, wenn du sie erobert hast. Wer das Wort „isle“ nicht kennt, liest trotzdem „ink“ und eine Form. Sieben Buchstaben passen unter ein Icon. Ein Untertitel passt in die 30 Zeichen, die der iOS-App-Store für Untertitel erlaubt (28 Zeichen): "Tint the sea, take the isles". Wir haben im Koreanischen, Japanischen, Chinesischen, Spanischen und Portugiesischen keine schlechte Bedeutung gefunden, aber diese Prüfungen sind unsere eigene Lesart und keine Begutachtung durch Muttersprachler.
 
 ## Die Schwachstellen
 
-- **Keine .com.** inkisle.com ist vergeben, deshalb liegt diese Seite unter inkisle.ipe.rest, der Domain unseres Studios.
+- **Keine .com.** inkisle.com wurde 2004 registriert und steht uns nicht zur Verfügung, deshalb liegt diese Seite unter inkisle.ipe.rest, der Domain unseres Studios.
 - **Aussprache.** „Ink-ISLE“ kann als „inkiss-ul“ gelesen werden. Das Logo wird InkIsle mit großem I geschrieben, um das Wort zu trennen, und die Store-Seite sollte zeigen, wie es klingt.
 - **Marken sind ungeprüft.** Vor dem Release müssen wir noch die Register der USA, der EU, Koreas und Japans für Software- und Spielklassen durchsuchen. Bis dahin ist der Name beschlossen, aber nicht freigegeben.
 

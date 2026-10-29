@@ -20,25 +20,25 @@ Un juego que se publicará en todo el mundo necesita pronto un nombre en inglés
 
 ## Diez candidatos, cinco finalistas
 
-Escribimos diez candidatos y los redujimos a cinco: **Inkisle**, Tintisle, Isleway, Inkwake e Isletide. Los otros cinco cayeron por razones sencillas. Tres chocaban con aplicaciones o juegos existentes de nombre igual o casi igual, uno se ahogaría entre resultados de búsqueda sobre otros productos y otro apenas sugería un juego.
+En la mañana del 2026-10-29 pedimos un nombre en inglés, revisamos los candidatos ese mismo día y elegimos Inkisle. Escribimos diez candidatos y los redujimos a cinco: **Inkisle**, Tintisle, Isleway, Inkwake e Isletide. Los otros cinco cayeron por razones sencillas. Tres chocaban con aplicaciones o juegos existentes de nombre igual o casi igual, uno se ahogaría entre resultados de búsqueda sobre otros productos y otro apenas sugería un juego.
 
 ## La comprobación
 
-Para cada finalista buscamos en la App Store de EE. UU., en Google Play y en el registro .com el 2026-10-29. Esto solo muestra si la misma grafía ya está en uso. No detecta sonidos ni grafías parecidos, y **no es una comprobación de marcas**.
+Para cada finalista buscamos en la App Store de EE. UU. (para Isletide, también en la coreana), en Google Play y en el registro .com el 2026-10-29. Esto solo muestra si la misma grafía ya está en uso. No detecta sonidos ni grafías parecidos, y **no es una comprobación de marcas**.
 
-- **Inkisle:** ninguna aplicación ni juego con ese nombre en ninguna de las dos tiendas en ese momento. El dominio .com lo tiene registrado otra persona desde 2004.
-- **Tintisle:** el más limpio de los cinco, con un .com libre. Sin embargo, en coreano «tint» sugiere primero el tinte de labios.
+- **Inkisle:** ninguna aplicación ni juego con ese nombre en ninguna de las dos tiendas en ese momento. El dominio .com se registró en 2004 y no podemos usarlo.
+- **Tintisle:** el más limpio de los cinco, sin registro conocido del .com (eso no prueba que se pueda comprar). Sin embargo, en coreano «tint» sugiere primero el tinte de labios.
 - **Isleway:** sin choques en las tiendas, pero el nombre no dice nada de colorear ni de conquistar.
 - **Inkwake:** el .com se compró hace poco, y «wake» puede leerse como despertar.
-- **Isletide:** existe un juego de nombre parecido en una de las tiendas, así que las búsquedas se mezclarían.
+- **Isletide:** existe un juego de nombre parecido en la App Store coreana, así que las búsquedas se mezclarían.
 
 ## Por qué Inkisle
 
-La regla está dentro del nombre. La tinta se extiende, y una isla se vuelve de tu color cuando la conquistas. Quien no conoce la palabra «isle» igualmente lee «ink» y una forma. Siete letras caben bajo un icono. Un subtítulo cabe en los 30 caracteres de la tienda: "Tint the sea, take the isles". No encontramos ningún significado negativo en coreano, japonés, chino, español ni portugués, pero esas comprobaciones son lecturas nuestras y no revisiones de hablantes nativos.
+La regla está dentro del nombre. La tinta se extiende, y una isla se vuelve de tu color cuando la conquistas. Quien no conoce la palabra «isle» igualmente lee «ink» y una forma. Siete letras caben bajo un icono. Un subtítulo cabe en el límite de 30 caracteres para subtítulos de la App Store de iOS (28 caracteres): "Tint the sea, take the isles". No encontramos ningún significado negativo en coreano, japonés, chino, español ni portugués, pero esas comprobaciones son lecturas nuestras y no revisiones de hablantes nativos.
 
 ## Los puntos débiles
 
-- **Sin .com.** inkisle.com está ocupado, así que este sitio vive en inkisle.ipe.rest, bajo el dominio de nuestro estudio.
+- **Sin .com.** inkisle.com se registró en 2004 y no podemos usarlo, así que este sitio vive en inkisle.ipe.rest, bajo el dominio de nuestro estudio.
 - **Pronunciación.** «Ink-ISLE» puede leerse como «inkiss-ul». El logotipo se escribe InkIsle con una I mayúscula para separar la palabra, y la página de la tienda debería mostrar cómo suena.
 - **Las marcas no están comprobadas.** Antes del lanzamiento aún tenemos que buscar en los registros de EE. UU., la UE, Corea y Japón, en las clases de software y juegos. Hasta entonces el nombre está decidido, pero no despejado.
 

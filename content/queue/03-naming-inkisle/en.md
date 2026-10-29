@@ -19,25 +19,25 @@ A game that will ship worldwide needs an English name early, because the name de
 
 ## Ten candidates, five finalists
 
-We wrote ten candidates and cut them to five: **Inkisle**, Tintisle, Isleway, Inkwake and Isletide. The other five fell out for plain reasons. Three of them collided with existing apps or games of the same or nearly the same name, one would drown in search results about other products, and one barely suggested a game.
+On the morning of 2026-10-29 we asked for an English name, checked candidates the same day and chose Inkisle. We wrote ten candidates and cut them to five: **Inkisle**, Tintisle, Isleway, Inkwake and Isletide. The other five fell out for plain reasons. Three of them collided with existing apps or games of the same or nearly the same name, one would drown in search results about other products, and one barely suggested a game.
 
 ## The check
 
-For each finalist we searched the US App Store, Google Play and the .com registry on 2026-10-29. This only shows whether the same spelling is already in use. It misses similar sounds and spellings, and it is **not a trademark check**.
+For each finalist we searched the US App Store (for Isletide, the Korean one too), Google Play and the .com registry on 2026-10-29. This only shows whether the same spelling is already in use. It misses similar sounds and spellings, and it is **not a trademark check**.
 
-- **Inkisle:** no app or game with that name in either store at that time. The .com domain has been registered by someone else since 2004.
-- **Tintisle:** the cleanest of the five, with a free .com. In Korean, though, "tint" first suggests lip tint.
+- **Inkisle:** no app or game with that name in either store at that time. The .com domain was registered in 2004 and is not available to us.
+- **Tintisle:** the cleanest of the five, with no registration record for the .com (that does not prove it can be bought). In Korean, though, "tint" first suggests lip tint.
 - **Isleway:** no store clash, but the name says nothing about coloring or capture.
 - **Inkwake:** the .com was bought recently, and "wake" can read as waking up.
-- **Isletide:** a similarly named game exists in one store, so searches would mix.
+- **Isletide:** a similarly named game exists in the Korean App Store, so searches would mix.
 
 ## Why Inkisle
 
-The rule is inside the name. Ink spreads, and an island turns your color when you capture it. People who do not know the word "isle" still read "ink" and a shape. Seven letters fit under an icon. A subtitle fits in the store's 30 characters: "Tint the sea, take the isles". We found no bad meaning in Korean, Japanese, Chinese, Spanish or Portuguese, but those checks are our own reading and not native-speaker reviews.
+The rule is inside the name. Ink spreads, and an island turns your color when you capture it. People who do not know the word "isle" still read "ink" and a shape. Seven letters fit under an icon. A subtitle fits in the iOS App Store's 30-character subtitle limit (this one is 28): "Tint the sea, take the isles". We found no bad meaning in Korean, Japanese, Chinese, Spanish or Portuguese, but those checks are our own reading and not native-speaker reviews.
 
 ## The weak spots
 
-- **No .com.** inkisle.com is taken, so this site lives at inkisle.ipe.rest, under our studio's domain.
+- **No .com.** inkisle.com was registered in 2004 and is not available to us, so this site lives at inkisle.ipe.rest, under our studio's domain.
 - **Pronunciation.** "Ink-ISLE" can be read as "inkiss-ul". The logo is written InkIsle with a capital I to split the word, and the store page should show how it sounds.
 - **Trademarks are unchecked.** Before release we still have to search the US, EU, Korean and Japanese registries for software and game classes. Until then the name is decided but not cleared.
 
