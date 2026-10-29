@@ -144,13 +144,44 @@ class OpsFiles(unittest.TestCase):
         check = y.split("  check:")[1].split("  deploy:")[0]
         self.assertIn("permissions:\n      contents: read", check)
 
-    def test_plist(self):
-        p = (REPO / "ops" / "rest.ipe.inkisle-publish.plist").read_text(encoding="utf-8")
-        self.assertIn("<key>Hour</key><integer>19</integer>", p)
-        self.assertIn("Library/Logs/inkisle-publish.log", p)
-        self.assertIn("INKISLE_PUBLISH_DIR", p)
+    def test_plist_template_has_no_personal_paths_and_renders(self):
+        t = (REPO / "ops" / "rest.ipe.inkisle-publish.plist.template").read_text(encoding="utf-8")
+        self.assertNotIn("/Users/", t)
+        self.assertIn("<key>Hour</key><integer>19</integer>", t)
+        self.assertIn("__HOME__/Library/Logs/inkisle-publish.log", t)
+        self.assertIn("INKISLE_PUBLISH_DIR", t)
+        tmp = Path(tempfile.mkdtemp(prefix="inkisle-ld-"))
+        self.addCleanup(shutil.rmtree, tmp, True)
+        env = {**os.environ, "INKISLE_LAUNCH_AGENTS_DIR": str(tmp / "LA"), "INKISLE_HOME": str(tmp / "home")}
+        r = subprocess.run(["bash", str(REPO / "ops" / "install_launchd.sh")], capture_output=True, text=True, env=env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        out = (tmp / "LA" / "rest.ipe.inkisle-publish.plist").read_text(encoding="utf-8")
+        self.assertNotIn("__HOME__", out)
+        self.assertIn(str(tmp / "home" / "Library" / "Logs" / "inkisle-publish.log"), out)
+        self.assertIn(str(tmp / "home" / "Developer" / "inkisle-rest" / "ops" / "publish_daily.sh"), out)
         if shutil.which("plutil"):
-            self.assertEqual(subprocess.run(["plutil", "-lint", str(REPO / "ops" / "rest.ipe.inkisle-publish.plist")], capture_output=True).returncode, 0)
+            self.assertEqual(subprocess.run(["plutil", "-lint", str(tmp / "LA" / "rest.ipe.inkisle-publish.plist")], capture_output=True).returncode, 0)
+
+    def test_no_personal_absolute_paths_in_the_repo(self):
+        """Public repo: no /Users/<name>/ or /home/<name>/ anywhere except files that deliberately name the forbidden string."""
+        import re
+        pat = re.compile(r"/(Users|home)/[A-Za-z0-9._-]+/")
+        skip_dirs = {".git", "__pycache__", "node_modules"}
+        allowed = {"docs/TRANSLATION.md", "scripts/build_site.py"}
+        bad = []
+        for p in REPO.rglob("*"):
+            rel = p.relative_to(REPO)
+            if not p.is_file() or skip_dirs & set(rel.parts) or rel.parts[0] == "tests" or rel.as_posix() in allowed:
+                continue
+            if p.suffix in (".png", ".jpg", ".jpeg", ".ico"):
+                continue
+            try:
+                text = p.read_text(encoding="utf-8")
+            except UnicodeDecodeError:
+                continue
+            if pat.search(text):
+                bad.append(rel.as_posix())
+        self.assertEqual(bad, [])
 
 
 if __name__ == "__main__":

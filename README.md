@@ -16,7 +16,7 @@ Static site on GitHub Pages (`CNAME` = inkisle.ipe.rest). Python 3.8+ standard l
 | `scripts/make_art.py`, `render_png.js` | vector art (logo, hero, covers) and the PNGs (og image, icons) |
 | `scripts/check.sh` | **green gate** — run before every commit |
 | `docs/TRANSLATION.md` | translation pipeline |
-| `ops/` | daily 19:00 KST publish: script + launchd plist (installed by the room lead, not by the repo) |
+| `ops/` | daily 19:00 KST publish: script + launchd plist (installed by the maintainer, not by the repo) |
 
 ## Everyday commands
 
