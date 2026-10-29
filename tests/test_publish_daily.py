@@ -23,6 +23,9 @@ class PublishDaily(unittest.TestCase):
         site = helpers.make_site(posts=(("alpha-post", PAST),), queue=("next-one", "next-two"))
         self.addCleanup(shutil.rmtree, site, True)
         shutil.copytree(REPO / "scripts", site / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
+        # The real repo ignores __pycache__; without it, CI's Python (which writes bytecode next to the scripts the
+        # publish run imports) leaves an untracked scripts/__pycache__ and the "unexpected paths" guard rolls back.
+        shutil.copy(REPO / ".gitignore", site / ".gitignore")
         helpers.build(site)
         self.tmp = Path(tempfile.mkdtemp(prefix="inkisle-pd-"))
         self.addCleanup(shutil.rmtree, self.tmp, True)
