@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- DRAFT — not installed. launchd daily 19:00 (the Mac's local time must be KST, or keep TZ below and adjust Hour). -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>rest.ipe.inkisle-publish</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/davy.kim/Developer/inkisle-rest/ops/publish_daily.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+  <key>EnvironmentVariables</key>
+  <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string><key>TZ</key><string>Asia/Seoul</string></dict>
+  <key>StandardOutPath</key><string>/Users/davy.kim/.ipe/logs/inkisle-publish.log</string>
+  <key>StandardErrorPath</key><string>/Users/davy.kim/.ipe/logs/inkisle-publish.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

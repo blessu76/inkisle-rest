@@ -1,0 +1,33 @@
+# Inkisle
+
+> Inkisle is an offline, single-player island-conquest strategy game for phones, now in development. Send fleets between islands and tint the sea your color. Follow the making, one post a day.
+
+Inkisle is a single-player, offline island-conquest strategy game by ipe() (https://ipe.rest/). It is in development and has NOT been released: no store page, release date or final price exists yet. This site is the game's home and its production journal (one post per day).
+
+## Key facts
+
+- Real-time island-conquest strategy, single player.
+- Stages of about 3 to 5 minutes, played upright with one hand.
+- Works offline: no account and no network needed.
+- Minimal vector art; each side has its own color and flag shape so it also reads without color.
+- Planned for iOS first, with Android developed alongside. No release date yet.
+
+## Pages
+
+- [Home](https://inkisle.ipe.rest/): Inkisle is a quick island-conquest strategy game for your phone. Drag fleets from your islands to the next one: the bigger number takes the island and the ink spreads in your color. Each stage takes a few minutes.
+- [About](https://inkisle.ipe.rest/about/): what Inkisle is and who makes it
+- [Privacy Policy](https://inkisle.ipe.rest/privacy/)
+- [Journal](https://inkisle.ipe.rest/journal/): the production journal
+- [RSS](https://inkisle.ipe.rest/journal/feed.xml)
+
+## Journal posts (English)
+
+- [Four game ideas, one core: why we chose island conquest](https://inkisle.ipe.rest/journal/why-island-conquest/) — 2026-10-29 — We drafted four concepts for our next game. All four shared one core, sending troops between nodes. Here is why we kept the core, dropped the story and put it on the sea.
+
+## Languages
+
+The site is available in 12 languages (English and Korean are written by hand, the others are AI translations): English, 한국어, 日本語, 简体中文, Español, Français, Deutsch, Português, Русский, العربية, हिन्दी, Bahasa Indonesia. Each language lives under /<code>/ (English at the root).
+
+## Contact and operator
+
+Davy Kim (ipe Studio) — ipe.haven@gmail.com
