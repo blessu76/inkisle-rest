@@ -1,6 +1,91 @@
 {
  "releases": [
   {
+   "id": "1.0.0-9",
+   "version": "1.0.0",
+   "build": "9",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 9: box-select only, fleets above islands",
+    "ko": "빌드 9: 선택은 사각형만, 함대는 섬 위에",
+    "ja": "ビルド9:選択は四角のみ、艦隊は島の上に",
+    "zh": "构建 9:仅保留框选,舰队绘于岛屿之上",
+    "es": "Compilación 9: solo selección por recuadro y flotas sobre las islas",
+    "fr": "Version 9 : sélection par cadre uniquement, flottes au-dessus des îles",
+    "de": "Build 9: nur Rahmenauswahl, Flotten über den Inseln",
+    "pt": "Build 9: só seleção por quadro e frotas sobre as ilhas",
+    "ru": "Сборка 9: выбор только рамкой, флоты поверх островов",
+    "ar": "الإصدار 9: التحديد بالإطار فقط والأساطيل فوق الجزر",
+    "hi": "बिल्ड 9: केवल बॉक्स से चयन, बेड़े द्वीपों के ऊपर",
+    "id": "Build 9: pilih hanya dengan kotak, armada di atas pulau"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 to 8, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1~8의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1〜8の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 至 8 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 a 8, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 à 8, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 8 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 a 8, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В ней всё из сборок 1–8 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-30. يضم محتوى الإصدارات من 1 إلى 8 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 8 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 sampai 8, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Selecting several islands is now done only by dragging a rectangle over open sea. The old gesture of dragging through islands one by one is gone, because the path could easily tangle when played fast. Dragging from one island to a target still works.",
+     "Fleets and their paths are now always drawn above every island, whether neutral, yours or the enemy’s, so a ship is never hidden under an island."
+    ],
+    "ko": [
+     "여러 섬을 고르는 방법은 빈 바다에 사각형을 끌어 묶는 것 하나뿐입니다. 섬을 하나씩 이어 그어 고르던 동작은 빠르게 하다 보면 동선이 꼬이기 쉬워 없앴습니다. 섬 하나에서 목표 섬까지 끌어 보내는 것은 그대로입니다.",
+     "함대와 그 경로는 중립·아군·적군 어느 섬이든 항상 섬 위에 그려져, 배가 섬 아래에 가려지는 일이 없습니다."
+    ],
+    "ja": [
+     "複数の島を選ぶ方法は、何もない海で四角をドラッグして囲む方法だけになりました。島を1つずつなぞって選ぶ操作は、素早く操作すると動線が絡まりやすいため廃止しました。1つの島から目標の島へドラッグして送る操作は今までどおりです。",
+     "艦隊とその航路は、中立・味方・敵のどの島の上にも常に描かれるようになり、船が島の下に隠れることはありません。"
+    ],
+    "zh": [
+     "选择多座岛屿现在只能在空白海面上拖出方框。逐个划过岛屿的旧手势已移除,因为操作较快时路线很容易缠在一起。从一座岛拖向目标岛的操作不变。",
+     "舰队及其航线现在始终绘制在所有岛屿之上,无论是中立、我方还是敌方的岛,船只不会再被岛屿遮住。"
+    ],
+    "es": [
+     "Ahora varias islas solo se eligen arrastrando un recuadro sobre el mar vacío. Se eliminó el gesto de recorrer las islas una a una, porque al jugar deprisa el trazo se enredaba con facilidad. Arrastrar de una isla a un objetivo sigue igual.",
+     "Las flotas y sus rutas se dibujan siempre por encima de todas las islas, sean neutrales, tuyas o enemigas, así que un barco nunca queda oculto bajo una isla."
+    ],
+    "fr": [
+     "Pour choisir plusieurs îles, il ne reste que le cadre tracé sur la mer vide. Le geste qui consistait à passer d’île en île a disparu, car le tracé s’emmêlait facilement quand on jouait vite. Glisser d’une île vers une cible fonctionne comme avant.",
+     "Les flottes et leurs trajets sont désormais toujours dessinés au-dessus de toutes les îles, neutres, alliées ou ennemies : un navire n’est plus jamais caché sous une île."
+    ],
+    "de": [
+     "Mehrere Inseln wählst du jetzt nur noch, indem du über dem offenen Meer einen Rahmen aufziehst. Das Entlangziehen von Insel zu Insel ist entfernt, weil sich der Weg bei schnellem Spiel leicht verhedderte. Von einer Insel zu einem Ziel zu ziehen funktioniert wie bisher.",
+     "Flotten und ihre Wege werden jetzt immer über allen Inseln gezeichnet – neutral, eigen oder feindlich –, sodass kein Schiff mehr unter einer Insel verschwindet."
+    ],
+    "pt": [
+     "Para escolher várias ilhas agora só existe o quadro arrastado sobre o mar vazio. O gesto de passar de ilha em ilha foi removido, porque o traço se embaralhava com facilidade quando se jogava rápido. Arrastar de uma ilha até um alvo continua igual.",
+     "As frotas e seus caminhos agora são sempre desenhados acima de todas as ilhas, neutras, suas ou inimigas, e nenhum navio fica escondido sob uma ilha."
+    ],
+    "ru": [
+     "Несколько островов теперь выбираются только рамкой, которую протягивают по пустому морю. Жест «провести по островам один за другим» убран: при быстрой игре линия легко путалась. Перетаскивание с одного острова на цель работает как раньше.",
+     "Флоты и их маршруты теперь всегда рисуются поверх всех островов — нейтральных, ваших и вражеских, — так что корабль больше не прячется под островом."
+    ],
+    "ar": [
+     "أصبح اختيار عدة جزر ممكنًا بسحب إطار على البحر الفارغ فقط. أُزيلت إيماءة المرور على الجزر واحدة تلو الأخرى لأن المسار كان يتشابك بسهولة عند اللعب بسرعة. أما السحب من جزيرة واحدة إلى الهدف فيعمل كما كان.",
+     "تُرسم الأساطيل ومساراتها الآن دائمًا فوق كل الجزر، سواء كانت محايدة أو لك أو للعدو، فلا تختفي سفينة تحت جزيرة."
+    ],
+    "hi": [
+     "कई द्वीप चुनने का अब केवल एक तरीका है: खाली समुद्र पर बॉक्स खींचना। द्वीपों को एक-एक करके जोड़ते हुए खींचने का पुराना तरीका हटा दिया गया है, क्योंकि तेज़ खेलने पर रास्ता आसानी से उलझ जाता था। एक द्वीप से लक्ष्य तक खींचना पहले जैसा ही है।",
+     "बेड़े और उनके रास्ते अब हमेशा सभी द्वीपों के ऊपर बनते हैं, चाहे वे तटस्थ हों, आपके हों या दुश्मन के, इसलिए कोई जहाज़ द्वीप के नीचे नहीं छिपता।"
+    ],
+    "id": [
+     "Memilih beberapa pulau kini hanya lewat menyeret kotak di laut kosong. Gerakan menyeret melewati pulau satu per satu dihapus karena jalurnya mudah kusut saat bermain cepat. Menyeret dari satu pulau ke target tetap sama.",
+     "Armada dan jalurnya kini selalu digambar di atas semua pulau, baik netral, milikmu, maupun musuh, sehingga kapal tidak pernah tersembunyi di bawah pulau."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-8",
    "version": "1.0.0",
    "build": "8",
