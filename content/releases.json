@@ -727,6 +727,91 @@
    }
   },
   {
+   "id": "1.0.0-10",
+   "version": "1.0.0",
+   "build": "10",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 10: a livelier capture, with ink spreading and a soft haptic",
+    "ko": "빌드 10: 섬을 먹는 맛 — 잉크 번짐·먹 고리·가벼운 진동",
+    "ja": "ビルド10:島を取る手応え — インクの広がり・墨の輪・軽い振動",
+    "zh": "构建 10:占领更有手感 — 墨迹晕开、墨环与轻触感反馈",
+    "es": "Compilación 10: capturar se siente mejor, con tinta que se extiende y una vibración suave",
+    "fr": "Version 10 : une capture plus vivante, avec l’encre qui s’étend et une légère vibration",
+    "de": "Build 10: Einnehmen fühlt sich besser an, mit sich ausbreitender Tinte und sanftem Haptik-Impuls",
+    "pt": "Build 10: capturar fica mais vivo, com tinta que se espalha e uma vibração suave",
+    "ru": "Сборка 10: захват острова стал выразительнее — расплывается чернила, лёгкая вибрация",
+    "ar": "الإصدار 10: استيلاء أكثر حيوية، مع انتشار الحبر واهتزاز خفيف",
+    "hi": "बिल्ड 10: द्वीप पर कब्ज़ा अब ज़्यादा जीवंत — स्याही फैलती है, हल्का कंपन",
+    "id": "Build 10: merebut pulau terasa lebih hidup, dengan tinta menyebar dan getaran halus"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 to 9, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1~9의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1〜9の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 至 9 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 a 9, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 à 9, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 9 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 a 9, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В неё вошло всё из сборок 1–9 и изменения ниже.",
+    "ar": "تم رفع هذا الإصدار إلى TestFlight في 2026-10-30. يتضمن محتوى الإصدارات 1 إلى 9 مع التغييرات أدناه.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 9 की सामग्री और नीचे के बदलाव शामिल हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 sampai 9, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Capturing an island now spreads ink over it in 0.65 seconds, with a small ink ring and a brief press on the number. When an island is taken from you, the spread is darker and shorter (0.42 seconds).",
+     "When you capture an island, the phone gives a light haptic tap. If Reduce Motion is on, only the color changes, with no spreading."
+    ],
+    "ko": [
+     "섬을 먹으면 잉크가 0.65초 동안 번지고, 먹 고리가 퍼지며 숫자가 살짝 눌립니다. 섬을 빼앗길 때는 더 어둡고 짧게(0.42초) 번집니다.",
+     "내가 섬을 먹으면 가볍게 진동이 옵니다. 동작 줄이기가 켜져 있으면 번짐 없이 색만 바뀝니다."
+    ],
+    "ja": [
+     "島を取ると、インクが0.65秒かけて広がり、小さな墨の輪が出て、数字が軽く沈みます。島を奪われるときは、より暗く短く(0.42秒)広がります。",
+     "自分が島を取ると、軽い振動があります。「視差効果を減らす」がオンの場合は、広がらず色だけが変わります。"
+    ],
+    "zh": [
+     "占领岛屿时,墨迹会在 0.65 秒内晕开,出现一圈小墨环,数字轻轻下压。岛屿被夺走时,晕开更暗、更短(0.42 秒)。",
+     "你占领岛屿时会有轻微的触感反馈。若开启“减少动态效果”,则只变色、不晕开。"
+    ],
+    "es": [
+     "Al capturar una isla, la tinta se extiende sobre ella en 0,65 segundos, con un pequeño anillo de tinta y un breve hundimiento del número. Si te quitan una isla, la mancha es más oscura y corta (0,42 s).",
+     "Al capturar una isla, el teléfono da un toque háptico suave. Con Reducir movimiento activado, solo cambia el color, sin extenderse."
+    ],
+    "fr": [
+     "Quand vous capturez une île, l’encre s’y étend en 0,65 seconde, avec un petit anneau d’encre et un bref enfoncement du nombre. Quand on vous prend une île, l’étalement est plus sombre et plus court (0,42 s).",
+     "Quand vous capturez une île, le téléphone émet une légère vibration. Avec « Réduire les animations », seule la couleur change, sans étalement."
+    ],
+    "de": [
+     "Beim Einnehmen einer Insel breitet sich die Tinte in 0,65 Sekunden aus, mit einem kleinen Tintenring und einem kurzen Eindrücken der Zahl. Wird dir eine Insel genommen, ist die Ausbreitung dunkler und kürzer (0,42 s).",
+     "Nimmst du eine Insel ein, gibt das Handy einen leichten Haptik-Impuls. Bei aktivierter Bewegungsreduzierung ändert sich nur die Farbe, ohne Ausbreitung."
+    ],
+    "pt": [
+     "Ao capturar uma ilha, a tinta se espalha sobre ela em 0,65 segundo, com um pequeno anel de tinta e um leve afundar do número. Quando tomam uma ilha de você, o espalhar é mais escuro e curto (0,42 s).",
+     "Ao capturar uma ilha, o celular dá um leve toque háptico. Com Reduzir movimento ativado, só a cor muda, sem espalhar."
+    ],
+    "ru": [
+     "При захвате острова чернила расплываются по нему за 0,65 секунды, появляется небольшое чернильное кольцо, а число слегка «вдавливается». Когда остров отбирают у вас, расплывание темнее и короче (0,42 с).",
+     "При захвате острова телефон слегка вибрирует. Если включено «Уменьшение движения», меняется только цвет, без расплывания."
+    ],
+    "ar": [
+     "عند الاستيلاء على جزيرة ينتشر الحبر فوقها خلال 0.65 ثانية، مع حلقة حبر صغيرة وانضغاط خفيف للرقم. وعندما تؤخذ منك جزيرة يكون الانتشار أغمق وأقصر (0.42 ثانية).",
+     "عند استيلائك على جزيرة يعطي الهاتف اهتزازًا خفيفًا. وإذا كان خيار «تقليل الحركة» مفعّلًا يتغير اللون فقط دون انتشار."
+    ],
+    "hi": [
+     "किसी द्वीप पर कब्ज़ा करने पर स्याही 0.65 सेकंड में उस पर फैलती है, एक छोटा स्याही-घेरा बनता है और संख्या हल्की-सी दबती है। जब कोई द्वीप आपसे छिनता है, तो फैलाव ज़्यादा गहरा और छोटा (0.42 सेकंड) होता है।",
+     "द्वीप पर कब्ज़ा करने पर फ़ोन हल्का कंपन देता है। यदि “मोशन कम करें” चालू है, तो फैलाव के बिना केवल रंग बदलता है।"
+    ],
+    "id": [
+     "Saat merebut pulau, tinta menyebar di atasnya dalam 0,65 detik, dengan cincin tinta kecil dan angka yang sedikit menekan. Saat pulau direbut darimu, sebarannya lebih gelap dan lebih singkat (0,42 detik).",
+     "Saat kamu merebut pulau, ponsel memberi getaran haptik ringan. Jika Kurangi Gerakan aktif, hanya warna yang berubah tanpa menyebar."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-9",
    "version": "1.0.0",
    "build": "9",
