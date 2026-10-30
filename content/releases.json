@@ -1,6 +1,91 @@
 {
  "releases": [
   {
+   "id": "1.0.0-8",
+   "version": "1.0.0",
+   "build": "8",
+   "status": "testflight",
+   "date": "2026-10-30",
+   "title": {
+    "en": "Build 8: serif titles and a paper grain",
+    "ko": "빌드 8: 세리프 제목 글꼴과 종이 질감",
+    "ja": "ビルド8:セリフ体のタイトルと紙の質感",
+    "zh": "构建 8:衬线标题字体与纸张质感",
+    "es": "Compilación 8: títulos con serifa y textura de papel",
+    "fr": "Version 8 : titres à empattements et grain de papier",
+    "de": "Build 8: Titel mit Serifenschrift und Papierstruktur",
+    "pt": "Build 8: títulos com serifa e textura de papel",
+    "ru": "Сборка 8: заголовки с засечками и бумажная фактура",
+    "ar": "الإصدار 8: عناوين بخط ذي زخارف وملمس ورق",
+    "hi": "बिल्ड 8: सेरिफ़ शीर्षक और काग़ज़ जैसी बनावट",
+    "id": "Build 8: judul berhuruf serif dan tekstur kertas"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 30, 2026. It has the contents of builds 1 to 7, plus the changes below.",
+    "ko": "2026년 10월 30일 TestFlight 에 올라간 빌드입니다. 빌드 1~7의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-30 に TestFlight にアップロードされたビルドです。ビルド1〜7の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-30 上传到 TestFlight 的构建。它包含构建 1 至 7 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-30. Incluye el contenido de las compilaciones 1 a 7, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-30. Elle reprend le contenu des versions 1 à 7, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-30 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 7 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-30. Ele traz o conteúdo dos builds 1 a 7, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-30. В ней всё из сборок 1–7 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-30. يضم محتوى الإصدارات من 1 إلى 7 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-30 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 7 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-30. Isinya mencakup build 1 sampai 7, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "The wordmark, the result titles and the new-sea notice now use two serif typefaces (Cinzel and Cormorant Garamond, both under the SIL Open Font License). They apply to Latin and Cyrillic text; other writing systems keep the system typeface.",
+     "A faint paper grain now lies over the chart, so the painted sea reads as ink on paper."
+    ],
+    "ko": [
+     "로고, 결과 화면 제목, 새 바다 안내에 두 가지 세리프 글꼴(Cinzel, Cormorant Garamond · 둘 다 SIL 오픈 폰트 라이선스)을 적용했습니다. 라틴·키릴 문자에 적용되며, 다른 문자는 기기 기본 글꼴 그대로입니다.",
+     "해도 위에 옅은 종이 질감이 깔려, 그려진 바다가 종이에 번진 잉크처럼 보입니다."
+    ],
+    "ja": [
+     "ロゴ、結果画面のタイトル、新しい海の案内に、2つのセリフ体(Cinzel と Cormorant Garamond、どちらも SIL オープンフォントライセンス)を使うようにしました。ラテン文字とキリル文字に適用され、ほかの文字は端末の標準書体のままです。",
+     "海図の上にうっすらと紙の質感が重なり、描かれた海が紙に染みたインクのように見えます。"
+    ],
+    "zh": [
+     "标志、结算标题和新海域提示改用两款衬线字体(Cinzel 与 Cormorant Garamond,均采用 SIL 开放字体许可)。仅用于拉丁和西里尔文字,其他文字仍使用系统字体。",
+     "海图上叠了一层淡淡的纸张纹理,让绘制的海面看起来像纸上的墨迹。"
+    ],
+    "es": [
+     "El logotipo, los títulos de resultados y el aviso de un mar nuevo usan ahora dos tipografías con serifa (Cinzel y Cormorant Garamond, ambas con la Licencia de Fuente Abierta SIL). Se aplican al texto latino y cirílico; los demás sistemas de escritura mantienen la tipografía del sistema.",
+     "Una textura tenue de papel cubre ahora la carta, de modo que el mar pintado parece tinta sobre papel."
+    ],
+    "fr": [
+     "Le logotype, les titres de résultat et l'annonce d'une nouvelle mer utilisent désormais deux polices à empattements (Cinzel et Cormorant Garamond, toutes deux sous licence SIL Open Font). Elles s'appliquent aux textes latins et cyrilliques ; les autres écritures gardent la police du système.",
+     "Un léger grain de papier recouvre maintenant la carte marine : la mer peinte ressemble à de l'encre sur papier."
+    ],
+    "de": [
+     "Wortmarke, Ergebnistitel und der Hinweis auf ein neues Meer nutzen jetzt zwei Serifenschriften (Cinzel und Cormorant Garamond, beide unter der SIL Open Font License). Sie gelten für lateinische und kyrillische Schrift; andere Schriftsysteme behalten die Systemschrift.",
+     "Eine feine Papierstruktur liegt nun über der Seekarte, sodass das gemalte Meer wie Tinte auf Papier wirkt."
+    ],
+    "pt": [
+     "O logotipo, os títulos de resultado e o aviso de um novo mar agora usam duas fontes com serifa (Cinzel e Cormorant Garamond, ambas sob a Licença de Fonte Aberta SIL). Valem para texto latino e cirílico; os demais sistemas de escrita mantêm a fonte do sistema.",
+     "Uma textura suave de papel agora cobre a carta, e o mar pintado parece tinta sobre papel."
+    ],
+    "ru": [
+     "Логотип, заголовки итогов и сообщение о новом море теперь набраны двумя шрифтами с засечками (Cinzel и Cormorant Garamond, оба по лицензии SIL Open Font). Они применяются к латинице и кириллице; остальные письменности сохраняют системный шрифт.",
+     "Морская карта теперь покрыта лёгкой бумажной фактурой, и нарисованное море выглядит как тушь на бумаге."
+    ],
+    "ar": [
+     "يستخدم الشعار وعناوين النتائج وإشعار البحر الجديد الآن خطّين ذوَي زخارف (Cinzel وCormorant Garamond، وكلاهما بترخيص SIL للخطوط المفتوحة). يُطبَّقان على النص اللاتيني والسيريلي، وتبقى بقية الكتابات بخط النظام.",
+     "طبقة خفيفة من ملمس الورق تغطي الآن خريطة البحار، فيبدو البحر المرسوم كحبر على ورق."
+    ],
+    "hi": [
+     "लोगो, नतीजे के शीर्षक और नए समुद्र की सूचना में अब दो सेरिफ़ फ़ॉन्ट (Cinzel और Cormorant Garamond, दोनों SIL ओपन फ़ॉन्ट लाइसेंस के तहत) इस्तेमाल होते हैं। ये लैटिन और सिरिलिक पाठ पर लागू होते हैं; दूसरी लिपियों में सिस्टम फ़ॉन्ट ही रहता है।",
+     "समुद्री नक़्शे पर अब काग़ज़ की हल्की बनावट है, जिससे बना हुआ समुद्र काग़ज़ पर स्याही जैसा दिखता है।"
+    ],
+    "id": [
+     "Logo, judul hasil, dan pemberitahuan laut baru kini memakai dua huruf serif (Cinzel dan Cormorant Garamond, keduanya berlisensi SIL Open Font). Berlaku untuk teks Latin dan Sirilik; aksara lain tetap memakai huruf sistem.",
+     "Tekstur kertas yang tipis kini menutupi peta laut, sehingga laut yang dilukis tampak seperti tinta di atas kertas."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-7",
    "version": "1.0.0",
    "build": "7",
