@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, nama game, penamaan, app store, merek dagang, branding
 image_alt: Pulau berwarna koral dengan noda tinta yang menyebar, gagasan di balik nama Inkisle.
+published: 2026-10-30T19:05+09:00
 ---
 Game yang akan dirilis ke seluruh dunia perlu nama bahasa Inggris sejak dini, karena nama menentukan domain, ikon, halaman toko, dan apa yang diketik orang di kotak pencarian.
 

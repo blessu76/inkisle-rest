@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spielname, Namensfindung, App Store, Marke, Branding
 image_alt: Eine korallenfarbene Insel mit einem sich ausbreitenden Tintenfleck, die Idee hinter dem Namen Inkisle.
+published: 2026-10-30T19:05+09:00
 ---
 Ein Spiel, das weltweit erscheint, braucht früh einen englischen Namen, denn der Name bestimmt die Domain, das Icon, die Store-Seite und das, was Leute in ein Suchfeld tippen.
 
