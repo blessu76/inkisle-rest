@@ -11,6 +11,7 @@ Static site on GitHub Pages (`CNAME` = inkisle.ipe.rest). Python 3.8+ standard l
 | `content/queue/NN-<slug>/<lang>.md` | queued posts (no `published:` yet). `NN-` orders the queue |
 | `scripts/build_site.py` | generator → `index.html`, `<lang>/…`, `journal/…`, `sitemap.xml`, `robots.txt`, `llms.txt`, `*/feed.xml`, `404.html` (generated, never hand-edit) |
 | `scripts/publish_post.py` | queue → journal (stamps the time, refuses future), then build + sitemap check |
+| `scripts/check_release.py` | `--build N`: the release note for app build N is in `content/releases.json` in all 12 languages and built (exit 1 + what is missing otherwise); the app's `deploy_ios.sh` runs it before every TestFlight upload |
 | `scripts/check_sitemap.py` | sitemap ↔ files ↔ posts ↔ hreflang consistency (`--live` after deploy) |
 | `scripts/indexnow.py` | IndexNow ping (key file `<32 hex>.txt` at the root) |
 | `scripts/make_art.py`, `render_png.js` | vector art (logo, hero, covers) and the PNGs (og image, icons) |
@@ -25,6 +26,7 @@ python3 scripts/build_site.py             # rebuild generated files
 bash scripts/check.sh                     # sources, tests, "build is up to date", sitemap — must print GREEN
 python3 scripts/publish_post.py --dry-run # what the next publish would do
 python3 scripts/publish_post.py           # publish the head of the queue now (then commit + push)
+python3 scripts/check_release.py --build 7 # release note for app build 7 complete? (the app's deploy_ios.sh runs this before upload)
 python3 scripts/check_sitemap.py --live   # after deploy: every URL is HTTP 200
 python3 scripts/indexnow.py <URL> ...     # after deploy: tell Bing/Naver/Yandex
 ```
