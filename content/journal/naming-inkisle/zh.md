@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 游戏名称, 起名, 应用商店, 商标, 品牌
 image_alt: 一座珊瑚色的岛屿,上面有一团扩散的墨迹,这就是 Inkisle 这个名字背后的想法。
+published: 2026-10-30T19:05+09:00
 ---
 一款要在全球发行的游戏,需要尽早有一个英文名,因为名字决定了域名、图标、商店页面,以及人们在搜索框里输入的内容。
 

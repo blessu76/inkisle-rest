@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game name, naming, app store, trademark, branding
 image_alt: A coral island with a spreading ink mark, the idea behind the name Inkisle.
+published: 2026-10-30T19:05+09:00
 ---
 A game that will ship worldwide needs an English name early, because the name decides the domain, the icon, the store listing and what people type into a search box.
 

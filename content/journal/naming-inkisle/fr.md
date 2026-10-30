@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, nom du jeu, nommage, boutique d'applications, marque déposée, branding
 image_alt: Une île corail avec une tache d'encre qui s'étend, l'idée derrière le nom Inkisle.
+published: 2026-10-30T19:05+09:00
 ---
 Un jeu qui sortira dans le monde entier a besoin tôt d'un nom anglais, car le nom décide du domaine, de l'icône, de la fiche de boutique et de ce que les gens tapent dans une barre de recherche.
 
