@@ -1,6 +1,151 @@
 {
  "releases": [
   {
+   "id": "1.0.0-11",
+   "version": "1.0.0",
+   "build": "11",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 11: the Fog Isles, language choice and leaderboards",
+    "ko": "빌드 11: 안개 군도, 언어 선택, 순위표",
+    "ja": "ビルド11:霧の群島、言語の選択、ランキング",
+    "zh": "构建 11:迷雾群岛、语言选择、排行榜",
+    "es": "Compilación 11: las Islas de Niebla, elección de idioma y clasificaciones",
+    "fr": "Version 11 : les îles de brume, choix de la langue et classements",
+    "de": "Build 11: die Nebelinseln, Sprachauswahl und Bestenlisten",
+    "pt": "Build 11: as Ilhas de Névoa, escolha do idioma e rankings",
+    "ru": "Сборка 11: Туманные острова, выбор языка и таблицы лидеров",
+    "ar": "الإصدار 11: جزر الضباب، واختيار اللغة، ولوحات الصدارة",
+    "hi": "बिल्ड 11: कोहरा द्वीप, भाषा का चुनाव और लीडरबोर्ड",
+    "id": "Build 11: Kepulauan Kabut, pilihan bahasa, dan papan peringkat"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 10, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~10의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜10の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 10 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 10, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 10, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 10 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 10, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–10 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 10 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 10 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 10, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 3, the Fog Isles: 8 new stages. Numbers beyond the fog show the last value you saw, dimmed, and lighting a lighthouse lets you see farther. Enemies that build up strength inside the fog appear.",
+     "Each sea now has its own sea color.",
+     "Each sea shows three lines of story.",
+     "You can choose the language in settings: 12 languages, or follow the device. On iOS, the per-app language setting works too.",
+     "The first time you start, you choose a nickname.",
+     "Game Center leaderboards. Runs where you used Ink are not ranked.",
+     "Fixed stage titles being cut off, and fixed the header of the sea chart."
+    ],
+    "ko": [
+     "3막 「안개 군도」: 새 판 8개. 안개 너머의 숫자는 마지막으로 본 값이 흐리게 보이고, 등대를 켜면 더 멀리 보입니다. 안개 속에서 힘을 모으는 적이 나옵니다.",
+     "막마다 바다 색이 다릅니다.",
+     "막마다 이야기 세 줄이 나옵니다.",
+     "설정에서 언어를 고를 수 있습니다. 12개 언어이며 기기 설정을 따를 수도 있습니다. iOS 의 앱별 언어 설정도 지원합니다.",
+     "처음 시작할 때 닉네임을 정합니다.",
+     "Game Center 순위표. Ink 를 쓴 판은 순위에 넣지 않습니다.",
+     "판 제목이 잘리던 것과 해도 머리글을 고쳤습니다."
+    ],
+    "ja": [
+     "第3海域「霧の群島」:新しいステージが8つ。霧の向こうの数字は最後に見た値がうすく表示され、灯台をともすと遠くまで見えます。霧の中で力をためる敵が現れます。",
+     "海域ごとに海の色が違います。",
+     "海域ごとに3行の物語が表示されます。",
+     "設定で言語を選べます。12言語から選ぶか、端末の設定に合わせられます。iOSのアプリ別言語設定にも対応しています。",
+     "初めて起動したときにニックネームを決めます。",
+     "Game Centerのランキング。Inkを使ったプレイはランキングに入りません。",
+     "ステージ名が途切れる問題と、海図のヘッダーを修正しました。"
+    ],
+    "zh": [
+     "第 3 海域“迷雾群岛”:新增 8 个关卡。雾后的数字会以暗淡的样子显示你最后一次看到的值,点亮灯塔可以看得更远。雾中会出现蓄积力量的敌人。",
+     "每个海域的海水颜色各不相同。",
+     "每个海域会出现三行故事。",
+     "可以在设置中选择语言:12 种语言,或跟随设备。也支持 iOS 的按应用设置语言。",
+     "第一次启动时,你需要设定昵称。",
+     "Game Center 排行榜。使用了 Ink 的对局不计入排名。",
+     "修复了关卡标题被截断的问题,并修复了海图的页眉。"
+    ],
+    "es": [
+     "Mar 3, las Islas de Niebla: 8 niveles nuevos. Los números tras la niebla muestran, atenuado, el último valor que viste, y encender un faro te permite ver más lejos. Aparecen enemigos que acumulan fuerza dentro de la niebla.",
+     "Cada mar tiene ahora su propio color.",
+     "Cada mar muestra tres líneas de historia.",
+     "Puedes elegir el idioma en los ajustes: 12 idiomas o el del dispositivo. En iOS también funciona el idioma por app.",
+     "La primera vez que inicias, eliges un apodo.",
+     "Clasificaciones de Game Center. Las partidas en las que usaste Ink no entran en la clasificación.",
+     "Se corrigieron los títulos de nivel que se cortaban y el encabezado de la carta marina."
+    ],
+    "fr": [
+     "Mer 3, les îles de brume : 8 nouveaux niveaux. Les nombres au-delà de la brume affichent, atténuée, la dernière valeur vue, et allumer un phare permet de voir plus loin. Des ennemis qui accumulent de la force dans la brume apparaissent.",
+     "Chaque mer a désormais sa propre couleur.",
+     "Chaque mer affiche trois lignes d'histoire.",
+     "Vous pouvez choisir la langue dans les réglages : 12 langues, ou celle de l'appareil. Sur iOS, la langue par app fonctionne aussi.",
+     "Au premier lancement, vous choisissez un pseudo.",
+     "Classements Game Center. Les parties où vous avez utilisé Ink ne sont pas classées.",
+     "Correction des titres de niveau coupés et de l'en-tête de la carte marine."
+    ],
+    "de": [
+     "Meer 3, die Nebelinseln: 8 neue Level. Zahlen hinter dem Nebel zeigen abgedunkelt den zuletzt gesehenen Wert, und ein entzündeter Leuchtturm lässt dich weiter sehen. Gegner, die im Nebel Kraft sammeln, treten auf.",
+     "Jedes Meer hat jetzt seine eigene Farbe.",
+     "Jedes Meer zeigt drei Zeilen Geschichte.",
+     "In den Einstellungen kannst du die Sprache wählen: 12 Sprachen oder die des Geräts. Unter iOS funktioniert auch die Sprache pro App.",
+     "Beim ersten Start wählst du einen Spitznamen.",
+     "Game-Center-Bestenlisten. Durchgänge, in denen du Ink benutzt hast, werden nicht gewertet.",
+     "Abgeschnittene Leveltitel und die Kopfzeile der Seekarte wurden behoben."
+    ],
+    "pt": [
+     "Mar 3, as Ilhas de Névoa: 8 fases novas. Os números além da névoa mostram, esmaecido, o último valor que você viu, e acender um farol deixa você ver mais longe. Surgem inimigos que acumulam força dentro da névoa.",
+     "Cada mar agora tem a sua própria cor.",
+     "Cada mar mostra três linhas de história.",
+     "Dá para escolher o idioma nos ajustes: 12 idiomas ou o do aparelho. No iOS, o idioma por app também funciona.",
+     "Na primeira vez que você abre o jogo, escolhe um apelido.",
+     "Rankings do Game Center. Partidas em que você usou Ink não entram no ranking.",
+     "Corrigidos os títulos de fase que eram cortados e o cabeçalho da carta náutica."
+    ],
+    "ru": [
+     "Море 3, Туманные острова: 8 новых уровней. Числа за туманом показывают тусклым последнее увиденное значение, а зажжённый маяк позволяет видеть дальше. Появляются враги, которые копят силы в тумане.",
+     "У каждого моря теперь свой цвет.",
+     "Каждое море показывает три строки истории.",
+     "Язык можно выбрать в настройках: 12 языков или язык устройства. На iOS работает и язык для отдельного приложения.",
+     "При первом запуске вы выбираете никнейм.",
+     "Таблицы лидеров Game Center. Забеги, в которых вы использовали Ink, в рейтинг не попадают.",
+     "Исправлены обрезавшиеся названия уровней и заголовок морской карты."
+    ],
+    "ar": [
+     "البحر 3، جزر الضباب: 8 مراحل جديدة. تظهر الأرقام خلف الضباب بآخر قيمة رأيتها وبشكل باهت، وإضاءة المنارة تتيح لك الرؤية لمسافة أبعد. وتظهر أعداء يجمعون قوتهم داخل الضباب.",
+     "لكل بحر الآن لونه الخاص.",
+     "يعرض كل بحر ثلاثة أسطر من القصة.",
+     "يمكنك اختيار اللغة من الإعدادات: 12 لغة، أو اتباع لغة الجهاز. وعلى iOS يعمل أيضًا إعداد اللغة لكل تطبيق.",
+     "عند أول تشغيل تختار اسمًا مستعارًا.",
+     "لوحات صدارة Game Center. الجولات التي استخدمت فيها Ink لا تدخل في الترتيب.",
+     "أُصلح قطع عناوين المراحل، وأُصلح رأس خريطة البحر."
+    ],
+    "hi": [
+     "समुद्र 3, कोहरा द्वीप: 8 नए स्तर। कोहरे के पार की संख्याएँ आखिरी देखी गई कीमत को धुँधला दिखाती हैं, और प्रकाशस्तंभ जलाने पर दूर तक दिखता है। कोहरे में ताकत जमा करने वाले दुश्मन आते हैं।",
+     "अब हर समुद्र का अपना रंग है।",
+     "हर समुद्र में कहानी की तीन पंक्तियाँ दिखती हैं।",
+     "सेटिंग में भाषा चुन सकते हैं: 12 भाषाएँ, या डिवाइस की भाषा। iOS में हर ऐप की अलग भाषा की सेटिंग भी काम करती है।",
+     "पहली बार शुरू करने पर आप एक उपनाम चुनते हैं।",
+     "Game Center लीडरबोर्ड। जिन खेलों में आपने Ink इस्तेमाल किया, वे रैंकिंग में नहीं गिने जाते।",
+     "कटे हुए स्तर शीर्षक और समुद्री चार्ट का हेडर ठीक किया गया।"
+    ],
+    "id": [
+     "Laut 3, Kepulauan Kabut: 8 level baru. Angka di balik kabut menampilkan nilai terakhir yang kamu lihat dengan redup, dan menyalakan mercusuar membuatmu melihat lebih jauh. Muncul musuh yang mengumpulkan kekuatan di dalam kabut.",
+     "Setiap laut kini punya warna lautnya sendiri.",
+     "Setiap laut menampilkan tiga baris cerita.",
+     "Kamu bisa memilih bahasa di pengaturan: 12 bahasa, atau mengikuti perangkat. Di iOS, pengaturan bahasa per aplikasi juga berfungsi.",
+     "Saat pertama kali memulai, kamu memilih nama panggilan.",
+     "Papan peringkat Game Center. Permainan yang memakai Ink tidak masuk peringkat.",
+     "Memperbaiki judul level yang terpotong dan header peta laut."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-5",
    "version": "1.0.0",
    "build": "5",
