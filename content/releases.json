@@ -1,6 +1,139 @@
 {
  "releases": [
   {
+   "id": "1.0.0-13",
+   "version": "1.0.0",
+   "build": "13",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 13: Whirlpool Sea, Open Sea and Night Sea",
+    "ko": "빌드 13: 소용돌이 바다, 큰 바다, 밤바다",
+    "ja": "ビルド13:渦の海、大海、夜の海",
+    "zh": "构建 13:漩涡之海、大海与夜海",
+    "es": "Compilación 13: el Mar de los Remolinos, el Mar Abierto y el Mar Nocturno",
+    "fr": "Version 13 : la mer des Tourbillons, la haute mer et la mer de nuit",
+    "de": "Build 13: Strudelmeer, Offenes Meer und Nachtmeer",
+    "pt": "Build 13: o Mar dos Redemoinhos, o Mar Aberto e o Mar Noturno",
+    "ru": "Сборка 13: Море водоворотов, Открытое море и Ночное море",
+    "ar": "الإصدار 13: بحر الدوامات والبحر المفتوح وبحر الليل",
+    "hi": "बिल्ड 13: भँवर सागर, खुला सागर और रात्रि सागर",
+    "id": "Build 13: Laut Pusaran, Laut Terbuka dan Laut Malam"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 12, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~12의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜12の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 12 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 12, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 12, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 12 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 12, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–12 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 12 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 12 की सामग्री है, साथ में नीचे के बदलाव।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 12, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 7, the Whirlpool Sea: 8 new stages. A fleet that passes through a whirlpool loses one in five. Open alliances appear.",
+     "Sea 8, the Open Sea: 8 new stages. It mixes in elements from the seas you have already crossed.",
+     "Sea 9, the Night Sea: at set times your sight narrows and only the area around lighthouses is visible. 8 new stages.",
+     "Each sea now has its own look, and stage balance has been refined.",
+     "A preview of Sea 10, First Light: its stages are in, but its look is not yet.",
+     "Fixed Ink being counted twice in some cases. A copy restored from a backup now gets its own device identity."
+    ],
+    "ko": [
+     "7막 「소용돌이 바다」: 새 판 8개. 소용돌이를 지나가면 함대의 다섯에 하나를 잃습니다. 공개 동맹이 나옵니다.",
+     "8막 「큰 바다」: 새 판 8개. 지나온 바다의 요소를 섞어 씁니다.",
+     "9막 「밤바다」: 정해진 때가 되면 시야가 좁아지고 등대 곁만 보입니다. 새 판 8개.",
+     "막마다 새 화면 연출이 들어갔고, 판 균형을 다듬었습니다.",
+     "10막 「첫 등불」 미리보기: 판은 들어 있고, 화면 연출은 아직입니다.",
+     "Ink 가 드물게 두 번 더해지던 문제를 고쳤습니다. 백업으로 복원한 사본은 기기 구분을 새로 받습니다."
+    ],
+    "ja": [
+     "第7海域「渦の海」:新しいステージ8つ。渦を通る艦隊は、5隻に1隻を失います。公開の同盟が登場します。",
+     "第8海域「大海」:新しいステージ8つ。これまで越えた海の要素が混ざり合います。",
+     "第9海域「夜の海」:決まった時刻になると視界が狭まり、灯台のそばだけが見えます。新しいステージ8つ。",
+     "海域ごとに新しい画面演出が加わり、ステージのバランスを整えました。",
+     "第10海域「最初の灯」プレビュー:ステージは入っていますが、画面演出はまだです。",
+     "Ink が二重に加算されることがあった問題を修正しました。バックアップから復元したコピーは、新しい端末識別を受け取ります。"
+    ],
+    "zh": [
+     "第 7 幕「漩涡之海」:新增 8 个关卡。舰队穿过漩涡,会损失五分之一。公开结盟登场。",
+     "第 8 幕「大海」:新增 8 个关卡。混合了你已走过的海域的元素。",
+     "第 9 幕「夜海」:到了固定的时刻,视野会收窄,只能看到灯塔附近。新增 8 个关卡。",
+     "每一幕都有了新的画面效果,关卡的平衡也做了打磨。",
+     "第 10 幕「第一盏灯」预览:关卡已加入,画面效果尚未完成。",
+     "修复了 Ink 偶尔被重复计入的问题。从备份恢复的副本会获得新的设备标识。"
+    ],
+    "es": [
+     "Mar 7, el Mar de los Remolinos: 8 niveles nuevos. Una flota que cruza un remolino pierde una de cada cinco naves. Aparecen alianzas abiertas.",
+     "Mar 8, el Mar Abierto: 8 niveles nuevos. Mezcla elementos de los mares que ya has cruzado.",
+     "Mar 9, el Mar Nocturno: a ciertas horas la vista se estrecha y solo se ve lo que rodea a los faros. 8 niveles nuevos.",
+     "Cada mar tiene ahora su propio aspecto, y se ha afinado el equilibrio de los niveles.",
+     "Avance del Mar 10, Primera Luz: los niveles ya están, pero su aspecto todavía no.",
+     "Se corrigió que el Ink se sumara dos veces en algunos casos. Una copia restaurada desde una copia de seguridad recibe ahora su propia identidad de dispositivo."
+    ],
+    "fr": [
+     "Mer 7, la mer des Tourbillons : 8 nouveaux niveaux. Une flotte qui traverse un tourbillon perd un navire sur cinq. Des alliances ouvertes apparaissent.",
+     "Mer 8, la haute mer : 8 nouveaux niveaux. Elle mêle des éléments des mers déjà traversées.",
+     "Mer 9, la mer de nuit : à heures fixes, la vue se resserre et seuls les abords des phares restent visibles. 8 nouveaux niveaux.",
+     "Chaque mer a désormais son propre décor, et l'équilibre des niveaux a été affiné.",
+     "Aperçu de la mer 10, Première lueur : les niveaux sont là, pas encore le décor.",
+     "Correction d'un cas où l'Ink était compté deux fois. Une copie restaurée depuis une sauvegarde reçoit désormais sa propre identité d'appareil."
+    ],
+    "de": [
+     "Meer 7, das Strudelmeer: 8 neue Stufen. Eine Flotte, die einen Strudel durchquert, verliert ein Fünftel. Offene Bündnisse kommen hinzu.",
+     "Meer 8, das Offene Meer: 8 neue Stufen. Es mischt Elemente der bereits durchquerten Meere.",
+     "Meer 9, das Nachtmeer: zu festen Zeiten wird die Sicht eng, und nur die Umgebung der Leuchttürme ist zu sehen. 8 neue Stufen.",
+     "Jedes Meer hat nun sein eigenes Erscheinungsbild, und die Ausgewogenheit der Stufen wurde verfeinert.",
+     "Vorschau auf Meer 10, Erstes Licht: Die Stufen sind da, das Erscheinungsbild noch nicht.",
+     "Behoben: Ink wurde in manchen Fällen doppelt gezählt. Eine aus einem Backup wiederhergestellte Kopie erhält jetzt eine eigene Geräte-Kennung."
+    ],
+    "pt": [
+     "Mar 7, o Mar dos Redemoinhos: 8 fases novas. Uma frota que atravessa um redemoinho perde um em cada cinco navios. Surgem alianças abertas.",
+     "Mar 8, o Mar Aberto: 8 fases novas. Mistura elementos dos mares que você já atravessou.",
+     "Mar 9, o Mar Noturno: em horas marcadas a visão se estreita e só se vê o entorno dos faróis. 8 fases novas.",
+     "Cada mar agora tem seu próprio visual, e o equilíbrio das fases foi refinado.",
+     "Prévia do Mar 10, Primeira Luz: as fases já estão, o visual ainda não.",
+     "Corrigido: o Ink era contado duas vezes em alguns casos. Uma cópia restaurada de um backup agora recebe a sua própria identidade de dispositivo."
+    ],
+    "ru": [
+     "Море 7, Море водоворотов: 8 новых уровней. Флот, прошедший через водоворот, теряет каждый пятый корабль. Появляются открытые союзы.",
+     "Море 8, Открытое море: 8 новых уровней. В нём смешаны элементы пройденных морей.",
+     "Море 9, Ночное море: в назначенное время обзор сужается, и видно только окрестности маяков. 8 новых уровней.",
+     "У каждого моря теперь свой облик, а баланс уровней доработан.",
+     "Предпросмотр Моря 10, «Первый огонь»: уровни уже есть, оформления пока нет.",
+     "Исправлено: в некоторых случаях Ink засчитывался дважды. Копия, восстановленная из резервной, теперь получает собственный идентификатор устройства."
+    ],
+    "ar": [
+     "البحر 7، بحر الدوامات: ٨ مراحل جديدة. الأسطول الذي يعبر دوامة يفقد سفينة من كل خمس. تظهر تحالفات علنية.",
+     "البحر 8، البحر المفتوح: ٨ مراحل جديدة. يمزج عناصر من البحار التي عبرتها.",
+     "البحر 9، بحر الليل: في أوقات محددة يضيق مدى الرؤية ولا يظهر إلا ما حول المنارات. ٨ مراحل جديدة.",
+     "لكل بحر الآن مظهره الخاص، وجرى ضبط توازن المراحل.",
+     "معاينة البحر 10، أول ضوء: المراحل موجودة، أما المظهر فلم يكتمل بعد.",
+     "أُصلح احتساب Ink مرتين في بعض الحالات. والنسخة المستعادة من نسخة احتياطية تحصل الآن على هوية جهاز جديدة."
+    ],
+    "hi": [
+     "सागर 7, भँवर सागर: 8 नए स्तर। भँवर से गुज़रने वाला बेड़ा हर पाँच में से एक जहाज़ खो देता है। खुले गठबंधन आते हैं।",
+     "सागर 8, खुला सागर: 8 नए स्तर। इसमें पार किए हुए सागरों के तत्व मिलकर आते हैं।",
+     "सागर 9, रात्रि सागर: तय समय पर दृष्टि सिमट जाती है और केवल प्रकाशस्तंभों के आसपास का हिस्सा दिखता है। 8 नए स्तर।",
+     "हर सागर को अब अपना अलग रूप मिला है, और स्तरों का संतुलन सँवारा गया है।",
+     "सागर 10, पहली लौ का पूर्वावलोकन: स्तर आ गए हैं, रूप अभी बाकी है।",
+     "कुछ मामलों में Ink दो बार जुड़ने की समस्या ठीक की गई। बैकअप से बहाल की गई प्रति को अब नई डिवाइस पहचान मिलती है।"
+    ],
+    "id": [
+     "Laut 7, Laut Pusaran: 8 tahap baru. Armada yang melewati pusaran kehilangan satu dari lima kapal. Aliansi terbuka muncul.",
+     "Laut 8, Laut Terbuka: 8 tahap baru. Memadukan unsur dari laut-laut yang sudah dilewati.",
+     "Laut 9, Laut Malam: pada waktu tertentu pandangan menyempit dan hanya sekitar mercusuar yang terlihat. 8 tahap baru.",
+     "Setiap laut kini punya tampilannya sendiri, dan keseimbangan tahap telah dirapikan.",
+     "Pratinjau Laut 10, Cahaya Pertama: tahapnya sudah ada, tampilannya belum.",
+     "Memperbaiki Ink yang dalam beberapa kasus terhitung dua kali. Salinan yang dipulihkan dari cadangan kini mendapat identitas perangkat baru."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-12",
    "version": "1.0.0",
    "build": "12",
