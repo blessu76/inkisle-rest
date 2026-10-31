@@ -18,7 +18,7 @@ Inkisle (se escribe InkIsle en el logotipo y se lee «ink-ISLE») es un juego de
 |---|---|
 | Nombre | Inkisle, decidido el 2026-10-29. Aún no se han hecho las comprobaciones de marca registrada. |
 | Plataformas | Se planea empezar por iOS, con Android desarrollándose en paralelo. Sin fecha. |
-| Precio | Sin decidir. El plan actual es: los primeros mares son gratis y el resto se desbloquea con una única compra, sin anuncios, sin energía, sin cajas de botín. |
+| Precio | Aún no se ha anunciado. Las compras dentro de la app todavía no están activas. El plan actual: todos los niveles son gratis; Ink es un objeto de ayuda opcional y consumible para un nivel; hay una forma de apoyar el juego sin ninguna ventaja en la partida; sin anuncios, sin energía, sin cajas de botín. |
 | Historia | Ninguna, a propósito. El atractivo está en el placer de conquistar islas y en querer llegar al siguiente mar. |
 | Juego en línea | Más adelante, si los jugadores lo quieren. El motor está construido de modo que se pueda añadir. |
 

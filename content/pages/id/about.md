@@ -18,7 +18,7 @@ Inkisle (di logo ditulis InkIsle, dibaca "ink-AIL") adalah game strategi tentang
 |---|---|
 | Nama | Inkisle, diputuskan pada 2026-10-29. Pemeriksaan merek dagang belum dilakukan. |
 | Platform | Direncanakan iOS lebih dulu, dengan Android dikembangkan bersamaan. Belum ada tanggal. |
-| Harga | Belum diputuskan. Rencana saat ini: laut-laut pertama gratis, sisanya dibuka dengan satu kali pembelian, tanpa iklan, tanpa energi, tanpa loot box. |
+| Harga | Belum diumumkan. Pembelian dalam aplikasi belum aktif. Rencana saat ini: semua level gratis; Ink adalah item bantuan opsional sekali pakai untuk sebuah level; dukungan tersedia tanpa keuntungan apa pun dalam permainan; tanpa iklan, tanpa energi, tanpa loot box. |
 | Cerita | Sengaja tidak ada. Daya tariknya adalah serunya merebut pulau dan keinginan menuju laut berikutnya. |
 | Bermain online | Nanti, kalau pemain menginginkannya. Mesin game dibuat agar fitur ini bisa ditambahkan. |
 
