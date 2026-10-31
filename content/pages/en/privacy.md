@@ -19,7 +19,7 @@ In short: the Site has no accounts, no sign-up, no comments and no advertising, 
 The App is not released. The design intent, which the final App Store privacy statement will confirm or correct, is:
 
 - The game works offline and needs no account.
-- Progress (stars, settings) is stored on your device only.
+- Progress (stars, settings) is saved on your device and synced through your own iCloud, so you can continue on other devices that use the same Apple ID. It is not sent to our servers.
 - We do not plan to include advertising or third-party tracking.
 
 If this changes, this section will be updated before release and the store privacy details will match it. Until then, treat it as a plan, not a promise about a shipped product.

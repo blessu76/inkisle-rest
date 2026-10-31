@@ -20,7 +20,7 @@ En bref : le Site n'a ni comptes, ni inscription, ni commentaires, ni publicité
 L'Application n'est pas sortie. L'intention de conception, que la déclaration de confidentialité finale de l'App Store confirmera ou corrigera, est la suivante :
 
 - Le jeu fonctionne hors ligne et ne nécessite aucun compte.
-- La progression (étoiles, réglages) est stockée uniquement sur votre appareil.
+- La progression (étoiles, réglages) est enregistrée sur votre appareil et synchronisée via iCloud pour que vous puissiez continuer sur d'autres appareils utilisant le même compte Apple. Elle n'est pas envoyée à nos serveurs.
 - Nous ne prévoyons pas d'inclure de publicité ni de suivi par des tiers.
 
 Si cela change, cette section sera mise à jour avant la sortie et les informations de confidentialité de la boutique y correspondront. D'ici là, considérez-la comme un projet, et non comme une promesse sur un produit déjà publié.

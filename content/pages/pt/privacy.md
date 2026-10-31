@@ -20,7 +20,7 @@ Em resumo: o Site não tem contas, cadastro, comentários nem publicidade, e nã
 O App não foi lançado. A intenção de projeto, que a declaração de privacidade final da App Store vai confirmar ou corrigir, é a seguinte:
 
 - O jogo funciona offline e não precisa de conta.
-- O progresso (estrelas, configurações) fica armazenado somente no seu dispositivo.
+- O progresso (estrelas, configurações) é salvo no seu dispositivo e sincronizado pelo iCloud para que você continue em outros dispositivos com a mesma conta Apple. Ele não é enviado aos nossos servidores.
 - Não pretendemos incluir publicidade nem rastreamento de terceiros.
 
 Se isso mudar, esta seção será atualizada antes do lançamento e as informações de privacidade da loja corresponderão a ela. Até lá, encare-a como um plano, não como uma promessa sobre um produto já lançado.

@@ -20,7 +20,7 @@ Kurz gesagt: Die Website hat keine Konten, keine Registrierung, keine Kommentare
 Die App ist nicht veröffentlicht. Die Planung, die die endgültige Datenschutzangabe im App Store bestätigen oder korrigieren wird, sieht so aus:
 
 - Das Spiel funktioniert offline und braucht kein Konto.
-- Fortschritt (Sterne, Einstellungen) wird nur auf deinem Gerät gespeichert.
+- Der Fortschritt (Sterne, Einstellungen) wird auf deinem Gerät gespeichert und über iCloud synchronisiert, damit du auf anderen Geräten mit derselben Apple-ID weiterspielen kannst. Er wird nicht an unsere Server gesendet.
 - Wir planen keine Werbung und kein Tracking durch Dritte.
 
 Ändert sich das, wird dieser Abschnitt vor der Veröffentlichung aktualisiert, und die Datenschutzangaben im Store stimmen dann damit überein. Bis dahin ist er als Plan zu verstehen, nicht als Zusage für ein ausgeliefertes Produkt.

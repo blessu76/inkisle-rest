@@ -20,7 +20,7 @@ En resumen: el Sitio no tiene cuentas, ni registro, ni comentarios, ni publicida
 La Aplicación no está lanzada. La intención de diseño, que la declaración de privacidad final de la App Store confirmará o corregirá, es esta:
 
 - El juego funciona sin conexión y no necesita cuenta.
-- El progreso (estrellas, ajustes) se guarda solo en tu dispositivo.
+- El progreso (estrellas, ajustes) se guarda en tu dispositivo y se sincroniza mediante iCloud para que puedas continuar en otros dispositivos con la misma cuenta de Apple. No se envía a nuestros servidores.
 - No prevemos incluir publicidad ni rastreo de terceros.
 
 Si esto cambia, esta sección se actualizará antes del lanzamiento y los datos de privacidad de la tienda coincidirán con ella. Hasta entonces, considérala un plan, no una promesa sobre un producto ya publicado.

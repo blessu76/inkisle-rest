@@ -20,7 +20,7 @@ Singkatnya: Situs ini tidak memiliki akun, pendaftaran, komentar, maupun iklan, 
 Aplikasi belum dirilis. Rencana desainnya, yang akan dikonfirmasi atau dikoreksi oleh pernyataan privasi final di App Store, adalah:
 
 - Game berjalan offline dan tidak membutuhkan akun.
-- Progres (bintang, pengaturan) hanya disimpan di perangkatmu.
+- Progres (bintang, pengaturan) disimpan di perangkatmu dan disinkronkan lewat iCloud agar kamu bisa melanjutkan di perangkat lain dengan akun Apple yang sama. Data itu tidak dikirim ke server kami.
 - Kami tidak berencana menyertakan iklan atau pelacakan pihak ketiga.
 
 Jika ini berubah, bagian ini akan diperbarui sebelum rilis dan detail privasi di toko akan sesuai dengannya. Sampai saat itu, anggaplah ini sebagai rencana, bukan janji tentang produk yang sudah dirilis.

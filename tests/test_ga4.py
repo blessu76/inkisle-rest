@@ -57,6 +57,11 @@ class Ga4(unittest.TestCase):
                 self.assertIsNone(stale.search((REPO / "content" / "pages" / lang / "privacy.md").read_text(encoding="utf-8")))
         self.assertIsNone(stale.search((REPO / "llms.txt").read_text(encoding="utf-8")))
 
+    def test_privacy_mentions_icloud_sync_in_all_12_languages(self):
+        for lang in bs.LANGS:
+            with self.subTest(lang):
+                self.assertIn("iCloud", (REPO / "content" / "pages" / lang / "privacy.md").read_text(encoding="utf-8"))
+
     def test_llms_txt_says_so(self):
         self.assertIn("Google Analytics", (REPO / "llms.txt").read_text(encoding="utf-8"))
 
