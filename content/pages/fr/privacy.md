@@ -5,14 +5,14 @@ translation_of: en
 ---
 Date d'entrée en vigueur : **{{EFFECTIVE}}**. Cette politique couvre le site web inkisle.ipe.rest (le « Site ») et, une fois sortie, l'application mobile Inkisle (l'« Application »). L'exploitant est **{{OPERATOR}}** (« nous »), un développeur indépendant. Contact : {{EMAIL}}.
 
-En bref : le Site n'a ni comptes, ni inscription, ni commentaires, ni publicité, et nous ne vous demandons aucune information personnelle.
+En bref : le Site n'a ni comptes, ni inscription, ni commentaires, ni publicité, et nous ne vous demandons pas d'informations personnelles. Il recueille des statistiques de visite de base via Google Analytics.
 
 ## 1. Le Site
 
 - **Informations que vous nous envoyez.** Si vous nous écrivez, nous recevons votre adresse et votre message, et nous ne les utilisons que pour vous répondre.
 - **Journaux d'hébergement.** Le Site est hébergé sur GitHub Pages. L'hébergeur peut traiter des données techniques de requête, comme votre adresse IP, pour fournir les pages. Nous ne les recevons ni ne les utilisons.
-- **Mesure d'audience et cookies.** À la date de rédaction, le Site n'utilise aucun outil de mesure d'audience et ne dépose aucun cookie. Si cela change, cette politique sera mise à jour avant le changement.
-- **Stockage du navigateur.** Le Site enregistre une petite préférence, votre thème clair ou sombre, dans le stockage local de votre navigateur. Elle reste sur votre appareil et ne nous est jamais envoyée. Vous pouvez l'effacer à tout moment.
+- **Mesure d'audience et cookies.** Nous utilisons Google Analytics 4 pour savoir quelles pages sont lues. Il enregistre les pages vues, la page d'où vous venez, votre type de navigateur et d'appareil, une localisation approximative (pays ou ville) et les clics sur les liens qui quittent notre site (l'adresse du lien uniquement). Il dépose dans votre navigateur des cookies (comme `_ga`, qui peut durer jusqu'à deux ans) pour distinguer les visites. Nous ne demandons ni votre nom ni votre e-mail dans la mesure d'audience, et elle ne nous permet pas de vous identifier. Google traite ces données pour notre compte, ce qui peut inclure des serveurs hors de Corée. Pour vous y opposer, bloquez ou supprimez les cookies dans les réglages de votre navigateur, ou utilisez le [module de désactivation de Google Analytics](https://tools.google.com/dlpage/gaoptout). Le Site fonctionne de la même façon sans eux.
+- **Stockage du navigateur.** Le Site enregistre deux petites préférences, votre thème clair ou sombre (`ink-theme`) et la langue que vous choisissez (`ink-lang`), dans le stockage local de votre navigateur. Elles restent sur votre appareil et ne nous sont jamais envoyées. Vous pouvez les effacer à tout moment.
 - **Liens.** Le Site contient des liens vers ipe.rest et d'autres sites. Leurs pratiques en matière de confidentialité leur sont propres.
 
 ## 2. L'Application (en développement)

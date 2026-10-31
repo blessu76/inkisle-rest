@@ -5,14 +5,14 @@ translation_of: en
 ---
 Fecha de entrada en vigor: **{{EFFECTIVE}}**. Esta política cubre el sitio web inkisle.ipe.rest (el «Sitio») y, cuando se lance, la aplicación móvil Inkisle (la «Aplicación»). El responsable es **{{OPERATOR}}** («nosotros»), un desarrollador individual. Contacto: {{EMAIL}}.
 
-En resumen: el Sitio no tiene cuentas, ni registro, ni comentarios, ni publicidad, y no te pedimos información personal.
+En resumen: el Sitio no tiene cuentas, ni registro, ni comentarios, ni publicidad, y no te pedimos información personal. Recoge estadísticas básicas de visitas mediante Google Analytics.
 
 ## 1. El Sitio
 
 - **Información que nos envías.** Si nos escribes un correo, recibimos tu dirección y tu mensaje, y los usamos únicamente para responderte.
 - **Registros del alojamiento.** El Sitio está alojado en GitHub Pages. El proveedor puede procesar datos técnicos de las solicitudes, como tu dirección IP, para entregar las páginas. Nosotros no los recibimos ni los usamos.
-- **Analítica y cookies.** En el momento de escribir esto, el Sitio no usa analítica ni instala cookies. Si eso cambia, esta política se actualizará antes de que ocurra.
-- **Almacenamiento del navegador.** El Sitio guarda una pequeña preferencia, tu tema claro u oscuro, en el almacenamiento local de tu navegador. Se queda en tu dispositivo y nunca se nos envía. Puedes borrarla cuando quieras.
+- **Analítica y cookies.** Usamos Google Analytics 4 para ver qué páginas se leen. Registra las visitas a páginas, la página de la que vienes, tu tipo de navegador y de dispositivo, una ubicación aproximada (país o ciudad) y los clics en enlaces que salen de nuestro sitio (solo la dirección del enlace). Establece cookies en tu navegador (como `_ga`, que puede durar hasta dos años) para distinguir las visitas. En la analítica no te pedimos tu nombre ni tu correo, y no podemos identificarte con ella. Google procesa estos datos en nuestro nombre, lo que puede incluir servidores fuera de Corea. Para no participar, bloquea o elimina las cookies en los ajustes de tu navegador o usa el [complemento de inhabilitación de Google Analytics](https://tools.google.com/dlpage/gaoptout). El Sitio funciona igual sin ellas.
+- **Almacenamiento del navegador.** El Sitio guarda dos pequeñas preferencias, tu tema claro u oscuro (`ink-theme`) y el idioma que eliges (`ink-lang`), en el almacenamiento local de tu navegador. Se quedan en tu dispositivo y nunca se nos envían. Puedes borrarlas cuando quieras.
 - **Enlaces.** El Sitio enlaza a ipe.rest y a otros sitios. Sus prácticas de privacidad son responsabilidad de cada uno de ellos.
 
 ## 2. La Aplicación (en desarrollo)

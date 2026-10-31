@@ -5,14 +5,14 @@ translation_of: en
 ---
 Gültig ab: **{{EFFECTIVE}}**. Diese Erklärung gilt für die Website inkisle.ipe.rest (die „Website“) und, sobald sie veröffentlicht ist, für die mobile App Inkisle (die „App“). Betreiber ist **{{OPERATOR}}** („wir“), ein einzelner Entwickler. Kontakt: {{EMAIL}}.
 
-Kurz gesagt: Die Website hat keine Konten, keine Registrierung, keine Kommentare und keine Werbung, und wir bitten dich nicht um persönliche Daten.
+Kurz gesagt: Die Website hat keine Konten, keine Registrierung, keine Kommentare und keine Werbung, und wir verlangen keine persönlichen Daten von dir. Sie erhebt über Google Analytics grundlegende Besuchsstatistiken.
 
 ## 1. Die Website
 
 - **Informationen, die du uns sendest.** Wenn du uns eine E-Mail schreibst, erhalten wir deine Adresse und deine Nachricht und verwenden sie nur, um dir zu antworten.
 - **Hosting-Protokolle.** Die Website wird auf GitHub Pages gehostet. Der Hoster kann technische Anfragedaten, etwa deine IP-Adresse, verarbeiten, um die Seiten auszuliefern. Wir erhalten und nutzen diese Daten nicht.
-- **Analyse und Cookies.** Zum Zeitpunkt der Erstellung nutzt die Website keine Analyse und setzt keine Cookies. Sollte sich das ändern, wird diese Erklärung vorher aktualisiert.
-- **Browser-Speicher.** Die Website speichert eine kleine Einstellung, nämlich dein helles oder dunkles Design, im lokalen Speicher deines Browsers. Sie bleibt auf deinem Gerät und wird nie an uns gesendet. Du kannst sie jederzeit löschen.
+- **Analyse und Cookies.** Wir nutzen Google Analytics 4, um zu sehen, welche Seiten gelesen werden. Erfasst werden Seitenaufrufe, die Seite, von der du kommst, dein Browser- und Gerätetyp, ein ungefährer Standort (Land oder Stadt) und Klicks auf Links, die unsere Website verlassen (nur die Linkadresse). Es setzt Cookies in deinem Browser (etwa `_ga`, das bis zu zwei Jahre bestehen kann), um Besuche zu unterscheiden. Wir fragen in der Analyse weder nach deinem Namen noch nach deiner E-Mail-Adresse und können dich anhand der Daten nicht identifizieren. Google verarbeitet diese Daten in unserem Auftrag, was Server außerhalb Koreas einschließen kann. Zum Widerspruch blockiere oder lösche Cookies in den Browsereinstellungen oder nutze das [Browser-Add-on zur Deaktivierung von Google Analytics](https://tools.google.com/dlpage/gaoptout). Die Website funktioniert ohne sie genauso.
+- **Browser-Speicher.** Die Website speichert zwei kleine Einstellungen, nämlich dein helles oder dunkles Design (`ink-theme`) und die gewählte Sprache (`ink-lang`), im lokalen Speicher deines Browsers. Sie bleiben auf deinem Gerät und werden nie an uns gesendet. Du kannst sie jederzeit löschen.
 - **Links.** Die Website verlinkt auf ipe.rest und andere Seiten. Für deren Datenschutzpraxis sind sie selbst verantwortlich.
 
 ## 2. Die App (in Entwicklung)

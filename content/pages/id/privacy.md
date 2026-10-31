@@ -5,14 +5,14 @@ translation_of: en
 ---
 Tanggal berlaku: **{{EFFECTIVE}}**. Kebijakan ini mencakup situs web inkisle.ipe.rest ("Situs") dan, setelah dirilis, aplikasi seluler Inkisle ("Aplikasi"). Operatornya adalah **{{OPERATOR}}** ("kami"), seorang pengembang perorangan. Kontak: {{EMAIL}}.
 
-Singkatnya: Situs ini tidak memiliki akun, pendaftaran, komentar, maupun iklan, dan kami tidak meminta informasi pribadi darimu.
+Singkatnya: Situs ini tidak memiliki akun, pendaftaran, komentar, maupun iklan, dan kami tidak meminta informasi pribadi darimu. Situs ini mengumpulkan statistik kunjungan dasar melalui Google Analytics.
 
 ## 1. Situs
 
 - **Informasi yang kamu kirim kepada kami.** Jika kamu mengirim email, kami menerima alamat dan pesanmu, dan hanya memakainya untuk membalas.
 - **Log hosting.** Situs ini di-host di GitHub Pages. Penyedia hosting dapat memproses data teknis permintaan, seperti alamat IP-mu, untuk menyajikan halaman. Kami tidak menerima ataupun menggunakannya.
-- **Analitik dan cookie.** Saat ini Situs tidak memakai analitik dan tidak memasang cookie. Jika itu berubah, kebijakan ini akan diperbarui sebelum perubahan terjadi.
-- **Penyimpanan browser.** Situs menyimpan satu preferensi kecil, yaitu tema terang atau gelapmu, di penyimpanan lokal browser. Data itu tetap di perangkatmu dan tidak pernah dikirim kepada kami. Kamu bisa menghapusnya kapan saja.
+- **Analitik dan cookie.** Kami memakai Google Analytics 4 untuk melihat halaman mana yang dibaca. Layanan ini mencatat tampilan halaman, halaman asal kamu datang, jenis browser dan perangkat, perkiraan lokasi (negara atau kota), dan klik pada tautan yang keluar dari situs kami (hanya alamat tautannya). Layanan ini memasang cookie di browser kamu (seperti `_ga`, yang bisa bertahan hingga dua tahun) untuk membedakan kunjungan. Kami tidak meminta nama atau email kamu dalam analitik, dan kami tidak dapat mengenali kamu dari data itu. Google memproses data ini atas nama kami, yang bisa mencakup server di luar Korea. Untuk menolak, blokir atau hapus cookie di pengaturan browser, atau gunakan [pengaya penolakan Google Analytics](https://tools.google.com/dlpage/gaoptout). Situs tetap berfungsi sama tanpa cookie tersebut.
+- **Penyimpanan browser.** Situs menyimpan dua preferensi kecil, yaitu tema terang atau gelap (`ink-theme`) dan bahasa yang kamu pilih (`ink-lang`), di penyimpanan lokal browser kamu. Keduanya tetap ada di perangkatmu dan tidak pernah dikirim kepada kami. Kamu bisa menghapusnya kapan saja.
 - **Tautan.** Situs menautkan ke ipe.rest dan situs lain. Praktik privasi mereka menjadi tanggung jawab mereka sendiri.
 
 ## 2. Aplikasi (dalam pengembangan)

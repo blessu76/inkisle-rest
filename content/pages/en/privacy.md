@@ -4,14 +4,14 @@ description: How inkisle.ipe.rest handles information, and the privacy position 
 ---
 Effective date: **{{EFFECTIVE}}**. This policy covers the website inkisle.ipe.rest (the "Site") and, once it is released, the Inkisle mobile app (the "App"). The operator is **{{OPERATOR}}** ("we"), an individual developer. Contact: {{EMAIL}}.
 
-In short: the Site has no accounts, no sign-up, no comments and no advertising, and we do not ask you for personal information.
+In short: the Site has no accounts, no sign-up, no comments and no advertising, and we do not ask you for personal information. It collects basic visit statistics through Google Analytics.
 
 ## 1. The Site
 
 - **Information you send us.** If you email us we receive your address and your message, and use them only to reply.
 - **Hosting logs.** The Site is hosted on GitHub Pages. The host may process technical request data, such as your IP address, to deliver the pages. We do not receive or use it.
-- **Analytics and cookies.** At the time of writing the Site uses no analytics and sets no cookies. If that changes, this policy will be updated before it does.
-- **Browser storage.** The Site saves one small preference, your light or dark theme, in your browser's local storage. It stays on your device and is never sent to us. You can clear it at any time.
+- **Analytics and cookies.** We use Google Analytics 4 to see which pages are read. It records page views, the page you came from, your browser and device type, an approximate location (country or city) and clicks on links that leave our site (the link address only). It sets cookies in your browser (such as `_ga`, which can last up to two years) to tell visits apart. We do not ask for your name or email in analytics, and we cannot identify you from it. Google processes this data on our behalf, which can include servers outside Korea. To opt out, block or delete cookies in your browser settings, or use [Google's Analytics opt-out add-on](https://tools.google.com/dlpage/gaoptout). The Site works the same without them.
+- **Browser storage.** The Site saves two small preferences, your light or dark theme (`ink-theme`) and the language you pick (`ink-lang`), in your browser's local storage. They stay on your device and are never sent to us. You can clear them at any time.
 - **Links.** The Site links to ipe.rest and other sites. Their privacy practices are their own.
 
 ## 2. The App (in development)

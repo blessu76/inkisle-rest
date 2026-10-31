@@ -2,7 +2,7 @@
 
 > Inkisle is an offline, single-player island-conquest strategy game for phones, now in development. Send fleets between islands and tint the sea your color. Follow the making, one post a day.
 
-Inkisle is a single-player, offline island-conquest strategy game by ipe() (https://ipe.rest/). It is in development and has NOT been released: no store page, release date or final price exists yet. This site is the game's home and its production journal (one post per day).
+Inkisle is a single-player, offline island-conquest strategy game by ipe() (https://ipe.rest/). It is in development and has NOT been released: no store page, release date or final price exists yet. This site is the game's home and its production journal (one post per day). It has no accounts or ads and collects only basic visit statistics through Google Analytics.
 
 ## Key facts
 
