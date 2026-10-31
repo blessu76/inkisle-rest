@@ -1,6 +1,103 @@
 {
  "releases": [
   {
+   "id": "1.0.0-14",
+   "version": "1.0.0",
+   "build": "14",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 14: First Light, and the End of Volume One",
+    "ko": "빌드 14: 첫 등불, 1권의 끝",
+    "ja": "ビルド14:最初の灯、第1巻の終わり",
+    "zh": "构建 14:第一盏灯,第一卷的终章",
+    "es": "Compilación 14: Primera Luz y el final del volumen uno",
+    "fr": "Version 14 : Première lueur, et la fin du premier volume",
+    "de": "Build 14: Erstes Licht und das Ende von Band eins",
+    "pt": "Build 14: Primeira Luz e o fim do volume um",
+    "ru": "Сборка 14: «Первый огонь» и конец первого тома",
+    "ar": "الإصدار 14: أول ضوء ونهاية المجلد الأول",
+    "hi": "बिल्ड 14: पहली लौ और पहले खंड का अंत",
+    "id": "Build 14: Cahaya Pertama dan akhir jilid satu"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 13, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~13의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜13の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 13 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 13, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 13, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 13 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 13, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–13 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 13 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 13 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 13, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 10, First Light: 8 new stages. With them, Volume One is complete: 10 seas, 80 stages.",
+     "The ending of Volume One: the first time you win the last stage, the colour of the sea spreads across the chart and the lighthouse is lit. You can watch it again from the Sea 10 chart.",
+     "Numbers on light-coloured islands are easier to read."
+    ],
+    "ko": [
+     "10막 「첫 등불」: 새 판 8개. 이로써 1권이 완성됩니다. 10개의 바다, 80판입니다.",
+     "1권의 엔딩: 마지막 판을 처음 이기면 해도 위로 바다색이 번지고 등대가 켜집니다. 10해역 해도에서 다시 볼 수 있습니다.",
+     "밝은 섬 위의 숫자가 더 잘 읽힙니다."
+    ],
+    "ja": [
+     "第10海域「最初の灯」:新しいステージ8つ。これで第1巻が完成します。10の海域、80ステージです。",
+     "第1巻のエンディング:最後のステージを初めて勝つと、海図の上に海の色が広がり、灯台に火がともります。第10海域の海図からもう一度見られます。",
+     "明るい色の島の上の数字が、読みやすくなりました。"
+    ],
+    "zh": [
+     "第 10 幕「第一盏灯」:新增 8 个关卡。第一卷就此完整:10 片海域,80 个关卡。",
+     "第一卷的结局:首次赢下最后一关时,海的颜色会在海图上晕开,灯塔随之亮起。之后可以在第 10 幕的海图上再次观看。",
+     "浅色岛屿上的数字更容易看清了。"
+    ],
+    "es": [
+     "Mar 10, Primera Luz: 8 niveles nuevos. Con ellos queda completo el volumen uno: 10 mares y 80 niveles.",
+     "El final del volumen uno: la primera vez que ganas el último nivel, el color del mar se extiende sobre la carta y el faro se enciende. Puedes volver a verlo desde la carta del Mar 10.",
+     "Los números sobre las islas de colores claros se leen mejor."
+    ],
+    "fr": [
+     "Mer 10, Première lueur : 8 nouveaux niveaux. Le premier volume est ainsi complet : 10 mers, 80 niveaux.",
+     "La fin du premier volume : la première fois que vous gagnez le dernier niveau, la couleur de la mer se répand sur la carte et le phare s'allume. Vous pouvez le revoir depuis la carte de la mer 10.",
+     "Les chiffres sur les îles de teinte claire se lisent mieux."
+    ],
+    "de": [
+     "Meer 10, Erstes Licht: 8 neue Stufen. Damit ist Band eins vollständig: 10 Meere, 80 Stufen.",
+     "Das Ende von Band eins: Gewinnst du die letzte Stufe zum ersten Mal, breitet sich die Farbe des Meeres über die Seekarte aus, und der Leuchtturm wird entzündet. Du kannst es dir auf der Karte von Meer 10 erneut ansehen.",
+     "Zahlen auf hellen Inseln sind besser lesbar."
+    ],
+    "pt": [
+     "Mar 10, Primeira Luz: 8 fases novas. Com elas, o volume um está completo: 10 mares, 80 fases.",
+     "O final do volume um: na primeira vez que você vence a última fase, a cor do mar se espalha pela carta e o farol é aceso. Dá para rever a cena na carta do Mar 10.",
+     "Os números sobre as ilhas de cores claras ficaram mais fáceis de ler."
+    ],
+    "ru": [
+     "Море 10, «Первый огонь»: 8 новых уровней. Первый том завершён: 10 морей, 80 уровней.",
+     "Финал первого тома: когда вы впервые проходите последний уровень, цвет моря растекается по карте и зажигается маяк. Сцену можно пересмотреть на карте Моря 10.",
+     "Цифры на светлых островах стали читаться лучше."
+    ],
+    "ar": [
+     "البحر 10، أول ضوء: ٨ مراحل جديدة. بها يكتمل المجلد الأول: ١٠ بحار و٨٠ مرحلة.",
+     "خاتمة المجلد الأول: عند فوزك بالمرحلة الأخيرة للمرة الأولى، ينتشر لون البحر فوق الخريطة وتُضاء المنارة. يمكنك مشاهدة المشهد مجددًا من خريطة البحر 10.",
+     "صارت الأرقام على الجزر الفاتحة أسهل قراءة."
+    ],
+    "hi": [
+     "सागर 10, पहली लौ: 8 नए स्तर। इनके साथ पहला खंड पूरा होता है: 10 सागर, 80 स्तर।",
+     "पहले खंड का अंत: आख़िरी स्तर पहली बार जीतने पर समुद्र का रंग नक्शे पर फैल जाता है और प्रकाशस्तंभ जल उठता है। इसे सागर 10 के नक्शे से फिर देखा जा सकता है।",
+     "हल्के रंग के द्वीपों पर संख्याएँ अब ज़्यादा साफ़ पढ़ी जाती हैं।"
+    ],
+    "id": [
+     "Laut 10, Cahaya Pertama: 8 tahap baru. Dengan ini jilid satu lengkap: 10 laut, 80 tahap.",
+     "Akhir jilid satu: saat pertama kali memenangkan tahap terakhir, warna laut menyebar di atas peta dan mercusuar menyala. Adegan ini bisa ditonton lagi dari peta Laut 10.",
+     "Angka di atas pulau berwarna terang kini lebih mudah dibaca."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-13",
    "version": "1.0.0",
    "build": "13",
