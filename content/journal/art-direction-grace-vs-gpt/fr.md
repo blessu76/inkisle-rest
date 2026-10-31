@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, direction artistique, vectoriel minimaliste, maquette, GPT, interface de jeu, art de jeu mobile
 image_alt: Quatre maquettes à la taille d'un téléphone côte à côte : deux de la direction vectorielle minimaliste, un diorama 3D low poly et une maquette externe de GPT.
+published: 2026-10-31T19:09+09:00
 ---
 La consigne pour l'apparence tenait en une phrase : un style **vectoriel minimaliste haut de gamme**, « des graphismes un peu plus soignés », sur un écran de téléphone tenu à la verticale. Un rendu plat et lisible convient à un jeu dont tout l'enjeu est de lire des chiffres sur des îles.
 

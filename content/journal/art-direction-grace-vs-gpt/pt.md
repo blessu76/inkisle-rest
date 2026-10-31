@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, direção de arte, vetorial minimalista, mockup, GPT, interface de jogo, arte de jogos para celular
 image_alt: Quatro mockups do tamanho de um celular lado a lado: dois da direção vetorial minimalista, um diorama 3D low poly e um mockup externo do GPT.
+published: 2026-10-31T19:09+09:00
 ---
 O briefing do visual era uma única frase: um estilo **vetorial minimalista premium**, "gráficos um pouco mais requintados", numa tela de celular segurada na vertical. Um visual plano e legível combina com um jogo cujo ponto central são os números nas ilhas.
 

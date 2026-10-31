@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Art Direction, Minimal-Vektor, Mockup, GPT, Spiel-UI, Mobile-Game-Art
 image_alt: Vier handygroße Mockups nebeneinander: zwei in der Minimal-Vektor-Richtung, ein Low-Poly-3D-Diorama und ein externes Mockup von GPT.
+published: 2026-10-31T19:09+09:00
 ---
 Die Vorgabe für den Look bestand aus einem Satz: ein **hochwertiger, minimaler Vektorstil**, „etwas edlere Grafik", auf einem hochkant gehaltenen Handybildschirm. Ein flacher, gut lesbarer Look passt zu einem Spiel, in dem es im Kern um Zahlen auf Inseln geht.
 

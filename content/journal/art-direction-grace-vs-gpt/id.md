@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, art direction, vektor minimalis, mockup, GPT, UI game, seni game mobile
 image_alt: Empat mockup berukuran ponsel berdampingan: dua dengan arah vektor minimalis, satu diorama 3D low poly, dan satu mockup dari GPT di luar tim.
+published: 2026-10-31T19:09+09:00
 ---
 Brief untuk tampilannya hanya satu kalimat: gaya **vektor minimalis premium**, "grafis sedikit lebih berkelas", di layar ponsel yang dipegang tegak. Tampilan datar yang mudah dibaca cocok untuk game yang intinya adalah angka di atas pulau.
 

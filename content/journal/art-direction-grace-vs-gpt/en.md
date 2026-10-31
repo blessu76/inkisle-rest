@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, art direction, minimal vector, mockup, GPT, game UI, mobile game art
 image_alt: Four phone-sized mockups side by side: two of the minimal vector direction, one low 3D diorama, one outside GPT mockup.
+published: 2026-10-31T19:09+09:00
 ---
 The brief for the look was one sentence: a **premium minimal vector** style, "graphics a bit more upscale", on a phone screen held upright. A flat, readable look suits a game whose whole point is numbers on islands.
 
