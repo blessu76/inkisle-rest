@@ -1,6 +1,115 @@
 {
  "releases": [
   {
+   "id": "1.0.0-18",
+   "version": "1.0.0",
+   "build": "18",
+   "status": "testflight",
+   "date": "2026-11-01",
+   "title": {
+    "en": "Build 18: Ink at the Harbor",
+    "ko": "빌드 18: 항구에서 Ink 구매",
+    "ja": "ビルド18:港でInkを購入",
+    "zh": "构建 18:在港口购买 Ink",
+    "es": "Compilación 18: Ink en el puerto",
+    "fr": "Version 18 : de l'Ink au port",
+    "de": "Build 18: Ink im Hafen",
+    "pt": "Build 18: Ink no porto",
+    "ru": "Сборка 18: Ink в гавани",
+    "ar": "الإصدار 18: Ink من الميناء",
+    "hi": "बिल्ड 18: बंदरगाह पर Ink",
+    "id": "Build 18: Ink di pelabuhan"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on November 1, 2026. It has the contents of builds 1 to 17, plus the changes below.",
+    "ko": "2026년 11월 1일 TestFlight 에 올라간 빌드입니다. 빌드 1~17의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-11-01 に TestFlight にアップロードされたビルドです。ビルド1〜17の内容に、以下の変更が加わりました。",
+    "zh": "2026-11-01 上传到 TestFlight 的构建。它包含构建 1 至 17 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-11-01. Incluye el contenido de las compilaciones 1 a 17, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-11-01. Elle reprend le contenu des versions 1 à 17, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-11-01 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 17 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-11-01. Ele traz o conteúdo dos builds 1 a 17, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-11-01. В ней всё из сборок 1–17 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-11-01. يضم محتوى الإصدارات من 1 إلى 17 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-11-01 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 17 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-11-01. Isinya mencakup build 1 sampai 17, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "During a stage you can now buy Ink right at the Harbor.",
+     "Use the lantern and the water channel straight from the Harbor cards.",
+     "Anchor and sea-mist markers are now shown, and sea mist costs 2 Ink.",
+     "The payment lock now lasts at most 60 seconds, the loading text is tidied up, and the Ink screen has a new “Refill Ink” heading."
+    ],
+    "ko": [
+     "전투 중에도 항구에서 Ink 를 바로 구매할 수 있습니다.",
+     "등불과 물길을 항구 카드에서 바로 사용할 수 있습니다.",
+     "닻과 물안개 표식이 표시되고, 물안개는 Ink 2 가 듭니다.",
+     "결제 잠금은 최대 60초까지만 유지되고, 로딩 문구가 정리되었으며, 「Ink 채우기」 머리글이 생겼습니다."
+    ],
+    "ja": [
+     "ステージ中も、港でInkをその場で購入できます。",
+     "ランタンと水路を、港のカードからそのまま使えます。",
+     "錨と海霧の目印が表示されるようになり、海霧はInkを2使います。",
+     "決済のロックは最長60秒までになり、読み込み中の文言を整え、「Inkを補充」の見出しを追加しました。"
+    ],
+    "zh": [
+     "关卡进行中也可以直接在港口购买 Ink。",
+     "可以直接在港口卡片上使用灯笼和水道。",
+     "现在会显示锚和海雾的标记,海雾需要 2 点 Ink。",
+     "支付锁定最长 60 秒,加载提示文字已整理,并新增「补充 Ink」标题。"
+    ],
+    "es": [
+     "Durante un nivel ahora puedes comprar Ink directamente en el puerto.",
+     "Usa el farol y el canal de agua desde las tarjetas del puerto.",
+     "Ahora se muestran las marcas de ancla y de bruma marina; la bruma marina cuesta 2 de Ink.",
+     "El bloqueo de pago dura como máximo 60 segundos, se ordenó el texto de carga y la pantalla de Ink tiene un nuevo encabezado «Recargar Ink»."
+    ],
+    "fr": [
+     "Pendant un niveau, vous pouvez désormais acheter de l'Ink directement au port.",
+     "Utilisez la lanterne et le chenal depuis les cartes du port.",
+     "Les repères d'ancre et de brume marine s'affichent maintenant ; la brume marine coûte 2 d'Ink.",
+     "Le verrouillage du paiement dure au plus 60 secondes, le texte de chargement a été remis en ordre et l'écran d'Ink a un nouvel intitulé « Recharger l'Ink »."
+    ],
+    "de": [
+     "Während eines Levels kannst du Ink jetzt direkt im Hafen kaufen.",
+     "Laterne und Wasserweg lassen sich direkt über die Hafenkarten nutzen.",
+     "Anker- und Seenebel-Markierungen werden jetzt angezeigt; Seenebel kostet 2 Ink.",
+     "Die Zahlungssperre dauert höchstens 60 Sekunden, der Ladetext wurde aufgeräumt und der Ink-Bildschirm hat die neue Überschrift „Ink auffüllen“."
+    ],
+    "pt": [
+     "Durante uma fase, agora você pode comprar Ink direto no porto.",
+     "Use a lanterna e o canal de água direto pelas cartas do porto.",
+     "As marcas de âncora e de névoa marinha agora aparecem; a névoa marinha custa 2 de Ink.",
+     "O bloqueio de pagamento dura no máximo 60 segundos, o texto de carregamento foi ajustado e a tela de Ink ganhou o título «Recarregar Ink»."
+    ],
+    "ru": [
+     "Во время уровня Ink теперь можно купить прямо в гавани.",
+     "Фонарь и водный путь можно использовать прямо с карточек гавани.",
+     "Теперь показываются метки якоря и морского тумана; морской туман стоит 2 Ink.",
+     "Блокировка оплаты длится не более 60 секунд, текст загрузки приведён в порядок, а на экране Ink появился заголовок «Пополнить Ink»."
+    ],
+    "ar": [
+     "أثناء المرحلة صار بإمكانك شراء Ink مباشرة من الميناء.",
+     "استخدم الفانوس والمجرى المائي مباشرة من بطاقات الميناء.",
+     "تظهر الآن علامات المرساة وضباب البحر، وضباب البحر يكلّف 2 من Ink.",
+     "يدوم قفل الدفع 60 ثانية كحدٍّ أقصى، ورُتّب نص التحميل، وصار لشاشة Ink عنوان جديد «تعبئة Ink»."
+    ],
+    "hi": [
+     "स्तर के दौरान अब आप बंदरगाह पर ही सीधे Ink खरीद सकते हैं।",
+     "लालटेन और जलमार्ग को बंदरगाह के कार्ड से सीधे इस्तेमाल करें।",
+     "अब लंगर और समुद्री कोहरे के निशान दिखते हैं, और समुद्री कोहरे में 2 Ink लगता है।",
+     "भुगतान का लॉक अधिकतम 60 सेकंड तक रहता है, लोडिंग का टेक्स्ट सुधारा गया है, और Ink स्क्रीन पर नया शीर्षक «Ink भरें» जुड़ा है।"
+    ],
+    "id": [
+     "Saat bermain, kini kamu bisa membeli Ink langsung di pelabuhan.",
+     "Pakai lentera dan jalur air langsung dari kartu pelabuhan.",
+     "Penanda jangkar dan kabut laut kini ditampilkan, dan kabut laut memakai 2 Ink.",
+     "Kunci pembayaran kini maksimal 60 detik, teks pemuatan dirapikan, dan layar Ink punya judul baru «Isi Ink»."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-17",
    "version": "1.0.0",
    "build": "17",
