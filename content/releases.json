@@ -1,6 +1,115 @@
 {
  "releases": [
   {
+   "id": "1.0.0-12",
+   "version": "1.0.0",
+   "build": "12",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 12: Current Way and the Coral Reef",
+    "ko": "빌드 12: 물살 해로, 산호초",
+    "ja": "ビルド12:潮流の海路、サンゴ礁",
+    "zh": "构建 12:水流航道与珊瑚礁",
+    "es": "Compilación 12: la Ruta de las Corrientes y el Arrecife de Coral",
+    "fr": "Version 12 : la Voie des courants et le récif de corail",
+    "de": "Build 12: der Strömungsweg und das Korallenriff",
+    "pt": "Build 12: o Caminho das Correntes e o Recife de Coral",
+    "ru": "Сборка 12: Путь течений и Коралловый риф",
+    "ar": "الإصدار 12: ممر التيارات والشعاب المرجانية",
+    "hi": "बिल्ड 12: धारा मार्ग और प्रवाल भित्ति",
+    "id": "Build 12: Jalur Arus dan Terumbu Karang"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 11, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~11의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜11の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 11 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 11, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 11, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 11 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 11, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–11 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 11 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 11 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 11, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 4, Current Way: 8 new stages. Currents push your fleets along or hold them back, and they reverse every 30 seconds. Ships leaving a harbor island travel 1.5 times faster. Allied fleets appear.",
+     "Sea 5, the Coral Reef: 8 new stages. A coral island you hold grows faster every 20 seconds, and starts over if it is taken. An island left untouched for 8 seconds grows 1.25 times faster, shown as a slow ring of ripples.",
+     "Fleet dots and troop labels no longer cover the numbers on islands. The ends of current bands fade out like spreading ink. Whirlpools get a label, and there is a new HUD for allies.",
+     "Fixed lighthouse information showing through the fog."
+    ],
+    "ko": [
+     "4막 「물살 해로」: 새 판 8개. 물길이 함대를 밀어 주거나 붙잡고, 30초마다 방향이 바뀝니다. 항구 섬에서 떠난 배는 1.5배 빠릅니다. 동맹 함대가 나옵니다.",
+     "5막 「산호초」: 새 판 8개. 지키고 있는 산호섬은 20초마다 더 빨리 자라고, 뺏기면 처음으로 돌아갑니다. 8초 동안 손대지 않은 섬은 1.25배 자라며, 물결 고리가 천천히 퍼져 보입니다.",
+     "함대 점과 병력 라벨이 섬의 숫자를 가리지 않습니다. 물길 띠의 끝이 먹이 번지듯 사라집니다. 소용돌이에 라벨이 붙고, 동맹 HUD 가 생겼습니다.",
+     "안개 속의 등대 정보가 보이던 문제를 고쳤습니다."
+    ],
+    "ja": [
+     "第4海域「潮流の海路」:新しいステージが8つ。潮の流れが艦隊を押してくれたり引き止めたりし、30秒ごとに向きが変わります。港の島を出た船は1.5倍の速さで進みます。同盟の艦隊が登場します。",
+     "第5海域「サンゴ礁」:新しいステージが8つ。守り続けているサンゴの島は20秒ごとに成長が速くなり、奪われると最初に戻ります。8秒間手を触れなかった島は1.25倍で育ち、さざ波の輪がゆっくり広がって見えます。",
+     "艦隊の点や兵力の表示が、島の数字を隠さなくなりました。潮流の帯の端が、墨がにじむように消えます。渦にラベルが付き、同盟用のHUDが加わりました。",
+     "霧の中の灯台の情報が見えてしまう問題を修正しました。"
+    ],
+    "zh": [
+     "第 4 海域“水流航道”:新增 8 个关卡。水流会推着舰队前进,也会拖住它们,每 30 秒反向一次。从港口岛出发的船快 1.5 倍。盟友舰队登场。",
+     "第 5 海域“珊瑚礁”:新增 8 个关卡。你守住的珊瑚岛每 20 秒长得更快,被夺走就从头开始。8 秒内无人触碰的岛屿增长快 1.25 倍,以缓缓扩散的涟漪圈显示。",
+     "舰队圆点和兵力标签不再遮住岛上的数字。水流带的末端像墨晕开一样淡去。漩涡有了标签,并新增了盟友 HUD。",
+     "修复了雾中灯塔信息会被看到的问题。"
+    ],
+    "es": [
+     "Mar 4, la Ruta de las Corrientes: 8 niveles nuevos. Las corrientes empujan a tus flotas o las frenan, y cambian de sentido cada 30 segundos. Los barcos que salen de una isla puerto van 1,5 veces más rápido. Aparecen flotas aliadas.",
+     "Mar 5, el Arrecife de Coral: 8 niveles nuevos. Una isla de coral que conservas crece más rápido cada 20 segundos y vuelve a empezar si te la quitan. Una isla que nadie toca durante 8 segundos crece 1,25 veces más rápido, y se ve como un anillo lento de ondas.",
+     "Los puntos de flota y las etiquetas de tropas ya no tapan los números de las islas. Los extremos de las bandas de corriente se desvanecen como tinta que se extiende. Los remolinos tienen etiqueta y hay un HUD nuevo para aliados.",
+     "Se corrigió que la información de los faros se viera a través de la niebla."
+    ],
+    "fr": [
+     "Mer 4, la Voie des courants : 8 nouveaux niveaux. Les courants poussent vos flottes ou les retiennent, et s'inversent toutes les 30 secondes. Les navires qui quittent une île-port vont 1,5 fois plus vite. Des flottes alliées apparaissent.",
+     "Mer 5, le récif de corail : 8 nouveaux niveaux. Une île de corail que vous gardez pousse plus vite toutes les 20 secondes, et repart de zéro si on vous la prend. Une île laissée tranquille pendant 8 secondes croît 1,25 fois plus vite, ce que montre un lent anneau d'ondes.",
+     "Les points de flotte et les étiquettes de troupes ne cachent plus les nombres des îles. Le bout des bandes de courant s'efface comme de l'encre qui se diffuse. Les tourbillons ont une étiquette et il y a un nouveau HUD pour les alliés.",
+     "Correction des informations de phare visibles à travers la brume."
+    ],
+    "de": [
+     "Meer 4, der Strömungsweg: 8 neue Level. Strömungen schieben deine Flotten voran oder bremsen sie und kehren alle 30 Sekunden um. Schiffe, die eine Hafeninsel verlassen, sind 1,5-mal so schnell. Verbündete Flotten treten auf.",
+     "Meer 5, das Korallenriff: 8 neue Level. Eine Koralleninsel, die du hältst, wächst alle 20 Sekunden schneller und beginnt von vorn, wenn sie dir genommen wird. Eine Insel, die 8 Sekunden unberührt bleibt, wächst 1,25-mal so schnell, sichtbar als langsamer Wellenring.",
+     "Flottenpunkte und Truppenbeschriftungen verdecken die Zahlen der Inseln nicht mehr. Die Enden der Strömungsbänder verlaufen wie sich ausbreitende Tinte. Strudel haben eine Beschriftung, und es gibt eine neue Anzeige für Verbündete.",
+     "Behoben: Leuchtturm-Informationen waren durch den Nebel sichtbar."
+    ],
+    "pt": [
+     "Mar 4, o Caminho das Correntes: 8 fases novas. As correntes empurram suas frotas ou as seguram, e invertem a cada 30 segundos. Navios que saem de uma ilha-porto andam 1,5 vez mais rápido. Surgem frotas aliadas.",
+     "Mar 5, o Recife de Coral: 8 fases novas. Uma ilha de coral que você mantém cresce mais rápido a cada 20 segundos e recomeça se for tomada. Uma ilha que ninguém toca por 8 segundos cresce 1,25 vez mais rápido, mostrado como um anel lento de ondulações.",
+     "Os pontos de frota e os rótulos de tropas não cobrem mais os números das ilhas. As pontas das faixas de corrente somem como tinta que se espalha. Os redemoinhos ganham rótulo e há um novo HUD para aliados.",
+     "Corrigido o problema de informações dos faróis aparecerem através da névoa."
+    ],
+    "ru": [
+     "Море 4, Путь течений: 8 новых уровней. Течения подталкивают ваши флоты или удерживают их и меняют направление каждые 30 секунд. Корабли, отплывшие от островов-гаваней, идут в 1,5 раза быстрее. Появляются союзные флоты.",
+     "Море 5, Коралловый риф: 8 новых уровней. Коралловый остров, который вы удерживаете, растёт быстрее каждые 20 секунд, а если его отнимут, всё начинается заново. Остров, которого никто не касался 8 секунд, растёт в 1,25 раза быстрее; это видно по медленному кольцу ряби.",
+     "Точки флотов и подписи войск больше не закрывают числа на островах. Концы полос течений тают, как расплывающаяся тушь. У водоворотов появилась подпись, а для союзников — новый HUD.",
+     "Исправлено: сведения о маяках были видны сквозь туман."
+    ],
+    "ar": [
+     "البحر 4، ممر التيارات: 8 مراحل جديدة. تدفع التيارات أساطيلك إلى الأمام أو تعيقها، وتنعكس كل 30 ثانية. السفن التي تغادر جزيرة ميناء تسير أسرع بمقدار 1.5 مرة. وتظهر أساطيل حليفة.",
+     "البحر 5، الشعاب المرجانية: 8 مراحل جديدة. الجزيرة المرجانية التي تحتفظ بها تنمو أسرع كل 20 ثانية، وتبدأ من جديد إذا استُولي عليها. والجزيرة التي لا يلمسها أحد لمدة 8 ثوانٍ تنمو أسرع بمقدار 1.25 مرة، وتظهر كحلقة تموجات بطيئة.",
+     "لم تعد نقاط الأساطيل ولافتات القوات تغطي أرقام الجزر. وتتلاشى أطراف أشرطة التيار كالحبر المنتشر. وصار للدوامات لافتة، وأُضيفت واجهة جديدة للحلفاء.",
+     "أُصلحت مشكلة ظهور معلومات المنارات عبر الضباب."
+    ],
+    "hi": [
+     "समुद्र 4, धारा मार्ग: 8 नए स्तर। धाराएँ आपके बेड़ों को आगे धकेलती या रोकती हैं, और हर 30 सेकंड में पलट जाती हैं। बंदरगाह द्वीप से निकले जहाज़ 1.5 गुना तेज़ चलते हैं। साथी बेड़े दिखाई देते हैं।",
+     "समुद्र 5, प्रवाल भित्ति: 8 नए स्तर। आपके कब्ज़े वाला प्रवाल द्वीप हर 20 सेकंड में और तेज़ बढ़ता है, और छिन जाए तो फिर से शुरू होता है। 8 सेकंड तक जिसे किसी ने नहीं छुआ, वह द्वीप 1.25 गुना तेज़ बढ़ता है, जो धीमे लहर-वलय के रूप में दिखता है।",
+     "बेड़े के बिंदु और सैनिक लेबल अब द्वीपों की संख्याओं को नहीं ढकते। धारा पट्टियों के सिरे फैलती स्याही की तरह मिट जाते हैं। भँवरों पर लेबल लगा है, और साथियों के लिए नया HUD है।",
+     "कोहरे के आर-पार प्रकाशस्तंभ की जानकारी दिखने की समस्या ठीक की गई।"
+    ],
+    "id": [
+     "Laut 4, Jalur Arus: 8 level baru. Arus mendorong armadamu maju atau menahannya, dan berbalik arah setiap 30 detik. Kapal yang berangkat dari pulau pelabuhan melaju 1,5 kali lebih cepat. Armada sekutu muncul.",
+     "Laut 5, Terumbu Karang: 8 level baru. Pulau karang yang kamu pertahankan tumbuh lebih cepat setiap 20 detik, dan mulai dari awal jika direbut. Pulau yang tidak disentuh selama 8 detik tumbuh 1,25 kali lebih cepat, terlihat sebagai cincin riak yang pelan.",
+     "Titik armada dan label pasukan tidak lagi menutupi angka di pulau. Ujung pita arus memudar seperti tinta yang menyebar. Pusaran kini berlabel, dan ada HUD baru untuk sekutu.",
+     "Memperbaiki informasi mercusuar yang terlihat menembus kabut."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-11",
    "version": "1.0.0",
    "build": "11",
