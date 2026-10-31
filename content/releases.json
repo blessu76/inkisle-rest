@@ -1,6 +1,103 @@
 {
  "releases": [
   {
+   "id": "1.0.0-16",
+   "version": "1.0.0",
+   "build": "16",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 16: Twin Isles",
+    "ko": "빌드 16: 쌍둥이 섬",
+    "ja": "ビルド16:双子の島",
+    "zh": "构建 16:双生岛",
+    "es": "Compilación 16: Islas Gemelas",
+    "fr": "Version 16 : Îles jumelles",
+    "de": "Build 16: Zwillingsinseln",
+    "pt": "Build 16: Ilhas Gêmeas",
+    "ru": "Сборка 16: Острова-близнецы",
+    "ar": "الإصدار 16: الجزيرتان التوأم",
+    "hi": "बिल्ड 16: जुड़वाँ द्वीप",
+    "id": "Build 16: Pulau Kembar"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 15, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~15의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜15の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 15 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 15, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 15, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 15 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 15, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–15 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 15 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 15 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 15, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 12, Twin Isles, the second sea of Volume Two: 8 new stages.",
+     "A new rule, twin isles: two paired islands grow faster when one owner holds both, and both stop growing when the owner changes.",
+     "A celadon-tinted morning sea."
+    ],
+    "ko": [
+     "2권의 두 번째 막, 12막 「쌍둥이 섬」: 새 판 8개.",
+     "새 규칙 「쌍섬」: 짝지은 두 섬을 같은 주인이 다 쥐면 둘 다 더 빨리 자라고, 주인이 갈리면 둘 다 멈춥니다.",
+     "청자빛 아침 바다가 펼쳐집니다."
+    ],
+    "ja": [
+     "第2巻の2つ目の海域、第12海域「双子の島」:新しいステージ8つ。",
+     "新しいルール「双子島」:対になった2つの島を同じ持ち主が握ると、どちらも速く育ちます。持ち主が分かれると、どちらも止まります。",
+     "青磁色の朝の海が広がります。"
+    ],
+    "zh": [
+     "第二卷的第二幕,第 12 幕「双生岛」:新增 8 个关卡。",
+     "新规则「双生岛」:一对岛屿由同一方掌握时,两座都长得更快;归属一旦分开,两座都会停下。",
+     "青瓷色的清晨海面。"
+    ],
+    "es": [
+     "Mar 12, Islas Gemelas, el segundo mar del volumen dos: 8 niveles nuevos.",
+     "Una regla nueva, las islas gemelas: si un mismo dueño tiene las dos islas de la pareja, ambas crecen más rápido; si el dueño cambia, ambas se detienen.",
+     "Un mar de mañana en tono celadón."
+    ],
+    "fr": [
+     "Mer 12, Îles jumelles, la deuxième mer du deuxième volume : 8 nouveaux niveaux.",
+     "Une nouvelle règle, les îles jumelles : quand un même propriétaire tient les deux îles d'une paire, elles grandissent plus vite ; quand le propriétaire change, elles s'arrêtent toutes les deux.",
+     "Une mer du matin aux teintes céladon."
+    ],
+    "de": [
+     "Meer 12, Zwillingsinseln, das zweite Meer von Band zwei: 8 neue Stufen.",
+     "Eine neue Regel, Zwillingsinseln: Hält ein Besitzer beide Inseln eines Paares, wachsen beide schneller; wechselt der Besitzer, stehen beide still.",
+     "Ein Morgenmeer in Seladon-Tönen."
+    ],
+    "pt": [
+     "Mar 12, Ilhas Gêmeas, o segundo mar do volume dois: 8 fases novas.",
+     "Uma regra nova, as ilhas gêmeas: quando um mesmo dono tem as duas ilhas do par, ambas crescem mais rápido; quando o dono muda, ambas param.",
+     "Um mar de manhã em tom celadon."
+    ],
+    "ru": [
+     "Море 12, «Острова-близнецы», второе море второго тома: 8 новых уровней.",
+     "Новое правило — острова-близнецы: если один владелец держит оба острова пары, оба растут быстрее; если владелец меняется, оба останавливаются.",
+     "Утреннее море в сером нефритовом оттенке."
+    ],
+    "ar": [
+     "البحر 12، الجزيرتان التوأم، ثاني بحار المجلد الثاني: ٨ مراحل جديدة.",
+     "قاعدة جديدة، الجزر التوأم: إذا امتلك صاحب واحد الجزيرتين المقترنتين نمتا معًا بسرعة أكبر، وإذا تغيّر المالك توقفت الاثنتان.",
+     "بحر صباحي بلون السيلادون."
+    ],
+    "hi": [
+     "दूसरे खंड का दूसरा सागर, सागर 12, जुड़वाँ द्वीप: 8 नए स्तर।",
+     "नया नियम, जुड़वाँ द्वीप: जोड़ी के दोनों द्वीप एक ही मालिक के पास हों तो दोनों तेज़ी से बढ़ते हैं; मालिक बदलते ही दोनों रुक जाते हैं।",
+     "सेलाडोन रंगत वाला सुबह का समुद्र।"
+    ],
+    "id": [
+     "Laut 12, Pulau Kembar, laut kedua jilid dua: 8 tahap baru.",
+     "Aturan baru, pulau kembar: bila satu pemilik menguasai kedua pulau yang berpasangan, keduanya tumbuh lebih cepat; bila pemiliknya berbeda, keduanya berhenti.",
+     "Laut pagi bernuansa seladon."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-15",
    "version": "1.0.0",
    "build": "15",
