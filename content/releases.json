@@ -1,6 +1,151 @@
 {
  "releases": [
   {
+   "id": "1.0.0-17",
+   "version": "1.0.0",
+   "build": "17",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 17: Drifting Ship",
+    "ko": "빌드 17: 떠도는 배",
+    "ja": "ビルド17:さまよう船",
+    "zh": "构建 17:漂泊之船",
+    "es": "Compilación 17: Barco a la Deriva",
+    "fr": "Version 17 : Le navire à la dérive",
+    "de": "Build 17: Das treibende Schiff",
+    "pt": "Build 17: Navio à Deriva",
+    "ru": "Сборка 17: Дрейфующий корабль",
+    "ar": "الإصدار 17: السفينة التائهة",
+    "hi": "बिल्ड 17: भटकता जहाज़",
+    "id": "Build 17: Kapal Hanyut"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 16, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~16의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜16の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 16 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 16, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 16, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 16 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 16, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–16 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 16 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 16 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 16, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Sea 13, the Drifting Ship: 8 new stages. The third star on these stages is for dodging the drifting ship.",
+     "The Ink button now pauses the game and opens a Harbor pop-up. The item slots in the Harbor (four of them) will open soon.",
+     "The most Ink you can use in one stage now goes up by one per volume: 5 in Volume One, 6 in Volume Two.",
+     "In boss seas Ink's effects are weaker, and the game now tells you so.",
+     "Ink feels better in the boss stage of 7-8.",
+     "Stage 13-3 has been rebalanced.",
+     "Korean text wrapping and speech bubbles have been refined."
+    ],
+    "ko": [
+     "13막 「떠도는 배」: 새 판 8개. 이 판들의 ★3은 떠도는 배를 피하는 것입니다.",
+     "Ink 버튼을 누르면 게임이 멈추고 「항구」 팝업이 열립니다. 항구의 아이템 칸 4개는 곧 열립니다.",
+     "한 판에서 쓸 수 있는 Ink 상한이 권마다 1씩 늘어납니다. 1권은 5, 2권은 6입니다.",
+     "보스 바다에서는 Ink 의 효과가 약해지며, 이제 화면에서 그 사실을 알려 줍니다.",
+     "7-8 보스 판에서 Ink 의 체감을 개선했습니다.",
+     "13-3 판의 균형을 다듬었습니다.",
+     "한국어 줄바꿈과 말풍선을 다듬었습니다."
+    ],
+    "ja": [
+     "第13海域「さまよう船」:新しいステージ8つ。これらのステージの★3は、さまよう船を避けることです。",
+     "Inkボタンを押すとゲームが一時停止し、「港」のポップアップが開きます。港のアイテム枠(4つ)は近日中に開きます。",
+     "1ステージで使えるInkの上限が、巻ごとに1ずつ増えます。第1巻は5、第2巻は6です。",
+     "ボス海域ではInkの効果が弱まります。その旨が画面でも分かるようになりました。",
+     "7-8のボスステージで、Inkの手応えを改善しました。",
+     "13-3のバランスを調整しました。",
+     "韓国語の改行と吹き出しを整えました。"
+    ],
+    "zh": [
+     "第 13 幕「漂泊之船」:新增 8 个关卡。这些关卡的第三颗星,是避开漂泊的船。",
+     "点按 Ink 按钮会暂停游戏并打开「港口」弹窗。港口里的 4 个道具格即将开放。",
+     "单个关卡可使用的 Ink 上限随卷递增 1:第一卷为 5,第二卷为 6。",
+     "在首领海域中 Ink 的效果会减弱,现在游戏会明确提示这一点。",
+     "改善了 7-8 首领关卡中 Ink 的使用手感。",
+     "调整了 13-3 的平衡。",
+     "优化了韩语的换行和对话气泡。"
+    ],
+    "es": [
+     "Mar 13, el Barco a la Deriva: 8 niveles nuevos. La tercera estrella de estos niveles es por esquivar al barco a la deriva.",
+     "El botón de Ink ahora pausa el juego y abre una ventana del Puerto. Las cuatro casillas de objetos del Puerto se abrirán pronto.",
+     "El máximo de Ink que se puede usar en un nivel sube uno por volumen: 5 en el volumen uno y 6 en el volumen dos.",
+     "En los mares de jefe los efectos del Ink son más débiles, y ahora el juego lo avisa.",
+     "El Ink se siente mejor en el nivel de jefe del 7-8.",
+     "Se reequilibró el nivel 13-3.",
+     "Se pulieron los saltos de línea y los globos de texto en coreano."
+    ],
+    "fr": [
+     "Mer 13, le Navire à la dérive : 8 nouveaux niveaux. La troisième étoile de ces niveaux récompense l'esquive du navire à la dérive.",
+     "Le bouton Ink met désormais le jeu en pause et ouvre une fenêtre du Port. Les quatre emplacements d'objets du Port ouvriront bientôt.",
+     "Le maximum d'Ink utilisable dans un niveau augmente d'un par volume : 5 au premier volume, 6 au deuxième.",
+     "Dans les mers de boss, les effets d'Ink sont plus faibles, et le jeu vous le signale maintenant.",
+     "L'Ink est plus agréable à utiliser dans le niveau de boss du 7-8.",
+     "Le niveau 13-3 a été rééquilibré.",
+     "Les retours à la ligne et les bulles de texte en coréen ont été affinés."
+    ],
+    "de": [
+     "Meer 13, das treibende Schiff: 8 neue Level. Der dritte Stern dieser Level gibt es fürs Ausweichen vor dem treibenden Schiff.",
+     "Der Ink-Knopf pausiert jetzt das Spiel und öffnet ein Hafen-Fenster. Die vier Gegenstandsfelder im Hafen öffnen sich bald.",
+     "Die Höchstmenge an Ink, die du in einem Level einsetzen kannst, steigt mit jedem Band um eins: 5 in Band eins, 6 in Band zwei.",
+     "In Boss-Meeren sind die Ink-Effekte schwächer, und das Spiel weist jetzt darauf hin.",
+     "Ink fühlt sich im Boss-Level von 7-8 besser an.",
+     "Level 13-3 wurde neu ausbalanciert.",
+     "Zeilenumbrüche und Sprechblasen im Koreanischen wurden verfeinert."
+    ],
+    "pt": [
+     "Mar 13, o Navio à Deriva: 8 fases novas. A terceira estrela dessas fases é por desviar do navio à deriva.",
+     "O botão de Ink agora pausa o jogo e abre uma janela do Porto. Os quatro espaços de itens do Porto abrirão em breve.",
+     "O máximo de Ink que se pode usar numa fase sobe um por volume: 5 no volume um e 6 no volume dois.",
+     "Nos mares de chefe os efeitos do Ink ficam mais fracos, e agora o jogo avisa isso.",
+     "O Ink está mais agradável de usar na fase de chefe do 7-8.",
+     "A fase 13-3 foi reequilibrada.",
+     "As quebras de linha e os balões de fala em coreano foram refinados."
+    ],
+    "ru": [
+     "Море 13, «Дрейфующий корабль»: 8 новых уровней. Третья звезда на этих уровнях — за то, что вы уклонились от дрейфующего корабля.",
+     "Кнопка Ink теперь ставит игру на паузу и открывает окно «Гавань». Четыре ячейки для предметов в гавани скоро откроются.",
+     "Максимум Ink, который можно использовать на одном уровне, растёт на единицу с каждым томом: 5 в первом томе, 6 во втором.",
+     "В морях с боссами эффекты Ink слабее, и теперь игра об этом сообщает.",
+     "Ink стал приятнее в уровне с боссом 7-8.",
+     "Уровень 13-3 перебалансирован.",
+     "Переносы строк и речевые пузыри в корейском тексте доработаны."
+    ],
+    "ar": [
+     "البحر 13، السفينة التائهة: ٨ مراحل جديدة. النجمة الثالثة في هذه المراحل لتفادي السفينة التائهة.",
+     "زر Ink يوقف اللعبة مؤقتًا الآن ويفتح نافذة «الميناء». خانات العناصر الأربع في الميناء ستُفتح قريبًا.",
+     "الحد الأقصى لما يمكن استخدامه من Ink في المرحلة الواحدة يزيد واحدًا مع كل مجلد: ٥ في المجلد الأول و٦ في الثاني.",
+     "في بحار الزعماء تضعف تأثيرات Ink، واللعبة تنبّهك إلى ذلك الآن.",
+     "تحسّن الإحساس باستخدام Ink في مرحلة الزعيم 7-8.",
+     "أُعيدت موازنة المرحلة 13-3.",
+     "حُسّن التفاف الأسطر وفقاعات الكلام في النص الكوري."
+    ],
+    "hi": [
+     "सागर 13, भटकता जहाज़: 8 नए स्तर। इन स्तरों का तीसरा तारा भटकते जहाज़ से बचने पर मिलता है।",
+     "अब Ink बटन दबाने पर खेल रुक जाता है और «बंदरगाह» पॉप-अप खुलता है। बंदरगाह के आइटम के 4 खाने जल्द खुलेंगे।",
+     "एक स्तर में इस्तेमाल हो सकने वाली Ink की सीमा हर खंड के साथ एक बढ़ती है: पहले खंड में 5, दूसरे में 6।",
+     "बॉस वाले सागरों में Ink का असर कम होता है, और अब खेल यह बताता भी है।",
+     "7-8 के बॉस स्तर में Ink का अनुभव बेहतर हुआ।",
+     "स्तर 13-3 का संतुलन ठीक किया गया।",
+     "कोरियाई पाठ की पंक्ति-तोड़ और संवाद-बुलबुले सुधारे गए।"
+    ],
+    "id": [
+     "Laut 13, Kapal Hanyut: 8 tahap baru. Bintang ketiga di tahap-tahap ini didapat dengan menghindari kapal hanyut.",
+     "Tombol Ink kini menjeda permainan dan membuka jendela Pelabuhan. Empat slot item di Pelabuhan akan segera dibuka.",
+     "Batas Ink yang bisa dipakai dalam satu tahap naik satu per jilid: 5 di jilid satu dan 6 di jilid dua.",
+     "Di laut bos, efek Ink lebih lemah, dan kini permainan memberi tahu hal itu.",
+     "Ink terasa lebih baik di tahap bos 7-8.",
+     "Tahap 13-3 diseimbangkan ulang.",
+     "Pemenggalan baris dan balon ucapan dalam bahasa Korea dirapikan."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-16",
    "version": "1.0.0",
    "build": "16",
