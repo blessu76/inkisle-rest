@@ -1,6 +1,115 @@
 {
  "releases": [
   {
+   "id": "1.0.0-15",
+   "version": "1.0.0",
+   "build": "15",
+   "status": "testflight",
+   "date": "2026-10-31",
+   "title": {
+    "en": "Build 15: Beyond the Chart, and the Reef",
+    "ko": "빌드 15: 지도 밖, 그리고 암초",
+    "ja": "ビルド15:海図の外へ、そして暗礁",
+    "zh": "构建 15:海图之外,以及暗礁",
+    "es": "Compilación 15: Más allá de la carta, y el arrecife",
+    "fr": "Version 15 : Hors de la carte, et le récif",
+    "de": "Build 15: Jenseits der Karte und das Riff",
+    "pt": "Build 15: Além da carta e o recife",
+    "ru": "Сборка 15: За пределами карты и риф",
+    "ar": "الإصدار 15: ما وراء الخريطة والشعاب",
+    "hi": "बिल्ड 15: नक्शे के पार और चट्टान",
+    "id": "Build 15: Di Luar Peta dan Karang"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight on October 31, 2026. It has the contents of builds 1 to 14, plus the changes below.",
+    "ko": "2026년 10월 31일 TestFlight 에 올라간 빌드입니다. 빌드 1~14의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "2026-10-31 に TestFlight にアップロードされたビルドです。ビルド1〜14の内容に、以下の変更が加わりました。",
+    "zh": "2026-10-31 上传到 TestFlight 的构建。它包含构建 1 至 14 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight el 2026-10-31. Incluye el contenido de las compilaciones 1 a 14, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight le 2026-10-31. Elle reprend le contenu des versions 1 à 14, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde am 2026-10-31 auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 14 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight em 2026-10-31. Ele traz o conteúdo dos builds 1 a 14, mais as mudanças abaixo.",
+    "ru": "Эта сборка была загружена в TestFlight 2026-10-31. В ней всё из сборок 1–14 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight في 2026-10-31. يضم محتوى الإصدارات من 1 إلى 14 مع التغييرات التالية.",
+    "hi": "यह बिल्ड 2026-10-31 को TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 14 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight pada 2026-10-31. Isinya mencakup build 1 sampai 14, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "Volume Two, Beyond the Chart, begins. Sea 11, Clear Water: 8 new stages. Past the edge of the map lies a white sea, and you draw it with your own ink.",
+     "A new element at sea, the reef: a ship cannot pierce a reef and sails around its edge. When you drag, the path it will take around the reef shows ahead of time.",
+     "The Volume Two seas look like a paper sea chart: white paper by day, black paper by night.",
+     "The sea name at the top of the chart no longer hides behind the routes."
+    ],
+    "ko": [
+     "2권 「지도 밖」이 시작됩니다. 11막 「맑은 물」: 새 판 8개. 지도 밖의 흰 바다를 우리 잉크로 그려 나갑니다.",
+     "새 바다 요소 「암초」: 배는 암초를 뚫지 못하고 끝을 돌아갑니다. 드래그하면 도는 길이 미리 보입니다.",
+     "2권의 바다는 종이 해도의 모습입니다. 낮에는 흰 종이, 밤에는 검은 종이입니다.",
+     "해도의 해역 머리줄이 항로에 가려지지 않도록 다듬었습니다."
+    ],
+    "ja": [
+     "第2巻「海図の外」が始まります。第11海域「澄んだ水」:新しいステージ8つ。地図の外の白い海を、私たちのインクで描いていきます。",
+     "新しい海の要素「暗礁」:船は暗礁を突き抜けられず、端を回り込みます。ドラッグすると、回り込む道があらかじめ見えます。",
+     "第2巻の海は、紙の海図の姿です。昼は白い紙、夜は黒い紙です。",
+     "海図の海域名の見出しが、航路に隠れないように整えました。"
+    ],
+    "zh": [
+     "第二卷「海图之外」开始。第 11 幕「清澈之水」:新增 8 个关卡。地图之外是一片白色的海,用我们的墨水把它画出来。",
+     "新的海上元素「暗礁」:船无法穿过暗礁,会绕着它的边缘行驶。拖动时,绕行的路线会提前显示出来。",
+     "第二卷的海呈纸质海图的模样:白天是白纸,夜晚是黑纸。",
+     "海图上的海域标题行不再被航线遮住。"
+    ],
+    "es": [
+     "Empieza el volumen dos, Más allá de la carta. Mar 11, Aguas Claras: 8 niveles nuevos. Más allá del borde del mapa hay un mar blanco, y lo dibujas con tu propia tinta.",
+     "Un elemento nuevo en el mar, el arrecife: el barco no puede atravesarlo y lo rodea por el borde. Al arrastrar, el camino que seguirá alrededor del arrecife se muestra de antemano.",
+     "Los mares del volumen dos parecen una carta náutica de papel: papel blanco de día, papel negro de noche.",
+     "El nombre del mar en la parte superior de la carta ya no queda oculto tras las rutas."
+    ],
+    "fr": [
+     "Le deuxième volume, Hors de la carte, commence. Mer 11, Eau claire : 8 nouveaux niveaux. Au-delà du bord de la carte s'étend une mer blanche, que vous dessinez avec votre propre encre.",
+     "Un nouvel élément en mer, le récif : le navire ne peut pas le traverser et en contourne le bord. Quand vous faites glisser, le chemin qu'il prendra autour du récif s'affiche à l'avance.",
+     "Les mers du deuxième volume ont l'allure d'une carte marine en papier : papier blanc le jour, papier noir la nuit.",
+     "Le nom de la mer en haut de la carte n'est plus caché par les routes."
+    ],
+    "de": [
+     "Band zwei, Jenseits der Karte, beginnt. Meer 11, Klares Wasser: 8 neue Stufen. Hinter dem Kartenrand liegt ein weißes Meer, und du zeichnest es mit deiner eigenen Tinte.",
+     "Ein neues Element auf See, das Riff: Das Schiff kann ein Riff nicht durchdringen und fährt um dessen Rand herum. Wenn du ziehst, wird der Weg um das Riff schon vorab angezeigt.",
+     "Die Meere von Band zwei sehen aus wie eine Seekarte auf Papier: tagsüber weißes Papier, nachts schwarzes.",
+     "Der Meeresname oben auf der Seekarte verschwindet nicht mehr hinter den Routen."
+    ],
+    "pt": [
+     "O volume dois, Além da carta, começa. Mar 11, Água Clara: 8 fases novas. Depois da borda do mapa há um mar branco, e você o desenha com a sua própria tinta.",
+     "Um elemento novo no mar, o recife: o barco não atravessa o recife e contorna a sua borda. Ao arrastar, o caminho que ele fará em volta do recife aparece de antemão.",
+     "Os mares do volume dois têm o aspecto de uma carta náutica de papel: papel branco de dia, papel preto à noite.",
+     "O nome do mar no alto da carta não fica mais escondido atrás das rotas."
+    ],
+    "ru": [
+     "Начинается второй том, «За пределами карты». Море 11, «Чистая вода»: 8 новых уровней. За краем карты лежит белое море, и вы рисуете его собственными чернилами.",
+     "Новый элемент на море — риф: корабль не может пройти сквозь риф и огибает его край. Когда вы тянете линию, путь вокруг рифа показывается заранее.",
+     "Моря второго тома выглядят как бумажная морская карта: днём белая бумага, ночью чёрная.",
+     "Название моря в верхней части карты больше не прячется за маршрутами."
+    ],
+    "ar": [
+     "يبدأ المجلد الثاني، ما وراء الخريطة. البحر 11، المياه الصافية: ٨ مراحل جديدة. وراء حافة الخريطة يمتد بحر أبيض، وترسمه بحبرك أنت.",
+     "عنصر جديد في البحر، الشعاب: لا تستطيع السفينة اختراق الشعاب، فتلتف حول حافتها. عند السحب يظهر مسبقًا الطريق الذي ستسلكه حولها.",
+     "تبدو بحار المجلد الثاني كخريطة بحرية ورقية: ورق أبيض في النهار وورق أسود في الليل.",
+     "لم يعد عنوان البحر في أعلى الخريطة يختفي خلف المسارات."
+    ],
+    "hi": [
+     "दूसरा खंड, नक्शे के पार, शुरू होता है। सागर 11, साफ़ पानी: 8 नए स्तर। नक्शे के किनारे के पार एक सफ़ेद सागर है, और आप उसे अपनी स्याही से रचते हैं।",
+     "समुद्र में एक नया तत्व, चट्टान: जहाज़ चट्टान को भेद नहीं सकता और उसके किनारे से घूमकर निकलता है। खींचते समय चट्टान के आसपास का रास्ता पहले से दिख जाता है।",
+     "दूसरे खंड के समुद्र काग़ज़ के समुद्री नक्शे जैसे दिखते हैं: दिन में सफ़ेद काग़ज़, रात में काला काग़ज़।",
+     "नक्शे के ऊपर का सागर-नाम अब मार्गों के पीछे नहीं छिपता।"
+    ],
+    "id": [
+     "Jilid dua, Di Luar Peta, dimulai. Laut 11, Air Jernih: 8 tahap baru. Di balik tepi peta terbentang laut putih, dan kamu melukisnya dengan tintamu sendiri.",
+     "Elemen baru di laut, karang: kapal tidak bisa menembus karang dan berlayar mengitari tepinya. Saat menyeret, jalur yang akan diambil mengitari karang terlihat lebih dulu.",
+     "Laut jilid dua tampak seperti peta laut kertas: kertas putih di siang hari, kertas hitam di malam hari.",
+     "Nama laut di bagian atas peta tidak lagi tertutup oleh rute."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-14",
    "version": "1.0.0",
    "build": "14",
