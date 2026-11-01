@@ -43,18 +43,28 @@ branch="$(git symbolic-ref --short -q HEAD || echo '(detached)')"
 [ -z "$(git status --porcelain)" ] || skip "working tree is not clean"
 
 git fetch -q origin main || { log "FAIL — git fetch"; exit 1; }
-git rebase -q origin/main || { git rebase --abort 2>/dev/null || true; log "FAIL — cannot rebase onto origin/main"; exit 1; }
 
-# Unpushed commits from an earlier failed push go first, whether or not there is anything new to publish — but only if they touch nothing outside the
-# publish set (a local work-in-progress commit must never ride along to the public main).
+# Local commits not on origin/main (a failed push, or someone committing in this clone) are judged BEFORE the rebase: if they touch anything outside the
+# publish set they must never ride along to the public main, and rebasing them onto a moved origin/main can conflict (10-31: a release-notes commit made
+# here collided with the same files on origin and the run failed). Skipping leaves the clone untouched for a human.
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
   stray=""
   while IFS= read -r f; do
     ok=0
     for p in $PUBLISH_PATHS; do case "$f" in "$p"|"$p"/*) ok=1;; esac; done
     [ "$ok" = 1 ] || stray="$stray $f"
-  done < <(git diff --name-only origin/main..HEAD)
-  [ -z "$stray" ] || skip "unpushed commits touch paths outside the publish set:${stray:0:200} — not pushing"
+  done < <(git diff --name-only origin/main...HEAD)
+  [ -z "$stray" ] || skip "unpushed commits touch paths outside the publish set:${stray:0:200} — not pushing (move them to a feature branch: git branch backup/x; git reset --hard origin/main)"
+fi
+
+git rebase -q origin/main || {
+  conflicts="$(git diff --name-only --diff-filter=U | head -5 | tr '\n' ' ')"
+  git rebase --abort 2>/dev/null || true
+  log "FAIL — cannot rebase onto origin/main (local unpushed: $(git log --oneline origin/main..HEAD | head -3 | tr '\n' ';') conflicts: ${conflicts:-?}) — clone left as it was"
+  exit 1
+}
+
+if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
 fi

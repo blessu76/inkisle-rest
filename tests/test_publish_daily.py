@@ -222,6 +222,28 @@ class PublishDaily(unittest.TestCase):
         self.assertEqual(self.origin_head(), before)
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
 
+    def test_diverged_unpushed_commit_is_skipped_before_any_rebase(self):
+        # 10-31: a release-notes commit made in the publish clone collided with origin; it must be skipped untouched, never rebased
+        (self.clone / "releases").mkdir(exist_ok=True)
+        (self.clone / "releases" / "index.html").write_text("local")
+        git(self.clone, "add", "-A")
+        git(self.clone, "commit", "-qm", "local notes")
+        other = self.tmp / "other"
+        git(self.tmp, "clone", "-q", str(self.origin), str(other))
+        (other / "releases").mkdir(exist_ok=True)
+        (other / "releases" / "index.html").write_text("remote")
+        git(other, "add", "-A")
+        git(other, "commit", "-qm", "remote notes")
+        git(other, "push", "-q", "origin", "main")
+        head, before = self.head(), self.origin_head()
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("SKIP", r.stdout)
+        self.assertIn("releases/index.html", r.stdout)
+        self.assertEqual(self.head(), head)
+        self.assertEqual(self.origin_head(), before)
+        self.assertFalse((self.clone / ".git" / "rebase-merge").exists())
+
     def test_failing_rollback_is_logged_loudly_and_still_releases_the_lock(self):
         # an index.lock makes `git reset --hard` fail, simulating a rollback that cannot complete
         r = self.run_script(check_cmd="touch .git/index.lock; false")
