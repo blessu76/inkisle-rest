@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Prototyp, Web-Prototyp, deterministische Spiele-Engine, HTML-Spiel, Mobile Game, Canvas
 image_alt: Viele kleine Inseln mit Truppenzahlen und eine Flotte, die im Inkisle-Prototyp das Meer überquert.
+published: 2026-11-01T19:00+09:00
 ---
 Bevor wir eine App bauen, wollten wir etwas auf dem Handy Spielbares haben. Am 2026-10-29 haben wir an einem einzigen Tag einen Web-Prototyp gebaut. Dieser Beitrag beschreibt, was darin steckt, wie er aufgebaut ist und, ebenso wichtig, was wir nicht prüfen konnten.
 

@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, prototype, web prototype, deterministic game engine, HTML game, mobile game, canvas
 image_alt: Many small islands with troop numbers and a fleet crossing the sea in the Inkisle prototype.
+published: 2026-11-01T19:00+09:00
 ---
 Before building an app we wanted something playable on a phone. On 2026-10-29 we built a web prototype in a single day. This post describes what is in it, how it is put together, and, just as important, what we could not check.
 

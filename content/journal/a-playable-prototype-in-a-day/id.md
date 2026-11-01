@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, prototipe, prototipe web, mesin game deterministik, game HTML, game mobile, canvas
 image_alt: Banyak pulau kecil dengan angka pasukan dan armada yang menyeberangi laut di prototipe Inkisle.
+published: 2026-11-01T19:00+09:00
 ---
 Sebelum membuat aplikasi, kami ingin sesuatu yang bisa dimainkan di ponsel. Pada 2026-10-29 kami membangun prototipe web dalam satu hari. Tulisan ini menjelaskan isinya, cara menyusunnya, dan sama pentingnya, apa yang tidak bisa kami periksa.
 

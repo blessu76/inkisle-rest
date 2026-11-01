@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, prototype, prototype web, moteur de jeu déterministe, jeu HTML, jeu mobile, canvas
 image_alt: De nombreuses petites îles portant des nombres de troupes et une flotte traversant la mer dans le prototype d'Inkisle.
+published: 2026-11-01T19:00+09:00
 ---
 Avant de construire une application, nous voulions quelque chose de jouable sur un téléphone. Le 2026-10-29, nous avons construit un prototype web en une seule journée. Cet article décrit ce qu'il contient, comment il est assemblé et, tout aussi important, ce que nous n'avons pas pu vérifier.
 

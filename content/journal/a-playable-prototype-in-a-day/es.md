@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, prototipo, prototipo web, motor de juego determinista, juego HTML, juego móvil, canvas
 image_alt: Muchas islas pequeñas con números de tropas y una flota cruzando el mar en el prototipo de Inkisle.
+published: 2026-11-01T19:00+09:00
 ---
 Antes de construir una app queríamos algo jugable en un teléfono. El 2026-10-29 construimos un prototipo web en un solo día. Esta entrada describe qué contiene, cómo está armado y, igual de importante, qué no pudimos comprobar.
 

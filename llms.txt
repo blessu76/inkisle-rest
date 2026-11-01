@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [A playable prototype in a day](https://inkisle.ipe.rest/journal/a-playable-prototype-in-a-day/) — 2026-11-01 — Sixteen stages, two seas and one HTML file of about 95 KB with no outside requests. How the prototype is built, what we tested in a headless browser, and what we could not test.
 - [Art direction: three mockups, one pick](https://inkisle.ipe.rest/journal/art-direction-grace-vs-gpt/) — 2026-10-31 — We asked for the same battle screen from our design assistant (two directions) and from GPT. What each returned, what went wrong with the outside mockup, and why minimal vector won.
 - [Naming the game: how we ended up with Inkisle](https://inkisle.ipe.rest/journal/naming-inkisle/) — 2026-10-30 — Ten English name candidates, five finalists, a store and domain check, and why Inkisle won. Including the weak spots we know about and the checks we have not done.
 - [The rules on one page: islands, troops, capture](https://inkisle.ipe.rest/journal/the-rules-on-one-page/) — 2026-10-30 — Inkisle's whole rule set on one page: how islands produce troops, how fleets fly, how capture is calculated, and how a match ends. Starting values, before testing.
