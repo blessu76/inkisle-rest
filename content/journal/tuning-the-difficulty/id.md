@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, keseimbangan game, penyetelan kesulitan, simulasi bot, tingkat kemenangan, desain level
 image_alt: Pertempuran ramai antara beberapa pihak berwarna di prototipe Inkisle.
+published: 2026-11-02T19:00+09:00
 ---
 Kami belum punya pemain uji, jadi kami mengajukan pertanyaan lain: level mana yang *jelas* salah? Dua bot sederhana memainkan setiap level masing-masing 40 kali, dengan 40 seed berbeda, lalu kami membaca tingkat kemenangannya.
 

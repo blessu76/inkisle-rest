@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, equilibrio del juego, ajuste de dificultad, simulación con bots, porcentaje de victorias, diseño de niveles
 image_alt: Una batalla concurrida entre varios bandos de colores en el prototipo de Inkisle.
+published: 2026-11-02T19:00+09:00
 ---
 Todavía no tenemos probadores, así que nos hicimos otra pregunta: ¿qué niveles están *obviamente* mal? Dos bots sencillos jugaron cada nivel 40 veces, con 40 semillas distintas, y leímos los porcentajes de victoria.
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 游戏平衡, 难度调整, 机器人模拟, 胜率, 关卡设计
 image_alt: Inkisle 原型中，多个彩色阵营混战的场面。
+published: 2026-11-02T19:00+09:00
 ---
 我们现在还没有试玩者，所以换了个问题：哪些关卡*明显*有问题？我们让两个简单的机器人把每个关卡各打40次，用40个不同的种子，然后查看胜率。
 

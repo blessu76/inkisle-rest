@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game balance, difficulty tuning, bot simulation, win rate, level design
 image_alt: A crowded battle between several colored sides on the Inkisle prototype.
+published: 2026-11-02T19:00+09:00
 ---
 We have no playtesters yet, so we asked a different question: which stages are *obviously* wrong? Two simple bots played every stage 40 times each, with 40 different seeds, and we read the win rates.
 

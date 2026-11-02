@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spielbalance, Schwierigkeitsabstimmung, Bot-Simulation, Siegquote, Leveldesign
 image_alt: Eine überfüllte Schlacht zwischen mehreren farbigen Seiten im Inkisle-Prototyp.
+published: 2026-11-02T19:00+09:00
 ---
 Wir haben noch keine Testspieler, also haben wir eine andere Frage gestellt: Welche Level sind *offensichtlich* falsch? Zwei einfache Bots haben jedes Level je 40 Mal gespielt, mit 40 verschiedenen Seeds, und wir haben die Siegquoten gelesen.
 

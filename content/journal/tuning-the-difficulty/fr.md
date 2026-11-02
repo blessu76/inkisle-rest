@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, équilibrage de jeu, réglage de la difficulté, simulation de bots, taux de victoire, level design
 image_alt: Une bataille animée entre plusieurs camps de couleurs différentes dans le prototype d'Inkisle.
+published: 2026-11-02T19:00+09:00
 ---
 Nous n'avons pas encore de testeurs, alors nous avons posé une autre question : quels niveaux sont *manifestement* faux ? Deux bots simples ont joué chaque niveau 40 fois, avec 40 graines différentes, et nous avons lu les taux de victoire.
 

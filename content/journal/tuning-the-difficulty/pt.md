@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, equilíbrio de jogo, ajuste de dificuldade, simulação com bots, taxa de vitória, design de fases
 image_alt: Uma batalha movimentada entre vários lados coloridos no protótipo do Inkisle.
+published: 2026-11-02T19:00+09:00
 ---
 Ainda não temos testadores, então fizemos outra pergunta: quais fases estão *obviamente* erradas? Dois bots simples jogaram cada fase 40 vezes, com 40 sementes diferentes, e lemos as taxas de vitória.
 
