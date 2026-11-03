@@ -29,6 +29,10 @@ COVERS = {  # slug: (seed, islands, factions in play)
     "three-stars-one-rule": (103, 7, ("me", "e2", "n")),
     "when-saved-data-breaks": (107, 8, ("me", "e1", "e3", "n")),
     "what-the-app-does-not-have": (109, 6, ("me", "n")),
+    "the-white-sea-ink-spring": (113, 8, ("me", "e1", "n")),
+    "a-difficulty-curve-with-a-floor": (127, 9, ("me", "e2", "n")),
+    "a-chart-that-changes-its-road": (131, 9, ("me", "e1", "e2", "n")),
+    "two-inks-at-once": (137, 7, ("me", "me", "e3", "n")),
 }
 
 
