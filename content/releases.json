@@ -1,6 +1,91 @@
 {
  "releases": [
   {
+   "id": "1.0.0-20",
+   "version": "1.0.0",
+   "build": "20",
+   "status": "testflight",
+   "date": "2026-11-03",
+   "title": {
+    "en": "Build 20: A gentler 2-5, and nicknames in more scripts",
+    "ko": "빌드 20: 한결 부드러운 2-5, 더 많은 글자의 닉네임",
+    "ja": "ビルド20:やさしくなった2-5と、より多くの文字のニックネーム",
+    "zh": "构建 20:更温和的 2-5,以及更多文字的昵称",
+    "es": "Compilación 20: un 2-5 más amable y apodos en más escrituras",
+    "fr": "Version 20 : un 2-5 plus doux et des pseudos en plus d’écritures",
+    "de": "Build 20: Ein sanfteres 2-5 und Spitznamen in mehr Schriften",
+    "pt": "Build 20: Um 2-5 mais suave e apelidos em mais escritas",
+    "ru": "Сборка 20: более мягкий 2-5 и ники на большем числе письменностей",
+    "ar": "الإصدار 20: مرحلة 2-5 أخفّ وألقاب بخطوط أكثر",
+    "hi": "बिल्ड 20: ज़्यादा सहज 2-5 और ज़्यादा लिपियों में उपनाम",
+    "id": "Build 20: Tahap 2-5 yang lebih ramah dan nama panggilan di lebih banyak aksara"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 19, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~19의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜19の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 19 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 19, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 19, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 19 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 19, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–19 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 19 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 19 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 19, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "The three-star goal of stage 2-5 is gentler: you may now lose up to 120 troops (it was 60).",
+     "Nicknames may now contain the zero-width non-joiner between letters, so names in Persian, Hindi and similar scripts can be written correctly."
+    ],
+    "ko": [
+     "2-5 판의 별 셋 조건이 한결 부드러워졌습니다. 잃어도 되는 병력이 60에서 120으로 늘었습니다.",
+     "닉네임의 글자 사이에 폭 없는 비결합 문자(ZWNJ)를 쓸 수 있어, 페르시아어·힌디어 같은 글자의 이름을 바르게 적을 수 있습니다."
+    ],
+    "ja": [
+     "2-5のステージの星3つの条件がやさしくなりました。失ってよい兵力が60から120に増えました。",
+     "ニックネームの文字と文字の間にゼロ幅非接合子(ZWNJ)を使えるようになり、ペルシア語やヒンディー語などの名前を正しく書けます。"
+    ],
+    "zh": [
+     "2-5 关卡的三星条件更温和了:允许损失的兵力从 60 提高到 120。",
+     "昵称现在可以在字母之间使用零宽不连字符(ZWNJ),波斯语、印地语等文字的名字可以正确书写。"
+    ],
+    "es": [
+     "El objetivo de tres estrellas del nivel 2-5 es más amable: ahora puedes perder hasta 120 tropas (antes eran 60).",
+     "Los apodos ahora admiten el no unidor de ancho cero entre letras, así que los nombres en persa, hindi y escrituras similares se escriben correctamente."
+    ],
+    "fr": [
+     "L’objectif de trois étoiles du niveau 2-5 est plus doux : tu peux maintenant perdre jusqu’à 120 troupes (contre 60 avant).",
+     "Les pseudos acceptent désormais le non-liant de largeur nulle entre les lettres, ce qui permet d’écrire correctement des noms en persan, en hindi et dans des écritures proches."
+    ],
+    "de": [
+     "Das Drei-Sterne-Ziel von Stufe 2-5 ist sanfter: Du darfst jetzt bis zu 120 Truppen verlieren (vorher 60).",
+     "Spitznamen dürfen zwischen Buchstaben jetzt den Nullbreiten-Nichtverbinder enthalten, sodass Namen in Persisch, Hindi und ähnlichen Schriften richtig geschrieben werden können."
+    ],
+    "pt": [
+     "A meta de três estrelas da fase 2-5 ficou mais suave: agora você pode perder até 120 tropas (eram 60).",
+     "Os apelidos agora aceitam o não-conector de largura zero entre letras, para escrever corretamente nomes em persa, híndi e escritas parecidas."
+    ],
+    "ru": [
+     "Условие трёх звёзд на уровне 2-5 стало мягче: теперь можно потерять до 120 войск (раньше 60).",
+     "В никах между буквами теперь можно использовать безширинный неприсоединяющий символ (ZWNJ), поэтому имена на персидском, хинди и похожих письменностях пишутся правильно."
+    ],
+    "ar": [
+     "شرط النجوم الثلاث في المرحلة 2-5 صار أخفّ: يمكنك الآن خسارة ما يصل إلى 120 جنديًا (كان 60).",
+     "صار بإمكان الألقاب أن تحتوي على الفاصل غير الرابط عديم العرض (ZWNJ) بين الحروف، فتُكتب الأسماء بالفارسية والهندية وما يشبهها كتابةً صحيحة."
+    ],
+    "hi": [
+     "स्टेज 2-5 की तीन-सितारा शर्त अब ज़्यादा सहज है: अब 120 सैनिक तक खो सकते हैं (पहले 60)।",
+     "उपनाम में अक्षरों के बीच अब शून्य-चौड़ाई वाला नॉन-जॉइनर (ZWNJ) रखा जा सकता है, जिससे फ़ारसी, हिन्दी जैसी लिपियों के नाम सही लिखे जा सकते हैं।"
+    ],
+    "id": [
+     "Syarat tiga bintang di tahap 2-5 lebih ramah: sekarang kamu boleh kehilangan hingga 120 pasukan (sebelumnya 60).",
+     "Nama panggilan kini boleh memuat pemisah tanpa lebar (ZWNJ) di antara huruf, sehingga nama dalam bahasa Persia, Hindi, dan aksara serupa dapat ditulis dengan benar."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-19",
    "version": "1.0.0",
    "build": "19",
