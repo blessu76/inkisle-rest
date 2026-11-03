@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [Sending from several islands at once: three rewrites of one control](https://inkisle.ipe.rest/journal/three-rewrites-of-multi-island-attack/) — 2026-11-03 — Attacking one island from several of yours was the hardest control in Inkisle. The first drag-based version, the tap-to-select fix and the swipe-to-select version, and what each one taught us.
 - [Tuning difficulty with bots: five stages that were wrong](https://inkisle.ipe.rest/journal/tuning-the-difficulty/) — 2026-11-02 — We played every stage with simple bots for 40 seeds each and found stages that were impossible, too short or too hard. The five changes, the win rates before and after, and why bots are not people.
 - [A playable prototype in a day](https://inkisle.ipe.rest/journal/a-playable-prototype-in-a-day/) — 2026-11-01 — Sixteen stages, two seas and one HTML file of about 95 KB with no outside requests. How the prototype is built, what we tested in a headless browser, and what we could not test.
 - [Art direction: three mockups, one pick](https://inkisle.ipe.rest/journal/art-direction-grace-vs-gpt/) — 2026-10-31 — We asked for the same battle screen from our design assistant (two directions) and from GPT. What each returned, what went wrong with the outside mockup, and why minimal vector won.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, commandes tactiles, UX de jeu mobile, sélection multiple, glisser-déposer, game design, itération
 image_alt: Une bataille où plusieurs îles envoient des flottes vers une île ennemie.
+published: 2026-11-03T19:00+09:00
 ---
 Envoyer une flotte est facile : on glisse depuis son île vers la cible. Ce qui est difficile dans les commandes d'Inkisle, c'est **d'envoyer depuis plusieurs îles à la fois**, car les derniers niveaux se gagnent en arrivant ensemble. Nous avons réécrit cette commande trois fois en quelques heures, et l'histoire montre pourquoi.
 

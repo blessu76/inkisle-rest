@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Touch-Steuerung, Mobile-Game-UX, Mehrfachauswahl, Drag and Drop, Spieldesign, Iteration
 image_alt: Eine Schlacht, in der mehrere Inseln Flotten zu einer gegnerischen Insel schicken.
+published: 2026-11-03T19:00+09:00
 ---
 Eine Flotte zu schicken ist einfach: von der eigenen Insel zum Ziel ziehen. Das Schwierige an Inkisles Steuerung ist, **von mehreren Inseln gleichzeitig zu senden**, denn späte Level gewinnt man, indem man gemeinsam ankommt. Wir haben diese Steuerung in wenigen Stunden dreimal neu geschrieben, und die Geschichte zeigt, warum.
 

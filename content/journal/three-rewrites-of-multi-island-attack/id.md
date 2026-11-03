@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kontrol sentuh, UX game mobile, multi-pilih, seret dan lepas, desain game, iterasi
 image_alt: Pertempuran ketika beberapa pulau mengirim armada ke satu pulau musuh.
+published: 2026-11-03T19:00+09:00
 ---
 Mengirim satu armada itu mudah: seret dari pulau Anda ke target. Bagian tersulit dari kontrol Inkisle adalah **mengirim dari beberapa pulau sekaligus**, karena level-level akhir dimenangkan dengan tiba bersama. Kami menulis ulang kontrol itu tiga kali dalam beberapa jam, dan ceritanya menunjukkan alasannya.
 

@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, touch controls, mobile game UX, multi-select, drag and drop, game design, iteration
 image_alt: A battle where several islands send fleets toward one enemy island.
+published: 2026-11-03T19:00+09:00
 ---
 Sending one fleet is easy: drag from your island to the target. The hard part of Inkisle's controls is **sending from several islands at once**, because late stages are won by arriving together. We rewrote that control three times in a few hours, and the story shows why.
 

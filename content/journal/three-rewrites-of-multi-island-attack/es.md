@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, controles táctiles, UX de juegos móviles, selección múltiple, arrastrar y soltar, diseño de juegos, iteración
 image_alt: Una batalla en la que varias islas envían flotas hacia una isla enemiga.
+published: 2026-11-03T19:00+09:00
 ---
 Enviar una flota es fácil: arrastras desde tu isla hasta el objetivo. Lo difícil de los controles de Inkisle es **enviar desde varias islas a la vez**, porque los niveles avanzados se ganan llegando juntos. Reescribimos ese control tres veces en pocas horas, y la historia muestra por qué.
 
