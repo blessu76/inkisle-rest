@@ -1,6 +1,139 @@
 {
  "releases": [
   {
+   "id": "1.0.0-19",
+   "version": "1.0.0",
+   "build": "19",
+   "status": "testflight",
+   "date": "2026-11-03",
+   "title": {
+    "en": "Build 19: The White Sea",
+    "ko": "빌드 19: 흰 바다",
+    "ja": "ビルド19:白い海",
+    "zh": "构建 19:白色的海",
+    "es": "Compilación 19: El mar blanco",
+    "fr": "Version 19 : la mer blanche",
+    "de": "Build 19: Das weiße Meer",
+    "pt": "Build 19: O mar branco",
+    "ru": "Сборка 19: Белое море",
+    "ar": "الإصدار 19: البحر الأبيض",
+    "hi": "बिल्ड 19: सफ़ेद सागर",
+    "id": "Build 19: Laut Putih"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 18, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~18의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜18の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 18 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 18, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 18, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 18 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 18, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–18 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 18 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 18 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 18, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "A new sea, the White Sea (Sea 14), opens with ink springs: dip your ink from a spring and spread it across the blank paper.",
+     "Your progress now continues through iCloud, so you can pick up where you left off on another device.",
+     "The first screen links to these Release Notes.",
+     "Stages across the seas were retuned for a smoother difficulty curve.",
+     "From Sea 5 you can use more than one Ink item at the same time, and the Harbor now shows why a card is locked.",
+     "Each sea draws its own decorations along the chart route."
+    ],
+    "ko": [
+     "새 바다 「흰 바다」(14막)가 열립니다. 먹샘에서 먹을 긷어 하얀 종이 위에 번지게 하세요.",
+     "진행 상황이 iCloud 로 이어져 다른 기기에서도 하던 곳부터 계속할 수 있습니다.",
+     "첫 화면에서 이 릴리즈 노트로 바로 갈 수 있습니다.",
+     "더 부드러운 난이도 곡선을 위해 여러 바다의 판을 다시 조정했습니다.",
+     "5막부터는 Ink 아이템을 동시에 여러 개 쓸 수 있고, 항구는 카드가 막힌 이유를 알려 줍니다.",
+     "해도의 길 위에 바다마다 다른 장식이 그려집니다."
+    ],
+    "ja": [
+     "新しい海「白い海」(第14海域)が開きます。墨の泉から墨をすくい、白い紙の上に広げましょう。",
+     "進行状況がiCloudで引き継がれ、別の端末でも続きから遊べます。",
+     "最初の画面からこのリリースノートへ移動できます。",
+     "難易度の流れをなめらかにするため、各海域のステージを調整しました。",
+     "第5海域からはInkアイテムを同時に複数使え、港ではカードが使えない理由が表示されます。",
+     "海図の道に、海域ごとに違う飾りが描かれます。"
+    ],
+    "zh": [
+     "新的海域「白色的海」(第 14 海域)开放,带来墨泉:从墨泉取墨,让它在空白的纸上晕开。",
+     "进度现在会通过 iCloud 同步,可以在另一台设备上接着玩。",
+     "首页可以直接进入本发布说明。",
+     "为了让难度曲线更平滑,重新调整了各海域的关卡。",
+     "从第 5 海域起可以同时使用多个 Ink 道具,港口也会说明卡片为何不可用。",
+     "海图上的航线会按海域画出不同的装饰。"
+    ],
+    "es": [
+     "Se abre un mar nuevo, el mar blanco (mar 14), con manantiales de tinta: toma tinta de un manantial y extiéndela sobre el papel en blanco.",
+     "Tu progreso ahora continúa con iCloud, así que puedes seguir desde otro dispositivo.",
+     "La primera pantalla enlaza con estas notas de la versión.",
+     "Se reajustaron los niveles de varios mares para una curva de dificultad más suave.",
+     "Desde el mar 5 puedes usar varios objetos de Ink a la vez, y el puerto indica por qué una tarjeta está bloqueada.",
+     "Cada mar dibuja sus propios adornos a lo largo de la ruta de la carta."
+    ],
+    "fr": [
+     "Une nouvelle mer, la mer blanche (mer 14), s'ouvre avec des sources d'encre : puisez l'encre à une source et étendez-la sur le papier vierge.",
+     "Votre progression se poursuit désormais via iCloud : reprenez là où vous vous étiez arrêté sur un autre appareil.",
+     "Le premier écran renvoie vers ces notes de version.",
+     "Les niveaux de plusieurs mers ont été réajustés pour une courbe de difficulté plus douce.",
+     "Dès la mer 5, vous pouvez utiliser plusieurs objets d'Ink en même temps, et le port indique pourquoi une carte est bloquée.",
+     "Chaque mer dessine ses propres ornements le long de la route de la carte."
+    ],
+    "de": [
+     "Ein neues Meer, das Weiße Meer (Meer 14), öffnet sich mit Tintenquellen: Schöpfe Tinte aus einer Quelle und lass sie sich über das leere Papier ausbreiten.",
+     "Dein Fortschritt läuft jetzt über iCloud weiter, sodass du auf einem anderen Gerät dort weitermachen kannst, wo du aufgehört hast.",
+     "Der erste Bildschirm verlinkt auf diese Release Notes.",
+     "Die Level mehrerer Meere wurden für eine sanftere Schwierigkeitskurve neu abgestimmt.",
+     "Ab Meer 5 kannst du mehrere Ink-Gegenstände gleichzeitig einsetzen, und der Hafen zeigt, warum eine Karte gesperrt ist.",
+     "Jedes Meer zeichnet eigene Verzierungen entlang der Route auf der Karte."
+    ],
+    "pt": [
+     "Um novo mar, o mar branco (mar 14), se abre com fontes de tinta: pegue tinta de uma fonte e espalhe-a pelo papel em branco.",
+     "Seu progresso agora continua pelo iCloud, então você pode retomar de onde parou em outro dispositivo.",
+     "A primeira tela leva a estas notas de versão.",
+     "As fases de vários mares foram reajustadas para uma curva de dificuldade mais suave.",
+     "A partir do mar 5 você pode usar vários itens de Ink ao mesmo tempo, e o porto mostra por que uma carta está bloqueada.",
+     "Cada mar desenha seus próprios enfeites ao longo da rota da carta."
+    ],
+    "ru": [
+     "Открывается новое море — Белое море (море 14) с чернильными родниками: зачерпните чернила из родника и разлейте их по чистой бумаге.",
+     "Прогресс теперь продолжается через iCloud: можно продолжить с того же места на другом устройстве.",
+     "С первого экрана есть ссылка на эти примечания к выпуску.",
+     "Уровни нескольких морей перенастроены для более плавной кривой сложности.",
+     "Начиная с моря 5 можно использовать несколько предметов Ink одновременно, а гавань показывает, почему карточка заблокирована.",
+     "Каждое море рисует свои украшения вдоль маршрута на карте."
+    ],
+    "ar": [
+     "يُفتح بحر جديد هو البحر الأبيض (البحر 14) بينابيع الحبر: اغرف الحبر من الينبوع ودعه ينتشر على الورقة البيضاء.",
+     "يستمر تقدّمك الآن عبر iCloud، فيمكنك المتابعة من حيث توقفت على جهاز آخر.",
+     "تحتوي الشاشة الأولى على رابط إلى ملاحظات الإصدار هذه.",
+     "أُعيد ضبط مراحل عدة بحار لمنحنى صعوبة أكثر سلاسة.",
+     "ابتداءً من البحر 5 يمكنك استخدام أكثر من عنصر Ink في الوقت نفسه، ويوضح الميناء سبب قفل البطاقة.",
+     "يرسم كل بحر زخارفه الخاصة على طول مسار الخريطة."
+    ],
+    "hi": [
+     "एक नया सागर, सफ़ेद सागर (सागर 14), स्याही के सोतों के साथ खुलता है: सोते से स्याही लें और उसे खाली काग़ज़ पर फैलाएँ।",
+     "आपकी प्रगति अब iCloud के ज़रिए जारी रहती है, इसलिए आप दूसरे डिवाइस पर वहीं से खेल सकते हैं जहाँ छोड़ा था।",
+     "पहली स्क्रीन से इन रिलीज़ नोट्स का लिंक मिलता है।",
+     "कठिनाई का क्रम और सहज बनाने के लिए कई सागरों के स्तर फिर से ट्यून किए गए।",
+     "सागर 5 से एक साथ कई Ink आइटम इस्तेमाल किए जा सकते हैं, और बंदरगाह बताता है कि कार्ड क्यों बंद है।",
+     "हर सागर नक्शे के रास्ते पर अपनी अलग सजावट बनाता है।"
+    ],
+    "id": [
+     "Laut baru, Laut Putih (laut 14), terbuka dengan mata air tinta: ambil tinta dari mata air dan sebarkan di atas kertas kosong.",
+     "Progres kamu kini berlanjut lewat iCloud, jadi bisa dilanjutkan dari perangkat lain.",
+     "Layar pertama menautkan ke catatan rilis ini.",
+     "Level di beberapa laut disetel ulang agar kurva kesulitan lebih mulus.",
+     "Mulai laut 5 kamu bisa memakai beberapa item Ink sekaligus, dan pelabuhan menjelaskan mengapa sebuah kartu terkunci.",
+     "Setiap laut menggambar hiasannya sendiri di sepanjang rute peta."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-18",
    "version": "1.0.0",
    "build": "18",
