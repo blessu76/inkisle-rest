@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, intro game, peluncuran aplikasi, tombol lewati, kurangi gerakan, aksesibilitas, game seluler
 image_alt: Pulau-pulau di laut hijau mint dengan tinta berwarna koral menyebar di salah satunya, gambar pembuka intro Inkisle.
+published: 2026-11-03T21:04+09:00
 ---
 Hal pertama yang kamu lihat saat membuka Inkisle adalah sebuah intro. Kami ingin intro terasa seperti peristiwa kecil beberapa kali pertama, lalu **tidak menghalangi** setelah itu. Tulisan ini menjelaskan cara intro dibuat dan aturan yang menentukan apa yang kamu lihat.
 

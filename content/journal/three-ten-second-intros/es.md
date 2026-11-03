@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, intro del juego, inicio de la app, botón de omitir, reducir movimiento, accesibilidad, juego móvil
 image_alt: Islas en un mar verde menta con tinta de color coral extendiéndose sobre una de ellas, la imagen inicial de la intro de Inkisle.
+published: 2026-11-03T21:04+09:00
 ---
 Lo primero que ves al abrir Inkisle es una intro. Queríamos que las primeras veces se sintiera como un pequeño acontecimiento y que después **no estorbara**. Esta entrada describe cómo está construida la intro y las reglas que deciden lo que ves.
 

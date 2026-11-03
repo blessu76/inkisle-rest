@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game intro, app launch, skip button, reduce motion, accessibility, mobile game
 image_alt: Islands in a mint-green sea with coral ink spreading across one of them, the opening image of the Inkisle intro.
+published: 2026-11-03T21:04+09:00
 ---
 The first thing you see when you open Inkisle is an intro. We wanted it to feel like a small event the first few times and to **get out of the way** after that. This post describes how the intro is built and the rules that decide what you see.
 

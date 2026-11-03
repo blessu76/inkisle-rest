@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, introdução do jogo, abertura do app, botão de pular, reduzir movimento, acessibilidade, jogo para celular
 image_alt: Ilhas em um mar verde-menta, com tinta cor de coral se espalhando por uma delas, a imagem de abertura da introdução do Inkisle.
+published: 2026-11-03T21:04+09:00
 ---
 A primeira coisa que você vê ao abrir o Inkisle é uma introdução. Queríamos que ela parecesse um pequeno acontecimento nas primeiras vezes e que depois **saísse do caminho**. Este post descreve como a introdução é construída e as regras que decidem o que você vê.
 
