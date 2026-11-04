@@ -13,6 +13,17 @@ import build_site as bs  # noqa: E402
 NOW = dt.datetime(2026, 11, 3, 20, 0, tzinfo=bs.KST)
 
 
+def isolated_env(home, **extra):
+    """Environment for running ops scripts in tests: HOME is a throw-away dir, so nothing can fall back to the real ~/Library/Logs, ~/Developer/inkisle-rest or ~/Library/LaunchAgents."""
+    import os
+    env = {**os.environ, "HOME": str(home)}
+    env.pop("INKISLE_PUBLISH_DIR", None)
+    env.pop("INKISLE_HOME", None)
+    env.pop("INKISLE_LAUNCH_AGENTS_DIR", None)
+    env.update(extra)
+    return env
+
+
 def post_text(slug, lang, title, published=None, extra=""):
     pub = ("published: %s\n" % published) if published else ""
     tr = "translation_of: en\n" if lang not in bs.MAIN_LANGS else ""

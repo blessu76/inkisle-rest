@@ -29,6 +29,8 @@ class PublishDaily(unittest.TestCase):
         helpers.build(site)
         self.tmp = Path(tempfile.mkdtemp(prefix="inkisle-pd-"))
         self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.home = self.tmp / "home"
+        self.home.mkdir()
         self.origin = self.tmp / "origin.git"
         git(self.tmp, "init", "-q", "--bare", "-b", "main", str(self.origin))
         self.clone = site
@@ -40,9 +42,27 @@ class PublishDaily(unittest.TestCase):
         self.check_cmd = "true"
 
     def run_script(self, check_cmd=None, publish_dir=None):
-        env = {**os.environ, "INKISLE_PUBLISH_DIR": str(publish_dir or self.clone), "INKISLE_CHECK_CMD": check_cmd or self.check_cmd,
-               "INKISLE_SKIP_NET": "1", "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t", "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t"}
+        env = helpers.isolated_env(self.home, INKISLE_PUBLISH_DIR=str(publish_dir or self.clone), INKISLE_CHECK_CMD=check_cmd or self.check_cmd,
+                                   INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
         return subprocess.run(["bash", str(SCRIPT)], capture_output=True, text=True, env=env)
+
+    def test_default_publish_dir_comes_from_home_and_tests_never_see_the_real_one(self):
+        # Regression: the tests must not be able to reach the real publish clone / log. With HOME isolated and no INKISLE_PUBLISH_DIR the script
+        # resolves ~/Developer/inkisle-rest inside the temp home, finds no clone and skips — and writes nothing there.
+        env = helpers.isolated_env(self.home, INKISLE_SKIP_NET="1")
+        self.assertNotIn("INKISLE_PUBLISH_DIR", env)
+        self.assertEqual(env["HOME"], str(self.home))
+        r = subprocess.run(["bash", str(SCRIPT)], capture_output=True, text=True, env=env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("SKIP", r.stdout)
+        self.assertIn(str(self.home / "Developer" / "inkisle-rest"), r.stdout)
+        self.assertEqual([p.name for p in self.home.iterdir()], [])
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())  # the fixture clone was not touched either
+
+    def test_script_itself_never_writes_a_log_file(self):
+        # Logging is the launchd plist's job (StandardOutPath); the script only echoes. A test run must leave HOME empty.
+        self.assertEqual(self.run_script().returncode, 0)
+        self.assertEqual(list(self.home.iterdir()), [])
 
     def head(self, cwd=None):
         return git(cwd or self.clone, "rev-parse", "HEAD").stdout.strip()
@@ -297,7 +317,7 @@ class OpsFiles(unittest.TestCase):
         self.assertIn("<key>GIT_TERMINAL_PROMPT</key><string>0</string>", t)
         tmp = Path(tempfile.mkdtemp(prefix="inkisle-ld-"))
         self.addCleanup(shutil.rmtree, tmp, True)
-        env = {**os.environ, "INKISLE_LAUNCH_AGENTS_DIR": str(tmp / "LA"), "INKISLE_HOME": str(tmp / "home")}
+        env = helpers.isolated_env(tmp / "hm", INKISLE_LAUNCH_AGENTS_DIR=str(tmp / "LA"), INKISLE_HOME=str(tmp / "home"))
         r = subprocess.run(["bash", str(REPO / "ops" / "install_launchd.sh")], capture_output=True, text=True, env=env)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         out = (tmp / "LA" / "rest.ipe.inkisle-publish.plist").read_text(encoding="utf-8")
@@ -311,10 +331,10 @@ class OpsFiles(unittest.TestCase):
         tmp = Path(tempfile.mkdtemp(prefix="inkisle-ld-"))
         self.addCleanup(shutil.rmtree, tmp, True)
         for bad in ("relative/home", "/a\\b", "/a\nb", "/a#b", "/a&b", "/a|b", ""):
-            env = {**os.environ, "INKISLE_LAUNCH_AGENTS_DIR": str(tmp / "LA"), "INKISLE_HOME": bad}
+            env = helpers.isolated_env(tmp / "hm", INKISLE_LAUNCH_AGENTS_DIR=str(tmp / "LA"), INKISLE_HOME=bad)
             if bad == "":
                 env.pop("INKISLE_HOME")
-                env["HOME"] = "relative"
+                env["HOME"] = "relative"  # (never the real home: the guard must reject before anything is written)
             r = subprocess.run(["bash", str(REPO / "ops" / "install_launchd.sh")], capture_output=True, text=True, env=env)
             self.assertEqual(r.returncode, 1, (bad, r.stdout, r.stderr))
             self.assertIn("HOME", r.stderr, bad)  # rejected by our own check, not by a later failure
