@@ -1,6 +1,79 @@
 {
  "releases": [
   {
+   "id": "1.0.0-21",
+   "version": "1.0.0",
+   "build": "21",
+   "status": "testflight",
+   "date": "2026-11-04",
+   "title": {
+    "en": "Build 21: Every sea gets its own look on the chart",
+    "ko": "빌드 21: 바다마다 다른 모습의 해도",
+    "ja": "ビルド21:海ごとに違う姿になった海図",
+    "zh": "构建 21:海图上每片海都有自己的样子",
+    "es": "Compilación 21: cada mar tiene su propio aspecto en la carta",
+    "fr": "Version 21 : chaque mer a son propre style sur la carte",
+    "de": "Build 21: Jedes Meer sieht auf der Karte anders aus",
+    "pt": "Build 21: Cada mar ganha um visual próprio na carta",
+    "ru": "Сборка 21: у каждого моря свой вид на карте",
+    "ar": "الإصدار 21: لكل بحر مظهره الخاص على الخريطة",
+    "hi": "बिल्ड 21: नक्शे पर हर समुद्र का अपना रूप",
+    "id": "Build 21: Setiap laut punya tampilan sendiri di peta"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 20, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~20의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜20の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 20 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 20, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 20, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 20 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 20, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–20 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 20 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 20 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 20, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "On the chart, stages you have not cleared stay plain white. Once cleared, each sea marks its stages with its own shape and colour, and boss stages get a double outline."
+    ],
+    "ko": [
+     "해도에서 아직 깨지 않은 판은 하얀 점으로 남습니다. 깨고 나면 바다마다 다른 모양과 색으로 표시되고, 보스 판은 이중 테두리가 붙습니다."
+    ],
+    "ja": [
+     "海図では、まだクリアしていないステージは白いままです。クリアすると、海ごとに違う形と色で印がつき、ボスのステージには二重の縁取りがつきます。"
+    ],
+    "zh": [
+     "在海图上,尚未通关的关卡保持纯白。通关后,每片海会用各自的形状和颜色标记关卡,首领关卡会带有双层描边。"
+    ],
+    "es": [
+     "En la carta, los niveles que aún no has superado se quedan en blanco liso. Al superarlos, cada mar los marca con su propia forma y color, y los niveles de jefe llevan un doble contorno."
+    ],
+    "fr": [
+     "Sur la carte, les niveaux non terminés restent d’un blanc uni. Une fois terminés, chaque mer les marque avec sa propre forme et sa propre couleur, et les niveaux de boss reçoivent un double contour."
+    ],
+    "de": [
+     "Auf der Karte bleiben noch nicht geschaffte Stufen schlicht weiß. Nach dem Sieg markiert jedes Meer seine Stufen mit eigener Form und Farbe, Boss-Stufen erhalten einen doppelten Rand."
+    ],
+    "pt": [
+     "Na carta, as fases ainda não vencidas ficam em branco liso. Depois de vencidas, cada mar as marca com forma e cor próprias, e as fases de chefe ganham contorno duplo."
+    ],
+    "ru": [
+     "На карте непройденные уровни остаются простыми белыми. После победы каждое море отмечает свои уровни своей формой и цветом, а у уровней с боссом появляется двойная обводка."
+    ],
+    "ar": [
+     "على الخريطة تبقى المراحل التي لم تجتزها بيضاء سادة. وبعد اجتيازها يميّز كل بحر مراحله بشكل ولون خاصّين به، وتحصل مراحل الزعيم على إطار مزدوج."
+    ],
+    "hi": [
+     "नक्शे पर जो चरण अभी पार नहीं हुए, वे सादे सफ़ेद रहते हैं। पार होने के बाद हर समुद्र अपने चरणों को अपने आकार और रंग से चिह्नित करता है, और बॉस वाले चरणों पर दोहरी रेखा लगती है।"
+    ],
+    "id": [
+     "Di peta, tahap yang belum diselesaikan tetap putih polos. Setelah selesai, setiap laut menandai tahapnya dengan bentuk dan warna sendiri, dan tahap bos mendapat garis tepi ganda."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-20",
    "version": "1.0.0",
    "build": "20",
