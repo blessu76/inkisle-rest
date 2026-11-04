@@ -42,7 +42,11 @@ def make_site(langs=("en", "ko"), posts=(("alpha-post", "2026-11-01T19:00+09:00"
         d.mkdir(parents=True)
         for l in ("en", "ko"):
             (d / (l + ".md")).write_text(post_text(slug, l, "Queued %s %s" % (slug, l)), encoding="utf-8")
-    shutil.copy(REPO / "content" / "releases.json", root / "content" / "releases.json")
+    # The real release notes are copied, but a note dated after the fixed NOW would trip the "lastmod in the future" check on any later release day.
+    rel = json.loads((REPO / "content" / "releases.json").read_text(encoding="utf-8"))
+    for r in rel["releases"]:
+        r["date"] = min(r["date"], NOW.strftime("%Y-%m-%d"))
+    (root / "content" / "releases.json").write_text(json.dumps(rel, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     shutil.copytree(REPO / "assets", root / "assets")
     return root
 

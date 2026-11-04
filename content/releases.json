@@ -5,7 +5,7 @@
    "version": "1.0.0",
    "build": "20",
    "status": "testflight",
-   "date": "2026-11-03",
+   "date": "2026-11-04",
    "title": {
     "en": "Build 20: A gentler 2-5, and nicknames in more scripts",
     "ko": "빌드 20: 한결 부드러운 2-5, 더 많은 글자의 닉네임",
@@ -90,7 +90,7 @@
    "version": "1.0.0",
    "build": "19",
    "status": "testflight",
-   "date": "2026-11-03",
+   "date": "2026-11-04",
    "title": {
     "en": "Build 19: The White Sea",
     "ko": "빌드 19: 흰 바다",

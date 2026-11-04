@@ -180,6 +180,10 @@ class Output(unittest.TestCase):
         self.assertTrue((root / "journal/page/2/index.html").is_file())
         self.assertIn('rel="next"', (root / "journal/index.html").read_text())
         self.assertIn("https://inkisle.ipe.rest/journal/page/2/", (root / "sitemap.xml").read_text())
+        # the language picker on page 2 offers page 2 of both languages, not only the page's own language
+        for pg, lang in (("journal/page/2/index.html", "en"), ("ko/journal/page/2/index.html", "ko")):
+            menu = re.search(r'<details class="lang">.*?</details>', (root / pg).read_text(), re.S).group(0)
+            self.assertEqual(re.findall(r'<a href="([^"]*)" hreflang', menu), ["/journal/page/2/", "/ko/journal/page/2/"], pg)
 
 
 class RealRepo(unittest.TestCase):

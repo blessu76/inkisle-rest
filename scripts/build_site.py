@@ -683,7 +683,8 @@ def build_list(ctx, lang, page):
             "blogPost": [{"@type": "BlogPosting", "headline": p["langs"][lang]["title"], "url": url(path_post(lang, p["slug"])),
                           "datePublished": iso_time(p)} for p in chunk]}
     graph = [ORG, website_ld(lang, ctx), blog, breadcrumb_ld(crumbs)]
-    alt = {l: path_journal(l) for l in ctx.langs} if page == 1 else {lang: path_journal(lang, page)}
+    # The language picker on page N links to the same page of every language that has one (all 12 when the translations are complete).
+    alt = {l: path_journal(l, page) for l in ctx.langs if page <= pages_count(len(posts_in(ctx, l)))} or {lang: path_journal(lang, page)}
     return path_journal(lang, page), render(ctx, lang, path=path_journal(lang, page), title=title, desc=t("journal_desc"), body=body,
                                             graph=graph, alt=alt, nav="journal", hreflang=(page == 1))
 
