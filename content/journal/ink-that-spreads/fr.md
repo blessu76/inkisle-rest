@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, sensation de jeu, retour visuel, jeu mobile, indice d'initiation, animation
 image_alt: Une tache d'encre couleur corail qui s'étale sur une île capturée pendant que des flottes se déplacent entre d'autres îles.
+published: 2026-11-04T19:00+09:00
 ---
 Dans un jeu où il s'agit de teindre la carte à votre couleur, le moment qui compte le plus est celui où **une île change de mains**. S'il ne s'agit que d'un changement de couleur, il est facile de le manquer sur un petit écran. Nous avons donc ajouté quelques petits effets dont le rôle est de dire « cela vient de se produire ».
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, rasa bermain, umpan balik visual, game seluler, petunjuk pengenalan, animasi
 image_alt: Noda tinta berwarna koral menyebar di atas pulau yang direbut sementara armada bergerak di antara pulau-pulau lain.
+published: 2026-11-04T19:00+09:00
 ---
 Dalam game tentang mewarnai peta dengan warnamu, momen yang paling penting adalah **saat sebuah pulau berpindah tangan**. Jika hanya pergantian warna, momen itu mudah terlewat di layar kecil. Jadi kami menambahkan beberapa efek kecil yang tugasnya mengatakan "ini baru saja terjadi".
 

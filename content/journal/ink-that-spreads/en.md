@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game feel, visual feedback, mobile game, onboarding hint, animation
 image_alt: A coral ink bloom spreading over a captured island while fleets move between other islands.
+published: 2026-11-04T19:00+09:00
 ---
 In a game about turning the map your color, the moment that matters most is **an island changing hands**. If it is only a color swap, it is easy to miss on a small screen. So we added a few small effects whose job is to say "this just happened".
 

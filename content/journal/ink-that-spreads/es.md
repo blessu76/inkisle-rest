@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, sensación de juego, respuesta visual, juego móvil, pista de introducción, animación
 image_alt: Una mancha de tinta color coral extendiéndose sobre una isla capturada mientras las flotas se mueven entre otras islas.
+published: 2026-11-04T19:00+09:00
 ---
 En un juego sobre teñir el mapa de tu color, el momento que más importa es **cuando una isla cambia de manos**. Si es solo un cambio de color, es fácil pasarlo por alto en una pantalla pequeña. Por eso añadimos algunos efectos pequeños cuya función es decir «esto acaba de pasar».
 

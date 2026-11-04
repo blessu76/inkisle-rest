@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, sensação de jogo, feedback visual, jogo para celular, dica de introdução, animação
 image_alt: Uma mancha de tinta cor de coral se espalhando sobre uma ilha capturada enquanto frotas se movem entre outras ilhas.
+published: 2026-11-04T19:00+09:00
 ---
 Em um jogo sobre pintar o mapa da sua cor, o momento mais importante é **quando uma ilha muda de mãos**. Se for apenas uma troca de cor, é fácil não notar em uma tela pequena. Por isso acrescentamos alguns efeitos pequenos cuja função é dizer "isso acabou de acontecer".
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spielgefühl, visuelles Feedback, Mobile Game, Einsteigerhinweis, Animation
 image_alt: Ein korallenfarbener Tintenklecks breitet sich über eine eroberte Insel aus, während Flotten zwischen anderen Inseln unterwegs sind.
+published: 2026-11-04T19:00+09:00
 ---
 In einem Spiel, in dem man die Karte in die eigene Farbe taucht, ist der wichtigste Moment, wenn **eine Insel den Besitzer wechselt**. Ist es nur ein Farbwechsel, übersieht man ihn auf einem kleinen Bildschirm leicht. Deshalb haben wir ein paar kleine Effekte hinzugefügt, deren Aufgabe es ist, „das ist gerade passiert" zu sagen.
 
