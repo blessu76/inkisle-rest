@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game audio, procedural sound, pentatonic scale, mobile game, accessibility, settings
 image_alt: Five rising notes drawn as small ink dots above a row of islands.
+published: 2026-11-05T19:00+09:00
 ---
 Many people play on a phone in public or in bed. A game that starts loud is a game that gets closed. So in Inkisle **sound is off until the player turns it on**, and that setting is saved.
 

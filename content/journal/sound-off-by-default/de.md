@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spielaudio, prozeduraler Sound, Pentatonik, Mobile Game, Barrierefreiheit, Einstellungen
 image_alt: Fünf aufsteigende Töne, als kleine Tintenpunkte über einer Reihe von Inseln gezeichnet.
+published: 2026-11-05T19:00+09:00
 ---
 Viele Leute spielen am Telefon in der Öffentlichkeit oder im Bett. Ein Spiel, das laut startet, wird geschlossen. Deshalb ist in Inkisle **der Ton aus, bis der Spieler ihn einschaltet**, und diese Einstellung wird gespeichert.
 

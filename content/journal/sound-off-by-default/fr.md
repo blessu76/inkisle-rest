@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, audio de jeu, son procédural, gamme pentatonique, jeu mobile, accessibilité, réglages
 image_alt: Cinq notes ascendantes dessinées comme de petits points d'encre au-dessus d'une rangée d'îles.
+published: 2026-11-05T19:00+09:00
 ---
 Beaucoup de gens jouent sur leur téléphone en public ou au lit. Un jeu qui démarre fort est un jeu qu'on ferme. C'est pourquoi, dans Inkisle, **le son est coupé tant que le joueur ne l'active pas**, et ce réglage est enregistré.
 

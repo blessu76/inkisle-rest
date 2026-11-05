@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, audio game, suara prosedural, tangga nada pentatonik, game seluler, aksesibilitas, pengaturan
 image_alt: Lima nada naik yang digambar sebagai titik-titik tinta kecil di atas deretan pulau.
+published: 2026-11-05T19:00+09:00
 ---
 Banyak orang bermain di ponsel di tempat umum atau di tempat tidur. Game yang dimulai dengan keras adalah game yang ditutup. Jadi di Inkisle **suara mati sampai pemain menyalakannya**, dan pengaturan itu disimpan.
 

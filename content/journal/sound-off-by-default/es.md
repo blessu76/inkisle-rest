@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, audio de juego, sonido procedural, escala pentatónica, juego móvil, accesibilidad, ajustes
 image_alt: Cinco notas ascendentes dibujadas como pequeños puntos de tinta sobre una fila de islas.
+published: 2026-11-05T19:00+09:00
 ---
 Mucha gente juega en el teléfono en público o en la cama. Un juego que empieza con ruido es un juego que se cierra. Por eso en Inkisle **el sonido está desactivado hasta que el jugador lo activa**, y ese ajuste se guarda.
 

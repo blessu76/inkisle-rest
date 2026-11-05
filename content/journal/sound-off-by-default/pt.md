@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, áudio de jogo, som procedural, escala pentatônica, jogo para celular, acessibilidade, configurações
 image_alt: Cinco notas ascendentes desenhadas como pequenos pontos de tinta acima de uma fileira de ilhas.
+published: 2026-11-05T19:00+09:00
 ---
 Muita gente joga no celular em público ou na cama. Um jogo que começa alto é um jogo que se fecha. Por isso, no Inkisle, **o som fica desligado até o jogador ligá-lo**, e essa configuração é salva.
 
