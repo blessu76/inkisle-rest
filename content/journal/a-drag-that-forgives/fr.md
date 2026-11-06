@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, commandes tactiles, UX de jeu mobile, glisser-déposer, multitouch, game design
 image_alt: Un pouce qui glisse depuis une île corail à travers la mer jusqu'à une île voisine, avec une ligne pointillée derrière lui.
+published: 2026-11-06T19:00+09:00
 ---
 Le premier niveau enseigne toute la commande en une ligne : **glissez une île sur une autre île et un navire part**. Cette phrase cache beaucoup de petites décisions, car un pouce est bien plus imprécis qu'une souris. Cet article rassemble celles dont nous sommes les plus sûrs.
 

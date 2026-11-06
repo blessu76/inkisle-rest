@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kontrol sentuh, UX game mobile, seret dan lepas, multisentuh, desain game
 image_alt: Sebuah ibu jari menyeret dari pulau koral melintasi laut ke pulau tetangga, dengan garis putus-putus di belakangnya.
+published: 2026-11-06T19:00+09:00
 ---
 Stage pertama mengajarkan seluruh kontrol dalam satu baris: **seret sebuah pulau ke pulau lain dan sebuah kapal berangkat**. Kalimat itu menyembunyikan banyak keputusan kecil, karena ibu jari jauh lebih tumpul daripada mouse. Tulisan ini mengumpulkan keputusan yang paling kami yakini.
 

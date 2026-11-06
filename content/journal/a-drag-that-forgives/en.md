@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, touch controls, mobile game UX, drag and drop, multitouch, game design
 image_alt: A thumb dragging from a coral island across the sea to a neighboring island, with a dotted line behind it.
+published: 2026-11-06T19:00+09:00
 ---
 The first stage teaches the whole control in one line: **drag an island onto another island and a ship leaves**. That sentence hides a lot of small decisions, because a thumb is much blunter than a mouse. This post collects the ones we are most sure about.
 

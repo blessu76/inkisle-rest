@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, controles por toque, UX de jogos mobile, arrastar e soltar, multitoque, design de jogos
 image_alt: Um polegar arrastando de uma ilha coral através do mar até uma ilha vizinha, com uma linha pontilhada atrás.
+published: 2026-11-06T19:00+09:00
 ---
 A primeira fase ensina o controle inteiro em uma linha: **arraste uma ilha até outra ilha e um navio parte**. Essa frase esconde muitas decisões pequenas, porque um polegar é bem mais desajeitado que um mouse. Este post reúne as que temos mais certeza.
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Touch-Steuerung, Mobile-Game-UX, Drag and Drop, Multitouch, Spieldesign
 image_alt: Ein Daumen zieht von einer korallenroten Insel über das Meer zu einer Nachbarinsel, dahinter eine gepunktete Linie.
+published: 2026-11-06T19:00+09:00
 ---
 Das erste Level lehrt die ganze Steuerung in einer Zeile: **Ziehe eine Insel auf eine andere Insel, und ein Schiff legt ab**. In diesem Satz stecken viele kleine Entscheidungen, denn ein Daumen ist viel ungenauer als eine Maus. Dieser Beitrag sammelt die, bei denen wir uns am sichersten sind.
 

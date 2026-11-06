@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, controles táctiles, UX de juegos móviles, arrastrar y soltar, multitáctil, diseño de juegos
 image_alt: Un pulgar arrastrando desde una isla coral a través del mar hasta una isla vecina, con una línea punteada detrás.
+published: 2026-11-06T19:00+09:00
 ---
 La primera fase enseña todo el control en una línea: **arrastra una isla sobre otra isla y sale un barco**. Esa frase esconde muchas decisiones pequeñas, porque un pulgar es mucho más torpe que un ratón. Esta entrada recoge las que nos parecen más seguras.
 
