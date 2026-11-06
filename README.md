@@ -13,7 +13,9 @@ Static site on GitHub Pages (`CNAME` = inkisle.ipe.rest). Python 3.8+ standard l
 | `scripts/publish_post.py` | queue → journal (stamps the time, refuses future), then build + sitemap check |
 | `scripts/check_release.py` | `--build N`: the release note for app build N is in `content/releases.json` in all 12 languages and built (exit 1 + what is missing otherwise); the app's `deploy_ios.sh` runs it before every TestFlight upload |
 | `scripts/check_sitemap.py` | sitemap ↔ files ↔ posts ↔ hreflang consistency (`--live` after deploy) |
-| `scripts/indexnow.py` | IndexNow ping (key file `<32 hex>.txt` at the root) |
+| `scripts/indexnow.py` | IndexNow ping (key file `<32 hex>.txt` at the root) — 3-line shim over the web kit |
+| `vendor/ipe_web_kit.lock` | pin of the **private** company web kit (F-024): tag, commit, manifest hash. The kit source is not committed (this repo is public): `vendor/ipe_web_kit/` is gitignored and installed by `scripts/kit_lock.py sync` / CI. Build-time only, not deployed |
+| `scripts/kit_lock.py` | `check` (installed kit == lock) · `sync --kit <clone>` (install the locked tag) · `sync --kit <clone> --update --tag vX.Y.Z` (move the lock) |
 | `scripts/make_art.py`, `render_png.js` | vector art (logo, hero, covers) and the PNGs (og image, icons) |
 | `scripts/check.sh` | **green gate** — run before every commit |
 | `docs/TRANSLATION.md` | translation pipeline |
@@ -30,6 +32,18 @@ python3 scripts/check_release.py --build 7 # release note for app build 7 comple
 python3 scripts/check_sitemap.py --live   # after deploy: every URL is HTTP 200
 python3 scripts/indexnow.py <URL> ...     # after deploy: tell Bing/Naver/Yandex
 ```
+
+### ipe_web_kit (private) — local setup
+
+The kit source is not in this repo (it is public); only `vendor/ipe_web_kit.lock` is. Install the locked tag once per clone (and after a lock change):
+
+```sh
+python3 scripts/kit_lock.py sync --kit ~/Developer/ipe_web_kit   # into vendor/ipe_web_kit/ (gitignored)
+python3 scripts/kit_lock.py check                                  # installed == lock; scripts/check.sh runs this first
+```
+
+CI (`.github/actions/ipe-web-kit`) checks the kit out at the locked commit with a read-only deploy key (secret `IPE_WEB_KIT_DEPLOY_KEY`) and runs the same `sync`.
+The 19:00 launchd clone needs the kit installed too, because `scripts/check.sh` is its green gate.
 
 URLs: English at the root (`/`, `/about/`, `/privacy/`, `/journal/`, `/journal/<slug>/`), every other language under `/<lang>/…` with the same slugs;
 `hreflang` links all language versions and `x-default` = English.
