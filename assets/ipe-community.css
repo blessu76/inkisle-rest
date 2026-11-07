@@ -1,7 +1,7 @@
 /* ipe_web_kit community — comments · likes · reports widget. Uses the kit theme tokens (--ipe-*) only; the site sets them (theme.theme_style).
-   Dark follows the page: data-ipe-scheme on <html> (see ipe-kit.css). Empty mount (OFF / not configured) is hidden. */
+   Dark follows the page: data-ipe-scheme on <html> (see ipe-kit.css). Empty mount (before load / not configured) stays 1px and invisible, never display:none. */
 .ipe-cm{margin:calc(var(--ipe-gap) * 4) 0 0;padding:calc(var(--ipe-gap) * 2) 0 0;border-top:1px solid var(--ipe-line);color:var(--ipe-text);font:400 15px/1.7 var(--ipe-font-sans);-webkit-font-smoothing:antialiased}
-.ipe-cm:empty{display:none}
+.ipe-cm:empty{min-height:1px;margin:0;padding:0;border-top-color:transparent}  /* keep a box: lazy-load IntersectionObserver cannot see display:none */
 .ipe-cm *{box-sizing:border-box}
 .ipe-cm__like{display:flex;align-items:center;gap:12px;margin:0 0 calc(var(--ipe-gap) * 2.5)}
 .ipe-cm__like-btn{appearance:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid var(--ipe-line);border-radius:var(--ipe-radius);background:transparent;color:var(--ipe-accent);font:600 12px/1 var(--ipe-font-mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
@@ -41,5 +41,5 @@
 .ipe-cm__msg--bad{color:var(--ipe-text)}
 .ipe-cm__msg:empty{display:none}
 .ipe-cm[lang="ar"] .ipe-cm__like-btn,.ipe-cm[lang="ar"] .ipe-cm__send,.ipe-cm[lang="ar"] .ipe-cm__more,.ipe-cm[lang="ar"] .ipe-cm__report,.ipe-cm[lang="ar"] .ipe-cm__lang{letter-spacing:0}
-@media (max-width:420px){.ipe-cm__row{flex-direction:column;align-items:stretch}.ipe-cm__send{width:100%}}
+@media (max-width:420px){.ipe-cm__row{flex-direction:column;align-items:stretch}.ipe-cm__hint{flex:0 0 auto}.ipe-cm__send{width:100%}}
 @media (prefers-reduced-motion:reduce){.ipe-cm__like-btn{transition:none}}

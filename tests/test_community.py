@@ -32,10 +32,37 @@ class Committed(unittest.TestCase):
         self.assertIn("--exclude='community.json'", (REPO / ".github/workflows/deploy.yml").read_text(encoding="utf-8"))
 
 
+PRIVACY = REPO / "content" / "community" / "privacy"
+PLACEHOLDERS = {"{{RETENTION_YEARS}}", "{{HIDDEN_DELETE_DAYS}}", "{{DELETE_REQUEST_DAYS}}", "{{MIN_AGE}}"}
+VALUES = {"RETENTION_YEARS": 3, "HIDDEN_DELETE_DAYS": 90, "DELETE_REQUEST_DAYS": 30, "MIN_AGE": 14}
+
+
+class PrivacyText(unittest.TestCase):
+    """content/community/privacy/<lang>.md: the comments section of the privacy policy, shown only once comments are ON."""
+
+    def test_every_language_has_it_with_the_same_undecided_values(self):
+        for lang in bs.LANGS:
+            text = (PRIVACY / (lang + ".md")).read_text(encoding="utf-8")
+            with self.subTest(lang):
+                self.assertEqual(set(re.findall(r"\{\{[A-Z_]+\}\}", text)), PLACEHOLDERS)
+                self.assertEqual(len(re.findall(r"^\*\*", text, re.M)), 7)  # same structure in every language
+                self.assertIn("ipe.haven@gmail.com", text)
+                self.assertNotRegex(text, r"\[(?:결정|검토)")  # internal review markers never ship
+                if lang != "ko":
+                    self.assertNotRegex(text, r"[가-힣]")
+
+    def test_the_site_ships_with_the_widget_off(self):
+        self.assertFalse(json.loads((REPO / "community.json").read_text(encoding="utf-8"))["features"]["comments"])
+
+
 class Switch(unittest.TestCase):
     def setUp(self):
         self.root = make_site()
         self.addCleanup(shutil.rmtree, self.root, True)
+        shutil.copytree(PRIVACY, self.root / "content" / "community" / "privacy")
+        old = dict(bs.COMMUNITY_PRIVACY_VALUES)  # the owner has not decided these yet; tests of the ON state use example values
+        bs.COMMUNITY_PRIVACY_VALUES.update(VALUES)
+        self.addCleanup(lambda: (bs.COMMUNITY_PRIVACY_VALUES.clear(), bs.COMMUNITY_PRIVACY_VALUES.update(old)))
 
     def built(self):
         ctx, errs = bs.make_ctx(self.root, now=NOW)
@@ -83,6 +110,27 @@ class Switch(unittest.TestCase):
         write_cfg(self.root, dict(ON, firebase={"projectId": "REPLACE", "apiKey": "REPLACE"}))
         with self.assertRaises(ValueError):
             bs.make_ctx(self.root, now=NOW)
+
+    def test_privacy_comments_section_only_when_on(self):
+        _, off = self.built()
+        for rel, anchor in (("privacy/index.html", "Comments and likes"), ("ko/privacy/index.html", "댓글과 좋아요")):
+            self.assertNotIn(anchor, off[rel])
+
+    def test_on_stops_the_build_while_a_privacy_value_is_undecided(self):
+        write_cfg(self.root, ON)
+        bs.COMMUNITY_PRIVACY_VALUES.pop("MIN_AGE")
+        with self.assertRaisesRegex(ValueError, r"\{\{MIN_AGE\}\}"):
+            self.built()
+
+    def test_privacy_comments_section_goes_before_the_app_section(self):
+        write_cfg(self.root, ON)
+        files = self.built()[1]
+        for rel, anchor, app in (("privacy/index.html", "Comments and likes", "2. The App"), ("ko/privacy/index.html", "댓글과 좋아요", "2. 앱")):
+            with self.subTest(rel):
+                page = files[rel]
+                self.assertEqual(page.count("ipe.haven@gmail.com"), 3)  # contact line + "Your choices" + the comments deletion paragraph
+                self.assertNotIn("{{", page)
+                self.assertLess(page.index(anchor), page.index(app))
 
     def test_main_copies_the_assets_only_when_on(self):
         for name in ("ipe-community.css", "ipe-community.js"):  # make_site copies the repo's assets, which hold them once the site is ON

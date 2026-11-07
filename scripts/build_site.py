@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 SITE = "https://inkisle.ipe.rest"
-ASSET_V = "20261107b"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
+ASSET_V = "20261108a"  # keep in sync: bump when assets/inkisle.css or inkisle.js change
 KST = dt.timezone(dt.timedelta(hours=9))
 PAGES_UPDATED = "2026-11-01"  # sitemap lastmod of about / privacy — bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
@@ -470,6 +470,12 @@ def langpick_script(root, langs):
     return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
 
 
+# Values for the {{...}} placeholders in content/community/privacy/<lang>.md. Left EMPTY on purpose: turning comments ON stops the build until the
+# owner has decided every value (retention years, days until hidden comments are deleted, days to answer a delete request, minimum age).
+COMMUNITY_PRIVACY_VALUES = {}
+COMMUNITY_PRIVACY_DIR = ("content", "community", "privacy")
+
+
 def load_community(root):
     """-> (config, head html, script html); (None, "", "") while community.json is absent or every feature is false."""
     f = Path(root) / COMMUNITY_FILE
@@ -497,6 +503,21 @@ class Ctx:
             return ""
         from ipe_web_kit import community  # noqa: E402
         return community.mount(self.cm, slug, lang)
+
+    def privacy_comments(self, lang):
+        """The 'Comments and likes' privacy section (empty while the widget is OFF — nothing is collected, so nothing is announced)."""
+        if not self.cm or not self.cm.enabled:
+            return ""
+        f = Path(self.root).joinpath(*COMMUNITY_PRIVACY_DIR) / (lang + ".md")
+        if not f.is_file():
+            raise ValueError("comments are ON but %s is missing" % f)
+        text = f.read_text(encoding="utf-8").strip()
+        for k, v in COMMUNITY_PRIVACY_VALUES.items():
+            text = text.replace("{{%s}}" % k, str(v))
+        left = sorted(set(re.findall(r"\{\{[A-Z_]+\}\}", text)))
+        if left:
+            raise ValueError("comments are ON but the privacy section %s still has undecided values %s — fill COMMUNITY_PRIVACY_VALUES in build_site.py" % (f.name, ", ".join(left)))
+        return text
 
     def t(self, lang, key):
         return self.i18n[lang][key]
@@ -641,8 +662,20 @@ def build_home(ctx, lang):
                                    graph=graph, alt=alt, nav="home")
 
 
+def with_comments_section(md, section):
+    """Put the comments section at the end of '## 1. The Site' (just before the next '## ' heading)."""
+    if not section:
+        return md
+    m = list(re.finditer(r"^## ", md, re.M))
+    if len(m) < 2:
+        raise ValueError("privacy page has no second '## ' heading to put the comments section before")
+    return md[:m[1].start()] + section + "\n\n" + md[m[1].start():]
+
+
 def build_page(ctx, lang, slug):
     meta, md = ctx.pages[(lang, slug)]
+    if slug == "privacy":
+        md = with_comments_section(md, ctx.privacy_comments(lang))
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     crumbs = [(path_home(lang), t("crumb_home")), (None, meta["title"])]
     ai = ""

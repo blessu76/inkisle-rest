@@ -102,8 +102,3 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .foot-langs{display:flex;flex-wrap:wrap;gap:4px 14px;margin:.6em 0;font-size:14px}
 .foot-langs a{color:var(--muted)}
 .foot-langs a[aria-current]{color:var(--fg);font-weight:700}
-/* ipe_web_kit community v0.2.2: its own `.ipe-cm:empty{display:none}` hides the mount before the lazy IntersectionObserver can ever see it (a display:none box never intersects),
-   so the widget would never start. Keep the empty mount as a 1px box until the widget fills it. Drop this once the kit fixes it. */
-main .ipe-cm:empty{display:block;min-height:1px}
-/* same kit CSS: at <=420px the form row turns into a column, where the hint's `flex:1 1 220px` becomes a 220px-tall box (a big gap above Post). */
-@media (max-width:420px){main .ipe-cm__hint{flex:0 0 auto}}
