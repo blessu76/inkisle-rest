@@ -1,6 +1,91 @@
 {
  "releases": [
   {
+   "id": "1.0.0-25",
+   "version": "1.0.0",
+   "build": "25",
+   "status": "testflight",
+   "date": "2026-11-07",
+   "title": {
+    "en": "Build 25: Your progress follows you between iPhone and iPad more reliably",
+    "ko": "빌드 25: iPhone 과 iPad 사이에서 진행 상황이 더 확실하게 이어집니다",
+    "ja": "ビルド25:iPhoneとiPadの間で進み具合がより確実に引き継がれます",
+    "zh": "构建 25:iPhone 与 iPad 之间的进度衔接更可靠",
+    "es": "Compilación 25: tu progreso te sigue con más fiabilidad entre iPhone y iPad",
+    "fr": "Version 25 : votre progression suit plus fidèlement d'un iPhone à un iPad",
+    "de": "Build 25: Dein Fortschritt folgt dir zuverlässiger zwischen iPhone und iPad",
+    "pt": "Build 25: seu progresso acompanha você com mais segurança entre iPhone e iPad",
+    "ru": "Сборка 25: прогресс надёжнее переходит между iPhone и iPad",
+    "ar": "الإصدار 25: تقدّمك ينتقل بين iPhone وiPad بثبات أكبر",
+    "hi": "बिल्ड 25: iPhone और iPad के बीच आपकी प्रगति अब ज़्यादा भरोसे से साथ चलती है",
+    "id": "Build 25: Kemajuanmu lebih andal mengikuti antara iPhone dan iPad"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 24, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~24의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜24の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 24 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 24, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 24, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 24 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 24, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–24 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 24 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 24 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 24, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "When you reopen the app on an iPhone or iPad signed in to the same Apple account, it now reads again right away, so boards, stars, unlocks and bonus ink earned on your other device show up.",
+     "If you turn on iCloud or sign in after the app is already open, your progress carries over the next time you open it. While iCloud is off, the app quietly saves to this device only."
+    ],
+    "ko": [
+     "같은 Apple 계정의 다른 iPhone·iPad 에서 앱을 다시 열면 바로 다시 읽어 와서, 다른 기기에서 깬 판·★·해금·공짜 잉크가 반영됩니다.",
+     "앱을 켠 뒤에 iCloud 를 켜거나 로그인해도 다시 열면 진행 상황이 이어집니다. iCloud 가 꺼져 있으면 조용히 이 기기에만 저장합니다."
+    ],
+    "ja": [
+     "同じApple IDのほかのiPhoneやiPadでアプリを開き直すと、すぐに読み込み直すので、別の端末でクリアした盤面・★・解放・無料インクが反映されます。",
+     "アプリを開いたあとでiCloudをオンにしたりサインインしたりしても、次に開いたときに進み具合が引き継がれます。iCloudがオフの間は、この端末にだけ静かに保存します。"
+    ],
+    "zh": [
+     "在登录同一个 Apple 账户的另一台 iPhone 或 iPad 上重新打开应用时,会立即重新读取,其他设备上通关的关卡、★、解锁内容和免费墨水都会同步过来。",
+     "即使在应用已经打开之后才开启 iCloud 或登录,下次打开时进度也会衔接上。iCloud 关闭时,应用只会静默保存在这台设备上。"
+    ],
+    "es": [
+     "Al volver a abrir la app en otro iPhone o iPad con la misma cuenta de Apple, ahora vuelve a leer al instante, y aparecen los tableros, las ★, los desbloqueos y la tinta gratis conseguidos en tu otro dispositivo.",
+     "Si activas iCloud o inicias sesión cuando la app ya está abierta, tu progreso se transfiere la próxima vez que la abras. Con iCloud desactivado, la app guarda en silencio solo en este dispositivo."
+    ],
+    "fr": [
+     "Quand vous rouvrez l'app sur un autre iPhone ou iPad connecté au même compte Apple, elle relit désormais tout de suite : plateaux, ★, déblocages et encre gratuite obtenus sur votre autre appareil apparaissent.",
+     "Si vous activez iCloud ou vous connectez alors que l'app est déjà ouverte, votre progression est reprise à la prochaine ouverture. Tant qu'iCloud est désactivé, l'app enregistre discrètement sur cet appareil uniquement."
+    ],
+    "de": [
+     "Wenn du die App auf einem anderen iPhone oder iPad mit demselben Apple-Account wieder öffnest, liest sie jetzt sofort neu ein, sodass geschaffte Felder, ★, Freischaltungen und kostenlose Tinte vom anderen Gerät erscheinen.",
+     "Schaltest du iCloud ein oder meldest dich an, nachdem die App schon offen ist, wird dein Fortschritt beim nächsten Öffnen übernommen. Solange iCloud aus ist, speichert die App still nur auf diesem Gerät."
+    ],
+    "pt": [
+     "Ao reabrir o app em outro iPhone ou iPad com a mesma conta Apple, ele agora lê tudo de novo na hora, e os tabuleiros, ★, desbloqueios e tinta grátis conseguidos no outro dispositivo aparecem.",
+     "Se você ativar o iCloud ou entrar na conta depois que o app já estiver aberto, seu progresso continua na próxima vez que você abrir. Com o iCloud desligado, o app salva em silêncio só neste dispositivo."
+    ],
+    "ru": [
+     "Когда вы снова открываете приложение на другом iPhone или iPad с тем же аккаунтом Apple, оно теперь сразу перечитывает данные: пройденные доски, ★, открытое и бесплатные чернила с другого устройства появляются.",
+     "Если включить iCloud или войти в аккаунт, когда приложение уже открыто, прогресс подхватится при следующем запуске. Пока iCloud выключен, приложение тихо сохраняет данные только на этом устройстве."
+    ],
+    "ar": [
+     "عند إعادة فتح التطبيق على iPhone أو iPad آخر بنفس حساب Apple، يقرأ البيانات من جديد فورًا، فتظهر الألواح والنجوم ★ والمفتوحات والحبر المجاني التي حصلت عليها على جهازك الآخر.",
+     "إذا فعّلت iCloud أو سجّلت الدخول بعد أن يكون التطبيق مفتوحًا بالفعل، ينتقل تقدّمك عند فتحه في المرة التالية. وما دام iCloud متوقفًا، يحفظ التطبيق بهدوء على هذا الجهاز فقط."
+    ],
+    "hi": [
+     "उसी Apple खाते वाले दूसरे iPhone या iPad पर ऐप दोबारा खोलने पर वह तुरंत फिर से पढ़ लेता है, इसलिए दूसरे डिवाइस पर पार किए गए बोर्ड, ★, अनलॉक और मुफ़्त स्याही दिख जाते हैं।",
+     "ऐप खुलने के बाद iCloud चालू करने या साइन इन करने पर भी, अगली बार खोलते ही आपकी प्रगति जुड़ जाती है। iCloud बंद होने पर ऐप चुपचाप सिर्फ़ इसी डिवाइस पर सहेजता है।"
+    ],
+    "id": [
+     "Saat kamu membuka ulang aplikasi di iPhone atau iPad lain dengan akun Apple yang sama, aplikasi kini langsung membaca ulang, sehingga papan, ★, hal yang terbuka, dan tinta gratis dari perangkat lainmu muncul.",
+     "Kalau kamu menyalakan iCloud atau masuk setelah aplikasi sudah terbuka, kemajuanmu terbawa saat kamu membukanya lagi. Selama iCloud mati, aplikasi diam-diam menyimpan hanya di perangkat ini."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-24",
    "version": "1.0.0",
    "build": "24",
