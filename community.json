@@ -1,7 +1,24 @@
 {
   "siteId": "inkisle.ipe.rest",
-  "features": {"comments": true, "likes": false, "reports": false},
-  "langs": ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"],
+  "features": {
+    "comments": false,
+    "likes": false,
+    "reports": false
+  },
+  "langs": [
+    "en",
+    "ko",
+    "ja",
+    "zh",
+    "es",
+    "fr",
+    "de",
+    "pt",
+    "ru",
+    "ar",
+    "hi",
+    "id"
+  ],
   "bannedExtra": [],
   "hideAt": 3,
   "minGapSeconds": 30
