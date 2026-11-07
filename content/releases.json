@@ -1,6 +1,176 @@
 {
  "releases": [
   {
+   "id": "1.0.0-23",
+   "version": "1.0.0",
+   "build": "23",
+   "status": "testflight",
+   "date": "2026-11-07",
+   "title": {
+    "en": "Build 23: A new nickname card and a redesigned settings sheet",
+    "ko": "빌드 23: 새 닉네임 카드와 다시 디자인한 설정 화면",
+    "ja": "ビルド23:新しいニックネームカードと、デザインを一新した設定画面",
+    "zh": "构建 23:全新的昵称卡片与重新设计的设置页面",
+    "es": "Compilación 23: nueva tarjeta de apodo y ajustes rediseñados",
+    "fr": "Version 23 : nouvelle carte de pseudo et réglages redessinés",
+    "de": "Build 23: Neue Spitznamen-Karte und überarbeitete Einstellungen",
+    "pt": "Build 23: Novo cartão de apelido e configurações redesenhadas",
+    "ru": "Сборка 23: новая карточка никнейма и обновлённые настройки",
+    "ar": "الإصدار 23: بطاقة اسم مستعار جديدة وإعدادات بتصميم جديد",
+    "hi": "बिल्ड 23: नया निकनेम कार्ड और नए डिज़ाइन की सेटिंग्स",
+    "id": "Build 23: Kartu nama panggilan baru dan pengaturan yang didesain ulang"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 22, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~22의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜22の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 22 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 22, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 22, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 22 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 22, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–22 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 22 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 22 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 22, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "The nickname window is now a paper-and-ink card with a letter counter, and it fits phones held sideways.",
+     "The settings sheet has new paper-and-ink cards, a colour accent for each section and icon chips."
+    ],
+    "ko": [
+     "닉네임 입력 창이 종이·잉크 카드로 바뀌었습니다. 글자 수 표시가 붙고, 폰을 가로로 들어도 맞게 보입니다.",
+     "설정 화면이 종이·잉크 카드로 다시 디자인되었습니다. 섹션마다 다른 색 악센트와 아이콘 칩이 붙습니다."
+    ],
+    "ja": [
+     "ニックネーム入力画面が、紙とインクのカードになりました。文字数の表示が付き、スマホを横にしても収まります。",
+     "設定画面を、紙とインクのカードでデザインし直しました。セクションごとに色のアクセントとアイコンチップが付きます。"
+    ],
+    "zh": [
+     "昵称输入窗口改成了纸与墨的卡片,带有字数提示,手机横屏也能完整显示。",
+     "设置页面用纸与墨的卡片重新设计,每个分区有各自的强调色和图标标签。"
+    ],
+    "es": [
+     "La ventana del apodo ahora es una tarjeta de papel y tinta con contador de letras, y se ajusta al móvil en horizontal.",
+     "Los ajustes tienen un diseño nuevo con tarjetas de papel y tinta, un color de acento por sección y chips con iconos."
+    ],
+    "fr": [
+     "La fenêtre du pseudo devient une carte papier et encre avec un compteur de lettres, et elle s'adapte au téléphone en mode paysage.",
+     "Les réglages sont redessinés avec des cartes papier et encre, une couleur d'accent par section et des pastilles d'icônes."
+    ],
+    "de": [
+     "Das Spitznamen-Fenster ist jetzt eine Papier-und-Tinte-Karte mit Buchstabenzähler und passt auch zum Handy im Querformat.",
+     "Die Einstellungen haben ein neues Design mit Papier-und-Tinte-Karten, einer Akzentfarbe pro Abschnitt und Symbol-Chips."
+    ],
+    "pt": [
+     "A janela do apelido agora é um cartão de papel e tinta com contador de letras e se ajusta ao celular na horizontal.",
+     "As configurações ganharam novo visual com cartões de papel e tinta, uma cor de destaque por seção e chips de ícones."
+    ],
+    "ru": [
+     "Окно ввода никнейма стало карточкой из бумаги и чернил со счётчиком букв и подходит для телефона в горизонтальном положении.",
+     "Настройки получили новый дизайн: карточки из бумаги и чернил, свой цветовой акцент у каждого раздела и значки в чипах."
+    ],
+    "ar": [
+     "أصبحت نافذة الاسم المستعار بطاقة من الورق والحبر مع عدّاد للأحرف، وتناسب الهاتف في الوضع الأفقي.",
+     "أُعيد تصميم الإعدادات ببطاقات من الورق والحبر، مع لون مميز لكل قسم ورقائق أيقونات."
+    ],
+    "hi": [
+     "निकनेम की विंडो अब कागज़-और-स्याही वाला कार्ड है, उसमें अक्षर गिनती है, और फ़ोन को आड़ा रखने पर भी ठीक दिखती है।",
+     "सेटिंग्स को कागज़-और-स्याही कार्ड से नया डिज़ाइन दिया गया है; हर हिस्से का अपना रंग और आइकन चिप है।"
+    ],
+    "id": [
+     "Jendela nama panggilan kini berupa kartu kertas dan tinta dengan penghitung huruf, dan pas untuk ponsel dalam posisi mendatar.",
+     "Pengaturan didesain ulang dengan kartu kertas dan tinta, warna aksen untuk tiap bagian, dan chip ikon."
+    ]
+   }
+  },
+  {
+   "id": "1.0.0-22",
+   "version": "1.0.0",
+   "build": "22",
+   "status": "testflight",
+   "date": "2026-11-06",
+   "title": {
+    "en": "Build 22: iPad in every orientation, phone sideways",
+    "ko": "빌드 22: iPad 4방향 전용 화면, 폰 가로 화면",
+    "ja": "ビルド22:iPadの全方向対応、スマホの横画面",
+    "zh": "构建 22:iPad 全方向专属界面,手机横屏",
+    "es": "Compilación 22: iPad en todas las orientaciones y móvil en horizontal",
+    "fr": "Version 22 : iPad dans toutes les orientations, téléphone en paysage",
+    "de": "Build 22: iPad in jeder Ausrichtung, Handy quer",
+    "pt": "Build 22: iPad em todas as orientações e celular na horizontal",
+    "ru": "Сборка 22: iPad в любой ориентации, телефон в альбомном режиме",
+    "ar": "الإصدار 22: iPad بكل الاتجاهات والهاتف بالوضع الأفقي",
+    "hi": "बिल्ड 22: iPad हर दिशा में, फ़ोन आड़ा",
+    "id": "Build 22: iPad di semua orientasi, ponsel mendatar"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 21, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~21의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜21の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 21 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 21, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 21, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 21 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 21, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–21 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 21 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 21 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 21, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "On iPad the game now turns to all four orientations. The board, the side panels and the chart use the full width of the screen, with no empty bars on the sides.",
+     "On phones you can play sideways too. A new Screen orientation setting lets you choose auto, portrait or landscape."
+    ],
+    "ko": [
+     "iPad 에서 화면이 4방향으로 돌아갑니다. 게임판·옆 패널·해도가 화면 폭을 가득 쓰고, 양옆의 빈 막대가 없습니다.",
+     "폰에서도 가로로 플레이할 수 있습니다. 설정의 「화면 방향」에서 자동·세로·가로를 고를 수 있습니다."
+    ],
+    "ja": [
+     "iPad で画面が4方向に回転します。盤面・サイドパネル・海図が画面の幅いっぱいに広がり、左右の空白がなくなりました。",
+     "スマホでも横向きでプレイできます。設定の「画面の向き」で、自動・縦・横を選べます。"
+    ],
+    "zh": [
+     "iPad 上的画面现在支持四个方向旋转。棋盘、侧边面板和海图占满屏幕宽度,两侧不再有空白条。",
+     "手机也可以横屏游玩。设置里新增“屏幕方向”,可选自动、竖屏或横屏。"
+    ],
+    "es": [
+     "En iPad el juego ahora gira a las cuatro orientaciones. El tablero, los paneles laterales y la carta ocupan todo el ancho de la pantalla, sin franjas vacías a los lados.",
+     "En el móvil también puedes jugar en horizontal. El nuevo ajuste «Orientación de pantalla» permite elegir automática, vertical u horizontal."
+    ],
+    "fr": [
+     "Sur iPad, le jeu pivote désormais dans les quatre orientations. Le plateau, les panneaux latéraux et la carte occupent toute la largeur de l’écran, sans bandes vides sur les côtés.",
+     "Sur téléphone, on peut aussi jouer en paysage. Le nouveau réglage « Orientation de l’écran » permet de choisir automatique, portrait ou paysage."
+    ],
+    "de": [
+     "Auf dem iPad dreht sich das Spiel jetzt in alle vier Ausrichtungen. Spielfeld, Seitenleisten und Karte nutzen die volle Bildschirmbreite, ohne leere Balken an den Seiten.",
+     "Auch auf dem Handy kannst du quer spielen. Die neue Einstellung „Bildschirmausrichtung“ bietet Automatisch, Hochformat oder Querformat."
+    ],
+    "pt": [
+     "No iPad o jogo agora gira para as quatro orientações. O tabuleiro, os painéis laterais e a carta usam toda a largura da tela, sem faixas vazias nas laterais.",
+     "No celular também dá para jogar na horizontal. A nova opção «Orientação da tela» permite escolher automática, vertical ou horizontal."
+    ],
+    "ru": [
+     "На iPad игра теперь поворачивается во все четыре стороны. Поле, боковые панели и карта занимают всю ширину экрана, пустых полос по бокам больше нет.",
+     "На телефоне тоже можно играть в альбомной ориентации. В настройках появился пункт «Ориентация экрана»: авто, портретная или альбомная."
+    ],
+    "ar": [
+     "على iPad صارت اللعبة تدور في الاتجاهات الأربعة. تستخدم اللوحة واللوحات الجانبية والخريطة عرض الشاشة كاملاً دون أشرطة فارغة على الجانبين.",
+     "يمكنك اللعب بالوضع الأفقي على الهاتف أيضاً. يتيح الإعداد الجديد «اتجاه الشاشة» اختيار تلقائي أو عمودي أو أفقي."
+    ],
+    "hi": [
+     "iPad पर गेम अब चारों दिशाओं में घूमता है। बोर्ड, साइड पैनल और नक्शा स्क्रीन की पूरी चौड़ाई इस्तेमाल करते हैं, दोनों ओर खाली पट्टियाँ नहीं हैं।",
+     "फ़ोन पर भी आड़ी स्क्रीन में खेल सकते हैं। सेटिंग में नया «स्क्रीन की दिशा» विकल्प है: ऑटो, खड़ी या आड़ी।"
+    ],
+    "id": [
+     "Di iPad, game kini berputar ke keempat orientasi. Papan, panel samping, dan peta memakai seluruh lebar layar, tanpa bilah kosong di kiri-kanan.",
+     "Di ponsel pun bisa bermain mendatar. Pengaturan baru «Orientasi layar» menyediakan pilihan otomatis, tegak, atau mendatar."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-21",
    "version": "1.0.0",
    "build": "21",
