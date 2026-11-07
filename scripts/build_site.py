@@ -41,6 +41,13 @@ EFFECTIVE = "2026-11-01"
 ORG_ID = "https://ipe.rest/#organization"
 ORG = {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": "https://ipe.rest/"}
 PER_PAGE = 10
+ROOT = Path(__file__).resolve().parent.parent
+# Community (comments / likes / reports): the private ipe_web_kit `community` module, driven by community.json (all features false = OFF =
+# the site is byte-identical to a build without it). The kit is installed into vendor/ from vendor/ipe_web_kit.lock by scripts/kit_lock.py.
+COMMUNITY_FILE = "community.json"
+# the widget reads --ipe-* tokens; point them at inkisle's own variables so it follows the light/dark theme of the page
+COMMUNITY_THEME = {"bg": "var(--bg)", "surface": "var(--surface)", "text": "var(--fg)", "muted": "var(--muted)", "line": "var(--line)",
+                   "accent": "var(--btn)", "accent-text": "var(--btn-fg)", "radius": "var(--r)"}
 # GA4 (same property as ipe.rest; subdomain, so no cross-domain setup). Inserted once into every page by render(); the privacy
 # policy (section 1, all languages) says so -> change them together with this.
 GA_MEASUREMENT_ID = "G-XG4BH800J0"
@@ -463,10 +470,33 @@ def langpick_script(root, langs):
     return "<script>%s</script>" % re.sub(r"\s*\n\s*", "", src.replace("/*SUPPORTED*/[]", json.dumps(list(langs)))).strip()
 
 
+def load_community(root):
+    """-> (config, head html, script html); (None, "", "") while community.json is absent or every feature is false."""
+    f = Path(root) / COMMUNITY_FILE
+    if not f.is_file():
+        return None, "", ""
+    sys.path.insert(0, str(ROOT / "vendor"))
+    from ipe_web_kit import community, theme  # noqa: E402  (private kit — see kit_lock.py)
+    cm = community.load(f)
+    if not cm.enabled:
+        return cm, "", ""
+    hrefs = {k: "/assets/%s?v=%s" % (src.name, community.asset_version(src)) for k, src in (("css", community.CSS), ("js", community.JS))}
+    head = community.head(cm, hrefs) + theme.theme_style(COMMUNITY_THEME)
+    return cm, head, community.script(cm, hrefs)
+
+
 class Ctx:
     def __init__(self, root, i18n, pages, posts, langs, now, releases=()):
         self.root, self.i18n, self.pages, self.posts, self.langs, self.now = root, i18n, pages, posts, langs, now
         self.releases = list(releases)
+        self.cm, self.cm_head, self.cm_script = load_community(root)
+
+    def mount(self, slug, lang):
+        """Comment section under a post (empty while OFF). Every language of a post shares one thread (same slug)."""
+        if not self.cm or not self.cm.enabled:
+            return ""
+        from ipe_web_kit import community  # noqa: E402
+        return community.mount(self.cm, slug, lang)
 
     def t(self, lang, key):
         return self.i18n[lang][key]
@@ -487,7 +517,7 @@ def iso_time(p):
     return p["published"].strftime("%Y-%m-%dT%H:%M:00+09:00")
 
 
-def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website", noindex=False, hreflang=True, nav=""):
+def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website", noindex=False, hreflang=True, nav="", community=False):
     t = lambda k: ctx.t(lang, k)  # noqa: E731
     name, og_loc, direction = LANGS[lang]
     canonical = url(path)
@@ -513,6 +543,8 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
         head.append('<link rel="alternate" type="application/rss+xml" title="Inkisle Journal (%s)" href="%s">' % (lang, path_feed(lang)))
     head.append('<link rel="stylesheet" href="/assets/inkisle.css?v=%s">' % ASSET_V)
     head.append(theme_script())
+    if community and ctx.cm_head:
+        head.append(ctx.cm_head)
     if path == "/":
         head.append(langpick_script(ctx.root, ctx.langs))
     head.append('<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": graph},
@@ -542,8 +574,9 @@ def render(ctx, lang, *, path, title, desc, body, graph, alt, og_type="website",
         (' · <a href="%s">%s</a>' % (esc(path_feed(lang)), esc(t("rss")))) if lang in ("en", "ko") else "", foot_langs, esc(t("status_badge")))
     return ('<!doctype html>\n<!-- %s -->\n<html lang="%s" dir="%s" data-ads="off"><head>%s</head><body>'
             '<a class="skip" href="#main">%s</a>%s<main id="main" class="wrap">%s</main>%s'
-            '<script src="/assets/inkisle.js?v=%s" defer></script>%s</body></html>\n') % (
-        GEN_MARK, lang, direction, "\n".join(head), esc(t("skip")), header, body, footer, ASSET_V, GA_SNIPPET)
+            '<script src="/assets/inkisle.js?v=%s" defer></script>%s%s</body></html>\n') % (
+        GEN_MARK, lang, direction, "\n".join(head), esc(t("skip")), header, body, footer, ASSET_V,
+        ctx.cm_script if community else "", GA_SNIPPET)
 
 
 def breadcrumb_html(items):
@@ -713,9 +746,9 @@ def build_post(ctx, lang, p):
             ('<a rel="next" href="%s">%s →</a>' % (esc(path_post(lang, newer["slug"])), esc(newer["langs"][lang]["title"]))) if newer else "<span></span>")
     body = ('%s<article class="prose post"><header><p class="meta">%s %d · <time datetime="%s">%s</time></p><h1>%s</h1>'
             '<p class="lead">%s</p></header>%s<img class="post-hero" src="/assets/posts/%s.svg" alt="%s" width="640" height="360">%s'
-            '</article>%s%s<p class="back"><a href="%s">← %s</a></p>') % (
+            '</article>%s%s%s<p class="back"><a href="%s">← %s</a></p>') % (
         breadcrumb_html(crumbs), esc(t("post_no")), nums[p["slug"]], iso_time(p), fmt_time(p), esc(d["title"]), esc(d["description"]), ai,
-        p["slug"], esc(d["image_alt"]), markdown(d["body"], ctx.root, heading_offset=0), pn,
+        p["slug"], esc(d["image_alt"]), markdown(d["body"], ctx.root, heading_offset=0), ctx.mount(p["slug"], lang), pn,
         ('<aside class="langs"><h2>%s</h2><ul>%s</ul></aside>' % (esc(t("other_langs")), others)) if others else "",
         esc(path_journal(lang)), esc(t("back_journal")))
     posting = {"@type": "BlogPosting", "@id": url(path) + "#post", "mainEntityOfPage": url(path), "url": url(path),
@@ -729,7 +762,7 @@ def build_post(ctx, lang, p):
         posting["translationOfWork"] = {"@type": "BlogPosting", "url": url(path_post(src, p["slug"])), "inLanguage": src}
     graph = [ORG, website_ld(lang, ctx), posting, breadcrumb_ld(crumbs)]
     return path, render(ctx, lang, path=path, title="%s — Inkisle" % d["title"], desc=d["description"], body=body, graph=graph,
-                        alt=alt, og_type="article", nav="journal")
+                        alt=alt, og_type="article", nav="journal", community=True)
 
 
 def build_404(ctx):
@@ -929,6 +962,9 @@ def main(argv=None):
         f = root / rel
         f.parent.mkdir(parents=True, exist_ok=True)
         f.write_text(text, encoding="utf-8")
+    if ctx.cm and ctx.cm.enabled:
+        from ipe_web_kit import community  # noqa: E402
+        community.copy_assets(ctx.cm, root / "assets")
     print("build_site: wrote %d file(s) — %d language(s), %d post(s)" % (len(files), len(ctx.langs), len(ctx.posts)))
     return 0
 
