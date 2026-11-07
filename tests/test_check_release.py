@@ -35,6 +35,18 @@ class CheckRelease(unittest.TestCase):
         self.assertEqual(len(errs), 1)
         self.assertIn("build 7: no entry", errs[0])
 
+    def test_latest_requires_newest_build(self):
+        root = self.site(entry(7), entry(6))
+        self.assertEqual(cr.check(root, "7", latest=True), [])
+        errs = cr.check(root, "6", latest=True)
+        self.assertEqual(len(errs), 1)
+        self.assertIn("not the newest note", errs[0])
+        self.assertIn("build 7", errs[0])
+        self.assertEqual(cr.check(root, "6"), [])  # default stays permissive
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(cr.main(["--root", str(root), "--build", "7", "--latest"]), 0)
+            self.assertEqual(cr.main(["--root", str(root), "--build", "6", "--latest"]), 1)
+
     def test_missing_languages_are_named(self):
         root = self.site(entry(7, langs=("en", "ko", "ja")))
         errs = cr.check(root, "7")

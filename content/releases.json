@@ -1,6 +1,115 @@
 {
  "releases": [
   {
+   "id": "1.0.0-24",
+   "version": "1.0.0",
+   "build": "24",
+   "status": "testflight",
+   "date": "2026-11-07",
+   "title": {
+    "en": "Build 24: A tidier iPad landscape layout and lesson lines when you get stuck",
+    "ko": "빌드 24: 더 깔끔해진 iPad 가로 배치, 막혔을 때 보여 주는 가르침 줄",
+    "ja": "ビルド24:すっきりしたiPad横向きレイアウトと、行き詰まったときの教えの一行",
+    "zh": "构建 24:更整洁的 iPad 横屏布局,以及卡关时出现的提示行",
+    "es": "Compilación 24: iPad en horizontal más ordenado y pistas cuando te atascas",
+    "fr": "Version 24 : iPad en paysage mieux rangé et lignes d'indice quand on bloque",
+    "de": "Build 24: Aufgeräumteres iPad-Querformat und Lehrzeilen, wenn du nicht weiterkommst",
+    "pt": "Build 24: iPad na horizontal mais organizado e linhas de dica quando você trava",
+    "ru": "Сборка 24: аккуратнее iPad в альбомной ориентации и строки-подсказки, когда застрял",
+    "ar": "الإصدار 24: تخطيط أرتب لـ iPad بالوضع الأفقي وأسطر إرشاد عند التعثر",
+    "hi": "बिल्ड 24: iPad लैंडस्केप का साफ़ लेआउट और अटकने पर सीख वाली पंक्ति",
+    "id": "Build 24: Tata letak iPad lanskap yang lebih rapi dan baris petunjuk saat kamu buntu"
+   },
+   "intro": {
+    "en": "This build went up on TestFlight. It has the contents of builds 1 to 23, plus the changes below.",
+    "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~23의 내용에 아래 변경이 더해졌습니다.",
+    "ja": "TestFlight にアップロードされたビルドです。ビルド1〜23の内容に、以下の変更が加わりました。",
+    "zh": "上传到 TestFlight 的构建。它包含构建 1 至 23 的内容,并加入了下面的改动。",
+    "es": "Esta compilación se subió a TestFlight. Incluye el contenido de las compilaciones 1 a 23, más los cambios de abajo.",
+    "fr": "Cette version a été mise en ligne sur TestFlight. Elle reprend le contenu des versions 1 à 23, avec les changements ci-dessous.",
+    "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält den Inhalt von Build 1 bis 23 plus die folgenden Änderungen.",
+    "pt": "Este build foi enviado ao TestFlight. Ele traz o conteúdo dos builds 1 a 23, mais as mudanças abaixo.",
+    "ru": "Эта сборка загружена в TestFlight. В ней всё из сборок 1–23 плюс изменения ниже.",
+    "ar": "رُفع هذا الإصدار إلى TestFlight. يضم محتوى الإصدارات من 1 إلى 23 مع التغييرات التالية.",
+    "hi": "यह बिल्ड TestFlight पर अपलोड हुआ। इसमें बिल्ड 1 से 23 की सामग्री है, साथ में नीचे के बदलाव हैं।",
+    "id": "Build ini diunggah ke TestFlight. Isinya mencakup build 1 sampai 23, ditambah perubahan di bawah."
+   },
+   "notes": {
+    "en": [
+     "On iPad held sideways the layout is tidier: on a narrow 9.7-inch screen the side panels shrink so the board can breathe, and the harbour sheet has two columns.",
+     "If your hands stop for 12 seconds on your first try at a stage, that stage's lesson line appears at the bottom.",
+     "The speed you pick (×2) now carries over to the next battle.",
+     "The defeat sheet shows that stage's lesson line again."
+    ],
+    "ko": [
+     "iPad 를 가로로 들었을 때 배치가 더 깔끔해졌습니다. 좁은 9.7인치 화면에서는 양옆 패널이 줄어 판이 숨 쉴 자리가 생기고, 항구 시트는 2단으로 나뉩니다.",
+     "스테이지에 처음 도전할 때 손이 12초 동안 멈추면 그 스테이지의 가르침 줄이 아래쪽에 나타납니다.",
+     "고른 배속(×2)이 다음 판에도 그대로 이어집니다.",
+     "패배 시트에서 그 스테이지의 가르침 줄을 다시 보여 줍니다."
+    ],
+    "ja": [
+     "iPadを横向きにしたときのレイアウトがすっきりしました。幅の狭い9.7インチ画面では両側のパネルが小さくなって盤面に余裕が生まれ、港のシートは2段組になります。",
+     "ステージへの初挑戦で12秒間手が止まると、そのステージの教えの一行が下に表示されます。",
+     "選んだ速度(×2)が次の対戦にも引き継がれます。",
+     "敗北シートで、そのステージの教えの一行をもう一度見られます。"
+    ],
+    "zh": [
+     "iPad 横屏时布局更整洁:在较窄的 9.7 英寸屏幕上,两侧面板会缩小,让棋盘有更多空间;港口面板分为两栏。",
+     "首次挑战某一关时,如果手停了 12 秒,屏幕下方会出现这一关的提示行。",
+     "你选的倍速(×2)会延续到下一局。",
+     "失败面板会再次显示这一关的提示行。"
+    ],
+    "es": [
+     "En el iPad en horizontal la disposición es más ordenada: en la pantalla estrecha de 9,7 pulgadas los paneles laterales se reducen para que el tablero respire, y la hoja del puerto tiene dos columnas.",
+     "Si en tu primer intento de un nivel tus manos se detienen 12 segundos, abajo aparece la línea de enseñanza de ese nivel.",
+     "La velocidad que eliges (×2) ahora se mantiene en la siguiente batalla.",
+     "La hoja de derrota vuelve a mostrar la línea de enseñanza de ese nivel."
+    ],
+    "fr": [
+     "Sur iPad en paysage, la disposition est plus ordonnée : sur l'écran étroit de 9,7 pouces, les panneaux latéraux rétrécissent pour laisser respirer le plateau, et la feuille du port s'affiche sur deux colonnes.",
+     "Si vos mains s'arrêtent 12 secondes lors de votre première tentative d'un niveau, la ligne d'enseignement de ce niveau s'affiche en bas.",
+     "La vitesse choisie (×2) est désormais conservée pour le combat suivant.",
+     "L'écran de défaite réaffiche la ligne d'enseignement de ce niveau."
+    ],
+    "de": [
+     "Auf dem iPad im Querformat ist das Layout aufgeräumter: Auf dem schmalen 9,7-Zoll-Bildschirm werden die Seitenleisten schmaler, damit das Spielfeld Luft hat, und das Hafenblatt hat zwei Spalten.",
+     "Stehen deine Hände bei deinem ersten Versuch an einer Stufe 12 Sekunden still, erscheint unten die Lehrzeile dieser Stufe.",
+     "Die gewählte Geschwindigkeit (×2) bleibt jetzt für den nächsten Kampf erhalten.",
+     "Das Niederlagenblatt zeigt die Lehrzeile dieser Stufe erneut."
+    ],
+    "pt": [
+     "No iPad na horizontal o layout está mais organizado: na tela estreita de 9,7 polegadas os painéis laterais diminuem para o tabuleiro respirar, e a folha do porto tem duas colunas.",
+     "Se suas mãos pararem por 12 segundos na primeira tentativa de uma fase, a linha de ensinamento dessa fase aparece embaixo.",
+     "A velocidade escolhida (×2) agora continua na próxima batalha.",
+     "A folha de derrota mostra de novo a linha de ensinamento dessa fase."
+    ],
+    "ru": [
+     "На iPad в альбомной ориентации раскладка стала аккуратнее: на узком 9,7-дюймовом экране боковые панели сужаются, чтобы доске хватало места, а лист порта делится на две колонки.",
+     "Если при первой попытке пройти уровень руки замирают на 12 секунд, внизу появляется строка-подсказка этого уровня.",
+     "Выбранная скорость (×2) теперь сохраняется и в следующем бою.",
+     "Экран поражения снова показывает строку-подсказку этого уровня."
+    ],
+    "ar": [
+     "في iPad بالوضع الأفقي صار التخطيط أرتب: على الشاشة الضيقة 9.7 بوصة تصغر اللوحتان الجانبيتان ليتسع المكان للّوحة، وتنقسم ورقة الميناء إلى عمودين.",
+     "إذا توقفت يداك 12 ثانية في أول محاولة لمرحلة ما، يظهر في الأسفل سطر الإرشاد الخاص بتلك المرحلة.",
+     "السرعة التي تختارها (×2) تبقى الآن في المعركة التالية.",
+     "تعرض ورقة الهزيمة سطر الإرشاد الخاص بتلك المرحلة مرة أخرى."
+    ],
+    "hi": [
+     "iPad को आड़ा पकड़ने पर लेआउट अब साफ़ है: संकरी 9.7 इंच स्क्रीन पर दोनों ओर के पैनल छोटे हो जाते हैं ताकि बोर्ड को जगह मिले, और बंदरगाह शीट दो कॉलम में बँटी है।",
+     "किसी स्टेज की पहली कोशिश में हाथ 12 सेकंड रुक जाएँ, तो नीचे उस स्टेज की सीख वाली पंक्ति दिखती है।",
+     "चुनी हुई रफ़्तार (×2) अब अगली लड़ाई में भी बनी रहती है।",
+     "हार वाली शीट उस स्टेज की सीख वाली पंक्ति फिर से दिखाती है।"
+    ],
+    "id": [
+     "Di iPad lanskap, tata letaknya lebih rapi: di layar sempit 9,7 inci panel samping mengecil agar papan punya ruang, dan lembar pelabuhan terbagi dua kolom.",
+     "Jika tanganmu berhenti 12 detik pada percobaan pertama sebuah stage, baris pelajaran stage itu muncul di bawah.",
+     "Kecepatan yang kamu pilih (×2) kini terbawa ke pertarungan berikutnya.",
+     "Lembar kekalahan menampilkan lagi baris pelajaran stage itu."
+    ]
+   }
+  },
+  {
    "id": "1.0.0-23",
    "version": "1.0.0",
    "build": "23",

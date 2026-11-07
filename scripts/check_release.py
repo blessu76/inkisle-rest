@@ -3,6 +3,7 @@
 
   python3 scripts/check_release.py --build 7          # 1.0.0+7 is in content/releases.json in all 12 languages
   python3 scripts/check_release.py --build 1.0.0+7    # same (the pubspec spelling is accepted)
+  python3 scripts/check_release.py --build 7 --latest # ... and build 7 is also the newest note (app = TF = notes)
 
 The app repo's deploy_ios.sh calls this before it uploads a build, so a TestFlight build can no longer go out
 without its release note (builds 6 and 7 once did). What it checks for the entry whose `build` is N:
@@ -28,8 +29,11 @@ def parse_build(raw):
     return str(int(m.group(1))) if m else None
 
 
-def check(root, build, pages=True):
-    """-> list of problems (empty = the note for [build] is complete)."""
+def check(root, build, pages=True, latest=False):
+    """-> list of problems (empty = the note for [build] is complete).
+
+    latest=True also demands that [build] is the newest build in content/releases.json — app version, TestFlight
+    build and the site's newest note must be the same number (a note for a higher build means the app is behind)."""
     root = Path(root)
     n = parse_build(build)
     if n is None:
@@ -47,6 +51,11 @@ def check(root, build, pages=True):
     if len(hits) > 1:
         errs.append("build %s: %d entries in content/releases.json, expected one" % (n, len(hits)))
     e = hits[0]
+    if latest:
+        newer = sorted({str(x.get("build")) for x in entries if str(x.get("build", "")).isdigit() and int(x["build"]) > int(n)},
+                       key=int)
+        if newer:
+            errs.append("build %s: not the newest note — content/releases.json already has build %s" % (n, ", ".join(newer)))
     if e.get("id") != "%s-%s" % (e.get("version"), n):
         errs.append("build %s: id %r should be %r" % (n, e.get("id"), "%s-%s" % (e.get("version"), n)))
     if e.get("status") == "testflight" and not e.get("date"):
@@ -80,8 +89,9 @@ def main(argv=None):
     ap.add_argument("--build", required=True, help="build number, e.g. 7 or 1.0.0+7")
     ap.add_argument("--root", default=str(Path(__file__).resolve().parent.parent), help="site repo root (default: this repo)")
     ap.add_argument("--no-pages", action="store_true", help="skip the check of the generated pages")
+    ap.add_argument("--latest", action="store_true", help="also require this build to be the newest entry in releases.json")
     a = ap.parse_args(argv)
-    errs = check(a.root, a.build, pages=not a.no_pages)
+    errs = check(a.root, a.build, pages=not a.no_pages, latest=a.latest)
     if errs:
         print("release note NOT ready:")
         for x in errs:
