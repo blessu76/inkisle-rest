@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [Three stars, one rule: how a stage is rated](https://inkisle.ipe.rest/journal/three-stars-one-rule/) — 2026-11-07 — Every stage in Inkisle can earn up to three stars. What each star means, why stars never block progress or go down, the 13 kinds of three-star goals, and the wrong label we found and fixed.
 - [A drag that forgives: the small rules behind one gesture](https://inkisle.ipe.rest/journal/a-drag-that-forgives/) — 2026-11-06 — Sending a fleet in Inkisle is one drag. The small rules that make it work with a real finger: a wider pick area, a drag that samples the whole path, one finger at a time, and clear messages when a send is not possible.
 - [Sound that is off by default: a scale for each sea](https://inkisle.ipe.rest/journal/sound-off-by-default/) — 2026-11-05 — Inkisle starts silent and the player turns sound on. How the sounds are made in code with no audio files, how each sea gets its own five-note scale, and why a chain of captures climbs the scale.
 - [Ink that spreads: the small effects that say what just happened](https://inkisle.ipe.rest/journal/ink-that-spreads/) — 2026-11-04 — In Inkisle a captured island leaves a bloom of ink, a comeback shows a banner, and the last enemy island lights up. What each effect is for, how long it lasts, and how the first-run finger hint works.

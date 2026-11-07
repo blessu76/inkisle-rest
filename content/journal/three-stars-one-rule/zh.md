@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 星级评价, 游戏进度, 游戏设计, 手机游戏, 重玩价值
 image_alt: 一排三颗星，前两颗填充了珊瑚色，第三颗只有轮廓。
+published: 2026-11-07T20:04+09:00
 ---
 Inkisle 的 16 个关卡，每一关会给出一到三颗星。星星是游戏表达“你还能做得更好”的方式，却不会强迫你。下面是这条规则，以及我们在解释它时犯的一个错误。
 

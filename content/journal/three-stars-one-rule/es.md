@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, puntuación por estrellas, progresión del juego, diseño de juegos, juego móvil, rejugabilidad
 image_alt: Una fila de tres estrellas, las dos primeras rellenas de color coral y la tercera solo un contorno.
+published: 2026-11-07T20:04+09:00
 ---
 Cada una de las 16 fases de Inkisle da de una a tres estrellas. Las estrellas son la forma que tiene el juego de decir "puedes hacerlo mejor" sin obligarte. Esta es la regla, y un error que cometimos al explicarla.
 

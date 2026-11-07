@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, star rating, game progression, game design, mobile game, replayability
 image_alt: A row of three stars, the first two filled in coral and the third one an outline.
+published: 2026-11-07T20:04+09:00
 ---
 Each of Inkisle's 16 stages gives one to three stars. Stars are the game's way of saying "you can do better" without forcing you to. Here is the rule, and one mistake we made in explaining it.
 

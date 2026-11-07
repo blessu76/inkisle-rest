@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Sternebewertung, Spielfortschritt, Spieldesign, Mobile Game, Wiederspielwert
 image_alt: Eine Reihe aus drei Sternen, die ersten beiden korallenrot gefüllt, der dritte nur als Umriss.
+published: 2026-11-07T20:04+09:00
 ---
 Jedes der 16 Level in Inkisle gibt einen bis drei Sterne. Sterne sind die Art des Spiels zu sagen „du kannst es besser“, ohne dich dazu zu zwingen. Hier die Regel und ein Fehler, den wir beim Erklären gemacht haben.
 
