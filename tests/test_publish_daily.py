@@ -62,7 +62,11 @@ class PublishDaily(unittest.TestCase):
     def test_script_itself_never_writes_a_log_file(self):
         # Logging is the launchd plist's job (StandardOutPath); the script only echoes. A test run must leave HOME empty.
         self.assertEqual(self.run_script().returncode, 0)
-        self.assertEqual(list(self.home.iterdir()), [])
+        # Only files count: macOS developer tools (the git/xcrun shim) may create an empty Library/ skeleton or a tool cache in a fresh HOME
+        # (seen when the disk was full) — that is not the script logging, so Library/Caches and bare directories are ignored.
+        written = [str(f.relative_to(self.home)) for f in self.home.rglob("*")
+                   if f.is_file() and "Library/Caches" not in f.relative_to(self.home).as_posix()]
+        self.assertEqual(written, [])
 
     def head(self, cwd=None):
         return git(cwd or self.clone, "rev-parse", "HEAD").stdout.strip()
