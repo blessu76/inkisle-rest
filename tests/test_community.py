@@ -85,6 +85,9 @@ class Switch(unittest.TestCase):
             bs.make_ctx(self.root, now=NOW)
 
     def test_main_copies_the_assets_only_when_on(self):
+        for name in ("ipe-community.css", "ipe-community.js"):  # make_site copies the repo's assets, which hold them once the site is ON
+            if (self.root / "assets" / name).exists():
+                (self.root / "assets" / name).unlink()
         self.assertEqual(bs.main(["--root", str(self.root)]), 0)
         self.assertFalse((self.root / "assets" / "ipe-community.js").exists())
         write_cfg(self.root, ON)
