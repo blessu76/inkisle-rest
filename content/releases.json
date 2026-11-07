@@ -37,51 +37,63 @@
    "notes": {
     "en": [
      "When you reopen the app on an iPhone or iPad signed in to the same Apple account, it now reads again right away, so boards, stars, unlocks and bonus ink earned on your other device show up.",
-     "If you turn on iCloud or sign in after the app is already open, your progress carries over the next time you open it. While iCloud is off, the app quietly saves to this device only."
+     "If you turn on iCloud or sign in after the app is already open, your progress carries over the next time you open it. While iCloud is off, the app quietly saves to this device only.",
+     "The waters of Sea 15, Broken Sails, and Sea 16, Water Gates, now have their own colours: warm driftwood sand for the first, cool steel blue for the second. Before, both drew the same plain water as Sea 1."
     ],
     "ko": [
      "같은 Apple 계정의 다른 iPhone·iPad 에서 앱을 다시 열면 바로 다시 읽어 와서, 다른 기기에서 깬 판·★·해금·공짜 잉크가 반영됩니다.",
-     "앱을 켠 뒤에 iCloud 를 켜거나 로그인해도 다시 열면 진행 상황이 이어집니다. iCloud 가 꺼져 있으면 조용히 이 기기에만 저장합니다."
+     "앱을 켠 뒤에 iCloud 를 켜거나 로그인해도 다시 열면 진행 상황이 이어집니다. iCloud 가 꺼져 있으면 조용히 이 기기에만 저장합니다.",
+     "15막 「부서진 돛」과 16막 「물길 문」의 바다 색이 따로 생겼습니다. 15막은 따뜻한 유목빛 모래색, 16막은 차가운 강철빛 푸른색입니다. 전에는 두 막 모두 1막과 같은 기본 물을 그렸습니다."
     ],
     "ja": [
      "同じApple IDのほかのiPhoneやiPadでアプリを開き直すと、すぐに読み込み直すので、別の端末でクリアした盤面・★・解放・無料インクが反映されます。",
-     "アプリを開いたあとでiCloudをオンにしたりサインインしたりしても、次に開いたときに進み具合が引き継がれます。iCloudがオフの間は、この端末にだけ静かに保存します。"
+     "アプリを開いたあとでiCloudをオンにしたりサインインしたりしても、次に開いたときに進み具合が引き継がれます。iCloudがオフの間は、この端末にだけ静かに保存します。",
+     "15幕「砕けた帆」と16幕「水路の門」の海に、それぞれ専用の色がつきました。15幕は温かい流木色の砂色、16幕は冷たい鋼のような青です。以前は、どちらも1幕と同じ基本の水を描いていました。"
     ],
     "zh": [
      "在登录同一个 Apple 账户的另一台 iPhone 或 iPad 上重新打开应用时,会立即重新读取,其他设备上通关的关卡、★、解锁内容和免费墨水都会同步过来。",
-     "即使在应用已经打开之后才开启 iCloud 或登录,下次打开时进度也会衔接上。iCloud 关闭时,应用只会静默保存在这台设备上。"
+     "即使在应用已经打开之后才开启 iCloud 或登录,下次打开时进度也会衔接上。iCloud 关闭时,应用只会静默保存在这台设备上。",
+     "第15幕「破碎之帆」和第16幕「水道之门」的海面有了各自的颜色:第15幕是温暖的浮木沙色,第16幕是清冷的钢蓝色。此前这两幕都沿用与第1幕相同的基础水面。"
     ],
     "es": [
      "Al volver a abrir la app en otro iPhone o iPad con la misma cuenta de Apple, ahora vuelve a leer al instante, y aparecen los tableros, las ★, los desbloqueos y la tinta gratis conseguidos en tu otro dispositivo.",
-     "Si activas iCloud o inicias sesión cuando la app ya está abierta, tu progreso se transfiere la próxima vez que la abras. Con iCloud desactivado, la app guarda en silencio solo en este dispositivo."
+     "Si activas iCloud o inicias sesión cuando la app ya está abierta, tu progreso se transfiere la próxima vez que la abras. Con iCloud desactivado, la app guarda en silencio solo en este dispositivo.",
+     "El agua del mar 15, «Velas rotas», y la del mar 16, «Puertas del agua», ahora tiene colores propios: arena cálida de madera a la deriva en el primero y azul acero frío en el segundo. Antes, ambos dibujaban la misma agua básica que el mar 1."
     ],
     "fr": [
      "Quand vous rouvrez l'app sur un autre iPhone ou iPad connecté au même compte Apple, elle relit désormais tout de suite : plateaux, ★, déblocages et encre gratuite obtenus sur votre autre appareil apparaissent.",
-     "Si vous activez iCloud ou vous connectez alors que l'app est déjà ouverte, votre progression est reprise à la prochaine ouverture. Tant qu'iCloud est désactivé, l'app enregistre discrètement sur cet appareil uniquement."
+     "Si vous activez iCloud ou vous connectez alors que l'app est déjà ouverte, votre progression est reprise à la prochaine ouverture. Tant qu'iCloud est désactivé, l'app enregistre discrètement sur cet appareil uniquement.",
+     "L'eau de la mer 15, « Voiles brisées », et celle de la mer 16, « Portes des eaux », a désormais ses propres couleurs : un sable chaud de bois flotté pour la première, un bleu acier froid pour la seconde. Auparavant, toutes deux reprenaient la même eau simple que la mer 1."
     ],
     "de": [
      "Wenn du die App auf einem anderen iPhone oder iPad mit demselben Apple-Account wieder öffnest, liest sie jetzt sofort neu ein, sodass geschaffte Felder, ★, Freischaltungen und kostenlose Tinte vom anderen Gerät erscheinen.",
-     "Schaltest du iCloud ein oder meldest dich an, nachdem die App schon offen ist, wird dein Fortschritt beim nächsten Öffnen übernommen. Solange iCloud aus ist, speichert die App still nur auf diesem Gerät."
+     "Schaltest du iCloud ein oder meldest dich an, nachdem die App schon offen ist, wird dein Fortschritt beim nächsten Öffnen übernommen. Solange iCloud aus ist, speichert die App still nur auf diesem Gerät.",
+     "Das Wasser von Meer 15 „Zerbrochene Segel“ und Meer 16 „Wassertore“ hat jetzt eigene Farben: warmes Treibholz-Sandbraun beim ersten, kühles Stahlblau beim zweiten. Vorher zeigten beide dasselbe schlichte Wasser wie Meer 1."
     ],
     "pt": [
      "Ao reabrir o app em outro iPhone ou iPad com a mesma conta Apple, ele agora lê tudo de novo na hora, e os tabuleiros, ★, desbloqueios e tinta grátis conseguidos no outro dispositivo aparecem.",
-     "Se você ativar o iCloud ou entrar na conta depois que o app já estiver aberto, seu progresso continua na próxima vez que você abrir. Com o iCloud desligado, o app salva em silêncio só neste dispositivo."
+     "Se você ativar o iCloud ou entrar na conta depois que o app já estiver aberto, seu progresso continua na próxima vez que você abrir. Com o iCloud desligado, o app salva em silêncio só neste dispositivo.",
+     "A água do mar 15, «Velas quebradas», e a do mar 16, «Portões d’água», agora tem cores próprias: areia quente de madeira à deriva no primeiro e azul-aço frio no segundo. Antes, os dois desenhavam a mesma água simples do mar 1."
     ],
     "ru": [
      "Когда вы снова открываете приложение на другом iPhone или iPad с тем же аккаунтом Apple, оно теперь сразу перечитывает данные: пройденные доски, ★, открытое и бесплатные чернила с другого устройства появляются.",
-     "Если включить iCloud или войти в аккаунт, когда приложение уже открыто, прогресс подхватится при следующем запуске. Пока iCloud выключен, приложение тихо сохраняет данные только на этом устройстве."
+     "Если включить iCloud или войти в аккаунт, когда приложение уже открыто, прогресс подхватится при следующем запуске. Пока iCloud выключен, приложение тихо сохраняет данные только на этом устройстве.",
+     "У воды 15-го моря «Сломанные паруса» и 16-го моря «Водные ворота» теперь свои цвета: тёплый песочный цвет дрейфующего дерева у первого и холодный стальной синий у второго. Раньше оба рисовали ту же простую воду, что и 1-е море."
     ],
     "ar": [
      "عند إعادة فتح التطبيق على iPhone أو iPad آخر بنفس حساب Apple، يقرأ البيانات من جديد فورًا، فتظهر الألواح والنجوم ★ والمفتوحات والحبر المجاني التي حصلت عليها على جهازك الآخر.",
-     "إذا فعّلت iCloud أو سجّلت الدخول بعد أن يكون التطبيق مفتوحًا بالفعل، ينتقل تقدّمك عند فتحه في المرة التالية. وما دام iCloud متوقفًا، يحفظ التطبيق بهدوء على هذا الجهاز فقط."
+     "إذا فعّلت iCloud أو سجّلت الدخول بعد أن يكون التطبيق مفتوحًا بالفعل، ينتقل تقدّمك عند فتحه في المرة التالية. وما دام iCloud متوقفًا، يحفظ التطبيق بهدوء على هذا الجهاز فقط.",
+     "صار لماء البحر 15 «الأشرعة المحطمة» والبحر 16 «بوابات الماء» لونان خاصان: رمل دافئ بلون الخشب الطافي للأول، وأزرق فولاذي بارد للثاني. وكان البحران يرسمان من قبل الماء البسيط نفسه الذي في البحر 1."
     ],
     "hi": [
      "उसी Apple खाते वाले दूसरे iPhone या iPad पर ऐप दोबारा खोलने पर वह तुरंत फिर से पढ़ लेता है, इसलिए दूसरे डिवाइस पर पार किए गए बोर्ड, ★, अनलॉक और मुफ़्त स्याही दिख जाते हैं।",
-     "ऐप खुलने के बाद iCloud चालू करने या साइन इन करने पर भी, अगली बार खोलते ही आपकी प्रगति जुड़ जाती है। iCloud बंद होने पर ऐप चुपचाप सिर्फ़ इसी डिवाइस पर सहेजता है।"
+     "ऐप खुलने के बाद iCloud चालू करने या साइन इन करने पर भी, अगली बार खोलते ही आपकी प्रगति जुड़ जाती है। iCloud बंद होने पर ऐप चुपचाप सिर्फ़ इसी डिवाइस पर सहेजता है।",
+     "समुद्र 15 «टूटे पाल» और समुद्र 16 «जल-द्वार» के पानी को अब अपने-अपने रंग मिले हैं: पहले के लिए बहती लकड़ी जैसा गर्म रेतीला रंग, दूसरे के लिए ठंडा स्टील-नीला। पहले दोनों समुद्र 1 वाला ही सादा पानी दिखाते थे।"
     ],
     "id": [
      "Saat kamu membuka ulang aplikasi di iPhone atau iPad lain dengan akun Apple yang sama, aplikasi kini langsung membaca ulang, sehingga papan, ★, hal yang terbuka, dan tinta gratis dari perangkat lainmu muncul.",
-     "Kalau kamu menyalakan iCloud atau masuk setelah aplikasi sudah terbuka, kemajuanmu terbawa saat kamu membukanya lagi. Selama iCloud mati, aplikasi diam-diam menyimpan hanya di perangkat ini."
+     "Kalau kamu menyalakan iCloud atau masuk setelah aplikasi sudah terbuka, kemajuanmu terbawa saat kamu membukanya lagi. Selama iCloud mati, aplikasi diam-diam menyimpan hanya di perangkat ini.",
+     "Air Laut 15 «Layar Patah» dan Laut 16 «Gerbang Air» kini punya warnanya sendiri: pasir hangat warna kayu apung untuk yang pertama, biru baja yang sejuk untuk yang kedua. Sebelumnya, keduanya menggambar air polos yang sama seperti Laut 1."
     ]
    }
   },
