@@ -41,9 +41,11 @@ class PublishDaily(unittest.TestCase):
         git(site, "push", "-q", "origin", "main")
         self.check_cmd = "true"
 
-    def run_script(self, check_cmd=None, publish_dir=None):
+    def run_script(self, check_cmd=None, publish_dir=None, **extra):
+        # The fixture clone has no vendor/ipe_web_kit.lock, so the kit check is stubbed out unless a test supplies its own.
+        extra = {"INKISLE_KIT_CHECK_CMD": "true", **extra}
         env = helpers.isolated_env(self.home, INKISLE_PUBLISH_DIR=str(publish_dir or self.clone), INKISLE_CHECK_CMD=check_cmd or self.check_cmd,
-                                   INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
+                                   **extra, INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
         return subprocess.run(["bash", str(SCRIPT)], capture_output=True, text=True, env=env)
 
     def test_default_publish_dir_comes_from_home_and_tests_never_see_the_real_one(self):
@@ -107,6 +109,36 @@ class PublishDaily(unittest.TestCase):
         self.assertIn("SKIP", r.stdout)
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
         self.assertEqual(git(self.clone, "log", "--oneline").stdout.count("\n"), 1)
+
+    def kit_stubs(self, synced_ok):
+        """A kit check that fails until the sync stub has run (marker file), and a sync stub that succeeds or fails."""
+        marker = self.tmp / "kit-synced"
+        return dict(INKISLE_KIT_CHECK_CMD="test -e '%s'" % marker,
+                    INKISLE_KIT_SYNC_CMD=("touch '%s'; echo synced-stub" % marker) if synced_ok else "echo 'kit install failed: no tag v9' >&2; exit 1")
+
+    def test_kit_mismatch_is_resynced_before_publishing(self):
+        # Regression 11-08: the lock moved to v0.2.3 but vendor/ stayed v0.1.1 -> build_site ImportError -> no post that day.
+        r = self.run_script(**self.kit_stubs(synced_ok=True))
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("syncing", r.stdout)
+        self.assertIn("kit re-synced", r.stdout)
+        self.assertTrue((self.clone / "content/journal/next-one/en.md").is_file())
+
+    def test_kit_mismatch_that_cannot_be_synced_fails_loudly_and_touches_nothing(self):
+        before = self.head()
+        r = self.run_script(**self.kit_stubs(synced_ok=False))
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+        self.assertIn("KIT_MISMATCH", r.stdout)
+        self.assertIn("no tag v9", r.stdout)
+        self.assertEqual(self.head(), before)
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+        self.assertFalse((self.clone / "content/journal/next-one").exists())
+
+    def test_matching_kit_is_not_resynced(self):
+        r = self.run_script(INKISLE_KIT_SYNC_CMD="echo SYNC-RAN; exit 1")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn("SYNC-RAN", r.stdout)
 
     def test_failed_green_gate_rolls_back_the_queue_move(self):
         before = self.head()

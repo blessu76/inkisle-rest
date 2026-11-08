@@ -9,7 +9,11 @@
 #   - Publishing is all-or-nothing: if anything before the commit fails (publish_post, the green gate, the path check, git add/commit, SIGTERM), the tree is reset to the commit it started from.
 #   - One run at a time: .git/publish.lock (stale after its process is gone or 3 h).
 #   - Only the paths a publish creates are staged (never `git add -A`).
-# Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow).
+#   - The private ipe_web_kit in vendor/ (gitignored) must match vendor/ipe_web_kit.lock. After the rebase the lock may have moved (11-08: lock v0.2.3, vendor v0.1.1 ->
+#     ImportError, no post that day), so the run first re-syncs vendor from the local kit clone (INKISLE_KIT_DIR, default ~/Developer/ipe_web_kit) and,
+#     if it still does not match, fails loudly (KIT_MISMATCH in the log + a macOS notification) before touching any content.
+# Test hooks: INKISLE_CHECK_CMD (default "bash scripts/check.sh"), INKISLE_SKIP_NET=1 (no sleep / live check / IndexNow / notification),
+#             INKISLE_KIT_CHECK_CMD (default "python3 scripts/kit_lock.py check"), INKISLE_KIT_SYNC_CMD (default "python3 scripts/kit_lock.py sync --kit <INKISLE_KIT_DIR>").
 set -euo pipefail
 export TZ=Asia/Seoul
 export GIT_TERMINAL_PROMPT=0     # under launchd nobody can type a password: fail instead of hanging
@@ -18,6 +22,9 @@ skip() { log "SKIP — $*"; exit 0; }
 
 REPO="${INKISLE_PUBLISH_DIR:-$HOME/Developer/inkisle-rest}"
 CHECK_CMD="${INKISLE_CHECK_CMD:-bash scripts/check.sh}"
+KIT_DIR="${INKISLE_KIT_DIR:-$HOME/Developer/ipe_web_kit}"
+KIT_CHECK_CMD="${INKISLE_KIT_CHECK_CMD:-python3 scripts/kit_lock.py check}"
+KIT_SYNC_CMD="${INKISLE_KIT_SYNC_CMD:-python3 scripts/kit_lock.py sync --kit \"$KIT_DIR\"}"
 # Everything publish_post.py + build_site.py may create or change. Anything else in the tree after a publish means abort.
 PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh es fr de pt ru ar hi id"
 
@@ -67,6 +74,22 @@ git rebase -q origin/main || {
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
+fi
+
+# vendor/ipe_web_kit must be the locked kit version (vendor/ is gitignored, so a pull that moves the lock does not move it). Re-sync from the local kit clone;
+# a failure here changes nothing in the tree, so there is nothing to roll back.
+if ! bash -c "$KIT_CHECK_CMD" >/dev/null 2>&1; then
+  log "kit does not match vendor/ipe_web_kit.lock — syncing from $KIT_DIR"
+  git -C "$KIT_DIR" fetch -q --tags origin 2>/dev/null || true       # the lock may name a tag newer than the clone knows; best effort
+  if ! sync_out="$(bash -c "$KIT_SYNC_CMD" 2>&1)" || ! kit_out="$(bash -c "$KIT_CHECK_CMD" 2>&1)"; then
+    log "FAIL — KIT_MISMATCH: vendor/ipe_web_kit does not match vendor/ipe_web_kit.lock and the sync from $KIT_DIR failed: ${sync_out:-${kit_out:-?}}"
+    log "fix by hand: cd $REPO && python3 scripts/kit_lock.py sync --kit <ipe_web_kit clone with the locked tag>"
+    if [ "${INKISLE_SKIP_NET:-0}" != "1" ] && command -v osascript >/dev/null 2>&1; then
+      osascript -e 'display notification "ipe_web_kit lock mismatch — daily publish did not run (see inkisle-publish.log)" with title "inkisle publish FAILED"' >/dev/null 2>&1 || true
+    fi
+    exit 1
+  fi
+  log "kit re-synced: $sync_out"
 fi
 
 # An empty queue ends the daily post series silently, so make it loud in the log (still exit 0: it is not an error).

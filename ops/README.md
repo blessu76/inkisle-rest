@@ -14,6 +14,7 @@ the script ran (HH:MM KST); a future time is refused.
 - Runs in a **dedicated publish clone**: `INKISLE_PUBLISH_DIR` (default `~/Developer/inkisle-rest`). That clone must stay on `main` with a clean tree and
   must not be a place where anyone (or any agent) works on feature branches. On any other branch, or with uncommitted changes, the run logs `SKIP` and exits 0.
 - A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due — but only if those commits touch nothing outside the publish set; otherwise `SKIP` (a local work-in-progress commit never rides along to main).
+- A `vendor/ipe_web_kit` that does not match `vendor/ipe_web_kit.lock` (`vendor/` is gitignored, so a pull that moves the lock does not move it) is re-synced from `INKISLE_KIT_DIR` (default `~/Developer/ipe_web_kit`) before publishing; if that fails the run logs `KIT_MISMATCH`, shows a macOS notification and exits 1 without touching the tree.
 - An empty queue logs `QUEUE_EMPTY` (exit 0). Check the log for `SKIP`/`FAIL`/`QUEUE_EMPTY` regularly — they do not alert anyone.
 - Publishing is atomic: if `publish_post.py` (build + sitemap check), the green gate or the path check fails, the tree is reset to where it started
   (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
