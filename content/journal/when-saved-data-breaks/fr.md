@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, données de sauvegarde, gestion des erreurs, robustesse, stockage local, jeu mobile, sauvegarde versionnée
 image_alt: Un petit carnet dont une page est déchirée, à côté d'une rangée d'îles, une façon calme de représenter une sauvegarde endommagée.
+published: 2026-11-08T21:35+09:00
 ---
 Inkisle n'a ni comptes ni serveur, donc toute la progression vit **uniquement sur le téléphone**. Cela rend les données sauvegardées simples, mais cela signifie aussi que personne ne peut les restaurer à votre place. La question que nous nous sommes posée : que doit faire l'appli quand ce qu'elle relit est faux ?
 

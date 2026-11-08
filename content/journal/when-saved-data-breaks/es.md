@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, datos guardados, gestión de errores, robustez, almacenamiento local, juego móvil, guardado con versión
 image_alt: Un pequeño cuaderno con una página rota junto a una fila de islas, una forma tranquila de mostrar un guardado dañado.
+published: 2026-11-08T21:35+09:00
 ---
 Inkisle no tiene cuentas ni servidor, así que todo el progreso vive **solo en el teléfono**. Eso hace que los datos guardados sean sencillos, y también significa que nadie puede restaurarlos por ti. La pregunta que nos hicimos: ¿qué debe hacer la app cuando lo que lee de vuelta está mal?
 

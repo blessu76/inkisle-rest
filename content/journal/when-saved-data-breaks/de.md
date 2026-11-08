@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Speicherdaten, Fehlerbehandlung, Robustheit, lokaler Speicher, Mobile Game, versionierter Spielstand
 image_alt: Ein kleines Notizbuch mit einer eingerissenen Seite neben einer Reihe von Inseln, eine ruhige Art, einen beschädigten Spielstand zu zeigen.
+published: 2026-11-08T21:35+09:00
 ---
 Inkisle hat keine Konten und keinen Server, daher liegt der gesamte Fortschritt **nur auf dem Handy**. Das macht die gespeicherten Daten einfach, und es heißt auch, dass sie niemand für dich wiederherstellen kann. Unsere Frage: Was soll die App tun, wenn das, was sie zurückliest, falsch ist?
 

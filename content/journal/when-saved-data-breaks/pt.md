@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, dados salvos, tratamento de erros, robustez, armazenamento local, jogo para celular, save com versão
 image_alt: Um pequeno caderno com uma página rasgada ao lado de uma fileira de ilhas, uma forma tranquila de mostrar um save danificado.
+published: 2026-11-08T21:35+09:00
 ---
 O Inkisle não tem contas nem servidor, então todo o progresso fica **apenas no celular**. Isso deixa os dados salvos simples, e também significa que ninguém pode restaurá-los por você. A pergunta que fizemos: o que o app deve fazer quando o que ele lê de volta está errado?
 

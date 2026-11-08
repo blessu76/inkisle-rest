@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, save data, error handling, robustness, local storage, mobile game, versioned save
 image_alt: A small notebook with one torn page next to a row of islands, a calm way to show a damaged save.
+published: 2026-11-08T21:35+09:00
 ---
 Inkisle has no accounts and no server, so all progress lives **only on the phone**. That makes the saved data simple, and it also means nobody can restore it for you. The question we asked: what should the app do when what it reads back is wrong?
 

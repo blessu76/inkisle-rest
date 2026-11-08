@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, data simpanan, penanganan galat, ketangguhan, penyimpanan lokal, game seluler, simpanan berversi
 image_alt: Sebuah buku catatan kecil dengan satu halaman robek di samping deretan pulau, cara yang tenang untuk menunjukkan simpanan yang rusak.
+published: 2026-11-08T21:35+09:00
 ---
 Inkisle tidak punya akun dan tidak punya server, jadi semua progres hidup **hanya di ponsel**. Itu membuat data tersimpan menjadi sederhana, dan juga berarti tidak ada yang bisa memulihkannya untukmu. Pertanyaan kami: apa yang harus dilakukan aplikasi ketika yang dibacanya kembali ternyata salah?
 

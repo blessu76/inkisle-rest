@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [When saved data breaks: how the app recovers](https://inkisle.ipe.rest/journal/when-saved-data-breaks/) — 2026-11-08 — A phone can lose, truncate or block an app's saved data. How Inkisle handles missing, damaged, outdated and unavailable storage for progress, the intro and the sound setting, and where our recovery is still blunt.
 - [Three stars, one rule: how a stage is rated](https://inkisle.ipe.rest/journal/three-stars-one-rule/) — 2026-11-07 — Every stage in Inkisle can earn up to three stars. What each star means, why stars never block progress or go down, the 13 kinds of three-star goals, and the wrong label we found and fixed.
 - [A drag that forgives: the small rules behind one gesture](https://inkisle.ipe.rest/journal/a-drag-that-forgives/) — 2026-11-06 — Sending a fleet in Inkisle is one drag. The small rules that make it work with a real finger: a wider pick area, a drag that samples the whole path, one finger at a time, and clear messages when a send is not possible.
 - [Sound that is off by default: a scale for each sea](https://inkisle.ipe.rest/journal/sound-off-by-default/) — 2026-11-05 — Inkisle starts silent and the player turns sound on. How the sounds are made in code with no audio files, how each sea gets its own five-note scale, and why a chain of captures climbs the scale.
