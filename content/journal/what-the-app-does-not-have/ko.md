@@ -6,6 +6,7 @@ lang: ko
 category: making-of
 keywords: Inkisle, 잉크아일, 개인정보, 광고 없음, 계정 없음, 앱 아이콘, iOS, Android, Flutter, 모바일 게임
 image_alt: 크림색 바탕 위에 단순한 잉크 얼룩으로 그린 코랄색 섬, Inkisle 앱 아이콘.
+published: 2026-11-09T19:00+09:00
 ---
 앱이 좋게 느껴지는 데는 **하지 않는 것**이 크게 작용합니다. Inkisle 첫 버전에서는 빼기로 한 것들의 짧은 목록을 정했습니다.
 

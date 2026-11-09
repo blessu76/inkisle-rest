@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 隐私, 无广告, 无账号, 应用图标, iOS, Android, Flutter, 手机游戏
 image_alt: 奶油色背景上,一座画成简单墨渍的珊瑚色岛屿,即 Inkisle 的应用图标。
+published: 2026-11-09T19:00+09:00
 ---
 一款应用让人觉得好用,很大程度上在于它**不做**什么。Inkisle 的首个版本,我们定下了一份简短的舍弃清单。
 

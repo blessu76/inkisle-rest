@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, privacy, no ads, no account, app icon, iOS, Android, Flutter, mobile game
 image_alt: A coral island drawn as a simple ink blot on a cream background, the Inkisle app icon.
+published: 2026-11-09T19:00+09:00
 ---
 A lot of what makes an app feel good is what it does **not** do. For the first release of Inkisle we decided on a short list of things to leave out.
 

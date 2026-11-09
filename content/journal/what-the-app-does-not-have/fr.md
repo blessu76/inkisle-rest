@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, confidentialité, sans publicité, sans compte, icône d'appli, iOS, Android, Flutter, jeu mobile
 image_alt: Une île corail dessinée comme une simple tache d'encre sur fond crème, l'icône de l'appli Inkisle.
+published: 2026-11-09T19:00+09:00
 ---
 Une grande partie de ce qui rend une appli agréable tient à ce qu'elle **ne** fait **pas**. Pour la première version d'Inkisle, nous avons arrêté une courte liste de choses à laisser de côté.
 

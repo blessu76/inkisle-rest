@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, privasi, tanpa iklan, tanpa akun, ikon aplikasi, iOS, Android, Flutter, game seluler
 image_alt: Sebuah pulau berwarna karang yang digambar sebagai noda tinta sederhana di atas latar krem, ikon aplikasi Inkisle.
+published: 2026-11-09T19:00+09:00
 ---
 Banyak hal yang membuat sebuah aplikasi terasa nyaman adalah apa yang **tidak** dilakukannya. Untuk rilis pertama Inkisle, kami memutuskan daftar singkat hal-hal yang ditinggalkan.
 

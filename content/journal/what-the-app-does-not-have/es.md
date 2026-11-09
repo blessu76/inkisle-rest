@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, privacidad, sin anuncios, sin cuenta, icono de la app, iOS, Android, Flutter, juego móvil
 image_alt: Una isla de color coral dibujada como una simple mancha de tinta sobre fondo crema, el icono de la app de Inkisle.
+published: 2026-11-09T19:00+09:00
 ---
 Gran parte de lo que hace agradable a una app es lo que **no** hace. Para el primer lanzamiento de Inkisle decidimos una lista corta de cosas que dejar fuera.
 

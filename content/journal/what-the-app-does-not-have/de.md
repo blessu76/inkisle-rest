@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Datenschutz, keine Werbung, kein Konto, App-Icon, iOS, Android, Flutter, Mobile Game
 image_alt: Eine korallenfarbene Insel, gezeichnet als einfacher Tintenklecks auf cremefarbenem Hintergrund, das App-Icon von Inkisle.
+published: 2026-11-09T19:00+09:00
 ---
 Vieles von dem, was eine App angenehm macht, ist das, was sie **nicht** tut. Für die erste Veröffentlichung von Inkisle haben wir eine kurze Liste von Dingen festgelegt, die wir weglassen.
 

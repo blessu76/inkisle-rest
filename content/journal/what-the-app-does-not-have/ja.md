@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, プライバシー, 広告なし, アカウントなし, アプリアイコン, iOS, Android, Flutter, モバイルゲーム
 image_alt: クリーム色の背景に、シンプルなインクのしみとして描かれた珊瑚色の島。Inkisle のアプリアイコン。
+published: 2026-11-09T19:00+09:00
 ---
 アプリの心地よさの多くは、アプリが**しない**ことから生まれます。Inkisle の最初のリリースでは、入れないものの短いリストを決めました。
 
