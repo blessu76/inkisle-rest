@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, level design, three-star rule, ink spring, bot simulation, game balance, sea 14
 image_alt: A pale sea with a small spring island at the center and a few islands around it, drawn in soft vector colors.
+published: 2026-11-10T19:00+09:00
 ---
 Sea 14, the white sea, adds one rule: an **ink spring**. Hold the spring island and, every 150 ticks, it pulses and spreads ink onto a nearby island. The first pulse comes 150 ticks after you capture it. The three-star goal we first wrote for it was "make the spring spread to N islands". That goal turned out to be a promise nobody could keep.
 

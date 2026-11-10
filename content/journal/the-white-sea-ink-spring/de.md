@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Leveldesign, Drei-Sterne-Regel, Tintenquelle, Bot-Simulation, Spielbalance, Meer 14
 image_alt: Ein helles Meer mit einer kleinen Quelleninsel in der Mitte und ein paar Inseln ringsum, gezeichnet in weichen Vektorfarben.
+published: 2026-11-10T19:00+09:00
 ---
 Meer 14, das Weiße Meer, bringt eine Regel dazu: eine **Tintenquelle**. Hältst du die Quelleninsel, pulsiert sie alle 150 Ticks und breitet Tinte auf eine nahe Insel aus. Der erste Puls kommt 150 Ticks nach der Eroberung. Das Drei-Sterne-Ziel, das wir zuerst dafür geschrieben haben, lautete "lass die Quelle sich auf N Inseln ausbreiten". Dieses Ziel erwies sich als ein Versprechen, das niemand halten konnte.
 

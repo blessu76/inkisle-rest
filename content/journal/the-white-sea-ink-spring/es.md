@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, diseño de niveles, regla de tres estrellas, manantial de tinta, simulación con bots, equilibrio del juego, mar 14
 image_alt: Un mar pálido con una pequeña isla manantial en el centro y unas pocas islas alrededor, dibujado en suaves colores vectoriales.
+published: 2026-11-10T19:00+09:00
 ---
 El mar 14, el mar blanco, añade una regla: un **manantial de tinta**. Si mantienes la isla del manantial, cada 150 ticks pulsa y extiende tinta a una isla cercana. El primer pulso llega 150 ticks después de capturarlo. El objetivo de tres estrellas que escribimos al principio era "haz que el manantial se extienda a N islas". Ese objetivo resultó ser una promesa que nadie podía cumplir.
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, level design, règle trois étoiles, source d'encre, simulation de bots, équilibrage du jeu, mer 14
 image_alt: Une mer pâle avec une petite île-source au centre et quelques îles autour, dessinée dans des couleurs vectorielles douces.
+published: 2026-11-10T19:00+09:00
 ---
 La mer 14, la mer blanche, ajoute une règle : une **source d'encre**. Tenez l'île de la source et, tous les 150 ticks, elle pulse et répand de l'encre sur une île voisine. La première pulsation arrive 150 ticks après sa capture. L'objectif trois étoiles que nous avions d'abord écrit pour elle était « faire répandre la source sur N îles ». Cet objectif s'est révélé être une promesse que personne ne pouvait tenir.
 

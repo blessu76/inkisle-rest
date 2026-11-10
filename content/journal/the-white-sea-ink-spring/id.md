@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, desain level, aturan tiga bintang, mata air tinta, simulasi bot, keseimbangan game, laut 14
 image_alt: Laut pucat dengan sebuah pulau mata air kecil di tengah dan beberapa pulau di sekitarnya, digambar dengan warna vektor yang lembut.
+published: 2026-11-10T19:00+09:00
 ---
 Laut 14, laut putih, menambahkan satu aturan: **mata air tinta**. Kuasai pulau mata air, dan setiap 150 tick ia berdenyut lalu menyebarkan tinta ke pulau di dekatnya. Denyut pertama datang 150 tick setelah kamu merebutnya. Target tiga bintang yang pertama kami tulis untuknya adalah "buat mata air menyebar ke N pulau". Target itu ternyata janji yang tidak bisa ditepati siapa pun.
 

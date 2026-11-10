@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, design de fases, regra de três estrelas, fonte de tinta, simulação com bots, equilíbrio do jogo, mar 14
 image_alt: Um mar pálido com uma pequena ilha-fonte no centro e algumas ilhas ao redor, desenhado em cores vetoriais suaves.
+published: 2026-11-10T19:00+09:00
 ---
 O mar 14, o mar branco, acrescenta uma regra: uma **fonte de tinta**. Se você mantém a ilha da fonte, a cada 150 ticks ela pulsa e espalha tinta por uma ilha próxima. O primeiro pulso vem 150 ticks depois de você capturá-la. O objetivo de três estrelas que escrevemos primeiro para ela era "faça a fonte se espalhar por N ilhas". Esse objetivo acabou sendo uma promessa que ninguém conseguia cumprir.
 

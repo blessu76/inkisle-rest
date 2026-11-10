@@ -23,6 +23,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [The white sea's ink spring: when a three-star rule cannot be earned](https://inkisle.ipe.rest/journal/the-white-sea-ink-spring/) — 2026-11-10 — Sea 14 has a spring that spreads ink onto nearby islands. Bots could not earn the three-star goal "make the spring spread to N islands", so we measured, tried moving islands, and replaced the rule with a count of spring pulses. What we tried and what is still unchecked.
 - [What the app does not have: no ads, no accounts, no tracking](https://inkisle.ipe.rest/journal/what-the-app-does-not-have/) — 2026-11-09 — Some of Inkisle's design is about what is left out. The app asks for no account and has no ads or tracking tools, it runs on iOS and Android from one codebase, and we drew a new icon for both. What we decided and what we have not checked.
 - [When saved data breaks: how the app recovers](https://inkisle.ipe.rest/journal/when-saved-data-breaks/) — 2026-11-08 — A phone can lose, truncate or block an app's saved data. How Inkisle handles missing, damaged, outdated and unavailable storage for progress, the intro and the sound setting, and where our recovery is still blunt.
 - [Three stars, one rule: how a stage is rated](https://inkisle.ipe.rest/journal/three-stars-one-rule/) — 2026-11-07 — Every stage in Inkisle can earn up to three stars. What each star means, why stars never block progress or go down, the 13 kinds of three-star goals, and the wrong label we found and fixed.
