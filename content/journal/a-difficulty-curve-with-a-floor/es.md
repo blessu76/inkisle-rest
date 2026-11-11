@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, curva de dificultad, equilibrio del juego, simulación con bots, diseño de niveles, tasa de victorias, nivel de IA
 image_alt: Una hilera sinuosa de islas que sube y baja como una ola, dibujada en suaves colores vectoriales.
+published: 2026-11-11T19:00+09:00
 ---
 Un comentario del propietario cambió este trabajo: si solo se pueden ganar 40 de 800 niveles, el juego es demasiado difícil, aunque cada nivel parezca bien por separado. Así que dejamos de ajustar los niveles uno a uno y escribimos una **curva**.
 

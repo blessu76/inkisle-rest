@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Schwierigkeitskurve, Spielbalance, Bot-Simulation, Leveldesign, Siegquote, KI-Stufe
 image_alt: Eine gewundene Reihe von Inseln, die wie eine Welle steigt und fällt, gezeichnet in sanften Vektorfarben.
+published: 2026-11-11T19:00+09:00
 ---
 Ein Kommentar des Inhabers hat diese Arbeit verändert: Wenn nur 40 von 800 Stufen gewinnbar sind, ist das Spiel zu schwer, auch wenn jede Stufe für sich in Ordnung aussieht. Also haben wir aufgehört, Stufen einzeln abzustimmen, und eine **Kurve** aufgeschrieben.
 

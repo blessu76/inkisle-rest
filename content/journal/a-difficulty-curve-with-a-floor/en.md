@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, difficulty curve, game balance, bot simulation, level design, win rate, AI level
 image_alt: A winding row of islands that rises and falls like a wave, drawn in soft vector colors.
+published: 2026-11-11T19:00+09:00
 ---
 A comment from the owner changed this work: if only 40 of 800 stages are winnable, the game is too hard, even if each stage looks fine alone. So we stopped tuning stages one by one and wrote down a **curve**.
 

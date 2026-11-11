@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, curva de dificuldade, equilíbrio de jogo, simulação com bots, design de fases, taxa de vitória, nível da IA
 image_alt: Uma fileira sinuosa de ilhas que sobe e desce como uma onda, desenhada em cores vetoriais suaves.
+published: 2026-11-11T19:00+09:00
 ---
 Um comentário do dono mudou este trabalho: se apenas 40 de 800 fases podem ser vencidas, o jogo é difícil demais, mesmo que cada fase pareça boa isoladamente. Então paramos de ajustar as fases uma a uma e escrevemos uma **curva**.
 

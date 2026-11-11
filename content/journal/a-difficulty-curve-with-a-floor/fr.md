@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, courbe de difficulté, équilibrage du jeu, simulation par bots, conception de niveaux, taux de victoire, niveau d'IA
 image_alt: Une rangée sinueuse d'îles qui monte et descend comme une vague, dessinée dans des couleurs vectorielles douces.
+published: 2026-11-11T19:00+09:00
 ---
 Un commentaire du propriétaire a changé ce travail : si seulement 40 niveaux sur 800 sont gagnables, le jeu est trop difficile, même si chaque niveau paraît correct isolément. Nous avons donc cessé de régler les niveaux un par un et nous avons écrit une **courbe**.
 

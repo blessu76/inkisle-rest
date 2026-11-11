@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kurva kesulitan, keseimbangan game, simulasi bot, desain level, tingkat kemenangan, level AI
 image_alt: Barisan pulau yang berkelok, naik dan turun seperti gelombang, digambar dengan warna vektor yang lembut.
+published: 2026-11-11T19:00+09:00
 ---
 Satu komentar dari pemilik mengubah pekerjaan ini: jika hanya 40 dari 800 stage yang bisa dimenangkan, game-nya terlalu sulit, meskipun setiap stage tampak baik jika dilihat sendiri-sendiri. Jadi kami berhenti menyetel stage satu per satu dan menuliskan sebuah **kurva**.
 
