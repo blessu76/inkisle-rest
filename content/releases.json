@@ -21,6 +21,14 @@
           "Improved: Release Notes in Settings now open in an in-app sheet, and recent notes can be read even when you are offline.",
           "Improved: Settings now has a Privacy Policy item that opens the policy page in your app language."
         ]
+      },
+      "title": {
+        "en": "Build 26: Seas 21 and 22, a refined stage picker, and release notes inside the app",
+        "ko": "빌드 26: 21막·22막, 더 다듬어진 판 선택 시트, 앱 안에서 보는 릴리즈 노트"
+      },
+      "intro": {
+        "en": "This build went up on TestFlight. It has the contents of builds 1 to 25, plus the changes below.",
+        "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~25의 내용에 아래 변경이 더해졌습니다."
       }
     },
     {
