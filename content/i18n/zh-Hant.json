@@ -45,11 +45,5 @@
  "fact3": "可離線遊玩：不需要帳號，也不需要網路。",
  "fact4": "極簡向量美術；每一方都有自己的顏色與旗幟形狀，沒有顏色也能辨識。",
  "fact5": "計畫先推出 iOS，Android 同步開發。尚未定發布日期。",
- "about_cta": "關於這款遊戲",
- "nav_releases": "版本說明",
- "releases_title": "版本說明",
- "releases_desc": "以淺白文字說明每個在正式發布前上傳到 TestFlight 的版本有哪些變化。",
- "rel_status_prep": "準備上傳 TestFlight",
- "rel_status_tf": "已上傳至 TestFlight",
- "rel_en_note": "此條目僅提供英文版本。"
+ "about_cta": "關於這款遊戲"
 }

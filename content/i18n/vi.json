@@ -45,11 +45,5 @@
  "fact3": "Chơi offline: không cần tài khoản và không cần mạng.",
  "fact4": "Nghệ thuật vector tối giản; mỗi bên có màu và hình cờ riêng nên vẫn dễ nhận ra khi không có màu.",
  "fact5": "Dự kiến ra mắt trên iOS trước, Android phát triển song song. Chưa có ngày phát hành.",
- "about_cta": "Về trò chơi",
- "nav_releases": "Ghi chú phát hành",
- "releases_title": "Ghi chú phát hành",
- "releases_desc": "Nêu bằng lời đơn giản những thay đổi trong từng bản dựng đưa lên TestFlight trước khi phát hành chính thức.",
- "rel_status_prep": "Đang chuẩn bị lên TestFlight",
- "rel_status_tf": "Đã có trên TestFlight",
- "rel_en_note": "Mục này chỉ có bằng tiếng Anh."
+ "about_cta": "Về trò chơi"
 }

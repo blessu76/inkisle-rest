@@ -541,364 +541,92 @@
 <xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/privacy/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/privacy/"/>
 </url>
-<url><loc>https://inkisle.ipe.rest/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/ko/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/ja/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/zh-Hant/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/es/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/pt-BR/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/fr/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/de/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/id/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/th/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/vi/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/tr/releases/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/releases/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/releases/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/releases/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/releases/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/releases/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/releases/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/releases/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/releases/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/releases/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/releases/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/releases/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/releases/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/releases/"/>
-</url>
 <url><loc>https://inkisle.ipe.rest/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/ko/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/ja/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/zh-Hant/journal/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/es/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/pt-BR/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/fr/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/de/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/id/journal/</loc><lastmod>2026-11-12</lastmod>
 <xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
 <xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
 <xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
 <xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
 <xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
 <xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
 <xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
 <xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/th/journal/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/vi/journal/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
-<xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
-</url>
-<url><loc>https://inkisle.ipe.rest/tr/journal/</loc><lastmod>2026-11-12</lastmod>
-<xhtml:link rel="alternate" hreflang="en" href="https://inkisle.ipe.rest/journal/"/>
-<xhtml:link rel="alternate" hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/"/>
-<xhtml:link rel="alternate" hreflang="ja" href="https://inkisle.ipe.rest/ja/journal/"/>
-<xhtml:link rel="alternate" hreflang="zh-Hant" href="https://inkisle.ipe.rest/zh-Hant/journal/"/>
-<xhtml:link rel="alternate" hreflang="es" href="https://inkisle.ipe.rest/es/journal/"/>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://inkisle.ipe.rest/pt-BR/journal/"/>
-<xhtml:link rel="alternate" hreflang="fr" href="https://inkisle.ipe.rest/fr/journal/"/>
-<xhtml:link rel="alternate" hreflang="de" href="https://inkisle.ipe.rest/de/journal/"/>
-<xhtml:link rel="alternate" hreflang="id" href="https://inkisle.ipe.rest/id/journal/"/>
-<xhtml:link rel="alternate" hreflang="th" href="https://inkisle.ipe.rest/th/journal/"/>
-<xhtml:link rel="alternate" hreflang="vi" href="https://inkisle.ipe.rest/vi/journal/"/>
-<xhtml:link rel="alternate" hreflang="tr" href="https://inkisle.ipe.rest/tr/journal/"/>
 <xhtml:link rel="alternate" hreflang="x-default" href="https://inkisle.ipe.rest/journal/"/>
 </url>
 <url><loc>https://inkisle.ipe.rest/journal/why-island-conquest/</loc><lastmod>2026-10-29</lastmod>

@@ -45,11 +45,5 @@
  "fact3": "Çevrimdışı çalışır: hesap ya da ağ gerekmez.",
  "fact4": "Sade vektör sanatı; her tarafın kendi rengi ve bayrak biçimi var, bu yüzden renk olmadan da okunur.",
  "fact5": "Önce iOS için planlanıyor, Android de paralel geliştiriliyor. Henüz yayın tarihi yok.",
- "about_cta": "Oyun hakkında",
- "nav_releases": "Sürüm notları",
- "releases_title": "Sürüm notları",
- "releases_desc": "Halka açık sürümden önce TestFlight'a yüklediğimiz her derlemede neyin değiştiğini sade bir dille anlatır.",
- "rel_status_prep": "TestFlight için hazırlanıyor",
- "rel_status_tf": "TestFlight'ta",
- "rel_en_note": "Bu kayıt yalnızca İngilizce olarak mevcuttur."
+ "about_cta": "Oyun hakkında"
 }
