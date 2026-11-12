@@ -1,6 +1,79 @@
 {
   "releases": [
     {
+      "id": "1.0.0-27",
+      "version": "1.0.0",
+      "build": "27",
+      "status": "testflight",
+      "date": "2026-11-13",
+      "title": {
+        "en": "Build 27: Release notes right in the app, in 12 languages",
+        "ko": "빌드 27: 앱 안에서 바로 보는 릴리즈 노트, 12개 언어 지원",
+        "ja": "ビルド27：アプリ内でそのまま読めるリリースノート、12言語対応",
+        "zh-Hant": "版本 27：App 內直接查看版本說明，支援 12 種語言",
+        "es": "Compilación 27: notas de versión dentro de la app, en 12 idiomas",
+        "pt-BR": "Build 27: notas de versão direto no app, em 12 idiomas",
+        "fr": "Build 27 : les notes de version directement dans l'app, en 12 langues",
+        "de": "Build 27: Versionshinweise direkt in der App, in 12 Sprachen",
+        "id": "Build 27: catatan rilis langsung di dalam aplikasi, dalam 12 bahasa",
+        "th": "บิลด์ 27: อ่านบันทึกการอัปเดตในแอปได้ทันที รองรับ 12 ภาษา",
+        "vi": "Bản dựng 27: ghi chú phát hành xem ngay trong ứng dụng, hỗ trợ 12 ngôn ngữ",
+        "tr": "Yapı 27: sürüm notları doğrudan uygulamada, 12 dilde"
+      },
+      "intro": {
+        "en": "This build went up on TestFlight. It has the contents of builds 1 to 26, plus the change below.",
+        "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~26의 내용에 아래 변경이 더해졌습니다.",
+        "ja": "TestFlight に上がったビルドです。ビルド1〜26の内容に、以下の変更が加わりました。",
+        "zh-Hant": "這是已上傳至 TestFlight 的版本，包含版本 1 至 26 的內容，再加上以下變更。",
+        "es": "Esta compilación se subió a TestFlight. Incluye lo de las compilaciones 1 a 26, más el cambio de abajo.",
+        "pt-BR": "Esta build foi enviada ao TestFlight. Ela inclui o conteúdo das builds 1 a 26, mais a mudança abaixo.",
+        "fr": "Ce build a été envoyé sur TestFlight. Il reprend le contenu des builds 1 à 26, plus le changement ci-dessous.",
+        "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält alles aus den Builds 1 bis 26 sowie die folgende Änderung.",
+        "id": "Build ini sudah naik ke TestFlight. Isinya mencakup build 1 sampai 26, ditambah perubahan di bawah.",
+        "th": "บิลด์นี้ขึ้น TestFlight แล้ว มีเนื้อหาของบิลด์ 1 ถึง 26 พร้อมการเปลี่ยนแปลงด้านล่าง",
+        "vi": "Bản dựng này đã lên TestFlight. Nó gồm nội dung của bản dựng 1 đến 26, cộng thêm thay đổi dưới đây.",
+        "tr": "Bu yapı TestFlight'a yüklendi. 1'den 26'ya kadar olan yapıların içeriğini ve aşağıdaki değişikliği içerir."
+      },
+      "notes": {
+        "en": [
+          "Improved: you can read the release notes right inside the app, and the app now supports 12 languages."
+        ],
+        "ko": [
+          "개선: 릴리즈 노트를 앱 안에서 바로 볼 수 있어요. 12개 언어를 지원해요."
+        ],
+        "ja": [
+          "改善：リリースノートをアプリ内でそのまま読めます。12言語に対応しています。"
+        ],
+        "zh-Hant": [
+          "改善：可以直接在 App 內查看版本說明，並支援 12 種語言。"
+        ],
+        "es": [
+          "Mejora: puedes leer las notas de versión dentro de la app, que ahora admite 12 idiomas."
+        ],
+        "pt-BR": [
+          "Melhoria: você pode ler as notas de versão direto no app, que agora oferece 12 idiomas."
+        ],
+        "fr": [
+          "Amélioration : vous pouvez lire les notes de version directement dans l'app, désormais disponible en 12 langues."
+        ],
+        "de": [
+          "Verbessert: Die Versionshinweise lassen sich direkt in der App lesen, und die App unterstützt jetzt 12 Sprachen."
+        ],
+        "id": [
+          "Peningkatan: catatan rilis bisa dibaca langsung di dalam aplikasi, dan aplikasi kini mendukung 12 bahasa."
+        ],
+        "th": [
+          "ปรับปรุง: อ่านบันทึกการอัปเดตได้ในแอปทันที และแอปรองรับ 12 ภาษาแล้ว"
+        ],
+        "vi": [
+          "Cải thiện: bạn có thể đọc ghi chú phát hành ngay trong ứng dụng, và ứng dụng nay hỗ trợ 12 ngôn ngữ."
+        ],
+        "tr": [
+          "İyileştirme: sürüm notlarını doğrudan uygulamada okuyabilirsiniz ve uygulama artık 12 dili destekliyor."
+        ]
+      }
+    },
+    {
       "id": "1.0.0-26",
       "version": "1.0.0",
       "build": "26",
