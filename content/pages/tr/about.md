@@ -18,7 +18,7 @@ Inkisle (logoda InkIsle yazılır, "ink-ISLE" diye okunur) adalar, filolar ve m�
 |---|---|
 | Ad | Inkisle, 2026-10-29 tarihinde kararlaştırıldı. Marka tescil kontrolleri henüz yapılmadı. |
 | Platformlar | Önce iOS için planlanıyor, Android paralel geliştiriliyor. Tarih yok. |
-| Fiyat | Henüz kararlaştırılmadı. Mevcut plan: ilk denizler ücretsiz, geri kalanı tek bir satın almayla açılır, reklam yok, enerji yok, sandık yok. |
+| Fiyat | Henüz açıklanmadı. Uygulama içi satın almalar henüz etkin değil. Mevcut plan: tüm bölümler ücretsiz; Mürekkep, bir bölüm için isteğe bağlı, tüketilebilir bir yardımcı öğedir; oyunda avantaj sağlamayan bir destek yolu vardır; reklam yok, enerji yok, sandık yok. |
 | Hikâye | Bilerek yok. Çekici olan, adaları ele geçirmenin eğlencesi ve bir sonraki denize gitme isteği. |
 | Çevrimiçi oyun | Oyuncular isterse, daha sonra. Motor, eklenebilecek şekilde kuruldu. |
 

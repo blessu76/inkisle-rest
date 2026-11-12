@@ -23,6 +23,9 @@ class PublishDaily(unittest.TestCase):
         site = helpers.make_site(posts=(("alpha-post", PAST),), queue=("next-one", "next-two"))
         self.addCleanup(shutil.rmtree, site, True)
         shutil.copytree(REPO / "scripts", site / "scripts", ignore=shutil.ignore_patterns("__pycache__"))
+        # The real repo ignores __pycache__; without it, CI's Python (which writes bytecode next to the scripts the
+        # publish run imports) leaves an untracked scripts/__pycache__ and the "unexpected paths" guard rolls back.
+        shutil.copy(REPO / ".gitignore", site / ".gitignore")
         shutil.copytree(REPO / "vendor", site / "vendor", ignore=shutil.ignore_patterns("__pycache__"))  # build_site imports ipe_web_kit from vendor/
         helpers.build(site)
         self.tmp = Path(tempfile.mkdtemp(prefix="inkisle-pd-"))
@@ -39,9 +42,11 @@ class PublishDaily(unittest.TestCase):
         git(site, "push", "-q", "origin", "main")
         self.check_cmd = "true"
 
-    def run_script(self, check_cmd=None, publish_dir=None):
+    def run_script(self, check_cmd=None, publish_dir=None, **extra):
+        # The fixture clone has no vendor/ipe_web_kit.lock, so the kit check is stubbed out unless a test supplies its own.
+        extra = {"INKISLE_KIT_CHECK_CMD": "true", **extra}
         env = helpers.isolated_env(self.home, INKISLE_PUBLISH_DIR=str(publish_dir or self.clone), INKISLE_CHECK_CMD=check_cmd or self.check_cmd,
-                                   INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
+                                   **extra, INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
         return subprocess.run(["bash", str(SCRIPT)], capture_output=True, text=True, env=env)
 
     def test_default_publish_dir_comes_from_home_and_tests_never_see_the_real_one(self):
@@ -60,7 +65,11 @@ class PublishDaily(unittest.TestCase):
     def test_script_itself_never_writes_a_log_file(self):
         # Logging is the launchd plist's job (StandardOutPath); the script only echoes. A test run must leave HOME empty.
         self.assertEqual(self.run_script().returncode, 0)
-        self.assertEqual(list(self.home.iterdir()), [])
+        # Only files count: macOS developer tools (the git/xcrun shim) may create an empty Library/ skeleton or a tool cache in a fresh HOME
+        # (seen when the disk was full) — that is not the script logging, so Library/Caches and bare directories are ignored.
+        written = [str(f.relative_to(self.home)) for f in self.home.rglob("*")
+                   if f.is_file() and "Library/Caches" not in f.relative_to(self.home).as_posix()]
+        self.assertEqual(written, [])
 
     def head(self, cwd=None):
         return git(cwd or self.clone, "rev-parse", "HEAD").stdout.strip()
@@ -101,6 +110,36 @@ class PublishDaily(unittest.TestCase):
         self.assertIn("SKIP", r.stdout)
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
         self.assertEqual(git(self.clone, "log", "--oneline").stdout.count("\n"), 1)
+
+    def kit_stubs(self, synced_ok):
+        """A kit check that fails until the sync stub has run (marker file), and a sync stub that succeeds or fails."""
+        marker = self.tmp / "kit-synced"
+        return dict(INKISLE_KIT_CHECK_CMD="test -e '%s'" % marker,
+                    INKISLE_KIT_SYNC_CMD=("touch '%s'; echo synced-stub" % marker) if synced_ok else "echo 'kit install failed: no tag v9' >&2; exit 1")
+
+    def test_kit_mismatch_is_resynced_before_publishing(self):
+        # Regression 11-08: the lock moved to v0.2.3 but vendor/ stayed v0.1.1 -> build_site ImportError -> no post that day.
+        r = self.run_script(**self.kit_stubs(synced_ok=True))
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("syncing", r.stdout)
+        self.assertIn("kit re-synced", r.stdout)
+        self.assertTrue((self.clone / "content/journal/next-one/en.md").is_file())
+
+    def test_kit_mismatch_that_cannot_be_synced_fails_loudly_and_touches_nothing(self):
+        before = self.head()
+        r = self.run_script(**self.kit_stubs(synced_ok=False))
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+        self.assertIn("KIT_MISMATCH", r.stdout)
+        self.assertIn("no tag v9", r.stdout)
+        self.assertEqual(self.head(), before)
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+        self.assertFalse((self.clone / "content/journal/next-one").exists())
+
+    def test_matching_kit_is_not_resynced(self):
+        r = self.run_script(INKISLE_KIT_SYNC_CMD="echo SYNC-RAN; exit 1")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertNotIn("SYNC-RAN", r.stdout)
 
     def test_failed_green_gate_rolls_back_the_queue_move(self):
         before = self.head()
@@ -239,6 +278,28 @@ class PublishDaily(unittest.TestCase):
         self.assertIn("wip.txt", r.stdout)
         self.assertEqual(self.origin_head(), before)
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+
+    def test_diverged_unpushed_commit_is_skipped_before_any_rebase(self):
+        # 10-31: a release-notes commit made in the publish clone collided with origin; it must be skipped untouched, never rebased
+        (self.clone / "releases").mkdir(exist_ok=True)
+        (self.clone / "releases" / "index.html").write_text("local")
+        git(self.clone, "add", "-A")
+        git(self.clone, "commit", "-qm", "local notes")
+        other = self.tmp / "other"
+        git(self.tmp, "clone", "-q", str(self.origin), str(other))
+        (other / "releases").mkdir(exist_ok=True)
+        (other / "releases" / "index.html").write_text("remote")
+        git(other, "add", "-A")
+        git(other, "commit", "-qm", "remote notes")
+        git(other, "push", "-q", "origin", "main")
+        head, before = self.head(), self.origin_head()
+        r = self.run_script()
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertIn("SKIP", r.stdout)
+        self.assertIn("releases/index.html", r.stdout)
+        self.assertEqual(self.head(), head)
+        self.assertEqual(self.origin_head(), before)
+        self.assertFalse((self.clone / ".git" / "rebase-merge").exists())
 
     def test_failing_rollback_is_logged_loudly_and_still_releases_the_lock(self):
         # an index.lock makes `git reset --hard` fail, simulating a rollback that cannot complete

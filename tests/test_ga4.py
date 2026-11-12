@@ -38,7 +38,7 @@ class Ga4(unittest.TestCase):
             self.assertNotIn(GA_ID, (REPO / rel).read_text(encoding="utf-8"))
 
     def test_committed_pages_have_it(self):
-        for rel in ("index.html", "404.html", "privacy/index.html", "releases/index.html", "ko/index.html", "ar/privacy/index.html"):
+        for rel in ("index.html", "404.html", "privacy/index.html", "ko/index.html", "ja/privacy/index.html", "th/privacy/index.html"):
             with self.subTest(rel):
                 self.assertEqual((REPO / rel).read_text(encoding="utf-8").count(GA_ID), 1)
 

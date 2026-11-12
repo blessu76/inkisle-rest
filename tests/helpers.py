@@ -16,7 +16,7 @@ NOW = dt.datetime(2026, 11, 3, 20, 0, tzinfo=bs.KST)
 def isolated_env(home, **extra):
     """Environment for running ops scripts in tests: HOME is a throw-away dir, so nothing can fall back to the real ~/Library/Logs, ~/Developer/inkisle-rest or ~/Library/LaunchAgents."""
     import os
-    env = {**os.environ, "HOME": str(home), "PYTHONDONTWRITEBYTECODE": "1"}  # macOS python would else cache bytecode under $HOME/Library/Caches
+    env = {**os.environ, "HOME": str(home), "PYTHONDONTWRITEBYTECODE": "1"}  # macOS Xcode python otherwise writes its pyc cache to $HOME/Library/Caches
     env.pop("INKISLE_PUBLISH_DIR", None)
     env.pop("INKISLE_HOME", None)
     env.pop("INKISLE_LAUNCH_AGENTS_DIR", None)

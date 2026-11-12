@@ -32,9 +32,13 @@ class Picker(unittest.TestCase):
             self.assertEqual(re.search(r'<html lang="([\w-]+)"', h).group(1), lang, f)
             self.assertEqual(re.search(r"<summary[^>]*>([^<]*)</summary>", h).group(1), name, f)
             menu = re.search(r'<details class="lang">.*?</details>', h, re.S).group(0)
-            cur = re.findall(r'<a href="[^"]*" hreflang="(\w+)"[^>]*aria-current', menu)
+            cur = re.findall(r'<a href="[^"]*" hreflang="([\w-]+)"[^>]*aria-current', menu)
             self.assertEqual(cur, [lang], f)
-            self.assertEqual(len(re.findall(r'<li><a ', menu)), len(bs.LANGS), f)
+            n = len(re.findall(r'<li><a ', menu))
+            if "journal/" in f:  # a journal index offers only the languages that have posts (the others are noindex, off the sitemap)
+                self.assertTrue(1 <= n <= len(bs.LANGS), f)
+            else:
+                self.assertEqual(n, len(bs.LANGS), f)
 
     def test_picker_links_stay_on_the_same_page(self):
         for lang, f, h in pages():

@@ -18,7 +18,7 @@ Inkisle (logo viết là InkIsle, đọc là "ink-ISLE") là trò chơi chiến 
 |---|---|
 | Tên | Inkisle, đã quyết định ngày 2026-10-29. Việc kiểm tra nhãn hiệu chưa hoàn tất. |
 | Nền tảng | Dự kiến ra mắt trên iOS trước, Android phát triển song song. Chưa có ngày. |
-| Giá | Chưa quyết định. Kế hoạch hiện tại: các biển đầu miễn phí, phần còn lại mở khóa bằng một lần mua, không quảng cáo, không năng lượng, không hộp quà ngẫu nhiên. |
+| Giá | Chưa công bố. Mua trong ứng dụng chưa được kích hoạt. Kế hoạch hiện tại: mọi màn chơi đều miễn phí; Mực là vật phẩm hỗ trợ tùy chọn, dùng một lần cho một màn chơi; có cách ủng hộ không mang lại lợi thế khi chơi; không quảng cáo, không năng lượng, không hộp quà ngẫu nhiên. |
 | Cốt truyện | Không có, có chủ ý. Điều hấp dẫn là niềm vui khi chiếm đảo và muốn đến biển tiếp theo. |
 | Chơi online | Sẽ làm sau, nếu người chơi muốn. Động cơ được xây dựng để có thể bổ sung sau này. |
 

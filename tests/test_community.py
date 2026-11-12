@@ -10,7 +10,7 @@ from helpers import NOW, REPO, bs, make_site
 
 sys.path.insert(0, str(REPO / "vendor"))  # the private kit, installed by scripts/kit_lock.py
 
-ON = {"siteId": "inkisle.ipe.rest", "features": {"comments": True, "likes": False, "reports": False}}
+ON = {"siteId": "inkisle.ipe.rest", "enabled": True}
 
 
 def write_cfg(root, cfg):
@@ -52,7 +52,7 @@ class PrivacyText(unittest.TestCase):
                     self.assertNotRegex(text, r"[가-힣]")
 
     def test_the_site_ships_with_the_widget_off(self):
-        self.assertFalse(json.loads((REPO / "community.json").read_text(encoding="utf-8"))["features"]["comments"])
+        self.assertFalse(json.loads((REPO / "community.json").read_text(encoding="utf-8"))["enabled"])
 
 
 class Switch(unittest.TestCase):
@@ -90,7 +90,7 @@ class Switch(unittest.TestCase):
                 if is_post:
                     self.assertEqual(text.count('<section class="ipe-cm"'), 1)
                     self.assertIn('data-site="inkisle.ipe.rest"', text)
-                    self.assertIn('data-features="comments"', text)
+                    self.assertIn('data-features="comments likes reports"', text)
                     self.assertRegex(text, r'href="/assets/ipe-community\.css\?v=[\w-]+"')
                     self.assertRegex(text, r'src="/assets/ipe-community\.js\?v=[\w-]+" defer')
                     self.assertIn('id="ipe-theme"', text)
