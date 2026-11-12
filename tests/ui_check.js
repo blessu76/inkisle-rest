@@ -22,7 +22,7 @@ function pagesToCheck() {
   const J = path.join(ROOT, 'content', 'journal');
   const slugs = fs.existsSync(J) ? fs.readdirSync(J).filter(d => fs.statSync(path.join(J, d)).isDirectory()) : [];
   if (slugs.length) out.push('/journal/' + slugs[0] + '/');
-  for (const l of langs) { out.push('/' + l + '/'); if (slugs.length) out.push('/' + l + '/journal/' + slugs[0] + '/'); }
+  for (const l of langs) { out.push('/' + l + '/'); if (slugs.length && fs.existsSync(path.join(ROOT, l, 'journal', slugs[0], 'index.html'))) out.push('/' + l + '/journal/' + slugs[0] + '/'); }
   return out;
 }
 (async () => {
