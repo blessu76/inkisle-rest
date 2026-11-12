@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Seekarte, Levelkarte, Routenstil, Mobile UI, Flutter, Rendering-Performance
 image_alt: Ein gewundener gepunkteter Weg zwischen Inseln, der von einer Seillinie in eine Wellenlinie übergeht, gezeichnet in weichen Vektorfarben.
+published: 2026-11-12T19:00+09:00
 ---
 Die Karte ist der Bildschirm, auf dem du die ruhige Zeit zwischen den Kämpfen verbringst: ein langer Weg aus Stufen. Bei 14 Meeren sah der Weg die ganze Strecke gleich aus. Ein langes Scrollen ohne Veränderung wirkt wie ein einziges, wiederholtes Meer. Deshalb hat jedes Meer seinen eigenen Weg bekommen.
 

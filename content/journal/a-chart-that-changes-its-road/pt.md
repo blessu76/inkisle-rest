@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, carta náutica, mapa de fases, estilo de rota, UI mobile, Flutter, desempenho de renderização
 image_alt: Um caminho tracejado e sinuoso entre ilhas que muda de uma linha de corda para uma linha de onda, desenhado em cores vetoriais suaves.
+published: 2026-11-12T19:00+09:00
 ---
 A carta é a tela onde você passa o tempo tranquilo entre batalhas: um longo caminho de fases. Com 14 mares, o caminho parecia o mesmo do começo ao fim. Uma rolagem longa sem mudança dá a sensação de um único mar repetido. Por isso cada mar ganhou seu próprio caminho.
 

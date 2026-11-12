@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, sea chart, level map, route style, mobile UI, Flutter, rendering performance
 image_alt: A winding dotted road between islands that changes from a rope line to a wave line, drawn in soft vector colors.
+published: 2026-11-12T19:00+09:00
 ---
 The chart is the screen where you spend the quiet time between battles: a long road of stages. With 14 seas, the road looked the same all the way. A long scroll with no change feels like one sea repeated. So each sea got its own road.
 

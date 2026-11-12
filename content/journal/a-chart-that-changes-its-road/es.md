@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, carta marina, mapa de niveles, estilo de ruta, interfaz móvil, Flutter, rendimiento de renderizado
 image_alt: Un camino sinuoso de puntos entre islas que cambia de una línea de cuerda a una línea de ola, dibujado en colores vectoriales suaves.
+published: 2026-11-12T19:00+09:00
 ---
 La carta es la pantalla donde pasas el tiempo tranquilo entre batallas: un largo camino de fases. Con 14 mares, el camino se veía igual de principio a fin. Un scroll largo sin cambios parece un solo mar repetido. Así que cada mar tiene ahora su propio camino.
 

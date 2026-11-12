@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, carte marine, carte des niveaux, style de route, interface mobile, Flutter, performance de rendu
 image_alt: Une route pointillée sinueuse entre des îles, qui passe d'une ligne de corde à une ligne d'ondes, dessinée dans des couleurs vectorielles douces.
+published: 2026-11-12T19:00+09:00
 ---
 La carte est l'écran où vous passez le temps calme entre les combats : une longue route de niveaux. Avec 14 mers, la route avait le même aspect d'un bout à l'autre. Un long défilement sans changement donne l'impression d'une seule mer répétée. Chaque mer a donc reçu sa propre route.
 

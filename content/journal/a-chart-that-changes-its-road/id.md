@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, peta laut, peta level, gaya rute, UI seluler, Flutter, performa rendering
 image_alt: Jalan titik-titik yang berkelok di antara pulau-pulau, berubah dari garis tali menjadi garis gelombang, digambar dengan warna vektor yang lembut.
+published: 2026-11-12T19:00+09:00
 ---
 Peta adalah layar tempat kamu menghabiskan waktu tenang di antara pertempuran: jalan panjang berisi stage. Dengan 14 laut, jalannya tampak sama dari awal sampai akhir. Gulir panjang tanpa perubahan terasa seperti satu laut yang berulang. Maka setiap laut mendapat jalannya sendiri.
 
