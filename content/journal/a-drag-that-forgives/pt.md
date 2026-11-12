@@ -2,7 +2,7 @@
 title: Um arrastar que perdoa: as pequenas regras por trás de um gesto
 description: Enviar uma frota no Inkisle é um único arrastar. As pequenas regras que o fazem funcionar com um dedo de verdade: uma área de seleção maior, um arrastar que amostra o caminho inteiro, um dedo de cada vez e mensagens claras quando um envio não é possível.
 slug: a-drag-that-forgives
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, controles por toque, UX de jogos mobile, arrastar e soltar, multitoque, design de jogos

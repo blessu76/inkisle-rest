@@ -2,7 +2,7 @@
 title: Quatro ideias de jogo, um só núcleo: por que escolhemos a conquista de ilhas
 description: Rascunhamos quatro conceitos para o nosso próximo jogo. Os quatro compartilhavam um mesmo núcleo: enviar tropas entre nós. Veja por que mantivemos o núcleo, abandonamos a história e o colocamos no mar.
 slug: why-island-conquest
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, conquista de ilhas, jogo de estratégia, jogo para celular, design de jogos, bastidores

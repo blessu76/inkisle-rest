@@ -1,3 +1,4 @@
+import datetime as dt
 import json
 import os
 import re
@@ -346,7 +347,7 @@ class Releases(unittest.TestCase):
         self.assertIn('<link rel="canonical" href="https://inkisle.ipe.rest/releases/">', h)
         self.assertIn("/releases/", (self.root / "llms.txt").read_text(encoding="utf-8"))
         import check_sitemap
-        errs, _ = check_sitemap.check(self.root, NOW)
+        errs, _ = check_sitemap.check(self.root, dt.datetime(2026, 11, 12, 21, 0, tzinfo=bs.KST))
         self.assertEqual(errs, [])
         self.assertTrue(ctx.releases)
 
@@ -376,9 +377,17 @@ class LanguagePick(unittest.TestCase):
 
     @NEED_NODE
     def test_follows_browser_language(self):
-        for langs, want in ((["ko-KR", "en-US"], "/ko/?a=1#h"), (["zh-TW"], "/zh/?a=1#h"), (["pt-BR"], "/pt/?a=1#h"), (["fr"], "/fr/?a=1#h"),
-                            (["ar-EG", "en"], "/ar/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"), (["in"], "/id/?a=1#h"), (["in-ID", "en"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
+        for langs, want in ((["ko-KR", "en-US"], "/ko/?a=1#h"), (["zh-TW"], "/zh-Hant/?a=1#h"), (["zh-Hant-HK"], "/zh-Hant/?a=1#h"),
+                            (["zh-MO", "en"], "/zh-Hant/?a=1#h"), (["pt-BR"], "/pt-BR/?a=1#h"), (["pt-PT"], "/pt-BR/?a=1#h"), (["pt"], "/pt-BR/?a=1#h"),
+                            (["fr"], "/fr/?a=1#h"), (["de-DE"], "/de/?a=1#h"), (["es-MX"], "/es/?a=1#h"), (["th-TH"], "/th/?a=1#h"),
+                            (["vi-VN"], "/vi/?a=1#h"), (["tr-TR"], "/tr/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"),
+                            (["in"], "/id/?a=1#h"), (["in-ID", "en"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
             self.assertEqual(self.run_pick(langs), want, langs)
+
+    @NEED_NODE
+    def test_ended_and_simplified_chinese_fall_back_to_english(self):
+        for langs in (["zh-CN"], ["zh-Hans-SG"], ["zh"], ["ru-RU"], ["ar-EG", "en"], ["hi-IN"]):
+            self.assertIsNone(self.run_pick(langs), langs)
 
     @NEED_NODE
     def test_english_and_unknown_stay_on_the_english_root(self):
@@ -389,7 +398,8 @@ class LanguagePick(unittest.TestCase):
     def test_saved_choice_wins_and_survives_blocked_storage(self):
         self.assertIsNone(self.run_pick(["ko-KR"], saved="en"))
         self.assertEqual(self.run_pick(["en-US"], saved="ja"), "/ja/?a=1#h")
-        self.assertEqual(self.run_pick(["ko-KR"], saved="klingon"), "/ko/?a=1#h")  # unknown saved value ignored
+        self.assertEqual(self.run_pick(["ko-KR"], saved="klingon"), "/ko/?a=1#h")
+        self.assertEqual(self.run_pick(["en-US"], saved="zh-Hans"), None)  # unknown saved value ignored
         self.assertEqual(self.run_pick(["ko-KR"], broken_storage=True), "/ko/?a=1#h")  # storage throws -> still works
 
     @NEED_NODE
@@ -406,6 +416,11 @@ class LanguagePick(unittest.TestCase):
         for rel in ("ko/index.html", "about/index.html", "releases/index.html", "journal/index.html", "404.html"):
             self.assertNotIn("ink-lang", (root / rel).read_text(encoding="utf-8"), rel)
         self.assertEqual(home.count("ink-lang"), 1)
+
+    def test_built_site_lists_the_twelve_languages(self):
+        home = (REPO / "index.html").read_text(encoding="utf-8")
+        langs = json.loads(re.search(r"var S=(\[[^\]]*\])", home).group(1))
+        self.assertEqual(langs, ["en", "ko", "ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"])
 
     def test_seo_stays_intact_and_links_visible_without_js(self):
         root = make_site()

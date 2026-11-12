@@ -2,7 +2,7 @@
 title: Som desligado por padrão: uma escala para cada mar
 description: O Inkisle começa em silêncio e o jogador liga o som. Como os sons são criados em código sem arquivos de áudio, como cada mar ganha sua própria escala de cinco notas e por que uma sequência de capturas sobe pela escala.
 slug: sound-off-by-default
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, áudio de jogo, som procedural, escala pentatônica, jogo para celular, acessibilidade, configurações

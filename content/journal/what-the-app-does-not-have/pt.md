@@ -2,7 +2,7 @@
 title: O que o app não tem: sem anúncios, sem contas, sem rastreamento
 description: Parte do design do Inkisle está no que foi deixado de fora. O app não pede conta e não tem anúncios nem ferramentas de rastreamento, roda em iOS e Android a partir de uma única base de código, e desenhamos um ícone novo para os dois. O que decidimos e o que ainda não verificamos.
 slug: what-the-app-does-not-have
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, privacidade, sem anúncios, sem conta, ícone do app, iOS, Android, Flutter, jogo para celular

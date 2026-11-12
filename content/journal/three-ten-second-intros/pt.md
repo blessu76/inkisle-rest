@@ -2,7 +2,7 @@
 title: Uma introdução de dez segundos em três versões: céu, mar e terra
 description: O Inkisle abre com uma introdução de dez segundos que tem três versões. Como as três compartilham o mesmo final, por que um saco embaralhado decide qual você vê, quando ela encurta para três segundos e o que acontece com a opção de reduzir movimento ativada.
 slug: three-ten-second-intros
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, introdução do jogo, abertura do app, botão de pular, reduzir movimento, acessibilidade, jogo para celular

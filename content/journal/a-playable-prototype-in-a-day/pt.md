@@ -2,7 +2,7 @@
 title: Um protótipo jogável em um dia
 description: Dezesseis fases, dois mares e um único arquivo HTML de cerca de 95 KB sem requisições externas. Como o protótipo é construído, o que testamos em um navegador sem interface e o que não conseguimos testar.
 slug: a-playable-prototype-in-a-day
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, protótipo, protótipo web, motor de jogo determinístico, jogo HTML, jogo para celular, canvas

@@ -2,7 +2,7 @@
 title: Três estrelas, uma regra: como uma fase é avaliada
 description: Cada fase do Inkisle pode render até três estrelas. O que cada estrela significa, por que as estrelas nunca bloqueiam o progresso nem diminuem, os 13 tipos de metas de três estrelas e o rótulo errado que encontramos e corrigimos.
 slug: three-stars-one-rule
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, avaliação por estrelas, progressão do jogo, design de jogos, jogo mobile, rejogabilidade

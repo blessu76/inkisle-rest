@@ -2,7 +2,7 @@
 title: Direção de arte: três mockups, uma escolha
 description: Pedimos a mesma tela de batalha ao nosso assistente de design (duas direções) e ao GPT. O que cada um devolveu, o que deu errado com o mockup externo e por que o vetorial minimalista venceu.
 slug: art-direction-grace-vs-gpt
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, direção de arte, vetorial minimalista, mockup, GPT, interface de jogo, arte de jogos para celular

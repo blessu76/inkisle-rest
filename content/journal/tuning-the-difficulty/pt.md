@@ -2,7 +2,7 @@
 title: Ajustando a dificuldade com bots: cinco fases que estavam erradas
 description: Jogamos todas as fases com bots simples, 40 sementes por fase, e encontramos fases impossíveis, curtas demais ou difíceis demais. As cinco mudanças, as taxas de vitória antes e depois, e por que bots não são pessoas.
 slug: tuning-the-difficulty
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, equilíbrio de jogo, ajuste de dificuldade, simulação com bots, taxa de vitória, design de fases

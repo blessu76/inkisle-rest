@@ -16,7 +16,7 @@ NOW = dt.datetime(2026, 11, 3, 20, 0, tzinfo=bs.KST)
 def isolated_env(home, **extra):
     """Environment for running ops scripts in tests: HOME is a throw-away dir, so nothing can fall back to the real ~/Library/Logs, ~/Developer/inkisle-rest or ~/Library/LaunchAgents."""
     import os
-    env = {**os.environ, "HOME": str(home), "PYTHONDONTWRITEBYTECODE": "1"}  # macOS Xcode python otherwise writes its pyc cache to $HOME/Library/Caches
+    env = {**os.environ, "HOME": str(home), "PYTHONDONTWRITEBYTECODE": "1"}  # macOS python would else cache bytecode under $HOME/Library/Caches
     env.pop("INKISLE_PUBLISH_DIR", None)
     env.pop("INKISLE_HOME", None)
     env.pop("INKISLE_LAUNCH_AGENTS_DIR", None)
@@ -53,11 +53,7 @@ def make_site(langs=("en", "ko"), posts=(("alpha-post", "2026-11-01T19:00+09:00"
         d.mkdir(parents=True)
         for l in ("en", "ko"):
             (d / (l + ".md")).write_text(post_text(slug, l, "Queued %s %s" % (slug, l)), encoding="utf-8")
-    # The real release notes are copied, but a note dated after the fixed NOW would trip the "lastmod in the future" check on any later release day.
-    rel = json.loads((REPO / "content" / "releases.json").read_text(encoding="utf-8"))
-    for r in rel["releases"]:
-        r["date"] = min(r["date"], NOW.strftime("%Y-%m-%d"))
-    (root / "content" / "releases.json").write_text(json.dumps(rel, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    shutil.copy(REPO / "content" / "releases.json", root / "content" / "releases.json")
     shutil.copytree(REPO / "assets", root / "assets")
     return root
 

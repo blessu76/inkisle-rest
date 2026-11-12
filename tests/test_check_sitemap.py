@@ -1,3 +1,4 @@
+import datetime as dt
 import shutil
 import unittest
 from pathlib import Path
@@ -5,6 +6,8 @@ from pathlib import Path
 from helpers import NOW, bs, build, make_site
 
 import check_sitemap as cs  # noqa: E402
+
+LATER = dt.datetime(2026, 11, 12, 21, 0, tzinfo=bs.KST)  # the static pages' lastmod (PAGES_UPDATED) is in the past for this
 
 
 class Sitemap(unittest.TestCase):
@@ -14,13 +17,13 @@ class Sitemap(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.root, True)
 
     def test_ok(self):
-        errs, urls = cs.check(self.root, NOW)
+        errs, urls = cs.check(self.root, LATER)
         self.assertEqual(errs, [])
         self.assertIn("https://inkisle.ipe.rest/", urls)
 
     def test_missing_file_detected(self):
         (self.root / "journal/alpha-post/index.html").unlink()
-        self.assertTrue(any("no file" in e for e in cs.check(self.root, NOW)[0]))
+        self.assertTrue(any("no file" in e for e in cs.check(self.root, LATER)[0]))
 
     def test_unlisted_post_detected(self):
         sm = self.root / "sitemap.xml"
@@ -28,18 +31,18 @@ class Sitemap(unittest.TestCase):
         start = text.index("<url><loc>https://inkisle.ipe.rest/journal/beta-post/</loc>")
         end = text.index("</url>", start) + 6
         sm.write_text(text[:start] + text[end:])
-        errs = cs.check(self.root, NOW)[0]
+        errs = cs.check(self.root, LATER)[0]
         self.assertTrue(any("missing from sitemap" in e for e in errs), errs)
 
     def test_broken_reciprocity_detected(self):
         sm = self.root / "sitemap.xml"
         sm.write_text(sm.read_text().replace('hreflang="ko" href="https://inkisle.ipe.rest/ko/journal/beta-post/"', 'hreflang="ko" href="https://inkisle.ipe.rest/ko/nowhere/"', 1))
-        self.assertTrue(cs.check(self.root, NOW)[0])
+        self.assertTrue(cs.check(self.root, LATER)[0])
 
     def test_future_lastmod_detected(self):
         sm = self.root / "sitemap.xml"
         sm.write_text(sm.read_text().replace("2026-11-02", "2099-01-01", 1))
-        self.assertTrue(any("future" in e for e in cs.check(self.root, NOW)[0]))
+        self.assertTrue(any("future" in e for e in cs.check(self.root, LATER)[0]))
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 title: Enviar de várias ilhas ao mesmo tempo: três reescritas de um único controle
 description: Atacar uma ilha a partir de várias das suas era o controle mais difícil do Inkisle. A primeira versão baseada em arrastar, a correção de tocar para selecionar e a versão de deslizar para selecionar, e o que cada uma nos ensinou.
 slug: three-rewrites-of-multi-island-attack
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, controles por toque, UX de jogos mobile, seleção múltipla, arrastar e soltar, design de jogos, iteração

@@ -2,7 +2,7 @@
 title: Dando nome ao jogo: como chegamos ao Inkisle
 description: Dez candidatos de nome em inglês, cinco finalistas, uma checagem de lojas e domínios, e por que o Inkisle venceu. Incluindo os pontos fracos que conhecemos e as checagens que ainda não fizemos.
 slug: naming-inkisle
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, nome do jogo, naming, loja de aplicativos, marca registrada, branding

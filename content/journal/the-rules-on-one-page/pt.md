@@ -2,7 +2,7 @@
 title: As regras numa página: ilhas, tropas, conquista
 description: Todas as regras do Inkisle numa página: como as ilhas produzem tropas, como as frotas voam, como a conquista é calculada e como uma partida termina. Valores iniciais, antes dos testes.
 slug: the-rules-on-one-page
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, regras do jogo, conquista de ilhas, motor determinístico, design de jogos, regras de conquista

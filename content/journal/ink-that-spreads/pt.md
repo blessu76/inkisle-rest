@@ -2,7 +2,7 @@
 title: Tinta que se espalha: os pequenos efeitos que dizem o que acabou de acontecer
 description: No Inkisle, uma ilha capturada deixa uma mancha de tinta, uma virada mostra um banner e a última ilha inimiga se ilumina. Para que serve cada efeito, quanto tempo dura e como funciona a dica do dedo na primeira partida.
 slug: ink-that-spreads
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, sensação de jogo, feedback visual, jogo para celular, dica de introdução, animação

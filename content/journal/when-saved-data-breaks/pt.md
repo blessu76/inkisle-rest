@@ -2,7 +2,7 @@
 title: Quando os dados salvos quebram: como o app se recupera
 description: Um celular pode perder, truncar ou bloquear os dados salvos de um app. Como o Inkisle lida com armazenamento ausente, danificado, desatualizado ou indisponível para o progresso, a introdução e a configuração de som, e onde nossa recuperação ainda é grosseira.
 slug: when-saved-data-breaks
-lang: pt
+lang: pt-BR
 translation_of: en
 category: making-of
 keywords: Inkisle, dados salvos, tratamento de erros, robustez, armazenamento local, jogo para celular, save com versão
