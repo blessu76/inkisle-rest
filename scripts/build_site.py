@@ -33,7 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
 from ipe_web_kit import languages as kl  # noqa: E402
 
 SITE = "https://inkisle.ipe.rest"
-ASSET_V = "20261113a"  # keep in sync: bump when assets/inkisle.css, inkisle.js or the inline langpick script change
+ASSET_V = "20261113b"  # keep in sync: bump when assets/inkisle.css, inkisle.js or the inline langpick script change
 KST = dt.timezone(dt.timedelta(hours=9))
 PAGES_UPDATED = "2026-11-12"  # sitemap lastmod of about / privacy — bump by hand when their text changes
 OPERATOR = "Davy Kim (ipe Studio)"
@@ -576,9 +576,42 @@ def website_ld(lang, ctx):
 
 def game_ld(lang, ctx):
     return {"@type": "VideoGame", "@id": SITE + "/#game", "name": "Inkisle", "url": url(path_home(lang)),
-            "description": ctx.t(lang, "home_desc"), "inLanguage": lang, "genre": ["Strategy"],
-            "applicationCategory": "GameApplication", "gamePlatform": ["iOS", "Android"], "playMode": "SinglePlayer",
+            "description": ctx.t(lang, "home_desc"), "inLanguage": lang, "genre": ["Strategy", "Island conquest"],
+            "applicationCategory": "GameApplication", "gamePlatform": ["iOS"], "playMode": "SinglePlayer",
             "image": SITE + OG_IMAGE, "creator": ORG, "publisher": {"@id": ORG_ID}}
+
+
+def faq_items(body):
+    """(question, answer) pairs from a FAQ H2 section: each H3 is a question, the text under it the answer."""
+    items, in_faq, q, ans = [], False, None, []
+    plain = lambda s: re.sub(r"\s+", " ", re.sub(r"[*`]|\[([^\]]*)\]\([^)]*\)", r"\1", s)).strip()  # noqa: E731
+
+    def flush():
+        if q and ans:
+            items.append((q, plain(" ".join(ans))))
+    for line in body.splitlines():
+        m = re.match(r"(#{2,3})\s+(.*)", line)
+        if m and len(m.group(1)) == 2:
+            if in_faq:
+                flush()
+                q, ans = None, []
+            in_faq = bool(re.search(r"faq|자주 묻는", m.group(2), re.I))
+            continue
+        if not in_faq:
+            continue
+        if m:
+            flush()
+            q, ans = plain(m.group(2)), []
+        elif line.strip() and q:
+            ans.append(line.strip())
+    if in_faq:
+        flush()
+    return items
+
+
+def faq_ld(path, lang, items):
+    return {"@type": "FAQPage", "@id": url(path) + "#faq", "inLanguage": lang, "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in items]}
 
 
 def post_card(ctx, lang, p, num):
@@ -730,7 +763,10 @@ def build_post(ctx, lang, p):
         posting["keywords"] = d["keywords"]
     if src:
         posting["translationOfWork"] = {"@type": "BlogPosting", "url": url(path_post(src, p["slug"])), "inLanguage": src}
-    graph = [ORG, website_ld(lang, ctx), posting, breadcrumb_ld(crumbs)]
+    graph = [ORG, website_ld(lang, ctx), game_ld(lang, ctx), posting, breadcrumb_ld(crumbs)]
+    faq = faq_items(d["body"])
+    if faq:
+        graph.append(faq_ld(path, lang, faq))
     return path, render(ctx, lang, path=path, title="%s — Inkisle" % d["title"], desc=d["description"], body=body, graph=graph,
                         alt=alt, og_type="article", nav="journal", community=True)
 

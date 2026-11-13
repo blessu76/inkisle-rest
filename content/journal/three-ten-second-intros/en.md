@@ -39,3 +39,17 @@ Our code review found that a damaged saved bag was never repaired: the app faile
 
 - We have not measured how the intro runs on a **real phone**. The tests cover the rules above, not the animation's smoothness.
 - Whether ten seconds is the right length for a first launch is a guess until other people see it.
+
+## FAQ
+
+### How long is the Inkisle intro?
+
+The full intro is 10 seconds, shown for the first three launches. From the fourth launch only the shared 3-second ending plays.
+
+### Which intro version do I get?
+
+There are three versions, sky, sea and land, picked from a shuffled bag, so three launches in a row show all three.
+
+### What if reduce motion is on?
+
+The intro does not move: it shows the finished ending frame for 1.2 seconds and goes to the menu.

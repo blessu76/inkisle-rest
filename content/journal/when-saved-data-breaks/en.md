@@ -41,3 +41,17 @@ Stars and best times are only ever improved, and a lost replay changes nothing. 
 
 - We tested damaged text, wrong versions and missing storage in code. We have **not** tested a phone that is out of space or an operating-system backup and restore.
 - When the whole file is unreadable, the player starts again from stage 1-1. For a player with many stars that would feel bad, and we have not decided whether to add something gentler.
+
+## FAQ
+
+### Where does Inkisle save progress?
+
+Only on the phone. There are no accounts and no server, so nobody can restore it for you.
+
+### What happens if the saved data is damaged?
+
+Each stage entry is read on its own, so one bad entry is skipped and the rest is kept. A fully unreadable file or a different version means a fresh start.
+
+### What if the sound setting is broken?
+
+The answer is off, because a broken file should never make the game louder.

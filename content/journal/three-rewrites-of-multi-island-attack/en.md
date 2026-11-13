@@ -42,3 +42,17 @@ The newest version lets you **swipe across your islands to pick them in one stro
 - We have **no data from outside players** on any of the three versions. The exact feel of v0.1.2 is **[unverified]** until others try it.
 
 The test with five to eight people is where this control will really be judged. If they still hesitate before an attack, we will change it a fourth time.
+
+## FAQ
+
+### How do you attack from several islands in Inkisle?
+
+The newest version, v0.1.2, lets you swipe across your islands to pick them in one stroke, then choose the target.
+
+### Why was the control rewritten three times?
+
+A thumb covers the island it passes over, so each version fixed one problem and exposed the next: aiming first, then many taps.
+
+### Is the control final?
+
+No. We have no data from outside players, and we will change it again if testers still hesitate before an attack.

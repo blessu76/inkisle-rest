@@ -45,3 +45,17 @@ Making stages easier made the **Ink** items worth more, because a stage that is 
 - Win rates are from bots. A few stages (4-6, 5-7, 9-5, 10-2, 10-3, 11-6) sit about ten points off the target, and 10-8 has a bot average of 62% against a target of 33%, because the admiral is very hard for the simplest bot but easy for the others.
 - Nobody has played the new curve by hand, so "40 of 800 is too hard" is fixed only in the bots' numbers. **[unverified]**
 - The game is in development and is not released.
+
+## FAQ
+
+### What is the difficulty floor in Inkisle?
+
+A test fails if the simplest bot wins 0 of 40 games on any stage. After the retune, the weakest stage was 4 wins of 40.
+
+### What does the enemy AI ceiling do?
+
+It caps enemy AI at level 5 for multi-enemy stages, level 4 for seas 11 and up and some bosses, and level 3 elsewhere.
+
+### Is the curve proven for human players?
+
+No. The numbers come from bots, and nobody has played the new curve by hand.

@@ -28,3 +28,17 @@ A new player does not know that you drag from one island to another. In a stage 
 
 - All of this is covered by tests for **when** an effect appears, not for **how it feels**. Timing, size and color are first guesses and have not been tried on a real phone by anyone outside the team.
 - We do not know yet whether the comeback banner is encouraging or just distracting.
+
+## FAQ
+
+### What effect shows an island being captured in Inkisle?
+
+An ink bloom spreads from the island in the new owner's color and fades out in about 0.75 seconds.
+
+### When does the comeback banner appear?
+
+When you were behind and take the lead, once, for about 1.6 seconds, so it does not turn into noise.
+
+### Do the effects feel right on a real phone?
+
+Unknown. Tests cover when effects appear, not how they feel, and timing, size and color are first guesses.

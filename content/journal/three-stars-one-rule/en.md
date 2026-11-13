@@ -47,3 +47,17 @@ The ★1 label first read "**win while keeping your islands**." But the conditio
 
 - The time limits for ★2 were set by the prototype and, as the bot test in an earlier post showed, look **too generous** for bots. We do not know yet what human times look like.
 - We do not know whether players will feel that 13 different goals are interesting or just confusing.
+
+## FAQ
+
+### What do the three stars mean in Inkisle?
+
+One star is a win, two stars is a win within the stage's time limit, and three stars is the stage's own goal shown on its card.
+
+### Do stars unlock anything?
+
+No. Winning opens the next stage, and beating the boss opens the next sea. Stars never go down on a replay.
+
+### What kinds of three-star goals are there?
+
+13 kinds so far, such as win without ever sending 100%, take every empty island, or never lose a single island.

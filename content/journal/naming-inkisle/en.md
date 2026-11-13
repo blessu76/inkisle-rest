@@ -43,3 +43,17 @@ The rule is inside the name. Ink spreads, and an island turns your color when yo
 - **Trademarks are unchecked.** Before release we still have to search the US, EU, Korean and Japanese registries for software and game classes. Until then the name is decided but not cleared.
 
 The runner-up was Tintisle. If the trademark search turns up a problem with Inkisle, that is the fallback.
+
+## FAQ
+
+### Why is the game called Inkisle?
+
+The rule is inside the name: ink spreads, and an island turns your color when you capture it. It has seven letters, so it fits under an icon.
+
+### Is the Inkisle name cleared as a trademark?
+
+No. We only searched app stores and the .com registry on 2026-10-29. US, EU, Korean and Japanese trademark searches are still to do.
+
+### Why is the site at inkisle.ipe.rest?
+
+The inkisle.com domain was registered in 2004 and is not available to us, so the site lives under our studio's domain.

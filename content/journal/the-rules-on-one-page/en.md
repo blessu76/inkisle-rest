@@ -45,3 +45,17 @@ If several fleets arrive in the same tick, they resolve one by one in the order 
 ## One engine for real time and turns
 
 The game state depends only on the starting map, a seed and a list of commands, with no clock and no randomness inside the engine. The same input gives the same result on every device. That is what lets the same engine run in real time now and in networked turns later, and it makes replays and bug reports a matter of saving a command list.
+
+## FAQ
+
+### How do islands make troops in Inkisle?
+
+A normal island adds 1 troop per second up to a cap of 45. Neutral islands do not produce. All values are starting values from the design document.
+
+### How is a capture decided?
+
+A fleet must exceed the island's defense times its multiplier, 1.0 normally and 1.5 for a fortress. Ties go to the defender.
+
+### How does a match end?
+
+You win when the enemy has no islands and no fleets, or by a decisive win, holding 3 times the enemy troops and 60% of islands for 5 seconds.

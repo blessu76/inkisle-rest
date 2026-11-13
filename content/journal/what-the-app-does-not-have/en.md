@@ -36,3 +36,17 @@ We shipped a bug here and fixed it: the adaptive icon was being shrunk twice (on
 
 - Build 2 went up on TestFlight on 2026-10-29 (the only distribution recorded in the release notes is this iOS build). We have not formally submitted the app to either store, and we have not confirmed how much it has been used on a **real iPhone or Android phone**. Things like store review, in-app screens in other languages and how the icon looks on different launchers are still open.
 - "No tracking" describes what is in our own code and package list. We have not audited the packages we depend on beyond reading their descriptions.
+
+## FAQ
+
+### Does Inkisle need an account?
+
+No. You open the app and play, with no sign-up or sign-in. Progress stays on the phone.
+
+### Does Inkisle have ads or tracking?
+
+No advertising, analytics or sign-in package is in the app's package list. We have not audited the packages we depend on beyond reading their descriptions.
+
+### Which platforms is it built for?
+
+Flutter builds iOS and Android from one codebase, portrait only, with iOS 13 and Android API 24 as minimums. The plan is to start with one platform first, and it is not released.

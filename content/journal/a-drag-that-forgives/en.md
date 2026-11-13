@@ -34,3 +34,17 @@ How much leaves an island is set by a ratio bar. The default is **50%**. Stage 1
 
 - Everything here is checked with simulated touches in tests. We have **not watched real people** use it on real phones, and the gestures that look fine in a test can still feel wrong.
 - The sizes (12 px, 0.4 s) are first guesses. They will change if players miss islands or select all by accident.
+
+## FAQ
+
+### How does Inkisle make dragging easier with a finger?
+
+The area that counts as on an island is its radius plus 12 pixels, and the drag samples the whole path so a fast swipe cannot skip an island.
+
+### What happens if a second finger touches the screen?
+
+The game follows only the first finger and ignores the others until it lifts.
+
+### Has it been tested with real players?
+
+No. It is checked with simulated touches only, and the sizes are first guesses.

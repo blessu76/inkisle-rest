@@ -37,3 +37,17 @@ When you capture several islands in a row, **each capture is one step higher** i
 
 - The tests check the notes and that muted means silent. They cannot tell us whether it **sounds pleasant**. Nobody outside the team has listened on a real phone speaker or headphones.
 - These tones are plain beeps. Whether they stay as the final sound or get replaced is not decided.
+
+## FAQ
+
+### Is sound off by default in Inkisle?
+
+Yes. Sound stays off until the player turns it on, the setting is saved, and a broken saved setting also means off.
+
+### Does Inkisle use recorded sound files?
+
+No. Every sound is built in code as a short 16-bit mono WAV, so there are no recordings to license.
+
+### What do chain captures sound like?
+
+Each capture in a row is one step higher in the sea's pentatonic scale, so a chain is heard as a rising line.

@@ -44,3 +44,17 @@ We also ran a deterministic check: the same map and commands gave the same resul
 - **Known rough edges:** the drag label can cover a neighbor's number, and the stage card can cover nodes on the chart.
 
 The next steps are a 30-minute test with five to eight people, with a play log built in first. The next post is about the balance work we did without humans.
+
+## FAQ
+
+### What is in the Inkisle web prototype?
+
+Sixteen stages in two seas, built as a single HTML file of about 95 KB with no outside requests.
+
+### Was it tested on real phones?
+
+No. It was tested in a headless Chrome at 375 by 812 and 320 by 568. iOS Safari and a mid-range Android phone are not checked.
+
+### Why keep the game engine separate from the screen?
+
+The engine is a pure module with no DOM, clock or random calls, so the same code can later run turn by turn over a network and replay a recorded command list.

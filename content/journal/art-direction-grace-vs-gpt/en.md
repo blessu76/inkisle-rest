@@ -32,3 +32,17 @@ The same two screens from each source: a **battle screen** (islands, fleets, the
 We picked **A**. It is the cheapest to draw, the easiest to read at 320 px wide, and it matches the rule of the game: color is the reward.
 
 Two cautions. This was **one round**, judged by a small team, with no players involved. And a mockup is not a game: A has since been built into the prototype, which is where it will really be tested. The next post is about that prototype.
+
+## FAQ
+
+### Which art direction did Inkisle choose?
+
+Direction A, premium minimal vector: soft shapes, one gentle shadow and big numbers. It is the cheapest to draw and easiest to read at 320 px wide.
+
+### Why not the 3D diorama?
+
+It looked richer in a still image, but the depth made numbers compete with island shapes and would cost more to draw and keep readable.
+
+### Was this a fair comparison of the models?
+
+No. It was one round judged by a small team, with no players, and the outside mockup failed partly because of a limit of our process.

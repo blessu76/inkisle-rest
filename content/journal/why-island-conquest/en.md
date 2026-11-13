@@ -43,3 +43,17 @@ Before writing the rules we read what players of this genre complain about. The 
 ## What we have not checked
 
 We have not tested the idea on outside players yet. The pitches and the research are our own reading of the genre, not measured demand. The next posts show the rules, the name, the art and a prototype, and they say what has and has not been measured.
+
+## FAQ
+
+### What kind of game is Inkisle?
+
+An island-conquest strategy game for iOS: islands produce troops, you send a share to another island, and the bigger number takes it.
+
+### Why island conquest?
+
+After four pitches with the same core, the owner asked for a territory-grab game, modernized in look, offline, with no story needed.
+
+### Does it have ads or pay-to-win?
+
+No. Those were the loudest complaints from players of the genre, so no ads and no pay-to-win became rules.

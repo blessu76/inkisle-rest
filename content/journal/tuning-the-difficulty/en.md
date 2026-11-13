@@ -42,3 +42,17 @@ We left the other 11 stages as they were. The target was a boss stage that a cas
 ## Why bots are not people
 
 A bot never misreads a number, never gets bored and never mis-drags. A person's first 30 minutes are the real test: where they retry, where they quit, how long they take to reach "next". The plan is to add a play log first and then watch five to eight people. Until then these numbers say only that no stage is clearly broken, and that is a weaker claim than "the difficulty is right".
+
+## FAQ
+
+### How was Inkisle's early difficulty tuned without playtesters?
+
+Two simple bots played every stage 40 times each with 40 seeds, and we read the win rates to find stages that were obviously wrong.
+
+### What was changed?
+
+Five stages: 1-1, 1-5, 1-8, 2-2 and 2-8. For example the stage 1-8 boss went from 0% to 53% for the simple bot.
+
+### Do bot win rates equal human difficulty?
+
+No. They show direction only, and a person's first 30 minutes are the real test.

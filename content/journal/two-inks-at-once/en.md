@@ -44,3 +44,17 @@ The bots rarely use the second slot well, so the small number may say more about
 - Whether a person finds two slots and a gap clear, or whether it feels like a lock. We have not tested it on a real phone. **[unverified]**
 - A one-line notice the first time a player reaches a two-slot sea (5-1) is not built yet.
 - The game is in development and is not released.
+
+## FAQ
+
+### How many Ink items can run at once in Inkisle?
+
+Seas 1 to 4 allow 1. Seas 5 to 10 allow 2 with a 10-second gap, volume 2 allows 2 with 5 seconds, and volume 3 allows 3.
+
+### What did bot simulations say about the change?
+
+The average gain was +1.1 percentage points across 80 stages, much smaller than the 3 to 8 we expected.
+
+### Is it clear to a real player?
+
+Unknown. We have not tested it on a real phone, and the game is still in development.

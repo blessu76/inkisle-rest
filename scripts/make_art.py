@@ -33,6 +33,10 @@ COVERS = {  # slug: (seed, islands, factions in play)
     "a-difficulty-curve-with-a-floor": (127, 9, ("me", "e2", "n")),
     "a-chart-that-changes-its-road": (131, 9, ("me", "e1", "e2", "n")),
     "two-inks-at-once": (137, 7, ("me", "me", "e3", "n")),
+    "not-a-stretched-phone": (139, 8, ("me", "e1", "n")),
+    "two-tests-that-lied": (149, 7, ("me", "e3", "n")),
+    "one-shape-per-sea": (151, 9, ("me", "e1", "e2", "e3", "n")),
+    "a-warning-that-rarely-cries-wolf": (157, 8, ("me", "e2", "n")),
 }
 
 

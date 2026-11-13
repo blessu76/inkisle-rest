@@ -50,3 +50,17 @@ Seven tests check that every sea has a style, that the sway stays under .32, tha
 - We did not measure the frame time with all 800 stages, only the ten-road check. **[unverified]**
 - On the dark night seas (11 and 14), the ink-colored road is held up by a white edge. Whether it looks right is a design check we still owe.
 - The game is in development and is not released.
+
+## FAQ
+
+### How many sea road styles does Inkisle have?
+
+Seven line types are shared across the 14 seas, and each sea has its own color and sway. After sea 14 the styles repeat as a placeholder.
+
+### Does the sea chart jump sideways at sea borders?
+
+No. The sway is one continuous function, so the angle continues across borders and the islands do not jump.
+
+### Has the chart been tried on a real phone?
+
+Not yet. All renders so far are test captures, and the game is still in development, not released.

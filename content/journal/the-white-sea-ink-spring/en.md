@@ -42,3 +42,17 @@ Alongside, we widened the middle of 14-1 (a central island from 4 to 12) and eas
 - In 14-6 and 14-8 the enemy holds the spring, so one pulse is the most you can count on. Bots rarely reached it, so the numbers rest on thin data. **[unverified]**
 - Nobody has played these stages by hand. Whether "make the spring pulse" feels clear on the stage card and the result screen needs a real phone. **[unverified]**
 - The game is in development and is not released.
+
+## FAQ
+
+### What is the ink spring in sea 14 of Inkisle?
+
+A spring island you hold pulses every 150 ticks and spreads ink onto a nearby island. The first pulse comes 150 ticks after you capture it.
+
+### Why was the three-star goal changed?
+
+The first goal, make the spring spread to N islands, was never reached: our scripted best play got 0 spreads in all six stages tested.
+
+### What is the goal now?
+
+The number of pulses of your own spring, such as 4 in stage 14-1. It touches only sea 14, so seas 1 to 13 did not change.
