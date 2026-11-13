@@ -26,7 +26,8 @@ KIT_DIR="${INKISLE_KIT_DIR:-$HOME/Developer/ipe_web_kit}"
 KIT_CHECK_CMD="${INKISLE_KIT_CHECK_CMD:-python3 scripts/kit_lock.py check}"
 KIT_SYNC_CMD="${INKISLE_KIT_SYNC_CMD:-python3 scripts/kit_lock.py sync --kit \"$KIT_DIR\"}"
 # Everything publish_post.py + build_site.py may create or change. Anything else in the tree after a publish means abort.
-PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh es fr de pt ru ar hi id"
+# The language dirs must be exactly the non-English languages of build_site.LANGS (en lives at the root) — tests/test_publish_daily.py fails when they drift.
+PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh-Hant es fr de pt-BR id th vi tr"
 
 [ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
 cd "$REPO"

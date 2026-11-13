@@ -175,6 +175,20 @@ class PublishDaily(unittest.TestCase):
         self.assertFalse((self.clone / "stray.txt").exists())
         self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
 
+    def test_publish_paths_cover_exactly_the_site_languages(self):
+        # Regression 11-13: the language set moved to 12 (pt-BR, zh-Hant, th, vi, tr) but PUBLISH_PATHS still listed the old dirs, so a publish that
+        # rebuilt pt-BR/ was rolled back as "unexpected paths". The guard stays strict: stale dirs (zh, ru, ar, hi, pt) must NOT be allowed.
+        import re
+        import build_site as bs
+        m = re.search(r'^PUBLISH_PATHS="([^"]*)"', SCRIPT.read_text(encoding="utf-8"), re.M)
+        self.assertIsNotNone(m)
+        paths = set(m.group(1).split())
+        langs = {l for l in bs.LANGS if l != "en"}
+        self.assertEqual(len(bs.LANGS), 12)
+        self.assertTrue(langs <= paths, "language dirs missing from PUBLISH_PATHS: %s" % sorted(langs - paths))
+        fixed = {"content/journal", "content/queue", "index.html", "404.html", "sitemap.xml", "llms.txt", "robots.txt", "journal"}
+        self.assertEqual(paths - fixed, langs, "PUBLISH_PATHS has dirs that are not site languages")
+
     def test_commit_failure_rolls_back_the_staged_tree(self):
         hook = self.clone / ".git" / "hooks" / "pre-commit"
         hook.write_text("#!/bin/sh\nexit 1\n")
