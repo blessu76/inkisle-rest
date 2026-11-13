@@ -375,7 +375,7 @@ class OpsFiles(unittest.TestCase):
         out = (tmp / "LA" / "rest.ipe.inkisle-publish.plist").read_text(encoding="utf-8")
         self.assertNotIn("__HOME__", out)
         self.assertIn(str(tmp / "home" / "Library" / "Logs" / "inkisle-publish.log"), out)
-        self.assertIn(str(tmp / "home" / "Developer" / "inkisle-rest" / "ops" / "publish_daily.sh"), out)
+        self.assertIn(str(tmp / "home" / "Developer" / "inkisle-rest" / "ops" / "slot_gate.sh"), out)
         if shutil.which("plutil"):
             self.assertEqual(subprocess.run(["plutil", "-lint", str(tmp / "LA" / "rest.ipe.inkisle-publish.plist")], capture_output=True).returncode, 0)
 
