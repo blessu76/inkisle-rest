@@ -1,5 +1,5 @@
 #!/bin/bash
-# Daily publish (one post a day, 19:00 KST): pull -> push leftovers -> publish_post --daily -> green gate -> commit -> push -> live check -> IndexNow.
+# Daily publish (one post a day, in a random afternoon slot picked by ops/slot_gate.sh): pull -> push leftovers -> publish_post --daily -> green gate -> commit -> push -> live check -> IndexNow.
 # Install notes: ops/README.md. Needs: python3, git (non-interactive push access to origin), network for IndexNow.
 #
 # Safety rules
@@ -32,7 +32,7 @@ PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llm
 [ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
 cd "$REPO"
 
-# One run at a time (a manual run or `launchctl kickstart` can overlap the 19:00 job). mkdir is atomic; a lock whose process is gone, or that is older
+# One run at a time (a manual run or `launchctl kickstart` can overlap a scheduled tick). mkdir is atomic; a lock whose process is gone, or that is older
 # than 3 hours, is stale and is taken over.
 lock="$REPO/.git/publish.lock"
 if ! mkdir "$lock" 2>/dev/null; then

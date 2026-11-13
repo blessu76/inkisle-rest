@@ -1,12 +1,13 @@
 # Daily publish automation (not installed by this repo)
 
-Policy: **one post a day at 19:00 KST** while the app is unreleased (2026-10-29). The publish time recorded in each post is the real time
+Policy: **one post a day in a random afternoon slot (12:00–17:59 KST, never the same hour as the day before)** while the app is unreleased (2026-10-29; was a fixed 19:00 until 2026-11-13). The publish time recorded in each post is the real time
 the script ran (HH:MM KST); a future time is refused.
 
 | File | Role |
 |---|---|
+| `slot_gate.sh` / `slot_gate.py` | launchd entry, every 15 min 12:00–18:45 KST: draws today's slot (`~/.ipe/queue/inkisle/slot.json`, override `INKISLE_SLOT_FILE`), runs `publish_daily.sh` once the time has come; `published` becomes true only on `pushed <slug>` / `nothing to publish` (SKIP, QUEUE_EMPTY, FAIL retry on the next tick; nothing after 18:45). Tests: `tests/test_slot_gate.py` |
 | `publish_daily.sh` | safety checks → push leftovers → `publish_post.py --daily` → green gate → commit → push → live check → IndexNow |
-| `rest.ipe.inkisle-publish.plist.template` | launchd job template (`__HOME__` placeholder; launchd does not expand `~`), 19:00 every day, log `~/Library/Logs/inkisle-publish.log` |
+| `rest.ipe.inkisle-publish.plist.template` | launchd job template (`__HOME__` placeholder; launchd does not expand `~`), every 15 min 12:00–18:45 → `slot_gate.sh`, log `~/Library/Logs/inkisle-publish.log` |
 | `install_launchd.sh` | renders the template for the current user, `plutil -lint`, writes `~/Library/LaunchAgents/…plist` — does **not** load it |
 
 ## Safety rules (tests: `tests/test_publish_daily.py`)
@@ -25,14 +26,14 @@ the script ran (HH:MM KST); a future time is refused.
 ## Install (by the maintainer, once; the repo never does this itself)
 
 1. Make the publish clone: `git clone https://github.com/blessu76/inkisle-rest.git ~/Developer/inkisle-rest` (must be on `main`; `git push` must work non-interactively).
-2. The Mac's time zone must be KST (launchd's 19:00 is local time).
+2. The Mac's time zone must be KST (launchd's schedule is local time).
 3. Check that pushing works the way launchd will do it (no terminal, no prompt):
 
 ```
 git -C ~/Developer/inkisle-rest push --dry-run origin HEAD:main     # must succeed without asking for anything (osxkeychain / ssh key / gh credential helper)
 ```
 
-   [Whether the keychain is reachable from the LaunchAgent session itself is only proven by the first real 19:00 run — watch the log that day.]
+   [Whether the keychain is reachable from the LaunchAgent session itself is only proven by the first real run — watch the log that day.]
 4. Install and load:
 
 ```
