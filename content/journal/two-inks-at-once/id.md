@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, item Tinta, desain game, keseimbangan game, simulasi bot, UI seluler, aksesibilitas
 image_alt: Dua tetes tinta kecil berdampingan di atas deretan pulau, digambar dengan warna vektor yang lembut.
+published: 2026-11-13T22:44+09:00
 ---
 Item Tinta (lonjakan, jangkar, kabut, lentera, pembalik pasang) dulu berjalan satu per satu. Itu mudah dipahami, tetapi juga berarti tahap yang lebih lanjut tidak pernah terasa seperti memberi lebih banyak alat. Jadi kami memberi tombol Tinta **slot**.
 

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, objetos de tinta, diseño de juegos, equilibrio del juego, simulación con bots, interfaz móvil, accesibilidad
 image_alt: Dos pequeñas gotas de tinta, una junto a la otra, sobre una fila de islas, dibujadas en suaves colores vectoriales.
+published: 2026-11-13T22:44+09:00
 ---
 Los objetos de tinta (oleada, ancla, niebla, linterna, vuelta de marea) se usaban de uno en uno. Es fácil de entender, pero también significa que una fase avanzada nunca da la sensación de tener más herramientas. Por eso dimos al botón de tinta **ranuras**.
 

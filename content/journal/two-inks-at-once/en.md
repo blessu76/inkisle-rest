@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, Ink items, game design, game balance, bot simulation, mobile UI, accessibility
 image_alt: Two small ink drops side by side above a row of islands, drawn in soft vector colors.
+published: 2026-11-13T22:44+09:00
 ---
 Ink items (surge, anchor, mist, lantern, tide flip) used to run one at a time. That is easy to understand and it also means a later stage can never feel like you have more tools. So we gave the Ink button **slots**.
 

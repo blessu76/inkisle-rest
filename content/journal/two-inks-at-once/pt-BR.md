@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, itens de tinta, design de jogos, equilíbrio do jogo, simulação com bots, interface móvel, acessibilidade
 image_alt: Duas pequenas gotas de tinta lado a lado acima de uma fileira de ilhas, desenhadas em cores vetoriais suaves.
+published: 2026-11-13T22:44+09:00
 ---
 Os itens de tinta (surto, âncora, névoa, lanterna, inversão da maré) funcionavam um de cada vez. Isso é fácil de entender, mas também significa que uma fase mais avançada nunca dá a sensação de que você tem mais ferramentas. Por isso demos ao botão de tinta **vagas**.
 

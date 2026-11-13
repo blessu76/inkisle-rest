@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Tinten-Items, Spieldesign, Spielbalance, Bot-Simulation, mobile Oberfläche, Barrierefreiheit
 image_alt: Zwei kleine Tintentropfen nebeneinander über einer Reihe von Inseln, in weichen Vektorfarben gezeichnet.
+published: 2026-11-13T22:44+09:00
 ---
 Tinten-Items (Schub, Anker, Nebel, Laterne, Gezeitenwechsel) liefen bisher immer nur eines nach dem anderen. Das ist leicht zu verstehen, bedeutet aber auch, dass sich ein späterer Level nie so anfühlt, als hätte man mehr Werkzeuge. Deshalb haben wir dem Tinten-Button **Slots** gegeben.
 

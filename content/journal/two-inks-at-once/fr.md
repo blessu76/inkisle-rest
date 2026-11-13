@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, objets d'encre, conception de jeu, équilibrage, simulation par bots, interface mobile, accessibilité
 image_alt: Deux petites gouttes d'encre côte à côte au-dessus d'une rangée d'îles, dessinées dans des couleurs vectorielles douces.
+published: 2026-11-13T22:44+09:00
 ---
 Les objets d'encre (afflux, ancre, brume, lanterne, inversion de marée) fonctionnaient un par un. C'est facile à comprendre, mais cela veut aussi dire qu'un niveau avancé ne donne jamais l'impression d'avoir plus d'outils. Nous avons donc donné des **emplacements** au bouton d'encre.
 
