@@ -362,7 +362,8 @@ class OpsFiles(unittest.TestCase):
     def test_plist_template_has_no_personal_paths_and_renders(self):
         t = (REPO / "ops" / "rest.ipe.inkisle-publish.plist.template").read_text(encoding="utf-8")
         self.assertNotIn("/Users/", t)
-        self.assertIn("<key>Hour</key><integer>19</integer>", t)
+        self.assertIn("<key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer>", t)  # slot ticks 12:00-18:45 -> slot_gate.sh
+        self.assertIn("ops/slot_gate.sh", t)
         self.assertIn("__HOME__/Library/Logs/inkisle-publish.log", t)
         self.assertIn("INKISLE_PUBLISH_DIR", t)
         self.assertIn("<key>GIT_TERMINAL_PROMPT</key><string>0</string>", t)
