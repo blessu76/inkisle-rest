@@ -1,0 +1,89 @@
+{
+  "releases": [
+    {
+      "id": "1.0.0-28",
+      "version": "1.0.0",
+      "build": "28",
+      "status": "testflight",
+      "date": "2026-11-14",
+      "title": {
+        "en": "Build 28: Nickname setup and Game Center leaderboards",
+        "ko": "빌드 28: 닉네임 설정 · Game Center 순위표",
+        "ja": "ビルド28：ニックネーム設定とGame Centerランキング",
+        "zh-Hant": "版本 28：暱稱設定與 Game Center 排行榜",
+        "es": "Compilación 28: apodo y clasificaciones de Game Center",
+        "pt-BR": "Build 28: apelido e rankings do Game Center",
+        "fr": "Build 28 : pseudo et classements Game Center",
+        "de": "Build 28: Spitzname und Game-Center-Bestenlisten",
+        "id": "Build 28: pengaturan nama panggilan dan papan peringkat Game Center",
+        "th": "บิลด์ 28: ตั้งชื่อเล่นและอันดับ Game Center",
+        "vi": "Bản dựng 28: đặt biệt danh và bảng xếp hạng Game Center",
+        "tr": "Yapı 28: takma ad ve Game Center sıralamaları"
+      },
+      "intro": {
+        "en": "This build went up on TestFlight. It has the contents of builds 1 to 27, plus the changes below.",
+        "ko": "TestFlight 에 올라간 빌드입니다. 빌드 1~27의 내용에 아래 변경이 더해졌습니다.",
+        "ja": "TestFlight に上がったビルドです。ビルド1〜27の内容に、以下の変更が加わりました。",
+        "zh-Hant": "這是已上傳至 TestFlight 的版本，包含版本 1 至 27 的內容，再加上以下變更。",
+        "es": "Esta compilación se subió a TestFlight. Incluye lo de las compilaciones 1 a 27, más los cambios de abajo.",
+        "pt-BR": "Esta build foi enviada ao TestFlight. Ela inclui o conteúdo das builds 1 a 27, mais as mudanças abaixo.",
+        "fr": "Ce build a été envoyé sur TestFlight. Il reprend le contenu des builds 1 à 27, plus les changements ci-dessous.",
+        "de": "Dieser Build wurde auf TestFlight hochgeladen. Er enthält alles aus den Builds 1 bis 27 sowie die folgenden Änderungen.",
+        "id": "Build ini sudah naik ke TestFlight. Isinya mencakup build 1 sampai 27, ditambah perubahan di bawah.",
+        "th": "บิลด์นี้ขึ้น TestFlight แล้ว มีเนื้อหาของบิลด์ 1 ถึง 27 พร้อมการเปลี่ยนแปลงด้านล่าง",
+        "vi": "Bản dựng này đã lên TestFlight. Nó gồm nội dung của bản dựng 1 đến 27, cộng thêm các thay đổi dưới đây.",
+        "tr": "Bu yapı TestFlight'a yüklendi. 1'den 27'ye kadar olan yapıların içeriğini ve aşağıdaki değişiklikleri içerir."
+      },
+      "notes": {
+        "en": [
+          "New: you can set a nickname the first time you play, and your scores now appear on the Game Center leaderboards (iPhone).",
+          "Changed: the harbor's Mist item now unlocks at sea 8, a battle allows up to three Ink items (besides Boost), and some sea difficulty curves were tuned."
+        ],
+        "ko": [
+          "추가: 처음 실행할 때 닉네임을 정할 수 있고, 아이폰에서는 점수가 Game Center 순위표에 올라가요.",
+          "조정: 항구의 물안개가 8막에서 열리고, 한 판에 증산 외 먹 아이템은 세 가지까지 쓸 수 있으며, 일부 바다의 난이도 곡선을 손봤어요."
+        ],
+        "ja": [
+          "追加：初回起動時にニックネームを設定でき、スコアがGame Centerのランキングに載ります（iPhone）。",
+          "調整：港の霧アイテムは8幕で解放され、1回の戦いで増産以外のインクアイテムは3種類まで使え、一部の海の難易度カーブを調整しました。"
+        ],
+        "zh-Hant": [
+          "新增：首次開啟時可設定暱稱，分數會登上 Game Center 排行榜（iPhone）。",
+          "調整：港口的迷霧道具改為第 8 幕開放，每場戰鬥除增產外最多可用三種墨水道具，並調整了部分海域的難度曲線。"
+        ],
+        "es": [
+          "Novedad: puedes elegir un apodo la primera vez que juegas y tus puntuaciones aparecen en las clasificaciones de Game Center (iPhone).",
+          "Cambio: el objeto Niebla del puerto se desbloquea en el mar 8, cada partida permite hasta tres objetos de tinta (además de Impulso) y se ajustaron las curvas de dificultad de algunos mares."
+        ],
+        "pt-BR": [
+          "Novo: você pode escolher um apelido na primeira vez que joga, e suas pontuações aparecem nos rankings do Game Center (iPhone).",
+          "Mudança: o item Névoa do porto agora libera no mar 8, cada partida permite até três itens de tinta (além do Impulso) e algumas curvas de dificuldade foram ajustadas."
+        ],
+        "fr": [
+          "Nouveau : vous pouvez choisir un pseudo au premier lancement, et vos scores apparaissent dans les classements Game Center (iPhone).",
+          "Modifié : l'objet Brume du port se débloque à la mer 8, une partie autorise jusqu'à trois objets d'encre (hors Boost) et la courbe de difficulté de certaines mers a été ajustée."
+        ],
+        "de": [
+          "Neu: Beim ersten Start kannst du einen Spitznamen festlegen, und deine Punkte erscheinen in den Game-Center-Bestenlisten (iPhone).",
+          "Geändert: Der Nebel-Gegenstand im Hafen wird ab Meer 8 freigeschaltet, pro Partie sind bis zu drei Tinten-Gegenstände erlaubt (außer Boost), und die Schwierigkeitskurve einiger Meere wurde angepasst."
+        ],
+        "id": [
+          "Baru: kamu bisa menetapkan nama panggilan saat pertama bermain, dan skormu muncul di papan peringkat Game Center (iPhone).",
+          "Perubahan: item Kabut di pelabuhan terbuka di laut 8, satu pertarungan boleh memakai hingga tiga item tinta (selain Boost), dan kurva kesulitan beberapa laut disesuaikan."
+        ],
+        "th": [
+          "ใหม่: ตั้งชื่อเล่นได้ตอนเล่นครั้งแรก และคะแนนจะขึ้นอันดับ Game Center (iPhone)",
+          "ปรับ: ไอเท็มหมอกที่ท่าเรือปลดล็อกที่ทะเลที่ 8 หนึ่งด่านใช้ไอเท็มหมึกได้สูงสุดสามอย่าง (ไม่นับเพิ่มกำลังผลิต) และปรับเส้นโค้งความยากของบางทะเล"
+        ],
+        "vi": [
+          "Mới: bạn có thể đặt biệt danh ngay lần chơi đầu, và điểm của bạn xuất hiện trên bảng xếp hạng Game Center (iPhone).",
+          "Thay đổi: vật phẩm Sương mù ở bến cảng mở ở biển 8, mỗi ván dùng tối đa ba vật phẩm mực (ngoài Tăng sản) và đường cong độ khó của một số biển được điều chỉnh."
+        ],
+        "tr": [
+          "Yeni: ilk oynayışta takma ad belirleyebilirsiniz ve puanlarınız Game Center sıralamalarında görünür (iPhone).",
+          "Değişiklik: limandaki Sis öğesi 8. denizde açılıyor, bir savaşta (Üretim artışı hariç) en fazla üç mürekkep öğesi kullanılabiliyor ve bazı denizlerin zorluk eğrisi ayarlandı."
+        ]
+      }
+    }
+  ]
+}
