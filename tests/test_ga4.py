@@ -46,7 +46,7 @@ class Ga4(unittest.TestCase):
         for lang in bs.LANGS:
             src = (REPO / "content" / "pages" / lang / "privacy.md").read_text(encoding="utf-8")
             with self.subTest(lang):
-                for needle in ("Google", "_ga", OPT_OUT, "ink-theme", "ink-lang"):
+                for needle in ("Google", "_ga", OPT_OUT, "ink-theme", "ipe_lang"):
                     self.assertIn(needle, src)
                 self.assertNotIn("Google Analytics 4 Google", src)
 
