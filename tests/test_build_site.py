@@ -1,9 +1,7 @@
 import datetime as dt
 import json
-import os
 import re
 import shutil
-import subprocess
 import unittest
 from pathlib import Path
 
@@ -170,7 +168,8 @@ class Output(unittest.TestCase):
     def test_lang_switcher_and_pagination(self):
         h = self.read("ko/journal/alpha-post/index.html")
         self.assertIn('lang="en"', h)
-        self.assertIn('aria-current="true"', h)
+        self.assertIn('aria-current="page"', h)
+        self.assertIn('<option value="/journal/alpha-post/" lang="en">English</option>', h)
         self.assertIn('<html lang="ko"', h)
 
     def test_pagination_with_many_posts(self):
@@ -182,9 +181,9 @@ class Output(unittest.TestCase):
         self.assertIn('rel="next"', (root / "journal/index.html").read_text())
         self.assertIn("https://inkisle.ipe.rest/journal/page/2/", (root / "sitemap.xml").read_text())
         # the language picker on page 2 offers page 2 of both languages, not only the page's own language
-        for pg, lang in (("journal/page/2/index.html", "en"), ("ko/journal/page/2/index.html", "ko")):
-            menu = re.search(r'<details class="lang">.*?</details>', (root / pg).read_text(), re.S).group(0)
-            self.assertEqual(re.findall(r'<a href="([^"]*)" hreflang', menu), ["/journal/page/2/", "/ko/journal/page/2/"], pg)
+        for pg in ("journal/page/2/index.html", "ko/journal/page/2/index.html"):
+            picker = re.search(r'<select class="ipe-lang__select".*?</select>', (root / pg).read_text(), re.S).group(0)
+            self.assertEqual(re.findall(r'<option value="([^"]*)"', picker), ["/journal/page/2/", "/ko/journal/page/2/"], pg)
 
 
 class RealRepo(unittest.TestCase):
@@ -239,77 +238,12 @@ class RealRepo(unittest.TestCase):
         self.assertEqual(keys[0].read_text().strip(), keys[0].stem)
 
 
-NODE = shutil.which("node")
-# CI must never skip the language-pick tests silently
-NEED_NODE = unittest.skipUnless(NODE or os.environ.get("CI"), "node not installed")
-
-
-class LanguagePick(unittest.TestCase):
-    """The root page follows the browser language (assets/langpick.js, inlined into / only)."""
-
-    def run_pick(self, languages, saved=None, path="/", broken_storage=False):
-        script = re.search(r"<script>(\(function\(\)\{var S=.*?)</script>", (REPO / "index.html").read_text(encoding="utf-8"), re.S).group(1)
-        harness = (
-            "var vm=require('vm');var out=null;var store=%s;var broken=%s;"
-            "var sb={location:{pathname:%s,search:'?a=1',hash:'#h',replace:function(u){out=u}},"
-            "navigator:{languages:%s,language:%s},"
-            "localStorage:{getItem:function(k){if(broken)throw new Error('blocked');return k==='ink-lang'?store:null}}};"
-            "vm.runInNewContext(%s,sb);console.log(JSON.stringify(out));"
-        ) % (json.dumps(saved), "true" if broken_storage else "false", json.dumps(path), json.dumps(languages),
-             json.dumps(languages[0] if languages else ""), json.dumps(script))
-        self.assertTrue(NODE, "node is required in CI")
-        r = subprocess.run([NODE, "-e", harness], capture_output=True, text=True, timeout=20)
-        self.assertEqual(r.returncode, 0, r.stderr)
-        return json.loads(r.stdout)
-
-    @NEED_NODE
-    def test_follows_browser_language(self):
-        for langs, want in ((["ko-KR", "en-US"], "/ko/?a=1#h"), (["zh-TW"], "/zh-Hant/?a=1#h"), (["zh-Hant-HK"], "/zh-Hant/?a=1#h"),
-                            (["zh-MO", "en"], "/zh-Hant/?a=1#h"), (["pt-BR"], "/pt-BR/?a=1#h"), (["pt-PT"], "/pt-BR/?a=1#h"), (["pt"], "/pt-BR/?a=1#h"),
-                            (["fr"], "/fr/?a=1#h"), (["de-DE"], "/de/?a=1#h"), (["es-MX"], "/es/?a=1#h"), (["th-TH"], "/th/?a=1#h"),
-                            (["vi-VN"], "/vi/?a=1#h"), (["tr-TR"], "/tr/?a=1#h"), (["sv", "ja-JP"], "/ja/?a=1#h"), (["id_ID"], "/id/?a=1#h"),
-                            (["in"], "/id/?a=1#h"), (["in-ID", "en"], "/id/?a=1#h"), (["KO-kr"], "/ko/?a=1#h")):
-            self.assertEqual(self.run_pick(langs), want, langs)
-
-    @NEED_NODE
-    def test_ended_and_simplified_chinese_fall_back_to_english(self):
-        for langs in (["zh-CN"], ["zh-Hans-SG"], ["zh"], ["ru-RU"], ["ar-EG", "en"], ["hi-IN"]):
-            self.assertIsNone(self.run_pick(langs), langs)
-
-    @NEED_NODE
-    def test_english_and_unknown_stay_on_the_english_root(self):
-        for langs in (["en-US"], ["en"], ["sv", "nb"], ["xx-YY"], [""], []):
-            self.assertIsNone(self.run_pick(langs), langs)
-
-    @NEED_NODE
-    def test_saved_choice_wins_and_survives_blocked_storage(self):
-        self.assertIsNone(self.run_pick(["ko-KR"], saved="en"))
-        self.assertEqual(self.run_pick(["en-US"], saved="ja"), "/ja/?a=1#h")
-        self.assertEqual(self.run_pick(["ko-KR"], saved="klingon"), "/ko/?a=1#h")
-        self.assertEqual(self.run_pick(["en-US"], saved="zh-Hans"), None)  # unknown saved value ignored
-        self.assertEqual(self.run_pick(["ko-KR"], broken_storage=True), "/ko/?a=1#h")  # storage throws -> still works
-
-    @NEED_NODE
-    def test_only_runs_on_the_root(self):
-        self.assertIsNone(self.run_pick(["ko-KR"], path="/about/"))
-        self.assertIsNone(self.run_pick(["ko-KR"], path="/ko/"))
-
-    def test_script_only_on_root_and_lists_built_languages(self):
-        root = make_site()
-        self.addCleanup(shutil.rmtree, root, True)
-        build(root)
-        home = (root / "index.html").read_text(encoding="utf-8")
-        self.assertIn('var S=["en", "ko"]', home)
-        for rel in ("ko/index.html", "about/index.html", "journal/index.html", "404.html"):
-            self.assertNotIn("ink-lang", (root / rel).read_text(encoding="utf-8"), rel)
-        self.assertEqual(home.count("ink-lang"), 1)
-
     def test_built_site_lists_the_twelve_languages(self):
         home = (REPO / "index.html").read_text(encoding="utf-8")
-        langs = json.loads(re.search(r"var S=(\[[^\]]*\])", home).group(1))
+        langs = re.findall(r'<option value="[^"]*" lang="([\w-]+)"', home)
         self.assertEqual(langs, ["en", "ko", "ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"])
 
-    def test_seo_stays_intact_and_links_visible_without_js(self):
+    def test_seo_stays_intact_and_no_language_list_in_footer(self):
         root = make_site()
         self.addCleanup(shutil.rmtree, root, True)
         build(root)
@@ -318,15 +252,9 @@ class LanguagePick(unittest.TestCase):
         self.assertIn('hreflang="x-default" href="https://inkisle.ipe.rest/"', h)
         self.assertNotIn("http-equiv", h)  # no meta refresh
         foot = h.split("</main>")[1]
-        self.assertIn('<p class="foot-langs"', foot)
-        self.assertIn('href="/ko/" hreflang="ko" lang="ko"', foot)
-        self.assertNotIn("<noscript>", h)
-
-    def test_explicit_choice_is_stored_by_the_language_links(self):
-        js = (REPO / "assets" / "inkisle.js").read_text(encoding="utf-8")
-        self.assertIn("localStorage.setItem('ink-lang'", js)
-        self.assertIn(".lang a[hreflang]", js)
-        self.assertIn(".foot-langs a[hreflang]", js)
+        self.assertNotIn("foot-langs", foot)
+        self.assertIn('<option value="/ko/" lang="ko">', h)
+        self.assertNotIn("<details", h)
 
 
 if __name__ == "__main__":

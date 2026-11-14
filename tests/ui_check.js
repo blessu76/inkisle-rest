@@ -43,7 +43,7 @@ function pagesToCheck() {
       const resp = await page.goto(base + pth, { waitUntil: 'load' });
       if (resp.status() !== 200) bad.push(`${w}px ${pth}: HTTP ${resp.status()}`);
       const m = await page.evaluate(() => ({ sw: document.documentElement.scrollWidth, iw: window.innerWidth,
-        wide: [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.table-wrap') && !e.closest('.lang ul') && getComputedStyle(e).position !== 'fixed')
+        wide: [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.table-wrap') && !e.closest('.ipe-lang') && getComputedStyle(e).position !== 'fixed')
           .slice(0, 3).map(e => e.tagName + '.' + e.className) }));
       if (m.sw > m.iw) bad.push(`${w}px ${pth}: horizontal overflow scrollWidth ${m.sw} > ${m.iw} (${m.wide.join(', ')})`);
       for (const e of errs) bad.push(`${w}px ${pth}: console: ${e}`);
@@ -54,14 +54,15 @@ function pagesToCheck() {
     }
     await ctx.close();
   }
-  // dark theme + open language menu once at 375
+  // dark theme + language select once at 375 (choosing 한국어 navigates to /ko/)
   const ctx = await b.newContext({ viewport: { width: 375, height: 812 }, colorScheme: 'dark' });
   const page = await ctx.newPage();
   await page.goto(base + '/', { waitUntil: 'load' });
-  await page.click('.lang summary');
-  await page.screenshot({ path: path.join(OUT, '375-dark-langmenu.png') });
+  await page.selectOption('#ipe-lang-select', '/ko/');
+  await page.waitForURL('**/ko/');
+  await page.screenshot({ path: path.join(OUT, '375-dark-langselect.png') });
   const sw = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-  if (sw > 0) bad.push('375px dark + language menu: overflow ' + sw);
+  if (sw > 0) bad.push('375px dark + language select: overflow ' + sw);
   await b.close(); server.close();
   console.log(`ui_check: ${n} page views, screenshots in ${OUT}`);
   if (bad.length) { console.error('ui_check FAILED:\n  ' + bad.join('\n  ')); process.exit(1); }

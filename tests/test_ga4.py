@@ -34,7 +34,7 @@ class Ga4(unittest.TestCase):
                 self.assertLess(text.index(GA_ID), text.index("</body>"))
 
     def test_no_snippet_in_assets(self):
-        for rel in ("assets/inkisle.js", "assets/inkisle.css", "assets/langpick.js"):
+        for rel in ("assets/inkisle.js", "assets/inkisle.css", "assets/ipe-lang.js"):
             self.assertNotIn(GA_ID, (REPO / rel).read_text(encoding="utf-8"))
 
     def test_committed_pages_have_it(self):
