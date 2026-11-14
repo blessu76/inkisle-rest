@@ -160,6 +160,18 @@ class Output(unittest.TestCase):
             self.assertNotRegex(h, r'<script[^>]+src="https?://')
             self.assertNotRegex(h, r'<link[^>]+rel="stylesheet"[^>]+href="https?://')
 
+    def test_retired_releases_stub_redirects_home_and_stays_unlisted(self):
+        for l in self.ctx.langs:
+            home = bs.path_home(l)
+            h = self.read(("" if l == "en" else l + "/") + "releases/index.html")
+            self.assertIn('<meta name="robots" content="noindex,follow">', h)
+            self.assertIn('<meta http-equiv="refresh" content="0; url=%s">' % home, h)
+            self.assertIn('location.replace("%s")' % home, h)
+            self.assertIn('<a href="%s">' % home, h)
+            self.assertIn('<html lang="%s">' % l, h)
+        for rel in ("sitemap.xml", "llms.txt", "index.html", "ko/index.html", "about/index.html", "journal/index.html"):
+            self.assertNotIn("/releases/", self.read(rel), rel)
+
     def test_deterministic(self):
         a = bs.build_all(self.ctx)
         b = bs.build_all(bs.make_ctx(self.root, NOW)[0])

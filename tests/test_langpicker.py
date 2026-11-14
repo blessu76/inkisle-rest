@@ -19,6 +19,8 @@ def pages():
         rel = p.relative_to(REPO).parts
         if rel[0] in ("tests", "scripts", "docs", "ops", "content", "assets", "vendor"):
             continue
+        if "releases" in rel:  # retired /releases/ redirect stub: no header, no picker
+            continue
         lang = rel[0] if rel[0] in LANG_DIRS else "en"
         out.append((lang, str(p.relative_to(REPO)), p.read_text(encoding="utf-8")))
     return out

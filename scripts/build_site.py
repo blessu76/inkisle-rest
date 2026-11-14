@@ -772,6 +772,20 @@ def build_404(ctx):
         '<link rel="canonical" href="%s">' % (SITE + "/404.html"), "")
 
 
+def build_releases_stub(ctx, lang):
+    """Retired /releases/ (web release notes were removed): a noindex stub that sends visitors to the same-language home.
+    Not in the sitemap, llms.txt, nav or footer."""
+    home = path_home(lang)
+    label = esc(ctx.t(lang, "nav_home"))
+    return ('<!doctype html>\n<!-- %s -->\n<html lang="%s"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<title>Inkisle</title><meta name="robots" content="noindex,follow">'
+            '<meta http-equiv="refresh" content="0; url=%s">'
+            '<script>location.replace(%s)</script>'
+            '<style>body{font:16px/1.6 system-ui,sans-serif;margin:0;padding:2rem 16px;text-align:center}</style>'
+            '</head><body><p><a href="%s">%s</a></p>%s</body></html>\n') % (GEN_MARK, lang, esc(home), json.dumps(home), esc(home), label, GA_SNIPPET)
+
+
 # ---------------------------------------------------------------- site files
 def lastmod_site(ctx):
     return max([p["published"].strftime("%Y-%m-%d") for p in ctx.posts] + [PAGES_UPDATED])
@@ -904,6 +918,7 @@ def build_all(ctx):
         put(*build_home(ctx, l))
         for slug in ("about", "privacy"):
             put(*build_page(ctx, l, slug))
+        put(path_page(l, "releases"), build_releases_stub(ctx, l))
         for pg in range(1, pages_count(len(posts_in(ctx, l))) + 1):
             put(*build_list(ctx, l, pg))
         for p in ctx.posts:
