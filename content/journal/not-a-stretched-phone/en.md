@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, iPad layout, landscape, responsive UI, mobile game, game design
 image_alt: A tablet in landscape showing a board of islands in the middle with a narrow panel on each side.
+published: 2026-11-14T17:30+09:00
 ---
 
 Inkisle, our island-conquest strategy game for iOS, now has an iPad layout of its own: in landscape the battle screen has a panel on each side of the board, and in portrait the bars stop stretching. A 9.7-inch iPad needed narrower panels than the larger ones. The game is still in development and not released.
