@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, Flutter, widget tests, test isolation, random test order, mobile development
 image_alt: Two small phone outlines side by side, one with a crooked ruler beside it.
+published: 2026-11-15T12:30+09:00
 ---
 
 Two of the Flutter widget tests for Inkisle, our island-conquest strategy game for iOS, passed for the wrong reason. Phone-sized tests quietly ran with a 2400 by 1800 view, and two tests left the language setting behind for the tests after them. We fixed both without changing the app. The game is still in development and not released.
