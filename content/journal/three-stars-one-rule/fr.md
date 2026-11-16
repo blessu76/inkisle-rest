@@ -9,7 +9,7 @@ keywords: Inkisle, notation par étoiles, progression du jeu, game design, jeu m
 image_alt: Une rangée de trois étoiles, les deux premières remplies de corail et la troisième seulement en contour.
 published: 2026-11-07T20:04+09:00
 ---
-Chacun des 16 niveaux d'Inkisle donne de une à trois étoiles. Les étoiles sont la façon qu'a le jeu de dire « vous pouvez faire mieux » sans vous y forcer. Voici la règle, et une erreur que nous avons faite en l'expliquant.
+Chacun des 16 niveaux du prototype d'Inkisle donne de une à trois étoiles. Les étoiles sont la façon qu'a le jeu de dire « vous pouvez faire mieux » sans vous y forcer. Voici la règle, et une erreur que nous avons faite en l'expliquant.
 
 ## Ce que signifie chaque étoile
 

@@ -9,7 +9,7 @@ keywords: Inkisle, penilaian bintang, progres game, desain game, game mobile, da
 image_alt: Deretan tiga bintang, dua yang pertama terisi warna koral dan yang ketiga hanya garis tepi.
 published: 2026-11-07T20:04+09:00
 ---
-Masing-masing dari 16 stage Inkisle memberi satu sampai tiga bintang. Bintang adalah cara game berkata "Anda bisa lebih baik" tanpa memaksa Anda. Berikut aturannya, dan satu kesalahan yang kami buat dalam menjelaskannya.
+Masing-masing dari 16 stage prototipe Inkisle memberi satu sampai tiga bintang. Bintang adalah cara game berkata "Anda bisa lebih baik" tanpa memaksa Anda. Berikut aturannya, dan satu kesalahan yang kami buat dalam menjelaskannya.
 
 ## Arti tiap bintang
 
