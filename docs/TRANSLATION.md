@@ -1,6 +1,6 @@
 # Translation pipeline (12 languages)
 
-`en` and `ko` are written by hand (originals). The other ten — `ja zh es fr de pt ru ar hi id` — are **AI translations of the English original**
+`en` and `ko` are written by hand (originals). The other ten — `ja zh es fr de pt ru id` — are **AI translations of the English original**
 (`translation_of: en`), shown on the site with an "AI translated" notice that links to the original.
 
 ## What gets translated
@@ -19,8 +19,7 @@
 4. The honesty markers `[unverified]` / `**[unverified]**` must stay visible in the translation, in the target language (e.g. 【未検証】 for ja), still bold where the original is bold.
 5. Do not add or remove claims. Do not invent a release date, price or platform commitment: the game is **in development and not released**.
 6. No secrets, local paths or internal tool names. (The build refuses `/Users/`, `claude.ai/` and similar.)
-7. Arabic (`ar`) is right-to-left: translate normally; the site sets `dir="rtl"`. Keep Latin brand names and numbers as they are.
-8. UTF-8, no BOM. `content/i18n/<lang>.json` must stay valid JSON with exactly the keys of `en.json` (the build lists missing or extra keys).
+7. UTF-8, no BOM. `content/i18n/<lang>.json` must stay valid JSON with exactly the keys of `en.json` (the build lists missing or extra keys).
 
 ## Check
 

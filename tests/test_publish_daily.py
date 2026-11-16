@@ -177,7 +177,7 @@ class PublishDaily(unittest.TestCase):
 
     def test_publish_paths_cover_exactly_the_site_languages(self):
         # Regression 11-13: the language set moved to 12 (pt-BR, zh-Hant, th, vi, tr) but PUBLISH_PATHS still listed the old dirs, so a publish that
-        # rebuilt pt-BR/ was rolled back as "unexpected paths". The guard stays strict: stale dirs (zh, ru, ar, hi, pt) must NOT be allowed.
+        # rebuilt pt-BR/ was rolled back as "unexpected paths". The guard stays strict: stale dirs (zh, ru, pt) must NOT be allowed.
         import re
         import build_site as bs
         m = re.search(r'^PUBLISH_PATHS="([^"]*)"', SCRIPT.read_text(encoding="utf-8"), re.M)

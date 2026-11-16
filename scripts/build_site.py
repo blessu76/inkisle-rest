@@ -93,7 +93,7 @@ def esc(s):
 
 # ---------------------------------------------------------------- paths
 def retired(stem):
-    """Content kept on disk for an ended language (zh, ru, ar, hi); skipped silently, never built."""
+    """Content kept on disk for an ended language (zh, ru); skipped silently, never built."""
     return kl.from_legacy(stem) in kl.ENDED
 
 

@@ -48,7 +48,7 @@ function pagesToCheck() {
       if (m.sw > m.iw) bad.push(`${w}px ${pth}: horizontal overflow scrollWidth ${m.sw} > ${m.iw} (${m.wide.join(', ')})`);
       for (const e of errs) bad.push(`${w}px ${pth}: console: ${e}`);
       n++;
-      if (pth === '/' || pth === '/ko/' || pth === '/ar/' || /journal\/[^/]+\/$/.test(pth) && !pth.startsWith('/') === false && (pth.startsWith('/journal') || pth.startsWith('/ko/') || pth.startsWith('/ar/')))
+      if (pth === '/' || pth === '/ko/' || pth === '/ja/' || /journal\/[^/]+\/$/.test(pth) && !pth.startsWith('/') === false && (pth.startsWith('/journal') || pth.startsWith('/ko/') || pth.startsWith('/ja/')))
         await page.screenshot({ path: path.join(OUT, `${w}-${pth.replace(/\//g, '_') || '_'}.png`), fullPage: true });
       await page.close();
     }

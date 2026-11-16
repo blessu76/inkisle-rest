@@ -90,7 +90,7 @@ class Detect(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("node"), "node required")
     def test_unsupported_and_english_stay_on_the_root(self):
-        for langs in (["ru-RU"], ["zh-CN"], ["ar-EG", "en"], ["hi-IN"], ["en-US"], ["xx-YY"]):
+        for langs in (["ru-RU"], ["zh-CN"], ["it-IT", "en"], ["nl-NL"], ["en-US"], ["xx-YY"]):
             self.assertIsNone(self.detect(langs), langs)
 
     @unittest.skipUnless(shutil.which("node"), "node required")
