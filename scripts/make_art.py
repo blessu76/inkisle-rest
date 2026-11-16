@@ -37,6 +37,9 @@ COVERS = {  # slug: (seed, islands, factions in play)
     "two-tests-that-lied": (149, 7, ("me", "e3", "n")),
     "one-shape-per-sea": (151, 9, ("me", "e1", "e2", "e3", "n")),
     "a-warning-that-rarely-cries-wolf": (157, 8, ("me", "e2", "n")),
+    "season-one-ends-at-act-thirty": (163, 8, ("me", "e1", "n")),
+    "two-free-seas-and-one-unlock": (167, 7, ("me", "e2", "n")),
+    "release-notes-inside-the-app": (173, 8, ("me", "e3", "n")),
 }
 
 
