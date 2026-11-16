@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, sea chart, UI design, color contrast, accessibility, mobile game
 image_alt: A row of stage markers on a sea chart, white circles first, then colored shapes: a diamond, a hexagon, a shield.
+published: 2026-11-16T14:30+09:00
 ---
 
 On Inkisle's sea chart, our island-conquest strategy game for iOS, a stage you have not cleared stays white everywhere, and a cleared stage takes the shape and color of its sea. There are fourteen sea styles, all with a white number that passes a 4.5 contrast check. The game is still in development and not released.

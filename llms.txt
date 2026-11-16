@@ -22,6 +22,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [One shape and one color per sea: how the chart marks what you cleared](https://inkisle.ipe.rest/journal/one-shape-per-sea/) — 2026-11-16 — On the sea chart, stages you have not cleared stay white everywhere, and cleared ones take the shape and color of their sea. The rule, the fourteen styles, the contrast check and how we looked at a wide screen.
 - [Two tests that lied: a screen size and a language that leaked](https://inkisle.ipe.rest/journal/two-tests-that-lied/) — 2026-11-15 — Phone-sized tests quietly ran with a tablet-sized screen, and two tests left the language setting behind for the next ones. How both showed up and what fixed them, with no change to the app itself.
 - [Not a stretched phone: giving Inkisle its own iPad layout](https://inkisle.ipe.rest/journal/not-a-stretched-phone/) — 2026-11-14 — On an iPad the battle screen used to be the phone screen made bigger. How the board got side panels in landscape, why a 9.7-inch iPad needed narrower ones, and what we have and have not checked.
 - [Two Ink items at once: slots, gaps and what the bots told us](https://inkisle.ipe.rest/journal/two-inks-at-once/) — 2026-11-13 — In early seas you could run one Ink item at a time. From sea 5 you can run two, and later three, with a gap between starts. The rule table, how the button shows it, and a simulation that found a much smaller effect than we expected.
