@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, playtest, bot simulation, game balance, warnings, mobile game
 image_alt: A small bell above an island map with one island flashing in a soft warning color.
+published: 2026-11-17T17:45+09:00
 ---
 
 Inkisle, our island-conquest strategy game for iOS, warns you when a stage looks lost, and in a bot simulation of 3,360 games the warning was a false alarm only 3 times out of 2,096 wins (0.14%). When it showed, the bot lost 98.9% of the time. The same run showed that the star goal of stage 2-5 is almost never reached. The game is still in development and not released.
