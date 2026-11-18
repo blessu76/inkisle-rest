@@ -1,6 +1,6 @@
 ---
 title: Hai biển miễn phí và một lần mở khóa: cách chúng tôi đơn giản hóa thanh toán
-description: Inkisle giữ biển 1 và 2 miễn phí và mở phần còn lại bằng một lần mua duy nhất, Mở khóa tất cả biển. Vì sao chúng tôi bỏ cửa hàng mực tiêu hao, cách khóa được tính trong mã, những ranh giới chúng tôi đặt ra cho việc khôi phục và hoàn tiền, và những điều chúng tôi chưa kiểm tra.
+description: Inkisle giữ biển 1 và 2 miễn phí và mở phần còn lại bằng một lần mua duy nhất, Mở khóa tất cả biển. Mực tiêu hao được thiết lập như thế nào, cách khóa được tính trong mã, những ranh giới chúng tôi đặt ra cho việc khôi phục và hoàn tiền, và những điều chúng tôi chưa kiểm tra.
 slug: two-free-seas-and-one-unlock
 lang: vi
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, mua trong ứng dụng, không tiêu hao, biển miễn phí,
 image_alt: Hai hòn đảo đang mở, phía sau là một dãy đảo có ổ khóa, và một chiếc chìa khóa nằm ngang qua dãy đảo đó.
 ---
 
-Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, nay giữ biển 1 và 2 miễn phí và mở biển 3 đến 30 (28 biển) bằng một lần mua duy nhất, Mở khóa tất cả biển. Chúng tôi đã bỏ cửa hàng mực tiêu hao và giữ lại sáu vật phẩm tiền boa. Sản phẩm trên cửa hàng vẫn chưa được tạo, vì vậy hôm nay chưa thể mua gì. Trò chơi đang được phát triển và chưa phát hành. Bài viết này không nêu giá cả hay ngày phát hành.
+Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, nay giữ biển 1 và 2 miễn phí và mở biển 3 đến 30 (28 biển) bằng một lần mua duy nhất, Mở khóa tất cả biển. Mực tiêu hao đã có trong cấu hình bán hàng, nhưng chưa phát hành và chưa kiểm tra trên thiết bị. Sáu vật phẩm tiền boa giữ nguyên. Sản phẩm trên cửa hàng đang ở bước đăng ký, nhưng chưa gửi xét duyệt và chưa kiểm tra trên thiết bị thật, nên việc mua hàng chưa được xác nhận. Trò chơi đang được phát triển và chưa phát hành. Bài viết này không nêu giá cả hay ngày phát hành.
 
 ## Điều gì đã thay đổi
 
-Thiết kế đầu tiên làm mọi màn chơi đều miễn phí, còn mực giúp giảm độ khó được bán dưới dạng vật phẩm nhỏ tiêu hao. Ngày 15 tháng 11, người phụ trách đã thay đổi điều này. **Biển 1 và 2 miễn phí, Mở khóa tất cả biển là lần mua một lần không tiêu hao, và mực không còn được bán.** Giờ đây mực chỉ kiếm được qua sao: mỗi 5 sao được 1, và đánh bại trùm được 2. Mực đã mua trước đó vẫn dùng được.
+Thiết kế đầu tiên làm mọi màn chơi đều miễn phí, còn mực giúp giảm độ khó được bán dưới dạng vật phẩm nhỏ tiêu hao. Ngày 15 tháng 11, người phụ trách đã thay đổi điều này. **Biển 1 và 2 miễn phí, và Mở khóa tất cả biển là lần mua một lần không tiêu hao.** Mực tiêu hao (gói 5 và 15) đã có trong cấu hình bán hàng, nhưng chưa phát hành và chưa kiểm tra trên thiết bị. Mực cũng kiếm được qua sao: mỗi 5 sao được 1, và đánh bại trùm được 2. Mực đã mua trước đó vẫn dùng được.
 
 ## Khóa được tính toán
 

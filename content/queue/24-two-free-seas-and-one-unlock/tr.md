@@ -1,6 +1,6 @@
 ---
 title: İki ücretsiz deniz ve tek bir kilit açma: ödemeyi nasıl sadeleştirdik
-description: Inkisle, 1. ve 2. denizleri ücretsiz tutuyor ve geri kalanını tek bir satın almayla açıyor: Tüm Denizlerin Kilidini Aç. Tüketilen mürekkep mağazasını neden kaldırdığımızı, kilidin kodda nasıl hesaplandığını, geri yükleme ve iadelerde çizdiğimiz sınırları ve henüz test etmediklerimizi anlatıyoruz.
+description: Inkisle, 1. ve 2. denizleri ücretsiz tutuyor ve geri kalanını tek bir satın almayla açıyor: Tüm Denizlerin Kilidini Aç. Tüketilen mürekkebin nasıl ayarlandığını, kilidin kodda nasıl hesaplandığını, geri yükleme ve iadelerde çizdiğimiz sınırları ve henüz test etmediklerimizi anlatıyoruz.
 slug: two-free-seas-and-one-unlock
 lang: tr
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, uygulama içi satın alma, tüketilmeyen, ücretsiz denizler,
 image_alt: İki açık ada, arkasında kilit simgeli bir ada sırası ve bu sıranın üzerine yatay duran bir anahtar.
 ---
 
-iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle, artık 1. ve 2. denizleri ücretsiz tutuyor ve 3. ila 30. denizleri (28 deniz) tek bir satın almayla açıyor: Tüm Denizlerin Kilidini Aç. Tüketilen mürekkep mağazasını kaldırdık ve altı bahşiş ürününü koruduk. Mağaza ürünü henüz oluşturulmadı, bu yüzden bugün hiçbir şey satın alınamaz. Oyun geliştirme aşamasında ve henüz yayımlanmadı. Bu yazı fiyat ya da tarih belirtmiyor.
+iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle, artık 1. ve 2. denizleri ücretsiz tutuyor ve 3. ila 30. denizleri (28 deniz) tek bir satın almayla açıyor: Tüm Denizlerin Kilidini Aç. Tüketilen mürekkep satış ayarlarında yer alıyor, ancak yayımlanmadı ve gerçek cihazda test edilmedi. Altı bahşiş ürünü olduğu gibi kalıyor. Mağaza ürünleri kayıt aşamasında, ancak inceleme için gönderilmedi ve gerçek cihazda test edilmedi; bu yüzden satın alma henüz doğrulanmış değil. Oyun geliştirme aşamasında ve henüz yayımlanmadı. Bu yazı fiyat ya da tarih belirtmiyor.
 
 ## Neler değişti
 
-İlk tasarımda her aşama ücretsizdi ve zorluğu düşüren mürekkep küçük tüketilen ürünler olarak satılıyordu. 15 Kasım'da sorumlu kişi bunu değiştirdi. **1. ve 2. denizler ücretsiz, Tüm Denizlerin Kilidini Aç tek seferlik tüketilmeyen bir satın alma ve mürekkep artık satılmıyor.** Mürekkep artık yalnızca yıldızlarla kazanılıyor: her 5 yıldız için 1, bir boss'u yenmek için 2. Daha önce satın alınan mürekkep de çalışmaya devam ediyor.
+İlk tasarımda her aşama ücretsizdi ve zorluğu düşüren mürekkep küçük tüketilen ürünler olarak satılıyordu. 15 Kasım'da sorumlu kişi bunu değiştirdi. **1. ve 2. denizler ücretsiz, Tüm Denizlerin Kilidini Aç ise tek seferlik tüketilmeyen bir satın almadır.** Tüketilen mürekkep (5'li ve 15'li paketler) satış ayarlarında yer alıyor, ancak yayımlanmadı ve gerçek cihazda test edilmedi. Mürekkep yıldızlarla da kazanılıyor: her 5 yıldız için 1, bir boss'u yenmek için 2. Daha önce satın alınan mürekkep de çalışmaya devam ediyor.
 
 ## Kilit hesaplanıyor
 

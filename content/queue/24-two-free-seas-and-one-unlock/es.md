@@ -1,6 +1,6 @@
 ---
 title: Dos mares gratis y un solo desbloqueo: cómo simplificamos el pago
-description: Inkisle mantiene los mares 1 y 2 gratis y abre el resto con una sola compra, Desbloquear todos los mares. Por qué eliminamos la tienda de tinta consumible, cómo se calcula el bloqueo en el código, las líneas que trazamos en la restauración y los reembolsos, y lo que aún no hemos probado.
+description: Inkisle mantiene los mares 1 y 2 gratis y abre el resto con una sola compra, Desbloquear todos los mares. Cómo se configura la tinta consumible, cómo se calcula el bloqueo en el código, las líneas que trazamos en la restauración y los reembolsos, y lo que aún no hemos probado.
 slug: two-free-seas-and-one-unlock
 lang: es
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, compra dentro de la app, no consumible, mares gratis, restaur
 image_alt: Dos islas abiertas, y detrás una fila de islas con candados, y una llave atravesada sobre la fila.
 ---
 
-Inkisle, nuestro juego de estrategia de conquista de islas para iOS, mantiene gratis los mares 1 y 2 y abre los mares 3 a 30 (28 mares) con una sola compra, Desbloquear todos los mares. Eliminamos la tienda de tinta consumible y conservamos los seis artículos de propina. El producto de la tienda todavía no se ha creado, así que hoy no se puede comprar nada. El juego está en desarrollo y no publicado, y esta entrada no indica ningún precio ni fecha.
+Inkisle, nuestro juego de estrategia de conquista de islas para iOS, mantiene gratis los mares 1 y 2 y abre los mares 3 a 30 (28 mares) con una sola compra, Desbloquear todos los mares. La tinta consumible está en la configuración de venta, pero no está publicada ni probada en un dispositivo. Los seis artículos de propina siguen igual. Los productos de la tienda están en la fase de registro, pero aún no se han enviado a revisión ni se han probado en un dispositivo, así que la compra todavía no está confirmada. El juego está en desarrollo y no publicado, y esta entrada no indica ningún precio ni fecha.
 
 ## Qué cambió
 
-El primer diseño hacía gratuitas todas las etapas, y la tinta que reduce la dificultad se vendía en pequeños artículos consumibles. El 15 de noviembre el responsable lo cambió. **Los mares 1 y 2 son gratis, Desbloquear todos los mares es una compra única no consumible, y la tinta ya no se vende.** Ahora la tinta se obtiene solo con estrellas: una por cada 5 estrellas, y 2 por vencer a un jefe. La tinta comprada antes sigue funcionando.
+El primer diseño hacía gratuitas todas las etapas, y la tinta que reduce la dificultad se vendía en pequeños artículos consumibles. El 15 de noviembre el responsable lo cambió. **Los mares 1 y 2 son gratis, y Desbloquear todos los mares es una compra única no consumible.** La tinta consumible (paquetes de 5 y de 15) está en la configuración de venta, pero no está publicada ni probada en un dispositivo. También se obtiene tinta con estrellas: una por cada 5 estrellas, y 2 por vencer a un jefe. La tinta comprada antes sigue funcionando.
 
 ## El bloqueo se calcula
 

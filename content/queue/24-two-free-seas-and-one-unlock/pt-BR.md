@@ -1,6 +1,6 @@
 ---
 title: Dois mares grátis e uma só liberação: como simplificamos o pagamento
-description: O Inkisle mantém os mares 1 e 2 grátis e libera o resto com uma única compra, Liberar todos os mares. Por que deixamos a loja de tinta consumível, como o bloqueio é calculado no código, as linhas que traçamos na restauração e nos reembolsos, e o que ainda não testamos.
+description: O Inkisle mantém os mares 1 e 2 grátis e libera o resto com uma única compra, Liberar todos os mares. Como a tinta consumível está configurada, como o bloqueio é calculado no código, as linhas que traçamos na restauração e nos reembolsos, e o que ainda não testamos.
 slug: two-free-seas-and-one-unlock
 lang: pt-BR
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, compra no aplicativo, não consumível, mares grátis, restau
 image_alt: Duas ilhas abertas, depois uma fileira de ilhas com cadeados atrás, e uma chave atravessada sobre a fileira.
 ---
 
-O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, mantém os mares 1 e 2 grátis e libera os mares 3 a 30 (28 mares) com uma única compra, Liberar todos os mares. Deixamos a loja de tinta consumível e mantivemos os seis itens de gorjeta. O produto da loja ainda não foi criado, então hoje nada pode ser comprado. O jogo está em desenvolvimento e não foi lançado, e esta publicação não informa preço nem data.
+O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, mantém os mares 1 e 2 grátis e libera os mares 3 a 30 (28 mares) com uma única compra, Liberar todos os mares. A tinta consumível está na configuração de venda, mas não foi lançada nem testada em aparelho. Os seis itens de gorjeta continuam como estão. Os produtos da loja estão na etapa de cadastro, mas ainda não foram enviados para análise nem testados em aparelho, então a compra ainda não está confirmada. O jogo está em desenvolvimento e não foi lançado, e esta publicação não informa preço nem data.
 
 ## O que mudou
 
-O primeiro design tornava gratuitas todas as fases, e a tinta que reduz a dificuldade era vendida em pequenos itens consumíveis. Em 15 de novembro, o responsável mudou isso. **Os mares 1 e 2 são grátis, Liberar todos os mares é uma compra única não consumível, e a tinta não é mais vendida.** Agora a tinta é obtida apenas por estrelas: uma a cada 5 estrelas, e 2 por vencer um chefe. A tinta comprada antes continua funcionando.
+O primeiro design tornava gratuitas todas as fases, e a tinta que reduz a dificuldade era vendida em pequenos itens consumíveis. Em 15 de novembro, o responsável mudou isso. **Os mares 1 e 2 são grátis, e Liberar todos os mares é uma compra única não consumível.** A tinta consumível (pacotes de 5 e de 15) está na configuração de venda, mas não foi lançada nem testada em aparelho. Também se obtém tinta com estrelas: uma a cada 5 estrelas, e 2 por vencer um chefe. A tinta comprada antes continua funcionando.
 
 ## O bloqueio é calculado
 

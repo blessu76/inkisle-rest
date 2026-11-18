@@ -1,6 +1,6 @@
 ---
 title: Dua laut gratis dan satu kali buka kunci: cara kami menyederhanakan pembayaran
-description: Inkisle membuat laut 1 dan 2 tetap gratis dan membuka sisanya dengan satu kali pembelian, Buka Semua Laut. Mengapa kami menghapus toko tinta yang habis pakai, bagaimana kunci dihitung di kode, batas yang kami tarik untuk pemulihan dan pengembalian dana, dan hal-hal yang belum kami uji.
+description: Inkisle membuat laut 1 dan 2 tetap gratis dan membuka sisanya dengan satu kali pembelian, Buka Semua Laut. Bagaimana tinta yang habis pakai diatur, bagaimana kunci dihitung di kode, batas yang kami tarik untuk pemulihan dan pengembalian dana, dan hal-hal yang belum kami uji.
 slug: two-free-seas-and-one-unlock
 lang: id
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, pembelian dalam aplikasi, non-konsumsi, laut gratis, pulihkan
 image_alt: Dua pulau terbuka, lalu deretan pulau dengan gembok di belakangnya, dan satu kunci tergeletak melintang di atas deretan itu.
 ---
 
-Inkisle, game strategi penaklukan pulau kami untuk iOS, kini membuat laut 1 dan 2 tetap gratis dan membuka laut 3 sampai 30 (28 laut) dengan satu kali pembelian, Buka Semua Laut. Kami menghapus toko tinta yang habis pakai dan mempertahankan enam item tip. Produk di toko belum dibuat, jadi hari ini belum ada yang bisa dibeli. Game ini masih dalam pengembangan dan belum dirilis. Postingan ini tidak menyebutkan harga atau tanggal.
+Inkisle, game strategi penaklukan pulau kami untuk iOS, kini membuat laut 1 dan 2 tetap gratis dan membuka laut 3 sampai 30 (28 laut) dengan satu kali pembelian, Buka Semua Laut. Tinta yang habis pakai ada dalam pengaturan penjualan, tetapi belum dirilis dan belum diuji di perangkat. Enam item tip tetap seperti semula. Produk toko masih dalam tahap pendaftaran, belum diajukan untuk ditinjau, dan belum diuji di perangkat, sehingga pembelian belum dapat dipastikan. Game ini masih dalam pengembangan dan belum dirilis. Postingan ini tidak menyebutkan harga atau tanggal.
 
 ## Yang berubah
 
-Desain pertama membuat semua tahap gratis, dan tinta yang menurunkan tingkat kesulitan dijual sebagai item kecil yang habis pakai. Pada 15 November, pemilik proyek mengubahnya. **Laut 1 dan 2 gratis, Buka Semua Laut adalah pembelian sekali bayar yang tidak habis pakai, dan tinta tidak lagi dijual.** Tinta sekarang hanya diperoleh lewat bintang: satu untuk setiap 5 bintang, dan 2 untuk mengalahkan bos. Tinta yang sudah dibeli sebelumnya tetap berfungsi.
+Desain pertama membuat semua tahap gratis, dan tinta yang menurunkan tingkat kesulitan dijual sebagai item kecil yang habis pakai. Pada 15 November, pemilik proyek mengubahnya. **Laut 1 dan 2 gratis, dan Buka Semua Laut adalah pembelian sekali bayar yang tidak habis pakai.** Tinta yang habis pakai (paket 5 dan 15) ada dalam pengaturan penjualan, tetapi belum dirilis dan belum diuji di perangkat. Tinta juga diperoleh lewat bintang: satu untuk setiap 5 bintang, dan 2 untuk mengalahkan bos. Tinta yang sudah dibeli sebelumnya tetap berfungsi.
 
 ## Kuncinya dihitung
 
