@@ -15,7 +15,7 @@ Static site on GitHub Pages (`CNAME` = inkisle.ipe.rest). Python 3.8+ standard l
 | `scripts/indexnow.py` | IndexNow ping (key file `<32 hex>.txt` at the root) — 3-line shim over the web kit |
 | `vendor/ipe_web_kit.lock` | pin of the **private** company web kit (F-024): tag, commit, manifest hash. The kit source is not committed (this repo is public): `vendor/ipe_web_kit/` is gitignored and installed by `scripts/kit_lock.py sync` / CI. Build-time only, not deployed |
 | `scripts/kit_lock.py` | `check` (installed kit == lock) · `sync --kit <clone>` (install the locked tag) · `sync --kit <clone> --update --tag vX.Y.Z` (move the lock) |
-| `scripts/make_art.py`, `render_png.js` | vector art (logo, hero, covers) and the PNGs (og image, icons) |
+| `scripts/make_art.py`, `render_png.js` | vector art (logo, hero, covers) and the PNGs (OG image, icons) |
 | `scripts/check.sh` | **green gate** — run before every commit |
 | `docs/TRANSLATION.md` | translation pipeline |
 | `ops/` | daily 19:00 KST publish: script + launchd plist (installed by the maintainer, not by the repo) |
