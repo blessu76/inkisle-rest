@@ -57,7 +57,7 @@ class Geo(unittest.TestCase):
 
     def test_english_posts_all_have_faq(self):
         for name, text in self.post_pages.items():
-            if not name.startswith(("ko/", "de/", "es/", "fr/", "id/", "ja/", "pt-BR/")):
+            if not name.startswith(("ko/", "de/", "es/", "fr/", "id/", "ja/", "pt-BR/", "zh-Hant/", "th/", "vi/", "tr/")):
                 self.assertIn("FAQPage", text, name)
 
     def test_faq_items_parser(self):
@@ -68,7 +68,7 @@ class Geo(unittest.TestCase):
     def test_post_meta_unique_and_linked(self):
         titles, descs = set(), set()
         for name, text in self.post_pages.items():
-            if name.startswith(("ko/", "de/", "es/", "fr/", "id/", "ja/", "pt-BR/")):
+            if name.startswith(("ko/", "de/", "es/", "fr/", "id/", "ja/", "pt-BR/", "zh-Hant/", "th/", "vi/", "tr/")):
                 continue
             t = re.search(r"<title>(.*?)</title>", text).group(1)
             d = re.search(r'<meta name="description" content="(.*?)"', text).group(1)
