@@ -1,6 +1,6 @@
 ---
 title: Two free seas and one unlock: how we simplified payment
-description: Inkisle keeps seas 1 and 2 free and opens the rest with one purchase, Unlock All Seas. Why we dropped the consumable ink shop, how the lock is computed in code, the lines we drew on restore and refunds, and what we have not tested.
+description: Inkisle keeps seas 1 and 2 free and opens the rest with one purchase, Unlock All Seas. How consumable ink is set up, how the lock is computed in code, the lines we drew on restore and refunds, and what we have not tested.
 slug: two-free-seas-and-one-unlock
 lang: en
 category: making-of
@@ -8,11 +8,11 @@ keywords: Inkisle, in-app purchase, non-consumable, free seas, restore purchases
 image_alt: Two open islands, then a row of islands with padlocks behind them, and one key lying across the row.
 ---
 
-Inkisle, our island-conquest strategy game for iOS, now keeps seas 1 and 2 free and opens seas 3 to 30 (28 seas) with one purchase, Unlock All Seas. We dropped the consumable ink shop and kept the six tip items. The store product itself has not been created yet, so nothing can be bought today. The game is in development and not released, and this post does not state a price or a date.
+Inkisle, our island-conquest strategy game for iOS, now keeps seas 1 and 2 free and opens seas 3 to 30 (28 seas) with one purchase, Unlock All Seas. Consumable ink is in the sales setup, but it is not released and has not been checked on a device. The six tip items stay as they are. The store product itself has not been created yet, so nothing can be bought today. The game is in development and not released, and this post does not state a price or a date.
 
 ## What changed
 
-The first design had every stage free, with ink that lowers difficulty sold as small consumable items. On November 15 the owner changed it. **Seas 1 and 2 are free, Unlock All Seas is a one-time non-consumable purchase, and ink is no longer sold.** Ink is now earned only through stars: one for every 5 stars, and 2 for beating a boss. Ink bought earlier still works.
+The first design had every stage free, with ink that lowers difficulty sold as small consumable items. On November 15 the owner changed it. **Seas 1 and 2 are free, and Unlock All Seas is a one-time non-consumable purchase.** Consumable ink (5-piece and 15-piece packs) is in the sales setup, but it is not released and has not been checked on a device. Ink is also earned through stars: one for every 5 stars, and 2 for beating a boss. Ink bought earlier still works.
 
 ## The lock is computed
 

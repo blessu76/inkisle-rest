@@ -1,6 +1,6 @@
 ---
 title: Zwei kostenlose Meere und eine Freischaltung: wie wir die Bezahlung vereinfacht haben
-description: Inkisle hält die Meere 1 und 2 kostenlos und öffnet den Rest mit einem einzigen Kauf, Alle Meere freischalten. Warum wir den verbrauchbaren Tintenshop abgeschafft haben, wie die Sperre im Code berechnet wird, welche Grenzen wir bei Wiederherstellung und Erstattungen gezogen haben und was wir noch nicht geprüft haben.
+description: Inkisle hält die Meere 1 und 2 kostenlos und öffnet den Rest mit einem einzigen Kauf, Alle Meere freischalten. Wie verbrauchbare Tinte im Verkaufsangebot eingerichtet ist, wie die Sperre im Code berechnet wird, welche Grenzen wir bei Wiederherstellung und Erstattungen gezogen haben und was wir noch nicht geprüft haben.
 slug: two-free-seas-and-one-unlock
 lang: de
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, In-App-Kauf, nicht verbrauchbar, kostenlose Meere, Käufe wie
 image_alt: Zwei offene Inseln, dahinter eine Reihe Inseln mit Vorhängeschlössern, und ein Schlüssel quer über der Reihe.
 ---
 
-Inkisle, unser Strategiespiel über die Eroberung von Inseln für iOS, hält die Meere 1 und 2 kostenlos und öffnet die Meere 3 bis 30 (28 Meere) mit einem einzigen Kauf, Alle Meere freischalten. Den verbrauchbaren Tintenshop haben wir gestrichen und die sechs Trinkgeld-Artikel behalten. Das Store-Produkt selbst ist noch nicht angelegt, deshalb kann heute nichts gekauft werden. Das Spiel ist in Entwicklung und nicht veröffentlicht. Dieser Beitrag nennt weder Preis noch Datum.
+Inkisle, unser Strategiespiel über die Eroberung von Inseln für iOS, hält die Meere 1 und 2 kostenlos und öffnet die Meere 3 bis 30 (28 Meere) mit einem einzigen Kauf, Alle Meere freischalten. Verbrauchbare Tinte (Pakete zu 5 und 15) ist im Verkaufsangebot enthalten, aber nicht veröffentlicht und auf einem Gerät nicht geprüft. Die sechs Trinkgeld-Artikel bleiben. Das Store-Produkt selbst ist noch nicht angelegt, deshalb kann heute nichts gekauft werden. Das Spiel ist in Entwicklung und nicht veröffentlicht. Dieser Beitrag nennt weder Preis noch Datum.
 
 ## Was sich geändert hat
 
-Der erste Entwurf machte alle Stufen kostenlos, und Tinte, die den Schwierigkeitsgrad senkt, wurde in kleinen verbrauchbaren Artikeln verkauft. Am 15. November hat der Verantwortliche das geändert. **Die Meere 1 und 2 sind kostenlos, Alle Meere freischalten ist ein einmaliger nicht verbrauchbarer Kauf, und Tinte wird nicht mehr verkauft.** Tinte gibt es jetzt nur noch über Sterne: eine für je 5 Sterne und 2 für den Sieg über einen Boss. Früher gekaufte Tinte funktioniert weiterhin.
+Der erste Entwurf machte alle Stufen kostenlos, und Tinte, die den Schwierigkeitsgrad senkt, wurde in kleinen verbrauchbaren Artikeln verkauft. Am 15. November hat der Verantwortliche das geändert. **Die Meere 1 und 2 sind kostenlos, Alle Meere freischalten ist ein einmaliger nicht verbrauchbarer Kauf.** Verbrauchbare Tinte (Pakete zu 5 und 15) ist im Verkaufsangebot enthalten, aber nicht veröffentlicht und auf einem Gerät nicht geprüft. Tinte gibt es außerdem über Sterne: eine für je 5 Sterne und 2 für den Sieg über einen Boss. Früher gekaufte Tinte funktioniert weiterhin.
 
 ## Die Sperre wird berechnet
 

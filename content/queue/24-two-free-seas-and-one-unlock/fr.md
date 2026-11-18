@@ -1,6 +1,6 @@
 ---
 title: Deux mers gratuites et un seul déblocage : comment nous avons simplifié le paiement
-description: Inkisle garde les mers 1 et 2 gratuites et ouvre le reste avec un seul achat, Débloquer toutes les mers. Pourquoi nous avons abandonné la boutique d'encre consommable, comment le verrou est calculé dans le code, les limites que nous avons fixées pour la restauration et les remboursements, et ce que nous n'avons pas encore testé.
+description: Inkisle garde les mers 1 et 2 gratuites et ouvre le reste avec un seul achat, Débloquer toutes les mers. Comment l'encre consommable est prévue dans l'offre de vente, comment le verrou est calculé dans le code, les limites que nous avons fixées pour la restauration et les remboursements, et ce que nous n'avons pas encore testé.
 slug: two-free-seas-and-one-unlock
 lang: fr
 translation_of: en
@@ -9,11 +9,11 @@ keywords: Inkisle, achat intégré, non consommable, mers gratuites, restaurer l
 image_alt: Deux îles ouvertes, puis une rangée d'îles cadenassées derrière, et une clé posée en travers de la rangée.
 ---
 
-Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, garde les mers 1 et 2 gratuites et ouvre les mers 3 à 30 (28 mers) avec un seul achat, Débloquer toutes les mers. Nous avons abandonné la boutique d'encre consommable et gardé les six articles de pourboire. Le produit de la boutique n'a pas encore été créé, donc rien ne peut être acheté aujourd'hui. Le jeu est en développement et n'est pas sorti. Cet article n'indique ni prix ni date.
+Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, garde les mers 1 et 2 gratuites et ouvre les mers 3 à 30 (28 mers) avec un seul achat, Débloquer toutes les mers. L'encre consommable (lots de 5 et de 15) figure dans l'offre de vente, mais elle n'est pas publiée et n'a pas été vérifiée sur un appareil. Les six articles de pourboire restent. Le produit de la boutique n'a pas encore été créé, donc rien ne peut être acheté aujourd'hui. Le jeu est en développement et n'est pas sorti. Cet article n'indique ni prix ni date.
 
 ## Ce qui a changé
 
-La première conception rendait toutes les étapes gratuites, et l'encre qui réduit la difficulté était vendue en petits articles consommables. Le 15 novembre, le responsable a modifié cela. **Les mers 1 et 2 sont gratuites, Débloquer toutes les mers est un achat unique non consommable, et l'encre n'est plus vendue.** L'encre s'obtient désormais uniquement avec les étoiles : une pour 5 étoiles, et 2 pour la victoire contre un boss. L'encre achetée auparavant fonctionne toujours.
+La première conception rendait toutes les étapes gratuites, et l'encre qui réduit la difficulté était vendue en petits articles consommables. Le 15 novembre, le responsable a modifié cela. **Les mers 1 et 2 sont gratuites, et Débloquer toutes les mers est un achat unique non consommable.** L'encre consommable (lots de 5 et de 15) figure dans l'offre de vente, mais elle n'est pas publiée et n'a pas été vérifiée sur un appareil. L'encre s'obtient aussi avec les étoiles : une pour 5 étoiles, et 2 pour la victoire contre un boss. L'encre achetée auparavant fonctionne toujours.
 
 ## Le verrou est calculé
 
