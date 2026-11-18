@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, musim 1, 30 babak, akhir, akhir terbuka, desain game, game mobile
 image_alt: Rute laut panjang di peta laut yang berhenti sebelum laut yang tenang, dengan satu lampu kecil menyala di pulau terakhir.
+published: 2026-11-18T19:02+09:00
 ---
 
 Musim 1 Inkisle, game strategi penaklukan pulau kami untuk iOS, berakhir di babak 30 dengan 8 tahap per babak, total 240 tahap. Rencana pertama adalah 100 babak dan 800 tahap; kami menyimpan rencana itu sebagai kandidat untuk musim 2 alih-alih membuangnya. Akhir babak 30 terdiri dari tiga adegan dalam waktu di bawah 30 detik dan tidak pernah mengatakan "the end". Game ini masih dalam pengembangan dan belum dirilis.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, temporada 1, 30 actos, final, final abierto, diseño de juegos, juego móvil
 image_alt: Una larga ruta marítima en una carta que se detiene antes de un mar en calma, con una pequeña luz encendida en la última isla.
+published: 2026-11-18T19:02+09:00
 ---
 
 La temporada 1 de Inkisle, nuestro juego de estrategia de conquista de islas para iOS, termina en el acto 30 con 8 fases por acto, 240 fases en total. El primer plan eran 100 actos y 800 fases; mantuvimos ese plan como candidato para una temporada 2 en lugar de descartarlo. El final del acto 30 son tres escenas de menos de 30 segundos y nunca dice "the end". El juego sigue en desarrollo y no está publicado.

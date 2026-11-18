@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, season 1, 30 acts, ending, open ending, game design, mobile game
 image_alt: A long sea route on a chart that stops before a calm sea, with one small light burning on the last island.
+published: 2026-11-18T19:02+09:00
 ---
 
 Season 1 of Inkisle, our island-conquest strategy game for iOS, ends at act 30 with 8 stages per act, 240 stages in all. The first plan was 100 acts and 800 stages; we kept that plan as a candidate for a season 2 instead of dropping it. The ending of act 30 is three scenes in under 30 seconds and it never says "the end". The game is still in development and not released.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, mùa 1, 30 hồi, kết thúc, kết thúc mở, thiết kế game, game di động
 image_alt: Một tuyến đường biển dài trên bản đồ hải đồ dừng lại trước một vùng biển yên lặng, với một ngọn đèn nhỏ đang sáng trên hòn đảo cuối cùng.
+published: 2026-11-18T19:02+09:00
 ---
 
 Mùa 1 của Inkisle, trò chơi chiến lược chinh phục đảo trên iOS của chúng tôi, kết thúc ở hồi 30 với 8 màn mỗi hồi, tổng cộng 240 màn. Kế hoạch đầu tiên là 100 hồi và 800 màn; chúng tôi giữ kế hoạch đó làm ứng viên cho mùa 2 thay vì bỏ đi. Kết thúc của hồi 30 gồm ba cảnh trong chưa đầy 30 giây và không bao giờ nói "the end". Trò chơi vẫn đang được phát triển và chưa phát hành.

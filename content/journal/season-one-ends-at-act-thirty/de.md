@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Staffel 1, 30 Akte, Ende, offenes Ende, Spieldesign, Mobile Game
 image_alt: Eine lange Seeroute auf einer Seekarte, die vor einem ruhigen Meer endet, mit einem kleinen Licht, das auf der letzten Insel brennt.
+published: 2026-11-18T19:02+09:00
 ---
 
 Staffel 1 von Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, endet mit Akt 30 bei 8 Stufen pro Akt, insgesamt 240 Stufen. Der erste Plan waren 100 Akte und 800 Stufen; wir haben ihn als Kandidaten für eine zweite Staffel behalten, statt ihn fallen zu lassen. Das Ende von Akt 30 besteht aus drei Szenen in weniger als 30 Sekunden und sagt nie „the end“. Das Spiel ist noch in Entwicklung und nicht veröffentlicht.

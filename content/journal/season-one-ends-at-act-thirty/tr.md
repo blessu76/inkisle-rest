@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, birinci sezon, 30 perde, son, açık son, oyun tasarımı, mobil oyun
 image_alt: Sakin bir denizden önce duran, son adadaki küçük bir ışığın yandığı, haritadaki uzun bir deniz rotası.
+published: 2026-11-18T19:02+09:00
 ---
 
 iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle'ın birinci sezonu, perde başına 8 bölümle, toplam 240 bölümle 30. perdede bitiyor. İlk plan 100 perde ve 800 bölümdü; bu planı atmak yerine ikinci sezon için aday olarak tuttuk. 30. perdenin sonu 30 saniyeden kısa üç sahneden oluşuyor ve hiçbir dilde "the end" demiyor. Oyun hâlâ geliştirme aşamasında ve yayımlanmadı.
