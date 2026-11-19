@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, in-app purchase, non-consumable, free seas, restore purchases, mobile game
 image_alt: Two open islands, then a row of islands with padlocks behind them, and one key lying across the row.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, our island-conquest strategy game for iOS, now keeps seas 1 and 2 free and opens seas 3 to 30 (28 seas) with one purchase, Unlock All Seas. Consumable ink is in the sales setup, but it is not released and has not been checked on a device. The six tip items stay as they are. The store products are at the store-registration stage, but they have not been submitted for review or checked on a device, so purchases are not yet confirmed. The game is in development and not released, and this post does not state a price or a date.

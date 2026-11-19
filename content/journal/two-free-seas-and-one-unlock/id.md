@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, pembelian dalam aplikasi, non-konsumsi, laut gratis, pulihkan pembelian, game mobile
 image_alt: Dua pulau terbuka, lalu deretan pulau dengan gembok di belakangnya, dan satu kunci tergeletak melintang di atas deretan itu.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, game strategi penaklukan pulau kami untuk iOS, kini membuat laut 1 dan 2 tetap gratis dan membuka laut 3 sampai 30 (28 laut) dengan satu kali pembelian, Buka Semua Laut. Tinta yang habis pakai ada dalam pengaturan penjualan, tetapi belum dirilis dan belum diuji di perangkat. Enam item tip tetap seperti semula. Produk toko masih dalam tahap pendaftaran, belum diajukan untuk ditinjau, dan belum diuji di perangkat, sehingga pembelian belum dapat dipastikan. Game ini masih dalam pengembangan dan belum dirilis. Postingan ini tidak menyebutkan harga atau tanggal.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, In-App-Kauf, nicht verbrauchbar, kostenlose Meere, Käufe wiederherstellen, Mobile Game
 image_alt: Zwei offene Inseln, dahinter eine Reihe Inseln mit Vorhängeschlössern, und ein Schlüssel quer über der Reihe.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, unser Strategiespiel über die Eroberung von Inseln für iOS, hält die Meere 1 und 2 kostenlos und öffnet die Meere 3 bis 30 (28 Meere) mit einem einzigen Kauf, Alle Meere freischalten. Verbrauchbare Tinte (Pakete zu 5 und 15) ist im Verkaufsangebot enthalten, aber nicht veröffentlicht und auf einem Gerät nicht geprüft. Die sechs Trinkgeld-Artikel bleiben. Die Store-Produkte sind im Registrierungsschritt, aber noch nicht zur Prüfung eingereicht und auf einem Gerät nicht geprüft; ob der Kauf funktioniert, ist daher noch nicht bestätigt. Das Spiel ist in Entwicklung und nicht veröffentlicht. Dieser Beitrag nennt weder Preis noch Datum.

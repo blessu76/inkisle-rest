@@ -62,7 +62,16 @@ if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
     for p in $PUBLISH_PATHS; do case "$f" in "$p"|"$p"/*) ok=1;; esac; done
     [ "$ok" = 1 ] || stray="$stray $f"
   done < <(git diff --name-only origin/main...HEAD)
-  [ -z "$stray" ] || skip "unpushed commits touch paths outside the publish set:${stray:0:200} — not pushing (move them to a feature branch: git branch backup/x; git reset --hard origin/main)"
+  if [ -n "$stray" ]; then
+    # 11-19: such a commit made every tick SKIP and no post went out all day. The commits are kept on a backup branch (nothing is lost), then the publish clone
+    # goes back to origin/main so the day's post still publishes. The notification tells a human to look at the branch.
+    bk="backup/stray-$(date '+%Y%m%d-%H%M%S')"
+    git branch "$bk" HEAD && git reset -q --hard origin/main || skip "unpushed commits touch paths outside the publish set:${stray:0:200} — could not move them to $bk"
+    log "WARN — unpushed commits touched paths outside the publish set (${stray:0:200}); kept on branch $bk, clone reset to origin/main"
+    if [ "${INKISLE_SKIP_NET:-0}" != "1" ] && command -v osascript >/dev/null 2>&1; then
+      osascript -e "display notification \"stray commits moved to $bk (daily publish continues)\" with title \"inkisle publish\"" >/dev/null 2>&1 || true
+    fi
+  fi
 fi
 
 git rebase -q origin/main || {

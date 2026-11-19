@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, compra dentro de la app, no consumible, mares gratis, restaurar compras, juego móvil
 image_alt: Dos islas abiertas, y detrás una fila de islas con candados, y una llave atravesada sobre la fila.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, nuestro juego de estrategia de conquista de islas para iOS, mantiene gratis los mares 1 y 2 y abre los mares 3 a 30 (28 mares) con una sola compra, Desbloquear todos los mares. La tinta consumible está en la configuración de venta, pero no está publicada ni probada en un dispositivo. Los seis artículos de propina siguen igual. Los productos de la tienda están en la fase de registro, pero aún no se han enviado a revisión ni se han probado en un dispositivo, así que la compra todavía no está confirmada. El juego está en desarrollo y no publicado, y esta entrada no indica ningún precio ni fecha.

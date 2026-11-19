@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, uygulama içi satın alma, tüketilmeyen, ücretsiz denizler, satın almaları geri yükle, mobil oyun
 image_alt: İki açık ada, arkasında kilit simgeli bir ada sırası ve bu sıranın üzerine yatay duran bir anahtar.
+published: 2026-11-19T19:17+09:00
 ---
 
 iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle, artık 1. ve 2. denizleri ücretsiz tutuyor ve 3. ila 30. denizleri (28 deniz) tek bir satın almayla açıyor: Tüm Denizlerin Kilidini Aç. Tüketilen mürekkep satış ayarlarında yer alıyor, ancak yayımlanmadı ve gerçek cihazda test edilmedi. Altı bahşiş ürünü olduğu gibi kalıyor. Mağaza ürünleri kayıt aşamasında, ancak inceleme için gönderilmedi ve gerçek cihazda test edilmedi; bu yüzden satın alma henüz doğrulanmış değil. Oyun geliştirme aşamasında ve henüz yayımlanmadı. Bu yazı fiyat ya da tarih belirtmiyor.

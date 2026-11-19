@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, mua trong ứng dụng, không tiêu hao, biển miễn phí, khôi phục giao dịch, game di động
 image_alt: Hai hòn đảo đang mở, phía sau là một dãy đảo có ổ khóa, và một chiếc chìa khóa nằm ngang qua dãy đảo đó.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, nay giữ biển 1 và 2 miễn phí và mở biển 3 đến 30 (28 biển) bằng một lần mua duy nhất, Mở khóa tất cả biển. Mực tiêu hao đã có trong cấu hình bán hàng, nhưng chưa phát hành và chưa kiểm tra trên thiết bị. Sáu vật phẩm tiền boa giữ nguyên. Sản phẩm trên cửa hàng đang ở bước đăng ký, nhưng chưa gửi xét duyệt và chưa kiểm tra trên thiết bị thật, nên việc mua hàng chưa được xác nhận. Trò chơi đang được phát triển và chưa phát hành. Bài viết này không nêu giá cả hay ngày phát hành.

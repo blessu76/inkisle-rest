@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, achat intégré, non consommable, mers gratuites, restaurer les achats, jeu mobile
 image_alt: Deux îles ouvertes, puis une rangée d'îles cadenassées derrière, et une clé posée en travers de la rangée.
+published: 2026-11-19T19:17+09:00
 ---
 
 Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, garde les mers 1 et 2 gratuites et ouvre les mers 3 à 30 (28 mers) avec un seul achat, Débloquer toutes les mers. L'encre consommable (lots de 5 et de 15) figure dans l'offre de vente, mais elle n'est pas publiée et n'a pas été vérifiée sur un appareil. Les six articles de pourboire restent. Les produits de la boutique en sont à l'étape d'enregistrement, mais ils n'ont pas encore été soumis à la révision ni vérifiés sur un appareil ; l'achat n'est donc pas encore confirmé. Le jeu est en développement et n'est pas sorti. Cet article n'indique ni prix ni date.

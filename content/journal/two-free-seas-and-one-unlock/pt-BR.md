@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, compra no aplicativo, não consumível, mares grátis, restaurar compras, jogo mobile
 image_alt: Duas ilhas abertas, depois uma fileira de ilhas com cadeados atrás, e uma chave atravessada sobre a fileira.
+published: 2026-11-19T19:17+09:00
 ---
 
 O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, mantém os mares 1 e 2 grátis e libera os mares 3 a 30 (28 mares) com uma única compra, Liberar todos os mares. A tinta consumível está na configuração de venda, mas não foi lançada nem testada em aparelho. Os seis itens de gorjeta continuam como estão. Os produtos da loja estão na etapa de cadastro, mas ainda não foram enviados para análise nem testados em aparelho, então a compra ainda não está confirmada. O jogo está em desenvolvimento e não foi lançado, e esta publicação não informa preço nem data.

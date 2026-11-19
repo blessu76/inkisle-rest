@@ -288,31 +288,31 @@ class PublishDaily(unittest.TestCase):
         before = self.origin_head()
         r = self.run_script()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertIn("SKIP", r.stdout)
+        self.assertIn("WARN", r.stdout)
         self.assertIn("wip.txt", r.stdout)
-        self.assertEqual(self.origin_head(), before)
-        self.assertTrue((self.clone / "content/queue/01-next-one").is_dir())
+        # 11-19: the stray commit is kept on a backup branch and the day's post still goes out, without the wip file
+        self.assertIn("backup/stray-", git(self.clone, "branch", "--list", "backup/stray-*").stdout)
+        self.assertNotEqual(self.origin_head(), before)
+        self.assertNotIn("wip.txt", git(self.clone, "ls-tree", "-r", "--name-only", "origin/main").stdout)
+        self.assertFalse((self.clone / "content/queue/01-next-one").is_dir())
 
     def test_diverged_unpushed_commit_is_skipped_before_any_rebase(self):
         # 10-31: a release-notes commit made in the publish clone collided with origin; it must be skipped untouched, never rebased
-        (self.clone / "releases").mkdir(exist_ok=True)
-        (self.clone / "releases" / "index.html").write_text("local")
+        (self.clone / "notes.txt").write_text("local")
         git(self.clone, "add", "-A")
         git(self.clone, "commit", "-qm", "local notes")
         other = self.tmp / "other"
         git(self.tmp, "clone", "-q", str(self.origin), str(other))
-        (other / "releases").mkdir(exist_ok=True)
-        (other / "releases" / "index.html").write_text("remote")
+        (other / "notes.txt").write_text("remote")
         git(other, "add", "-A")
         git(other, "commit", "-qm", "remote notes")
         git(other, "push", "-q", "origin", "main")
         head, before = self.head(), self.origin_head()
         r = self.run_script()
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
-        self.assertIn("SKIP", r.stdout)
-        self.assertIn("releases/index.html", r.stdout)
-        self.assertEqual(self.head(), head)
-        self.assertEqual(self.origin_head(), before)
+        self.assertIn("WARN", r.stdout)
+        self.assertIn("notes.txt", r.stdout)
+        self.assertIn(head, git(self.clone, "branch", "--list", "backup/stray-*", "--format=%(objectname)").stdout)  # local commit kept, never rebased
         self.assertFalse((self.clone / ".git" / "rebase-merge").exists())
 
     def test_failing_rollback_is_logged_loudly_and_still_releases_the_lock(self):
