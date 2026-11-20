@@ -8,7 +8,7 @@ Inkisle (written InkIsle in the logo, read "ink-ISLE") is a strategy game about 
 
 - Every island produces troops over time. You own some islands, the other side owns some, and neutral islands hold a fixed number.
 - Drag from one of your islands to another island to send a fleet. A bar at the bottom lets you choose how much to send: 25, 50, 75 or 100%.
-- When a fleet arrives with more troops than the island holds, it captures the island and the island fills with your color. Fortresses defend at 1.5 times their number.
+- When a fleet arrives with more troops than the island holds, it captures the island and the island fills with your color. Forts defend at 1.5 times their number.
 - Stages take about 3 to 5 minutes, are played upright with one hand, and need no network.
 
 ## What is decided, and what is not

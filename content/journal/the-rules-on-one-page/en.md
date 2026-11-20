@@ -12,7 +12,7 @@ Good strategy games can be explained in a minute. This is our attempt at Inkisle
 
 ## Islands make troops
 
-The numbers below are for the normal island. There are four kinds of island in all, and the starting values of the other three are: a **small island** makes 1 troop every 1.6 seconds with a cap of 25; a **big island** makes 1 troop every 0.6 seconds with a cap of 80; a **fortress** makes 1 troop every 2 seconds with a cap of 60 and a defense multiplier of 1.5.
+The numbers below are for the normal island. There are four kinds of island in all, and the starting values of the other three are: a **small island** makes 1 troop every 1.6 seconds with a cap of 25; a **big island** makes 1 troop every 0.6 seconds with a cap of 80; a **fort** makes 1 troop every 2 seconds with a cap of 60 and a defense multiplier of 1.5.
 
 - Each island you own adds **1 troop per second** (a "tick" is 100 ms, so one troop every 10 ticks).
 - There is a **cap** of 45. Past the cap an island stops producing, and extra troops from reinforcements drain back to the cap at 1 per second. That stops you from piling everything on one island and waiting.
@@ -28,10 +28,10 @@ A fleet flies in a straight line at **2.5 map units per second**. A neighboring 
 ## Capture, calculated at arrival
 
 - Arriving at your own island adds the troops.
-- Arriving at an enemy or neutral island, you need more than **defense times the multiplier**. The multiplier is 1.0 normally and **1.5 for a fortress**.
+- Arriving at an enemy or neutral island, you need more than **defense times the multiplier**. The multiplier is 1.0 normally and **1.5 for a fort**.
 - Attack above the requirement: you capture, and the new defense is the leftover. Equal: the defender holds with 0 (ties go to the defender). Below: the defender loses a share.
 
-Two examples. A fleet of 18 arrives at a fortress of 10. The requirement is ceil(10 × 1.5) = 15, so you capture it with 3 left. A fleet of 12 arriving at the same fortress leaves it with 2.
+Two examples. A fleet of 18 arrives at a fort of 10. The requirement is ceil(10 × 1.5) = 15, so you capture it with 3 left. A fleet of 12 arriving at the same fort leaves it with 2.
 
 If several fleets arrive in the same tick, they resolve one by one in the order they left.
 
@@ -54,7 +54,7 @@ A normal island adds 1 troop per second up to a cap of 45. Neutral islands do no
 
 ### How is a capture decided?
 
-A fleet must exceed the island's defense times its multiplier, 1.0 normally and 1.5 for a fortress. Ties go to the defender.
+A fleet must exceed the island's defense times its multiplier, 1.0 normally and 1.5 for a fort. Ties go to the defender.
 
 ### How does a match end?
 

@@ -33,7 +33,7 @@ The ★3 goal is different in almost every stage. There are 13 kinds so far, for
 - win without ever sending 100%,
 - take every empty island,
 - never lose a single island,
-- capture a fortress in one attack,
+- capture a fort in one attack,
 - hold off a simultaneous enemy attack once,
 - do not attack the enemy's home island before a given time.
 

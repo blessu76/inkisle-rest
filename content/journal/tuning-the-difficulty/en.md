@@ -25,14 +25,14 @@ Neither is a person. They tell us direction, not difficulty as a human feels it.
 | 1-5 | Over in 18 seconds | Enemy home 20 → 26, one neutral island given to the enemy | 100%, now 30 s |
 | 1-8 boss | Practically unbeatable | Enemy's second island made smaller, flag island 24 → 26, one small island handed to the player | **0% → 53%** |
 | 2-2 | Over in 23 seconds | Player home 15 → 20, one island given to the enemy | 100%, now 38 s |
-| 2-8 boss | Too hard | Flag island 24 → 28, one enemy fortress made a neutral fortress of 14 | **10% → 38%** |
+| 2-8 boss | Too hard | Flag island 24 → 28, one enemy fort made a neutral fort of 14 | **10% → 38%** |
 
 We left the other 11 stages as they were. The target was a boss stage that a casual player beats after about one retry, so 40 to 60% for the simple bot.
 
 ## Side effects we noticed
 
 - Across a 20-seed set, the simple bot's overall win rate went from 84% to 91% and the skilled bot's from 78% to 82%.
-- Stage 2-2 got *harder* for the skilled bot, 100% down to 65%. We think the bot has a habit of emptying fortresses, but that is **[unverified]**.
+- Stage 2-2 got *harder* for the skilled bot, 100% down to 65%. We think the bot has a habit of emptying forts, but that is **[unverified]**.
 - Stages 2-4 and 2-7 show low win rates for the skilled bot, 40% and 38%. In a crowded fight, gathering may hurt. Also **[unverified]**.
 - The two-star time limits look too generous, since bots meet them nearly always. We will tighten them after we see human times.
 
