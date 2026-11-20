@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, notes de version, localisation, multilingue, tests, jeu mobile
 image_alt: Une feuille de papier qui remonte du bas d'un écran, avec douze petits onglets de langue alignés au-dessus.
+published: 2026-11-20T17:45+09:00
 ---
 
 Les notes de version d'Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, sont une feuille dans l'application, ouverte depuis les Réglages, et non une page web. Les notes de chaque build sont rédigées en 12 langues, et un script de contrôle vérifie le nombre d'éléments et leur longueur. Le contrôle du build 34 a donné 0 erreur et 0 avertissement. Le jeu est encore en développement et n'est pas sorti.

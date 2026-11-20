@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, release notes, localization, multilingual, testing, mobile game
 image_alt: One sheet of paper rising from the bottom of a screen, with twelve small language tabs in a row above it.
+published: 2026-11-20T17:45+09:00
 ---
 
 The release notes of Inkisle, our island-conquest strategy game for iOS, are an in-app sheet opened from Settings, not a web page. Each build's notes are written in 12 languages, and a check script verifies the item count and length. The check for build 34 reported 0 errors and 0 warnings. The game is still in development and not released.

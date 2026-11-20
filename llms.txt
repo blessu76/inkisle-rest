@@ -22,6 +22,7 @@ Inkisle is a single-player, offline island-conquest strategy game by ipe() (http
 
 ## Journal posts (English)
 
+- [Release notes inside the app: a 12-language sheet and a length check](https://inkisle.ipe.rest/journal/release-notes-inside-the-app/) — 2026-11-20 — Inkisle's release notes are a sheet inside Settings, not a web page. How each build's notes are written in 12 languages, the checks on item count and length, and the test bug that showed an empty sheet.
 - [Two free seas and one unlock: how we simplified payment](https://inkisle.ipe.rest/journal/two-free-seas-and-one-unlock/) — 2026-11-19 — Inkisle keeps seas 1 and 2 free and opens the rest with one purchase, Unlock All Seas. How consumable ink is set up, how the lock is computed in code, the lines we drew on restore and refunds, and what we have not tested.
 - [From 100 acts to 30, and an ending that stays open: the end of season 1](https://inkisle.ipe.rest/journal/season-one-ends-at-act-thirty/) — 2026-11-18 — The first plan was 100 acts and 800 stages. Why we closed season 1 at 30 acts and 240 stages, how we kept the 100-act plan as a candidate instead of dropping it, and how the ending with no closing word was made.
 - [Bots as playtesters: a warning that rarely cries wolf](https://inkisle.ipe.rest/journal/a-warning-that-rarely-cries-wolf/) — 2026-11-17 — A crisis warning should only appear when you are really about to lose. We replayed thousands of bot games to measure false alarms, and the same run showed a star goal almost nobody wins.

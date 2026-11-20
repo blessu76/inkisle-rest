@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, catatan rilis, lokalisasi, multibahasa, pengujian, game mobile
 image_alt: Selembar kertas naik dari bagian bawah layar, dengan dua belas tab bahasa kecil berderet di atasnya.
+published: 2026-11-20T17:45+09:00
 ---
 
 Catatan rilis Inkisle, game strategi penaklukan pulau kami untuk iOS, berupa lembar di dalam aplikasi yang dibuka dari Pengaturan, bukan halaman web. Catatan setiap build ditulis dalam 12 bahasa, dan sebuah skrip pemeriksa memastikan jumlah item dan panjangnya sesuai. Pemeriksaan untuk build 34 menghasilkan 0 galat dan 0 peringatan. Game ini masih dalam pengembangan dan belum dirilis.

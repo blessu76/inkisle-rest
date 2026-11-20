@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, ghi chú phát hành, bản địa hóa, đa ngôn ngữ, kiểm thử, game di động
 image_alt: Một tờ giấy trồi lên từ đáy màn hình, phía trên là mười hai thẻ ngôn ngữ nhỏ xếp thành hàng.
+published: 2026-11-20T17:45+09:00
 ---
 
 Ghi chú phát hành của Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, là một bảng trong ứng dụng, mở từ Cài đặt, không phải trang web. Ghi chú của mỗi bản dựng được viết bằng 12 ngôn ngữ, và một script kiểm tra xác nhận số lượng mục và độ dài. Kiểm tra cho bản dựng 34 báo 0 lỗi và 0 cảnh báo. Trò chơi vẫn đang phát triển và chưa phát hành.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Versionshinweise, Lokalisierung, mehrsprachig, Tests, Mobile Game
 image_alt: Ein Blatt Papier, das vom unteren Bildschirmrand nach oben steigt, darüber eine Reihe von zwölf kleinen Sprachreitern.
+published: 2026-11-20T17:45+09:00
 ---
 
 Die Versionshinweise von Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, sind ein Blatt in der App, das über die Einstellungen geöffnet wird, keine Webseite. Die Hinweise jedes Builds werden in 12 Sprachen geschrieben, und ein Prüfskript kontrolliert die Anzahl der Einträge und ihre Länge. Die Prüfung von Build 34 meldete 0 Fehler und 0 Warnungen. Das Spiel ist noch in Entwicklung und nicht veröffentlicht.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, sürüm notları, yerelleştirme, çok dilli, test, mobil oyun
 image_alt: Ekranın alt kısmından yukarı doğru yükselen bir kağıt, üzerinde bir sıra halinde on iki küçük dil sekmesi.
+published: 2026-11-20T17:45+09:00
 ---
 
 iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle'ın sürüm notları, Ayarlar'dan açılan bir uygulama içi sayfadır; bir web sayfası değildir. Her derlemenin notları 12 dilde yazılır ve bir kontrol betiği öğe sayısını ve uzunluklarını doğrular. Derleme 34'ün kontrolü 0 hata ve 0 uyarı verdi. Oyun hâlâ geliştirme aşamasında ve henüz yayımlanmadı.
