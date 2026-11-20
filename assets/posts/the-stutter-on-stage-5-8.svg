@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-hidden="true">
+<defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE3DC"/><stop offset="1" stop-color="#8CCBC7"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#s)"/>
+<path d="M0 72 Q160 58 320 72 T640 78" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="2" stroke-dasharray="3 12" stroke-linecap="round"/>
+<path d="M60 290 L580 290" stroke="#F3EBDD" stroke-width="4" stroke-linecap="round"/>
+<g fill="#9A4F95">
+<rect x="90" y="110" width="34" height="180" rx="6" opacity=".9"/><rect x="140" y="150" width="34" height="140" rx="6" opacity=".9"/><rect x="190" y="90" width="34" height="200" rx="6" opacity=".9"/><rect x="240" y="140" width="34" height="150" rx="6" opacity=".9"/>
+</g>
+<path d="M300 200 L340 200 M330 188 L342 200 L330 212" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#F2685A">
+<rect x="370" y="236" width="34" height="54" rx="6"/><rect x="420" y="246" width="34" height="44" rx="6"/><rect x="470" y="228" width="34" height="62" rx="6"/><rect x="520" y="244" width="34" height="46" rx="6"/>
+</g>
+<path d="M60 170 L580 170" stroke="#fff" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round" opacity=".7"/>
+</svg>

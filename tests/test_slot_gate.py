@@ -88,6 +88,26 @@ class SlotGate(unittest.TestCase):
         self.run_gate("2026-11-13 18:45")
         self.assertEqual(self.n_calls(), 1)
 
+    def test_no_publish_at_1801_when_slot_already_published(self):
+        """5cc3111 incident guard: today's slot (e.g. 17:19) already published -> 18:01 must not publish again."""
+        self.write(date="2026-11-20", time="17:19", published=True)
+        self.run_gate("2026-11-20 18:01")
+        self.assertEqual(self.n_calls(), 0)
+
+    def test_no_publish_at_1917_even_if_unpublished(self):
+        """Past the last tick (18:45): never publishes, state stays unpublished, uses a marker command (no real push)."""
+        self.write(date="2026-11-20", time="16:58", published=False)
+        r = self.run_gate("2026-11-20 19:17")
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(self.n_calls(), 0)
+        self.assertFalse(self.state()["published"])
+
+    def test_new_day_slot_is_always_before_1800(self):
+        for i in range(30):
+            self.write(date="2026-11-19", time="16:58", published=True)
+            self.run_gate("2026-11-20 12:00")
+            self.assertLess(self.state()["time"], "18:00")
+
     def test_plist_template_has_the_afternoon_ticks(self):
         text = (REPO / "ops" / "rest.ipe.inkisle-publish.plist.template").read_text()
         self.assertIn("ops/slot_gate.sh", text)
