@@ -86,8 +86,9 @@ class Ga4(unittest.TestCase):
             raise AssertionError("GA snippet with hostname guard not found")
         return m.group(1)
 
-    def run_snippet(self, snippet, hostname):
-        payload = json.dumps({"code": snippet, "hostname": hostname})
+    def run_snippet(self, snippet, hostname, clicks=()):
+        # clicks: [{"type": "click"|"auxclick", "button": int, "link": {"href", "hostname"} | None}] dispatched after load
+        payload = json.dumps({"code": snippet, "hostname": hostname, "clicks": list(clicks)})
         proc = subprocess.run(["node", "-e", NODE_HARNESS], input=payload, capture_output=True, text=True, check=True)
         return json.loads(proc.stdout)
 
@@ -113,20 +114,63 @@ class Ga4(unittest.TestCase):
         self.assertEqual(out["dataLayer"][1][1], GA_ID)
         self.assertEqual(out["clickListeners"], ["click", "auxclick"])
 
+    @staticmethod
+    def outbound(out):
+        return [call for call in out["dataLayer"] if call[0] == "event" and call[1] == "outbound_click"]
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_runtime_outbound_click_on_external_link_is_sent(self):
+        snippet = self.inline_snippet(self.pages["index.html"])
+        link = {"href": "https://example.com/page", "hostname": "example.com"}
+        out = self.run_snippet(snippet, "inkisle.ipe.rest", clicks=[
+            {"type": "click", "button": 0, "link": link},
+            {"type": "auxclick", "button": 1, "link": link},
+        ])
+        events = self.outbound(out)
+        self.assertEqual(len(events), 2)
+        for call in events:
+            with self.subTest(call=call):
+                self.assertEqual(call[2], {"link_url": "https://example.com/page", "link_domain": "example.com", "transport_type": "beacon"})
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_runtime_outbound_click_ignores_same_site_and_non_link_targets(self):
+        snippet = self.inline_snippet(self.pages["index.html"])
+        out = self.run_snippet(snippet, "inkisle.ipe.rest", clicks=[
+            {"type": "click", "button": 0, "link": {"href": "https://inkisle.ipe.rest/ko/", "hostname": "inkisle.ipe.rest"}},
+            {"type": "click", "button": 0, "link": None},
+            {"type": "auxclick", "button": 2, "link": {"href": "https://example.com/", "hostname": "example.com"}},
+        ])
+        self.assertEqual(self.outbound(out), [])
+        self.assertEqual([call[0] for call in out["dataLayer"]], ["js", "config"])
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_runtime_local_hosts_send_no_outbound_click(self):
+        snippet = self.inline_snippet(self.pages["index.html"])
+        link = {"href": "https://example.com/page", "hostname": "example.com"}
+        for host in ("localhost", "127.0.0.1", "[::1]", "0.0.0.0", ""):
+            with self.subTest(host=host):
+                out = self.run_snippet(snippet, host, clicks=[{"type": "click", "button": 0, "link": link}])
+                self.assertEqual(out["dataLayer"], [])
+
 
 NODE_HARNESS = r"""
 let input = '';
 process.stdin.on('data', d => input += d).on('end', () => {
-  const { code, hostname } = JSON.parse(input);
+  const { code, hostname, clicks = [] } = JSON.parse(input);
   const appended = [], listeners = {};
   global.location = { hostname };
   global.document = {
     head: { appendChild: e => appended.push(e) },
     createElement: tag => ({ tag }),
-    addEventListener: (type) => { listeners[type] = true; },
+    addEventListener: (type, fn) => { listeners[type] = fn; },
   };
   global.window = global;
   new Function(code)();
+  for (const c of clicks) {
+    const listener = listeners[c.type];
+    if (!listener) continue;
+    listener({ type: c.type, button: c.button, target: { closest: () => c.link ? { href: c.link.href, hostname: c.link.hostname } : null } });
+  }
   const dataLayer = (global.dataLayer || []).map(a => Array.from(a).map(v => (v instanceof Date ? 'date' : v)));
   console.log(JSON.stringify({
     appended: appended.map(e => ({ tag: e.tag, async: e.async, src: e.src })),
