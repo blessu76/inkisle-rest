@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Random afternoon publish slot gate (KST). Called every 15 min by launchd (12:00-18:45); decides whether ops/publish_daily.sh runs now.
+"""Random afternoon publish slot gate (KST). Called every 15 min by launchd (12:00-18:45 ticks); decides whether ops/publish_daily.sh runs now.
 
 State file (INKISLE_SLOT_FILE, default ~/.ipe/queue/inkisle/slot.json):
   {"date": "YYYY-MM-DD", "time": "HH:MM", "prev_date": ..., "prev_time": ..., "published": true|false}
-A new day draws a new time in 12:00-17:59 whose hour differs from yesterday's hour. Test hooks: INKISLE_NOW="YYYY-MM-DD HH:MM",
+A new day draws a new time in 12:00-17:29 whose hour differs from yesterday's hour (the 17:xx hour only uses minutes 0-29,
+so at least two 15-min ticks remain before 18:00 for a retry). HARD CUTOFF: from 18:00 on (hm >= "18:00") nothing is ever published that day. Test hooks: INKISLE_NOW="YYYY-MM-DD HH:MM",
 INKISLE_PUBLISH_CMD (default: bash <ops>/publish_daily.sh).
 """
 import datetime as dt
@@ -16,7 +17,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-LAST_TICK = "18:45"          # after this the gate does nothing (a failed day is skipped, not retried at night)
+CUTOFF = "18:00"             # hard cutoff: at/after this the gate never publishes (a missed day is skipped, not retried in the evening)
+LAST_SLOT_MINUTE_17 = 29     # 17:xx draws only minutes 0-29 so >= 2 ticks (e.g. 17:30, 17:45) fit before the cutoff
 DONE_RE = re.compile(r"publish_daily: (pushed \S+|nothing to publish)")
 
 
@@ -30,7 +32,9 @@ def now_kst():
 def draw(prev_time, rng=random):
     prev_hour = int(prev_time.split(":")[0]) if prev_time else None
     hours = [h for h in range(12, 18) if h != prev_hour]
-    return "%02d:%02d" % (rng.choice(hours), rng.randrange(60))
+    hour = rng.choice(hours)
+    minute = rng.randrange(LAST_SLOT_MINUTE_17 + 1 if hour == 17 else 60)
+    return "%02d:%02d" % (hour, minute)
 
 
 def load(path):
@@ -64,8 +68,8 @@ def main():
         return 0
     if hm < st["time"]:
         return 0
-    if hm > LAST_TICK:
-        log("past %s — giving up for today" % LAST_TICK, now)
+    if hm >= CUTOFF:
+        log("at/after %s — hard cutoff, not publishing today" % CUTOFF, now)
         return 0
     cmd = os.environ.get("INKISLE_PUBLISH_CMD") or "bash %s/publish_daily.sh" % HERE
     r = subprocess.run(cmd, shell=True, capture_output=True, text=True)

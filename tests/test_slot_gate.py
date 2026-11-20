@@ -81,12 +81,38 @@ class SlotGate(unittest.TestCase):
         self.run_gate("2026-11-13 13:30", publish="echo 'publish_daily: nothing to publish'")
         self.assertTrue(self.state()["published"])
 
-    def test_gives_up_after_1845(self):
+    def test_hard_cutoff_at_1800(self):
         self.write(date="2026-11-13", time="13:00", published=False)
-        self.run_gate("2026-11-13 18:46")
+        self.run_gate("2026-11-13 18:00")
         self.assertEqual(self.n_calls(), 0)
-        self.run_gate("2026-11-13 18:45")
+        self.run_gate("2026-11-13 18:01")
+        self.assertEqual(self.n_calls(), 0)
+        self.assertFalse(self.state()["published"])
+        self.run_gate("2026-11-13 17:59")
         self.assertEqual(self.n_calls(), 1)
+        self.assertTrue(self.state()["published"])
+
+    def test_unpublished_1759_publishes(self):
+        self.write(date="2026-11-13", time="17:29", published=False)
+        self.run_gate("2026-11-13 17:59")
+        self.assertEqual(self.n_calls(), 1)
+
+    def test_draw_leaves_two_ticks_before_1800(self):
+        import random, sys
+        sys.path.insert(0, str(REPO / "ops"))
+        import slot_gate
+        rng = random.Random(7)
+        for i in range(2000):
+            prev = "%02d:%02d" % (12 + i % 6, i % 60)
+            t = slot_gate.draw(prev, rng)
+            h, m = int(t[:2]), int(t[3:])
+            self.assertTrue(12 <= h <= 17 and 0 <= m <= 59, t)
+            self.assertNotEqual(h, int(prev[:2]))
+            first = ((h * 60 + m + 14) // 15) * 15          # first 15-min tick at/after the slot
+            ticks = [x for x in range(first, 18 * 60, 15)]
+            self.assertGreaterEqual(len(ticks), 2, t)
+            if h == 17:
+                self.assertLessEqual(m, 29)
 
     def test_no_publish_at_1801_when_slot_already_published(self):
         """5cc3111 incident guard: today's slot (e.g. 17:19) already published -> 18:01 must not publish again."""
@@ -95,7 +121,7 @@ class SlotGate(unittest.TestCase):
         self.assertEqual(self.n_calls(), 0)
 
     def test_no_publish_at_1917_even_if_unpublished(self):
-        """Past the last tick (18:45): never publishes, state stays unpublished, uses a marker command (no real push)."""
+        """Past the 18:00 cutoff: never publishes, state stays unpublished, uses a marker command (no real push)."""
         self.write(date="2026-11-20", time="16:58", published=False)
         r = self.run_gate("2026-11-20 19:17")
         self.assertEqual(r.returncode, 0, r.stderr)
