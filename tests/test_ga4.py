@@ -1,6 +1,8 @@
 """GA4: one snippet per generated page, and the privacy text in all 12 languages that must match it."""
+import json
 import re
 import shutil
+import subprocess
 import unittest
 
 from helpers import REPO, build, bs, make_site
@@ -64,6 +66,75 @@ class Ga4(unittest.TestCase):
 
     def test_llms_txt_says_so(self):
         self.assertIn("Google Analytics", (REPO / "llms.txt").read_text(encoding="utf-8"))
+
+    def test_hostname_guard_comes_before_loader_and_config_in_every_page(self):
+        # structure, not just presence: the local-host return must precede the loader element and gtag('config') on every page
+        for rel, text in self.pages.items():
+            with self.subTest(rel):
+                snip = self.inline_snippet(text)
+                guard = snip.index("location.hostname")
+                loader = snip.index("createElement('script')")
+                config = snip.index("gtag('config',GA_ID)")
+                self.assertLess(guard, loader)
+                self.assertLess(loader, config)
+                self.assertLess(snip.index("return;"), loader)
+
+    @staticmethod
+    def inline_snippet(page_text):
+        m = re.search(r"<script>(\(function\(\)\{var h=location\.hostname;.*?)</script>", page_text, re.S)
+        if not m:
+            raise AssertionError("GA snippet with hostname guard not found")
+        return m.group(1)
+
+    def run_snippet(self, snippet, hostname):
+        payload = json.dumps({"code": snippet, "hostname": hostname})
+        proc = subprocess.run(["node", "-e", NODE_HARNESS], input=payload, capture_output=True, text=True, check=True)
+        return json.loads(proc.stdout)
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_runtime_local_hosts_send_nothing(self):
+        snippet = self.inline_snippet(self.pages["index.html"])
+        for host in ("localhost", "127.0.0.1", "[::1]", "0.0.0.0", ""):
+            with self.subTest(host=host):
+                out = self.run_snippet(snippet, host)
+                self.assertEqual(out["appended"], [])
+                self.assertEqual(out["dataLayer"], [])
+                self.assertEqual(out["clickListeners"], [])
+
+    @unittest.skipUnless(shutil.which("node"), "node not installed")
+    def test_runtime_live_host_loads_loader_then_configs(self):
+        snippet = self.inline_snippet(self.pages["index.html"])
+        out = self.run_snippet(snippet, "inkisle.ipe.rest")
+        self.assertEqual(len(out["appended"]), 1)
+        self.assertEqual(out["appended"][0]["src"], "https://www.googletagmanager.com/gtag/js?id=" + GA_ID)
+        self.assertTrue(out["appended"][0]["async"])
+        names = [call[0] for call in out["dataLayer"]]
+        self.assertEqual(names[:2], ["js", "config"])
+        self.assertEqual(out["dataLayer"][1][1], GA_ID)
+        self.assertEqual(out["clickListeners"], ["click", "auxclick"])
+
+
+NODE_HARNESS = r"""
+let input = '';
+process.stdin.on('data', d => input += d).on('end', () => {
+  const { code, hostname } = JSON.parse(input);
+  const appended = [], listeners = {};
+  global.location = { hostname };
+  global.document = {
+    head: { appendChild: e => appended.push(e) },
+    createElement: tag => ({ tag }),
+    addEventListener: (type) => { listeners[type] = true; },
+  };
+  global.window = global;
+  new Function(code)();
+  const dataLayer = (global.dataLayer || []).map(a => Array.from(a).map(v => (v instanceof Date ? 'date' : v)));
+  console.log(JSON.stringify({
+    appended: appended.map(e => ({ tag: e.tag, async: e.async, src: e.src })),
+    dataLayer,
+    clickListeners: Object.keys(listeners),
+  }));
+});
+"""
 
 
 if __name__ == "__main__":
