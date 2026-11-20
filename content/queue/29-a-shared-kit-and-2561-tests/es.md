@@ -28,7 +28,7 @@ Así que solo la conexión de Game Center en iOS pasó al kit, y los ID de table
 
 ## Las pruebas de tiempo vacilaron
 
-Dos veces en esta puerta, una prueba que mide tiempo vaciló bajo carga. Una prueba de presupuesto de fotogramas que dibuja 800 carreteras falló una vez cuando las pruebas corrían en paralelo, y durante el trabajo de iCloud falló una vez una prueba de presupuesto de rendimiento. Ambas pasaron al ejecutarlas solas o al repetir la suite completa. Lo interpretamos como carga, no como nuestro cambio [sin verificar; no rastreamos la causa]. No relajamos los presupuestos.
+Dos veces en esta puerta, una prueba que mide tiempo vaciló bajo carga. Una prueba de presupuesto de fotogramas que dibuja 800 carreteras falló una vez cuando las pruebas corrían en paralelo, y durante el trabajo de iCloud falló una vez una prueba de presupuesto de rendimiento. Ambas pasaron al ejecutarlas solas o al repetir la suite completa. Lo interpretamos como carga, no como nuestro cambio, aunque no rastreamos la causa. No relajamos los presupuestos.
 
 ## 19 de noviembre: dos archivos cambiados
 
@@ -36,9 +36,9 @@ La versión 0.15.3 deja la API pública como estaba; hace que un recuento en la 
 
 ## Lo que no hemos comprobado
 
-- **El inicio de sesión de Game Center, el envío de puntuaciones, la pantalla de clasificación y un viaje de ida y vuelta de iCloud no se han comprobado en un dispositivo real [sin verificar].** Lo veremos en TestFlight.
-- Las vistas de 375 px y 320 px se cubrieron con pruebas de widgets a 320×568 en lugar de verlas directamente [sin verificar].
-- No encontramos la causa raíz de las pruebas que vacilaron bajo carga [sin verificar].
+- **El inicio de sesión de Game Center, el envío de puntuaciones, la pantalla de clasificación y un viaje de ida y vuelta de iCloud no se han comprobado en un dispositivo real.** Lo veremos en TestFlight.
+- Las vistas de 375 px y 320 px se cubrieron con pruebas de widgets a 320×568 en lugar de verlas directamente.
+- No encontramos la causa raíz de las pruebas que vacilaron bajo carga.
 - Las cifras de aquí son los resultados de la puerta de ese día, y el número de pruebas cambiará más adelante.
 
 ## Preguntas frecuentes

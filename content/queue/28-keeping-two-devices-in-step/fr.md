@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, synchronisation entre appareils, données de sauvegar
 image_alt: Deux écrans de tailles différentes reliés par un fil mince, avec les îles des deux cartes peintes des mêmes couleurs.
 ---
 
-Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, la progression, l'encre et les réglages clés (langue et pseudo) sont alignés entre les appareils d'un même identifiant Apple grâce au stockage clé-valeur iCloud du joueur lui-même. Cette synchronisation existait déjà. Ce que nous avons fait le 16 novembre n'a pas été de la construire, mais de déplacer vers un kit d'application partagé un pont que nous avions écrit nous-mêmes, et la plus grande crainte était de ne perdre aucune valeur sauvegardée. Nous n'avons pas encore vérifié un aller-retour entre un vrai iPhone et un iPad [non vérifié]. Le jeu est en développement et n'est pas sorti.
+Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, la progression, l'encre et les réglages clés (langue et pseudo) sont alignés entre les appareils d'un même identifiant Apple grâce au stockage clé-valeur iCloud du joueur lui-même. Cette synchronisation existait déjà. Ce que nous avons fait le 16 novembre n'a pas été de la construire, mais de déplacer vers un kit d'application partagé un pont que nous avions écrit nous-mêmes, et la plus grande crainte était de ne perdre aucune valeur sauvegardée. Nous n'avons pas encore vérifié un aller-retour entre un vrai iPhone et un iPad. Le jeu est en développement et n'est pas sorti.
 
 ## Ce que nous avons déplacé
 
@@ -38,7 +38,7 @@ Quand deux appareils ont une progression différente, nous avons gardé la fusio
 
 Un article précédent disait que le déblocage ne passe pas sur un autre appareil. Ce travail l'a changé. Le bloc de synchronisation porte désormais une marque indiquant que Débloquer toutes les mers a été acheté, et un autre appareil qui la lit s'ouvre aussi. La marque **ne fait que croître.** Un bloc qui n'en contient pas ne la retire pas ; nous l'envoyons de nouveau.
 
-C'est un changement de conception faisant suite à la consigne de « synchronisation obligatoire » du responsable, et il a une limite : une fois la marque synchronisée, un remboursement ne la retire pas sur les autres appareils. Le traitement des remboursements reste une décision de politique. Le parcours d'achat lui-même n'a pas non plus été exécuté sur un vrai appareil [non vérifié].
+C'est un changement de conception faisant suite à la consigne de « synchronisation obligatoire » du responsable, et il a une limite : une fois la marque synchronisée, un remboursement ne la retire pas sur les autres appareils. Le traitement des remboursements reste une décision de politique. Le parcours d'achat lui-même n'a pas non plus été exécuté sur un vrai appareil.
 
 ## Taille et tests
 
@@ -46,7 +46,7 @@ Le stockage clé-valeur iCloud a une limite totale (1 Mo). Le bloc de synchronis
 
 ## Ce que nous n'avons pas vérifié
 
-- **Une vraie synchronisation entre un iPhone et un iPad n'a pas été vérifiée [non vérifié].** On ne peut la voir que sur de vrais appareils ou via TestFlight.
+- **Une vraie synchronisation entre un iPhone et un iPad n'a pas été vérifiée.** On ne peut la voir que sur de vrais appareils ou via TestFlight.
 - Les suppressions ne se propagent pas aux autres appareils, car cette synchronisation ne fait que fusionner.
 - Android n'est pas concerné. Les données restent sur l'appareil.
 - Si une ancienne version sur un autre appareil écrase la même clé, la marque d'achat peut brièvement disparaître, et la nouvelle version l'envoie de nouveau.

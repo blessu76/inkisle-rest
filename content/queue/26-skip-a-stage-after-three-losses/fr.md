@@ -9,7 +9,7 @@ keywords: Inkisle, passer un niveau, difficulté, game design, données de sauve
 image_alt: Une carte marine avec une île portant un petit drapeau corail et un chemin en pointillés qui la contourne vers l'île suivante.
 ---
 
-Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, perdre trois fois le même niveau fait apparaître la question : « Passer ce niveau et réessayer plus tard ? » Passer coûte 3 Ink. Le niveau passé reçoit un drapeau sur la carte et reste jouable à tout moment. Le jeu est encore en développement et n'est pas sorti ; nous n'avons pas encore vu cette fenêtre sur un vrai appareil [non vérifié].
+Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, perdre trois fois le même niveau fait apparaître la question : « Passer ce niveau et réessayer plus tard ? » Passer coûte 3 Ink. Le niveau passé reçoit un drapeau sur la carte et reste jouable à tout moment. Le jeu est encore en développement et n'est pas sorti ; nous n'avons pas encore vu cette fenêtre sur un vrai appareil.
 
 ## Pourquoi proposer de passer
 
@@ -50,9 +50,9 @@ Pour la fusion iCloud, on garde le plus grand nombre d'échecs, on réunit les l
 
 ## Ce que nous n'avons pas vérifié
 
-- La fenêtre et le drapeau sur un vrai appareil ou simulateur. Des tests de widgets en largeur 375 et 320 n'ont montré aucun débordement dans 16 colonnes de langue, mais nous n'avons pas regardé de captures [non vérifié].
-- Si une ancienne version de l'app qui écrase l'instantané iCloud perd les deux nouvelles clés. Les niveaux réussis et les étoiles resteraient ; seule la marque serait perdue [non vérifié].
-- Les traductions autres que le coréen et l'anglais n'ont pas été relues par des locuteurs natifs [non vérifié].
+- La fenêtre et le drapeau sur un vrai appareil ou simulateur. Des tests de widgets en largeur 375 et 320 n'ont montré aucun débordement dans 16 colonnes de langue, mais nous n'avons pas regardé de captures.
+- Si une ancienne version de l'app qui écrase l'instantané iCloud perd les deux nouvelles clés. Les niveaux réussis et les étoiles resteraient ; nous pensons que seule la marque serait perdue.
+- Les traductions autres que le coréen et l'anglais n'ont pas été relues par des locuteurs natifs.
 
 ## Questions fréquentes
 

@@ -48,9 +48,9 @@ Baris terakhir, dalam bahasa Korea, adalah "Air yang dalam memantulkan." (「깊
 
 ## Apa yang belum kami periksa
 
-- **Teks akhir dalam 10 bahasa selain Korea dan Inggris diterjemahkan oleh mesin dan belum ditinjau [belum diverifikasi].** Dengan hanya beberapa baris di layar, kualitas terjemahan langsung terlihat.
-- Pudar yang lambat, huruf emas, dan volume lonceng belum dilihat di perangkat sungguhan [belum diverifikasi].
-- Tampilan 375px dan 320px hanya diperiksa dalam uji widget, yang font ujinya jauh lebih lebar daripada yang asli [belum diverifikasi].
+- **Teks akhir dalam 10 bahasa selain Korea dan Inggris diterjemahkan oleh mesin dan belum ditinjau.** Dengan hanya beberapa baris di layar, kualitas terjemahan langsung terlihat.
+- Pudar yang lambat, huruf emas, dan volume lonceng belum dilihat di perangkat sungguhan.
+- Tampilan 375px dan 320px hanya diperiksa dalam uji widget, yang font ujinya jauh lebih lebar daripada yang asli.
 - Apakah akan ada season 2 belum diputuskan, dan tanggal rilis belum ditetapkan.
 
 ## FAQ

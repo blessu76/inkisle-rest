@@ -9,7 +9,7 @@ keywords: Inkisle, performans, takılma, kare süresi, oyun tasarımı, mobil oy
 image_alt: Solda dört uzun mor çubuk, sağda dört kısa mercan rengi çubuk; aralarında bir ok ve bütçeyi gösteren kesikli bir çizgi var.
 ---
 
-iOS için yaptığımız ada fethi strateji oyunu Inkisle, testler sırasında 5-8. bölümde takılıyordu. Kolay tahmin, filoları hareket ettiren ve ele geçirmeleri belirleyen oyun motorunun fazla ağırlaştığıydı. Önce ölçtük. Sorun motor değil, onu çevreleyen ekrandı. Değişiklikten sonra 5-8. bölümde bir karenin maliyeti bilgisayarımızda 3,4 ms'den 1,3 ms'ye düştü. Oyun geliştirme aşamasında ve yayımlanmadı; bu sayılar bir telefondan gelmiyor [doğrulanmadı].
+iOS için yaptığımız ada fethi strateji oyunu Inkisle, testler sırasında 5-8. bölümde takılıyordu. Kolay tahmin, filoları hareket ettiren ve ele geçirmeleri belirleyen oyun motorunun fazla ağırlaştığıydı. Önce ölçtük. Sorun motor değil, onu çevreleyen ekrandı. Değişiklikten sonra 5-8. bölümde bir karenin maliyeti bilgisayarımızda 3,4 ms'den 1,3 ms'ye düştü. Oyun geliştirme aşamasında ve yayımlanmadı; bu sayılar bir telefondan gelmiyor.
 
 ## Ne ölçtük
 
@@ -54,10 +54,10 @@ Motor için ekransız bir kıyaslama testi ve gevşek üst sınırları olan bir
 
 ## Neleri kontrol etmedik
 
-- **Gerçek bir telefonda saniyede 60 veya 120 kare hızı kontrol edilmedi [doğrulanmadı].** Sayılarımız bir bilgisayardaki ekran iş parçacığı maliyetidir, bir cihazdaki grafik maliyeti değil.
-- **Sis perdesi ve şerit katmanları ne ölçüldü ne de değiştirildi [doğrulanmadı].** Tam ekran bulanıklıkla çiziliyorlar; bu da işlemciye değil grafik çipine yük bindirir. 5-8. bölüm telefonda hâlâ takılıyorsa ilk şüphelimiz bu.
-- Hiçbir yerleşim değişmediği için tarayıcı çizimine 320, 375, 768 ve 1280 px'te bakmadık [doğrulanmadı].
-- Girdinin daha duyarlı hissettirdiği yalnızca bizim beklentimiz [doğrulanmadı].
+- **Gerçek bir telefonda saniyede 60 veya 120 kare hızı kontrol edilmedi.** Sayılarımız bir bilgisayardaki ekran iş parçacığı maliyetidir, bir cihazdaki grafik maliyeti değil.
+- **Sis perdesi ve şerit katmanları ne ölçüldü ne de değiştirildi.** Tam ekran bulanıklıkla çiziliyorlar; bu da işlemciye değil grafik çipine yük bindirir. 5-8. bölüm telefonda hâlâ takılıyorsa ilk şüphelimiz bu.
+- Hiçbir yerleşim değişmediği için tarayıcı çizimine 320, 375, 768 ve 1280 px'te bakmadık.
+- Girdinin daha duyarlı hissettirdiği yalnızca bizim beklentimiz.
 
 ## SSS
 

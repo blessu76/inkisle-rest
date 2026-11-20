@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, đồng bộ giữa các thiết bị, dữ liệu l�
 image_alt: Hai màn hình khác kích thước được nối bằng một sợi chỉ mảnh, các hòn đảo trên cả hai bản đồ được tô cùng màu.
 ---
 
-Trong Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, tiến trình, mực và các cài đặt chính (ngôn ngữ và biệt danh) được khớp giữa các thiết bị cùng Apple ID thông qua kho khóa-giá trị iCloud của chính người chơi. Việc đồng bộ này đã có sẵn. Điều chúng tôi làm vào ngày 16 tháng 11 không phải là xây dựng nó, mà là chuyển một cây cầu do chính chúng tôi viết vào bộ ứng dụng dùng chung, và nỗi lo lớn nhất là không làm mất dù chỉ một giá trị đã lưu. Chúng tôi chưa kiểm tra vòng đi-về giữa một iPhone và một iPad thật **[chưa xác minh]**. Trò chơi đang được phát triển và chưa phát hành.
+Trong Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, tiến trình, mực và các cài đặt chính (ngôn ngữ và biệt danh) được khớp giữa các thiết bị cùng Apple ID thông qua kho khóa-giá trị iCloud của chính người chơi. Việc đồng bộ này đã có sẵn. Điều chúng tôi làm vào ngày 16 tháng 11 không phải là xây dựng nó, mà là chuyển một cây cầu do chính chúng tôi viết vào bộ ứng dụng dùng chung, và nỗi lo lớn nhất là không làm mất dù chỉ một giá trị đã lưu. Chúng tôi chưa kiểm tra vòng đi-về giữa một iPhone và một iPad thật. Trò chơi đang được phát triển và chưa phát hành.
 
 ## Những gì chúng tôi đã chuyển
 
@@ -38,7 +38,7 @@ Khi hai thiết bị có tiến trình khác nhau, chúng tôi giữ cách hợp
 
 Một bài trước nói rằng việc mở khóa không chuyển sang thiết bị khác. Công việc này đã thay đổi điều đó. Khối đồng bộ giờ mang theo một dấu hiệu cho biết Mở khóa tất cả biển đã được mua, và thiết bị khác đọc được dấu hiệu này cũng sẽ mở. Dấu hiệu **chỉ tăng.** Một khối không có nó sẽ không gỡ nó đi; chúng tôi đẩy lại.
 
-Đây là thay đổi thiết kế theo chỉ thị "đồng bộ bắt buộc" của người phụ trách, và nó có một giới hạn: một khi dấu hiệu đã đồng bộ, việc hoàn tiền không gỡ nó trên các thiết bị khác. Cách xử lý hoàn tiền được để lại như một quyết định về chính sách. Bản thân luồng mua hàng cũng chưa được chạy trên thiết bị thật **[chưa xác minh]**.
+Đây là thay đổi thiết kế theo chỉ thị "đồng bộ bắt buộc" của người phụ trách, và nó có một giới hạn: một khi dấu hiệu đã đồng bộ, việc hoàn tiền không gỡ nó trên các thiết bị khác. Cách xử lý hoàn tiền được để lại như một quyết định về chính sách. Bản thân luồng mua hàng cũng chưa được chạy trên thiết bị thật.
 
 ## Dung lượng và kiểm thử
 
@@ -46,7 +46,7 @@ Kho khóa-giá trị iCloud có giới hạn tổng (1 MB). Khối đồng bộ 
 
 ## Những gì chúng tôi chưa kiểm tra
 
-- **Việc đồng bộ thật giữa iPhone và iPad chưa được kiểm tra [chưa xác minh].** Chỉ có thể thấy điều này trên thiết bị thật hoặc TestFlight.
+- **Việc đồng bộ thật giữa iPhone và iPad chưa được kiểm tra.** Chỉ có thể thấy điều này trên thiết bị thật hoặc TestFlight.
 - Việc xóa không lan sang các thiết bị khác, vì đồng bộ này chỉ hợp nhất.
 - Android không áp dụng. Dữ liệu ở lại trên thiết bị.
 - Nếu một bản dựng cũ trên thiết bị khác ghi đè cùng khóa, dấu hiệu mua hàng có thể biến mất trong chốc lát, và bản dựng mới sẽ đẩy lại nó.

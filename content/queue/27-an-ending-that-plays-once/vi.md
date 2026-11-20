@@ -48,9 +48,9 @@ Dòng cuối, bằng tiếng Hàn, là "Nước sâu in bóng." (「깊은 물�
 
 ## Những gì chúng tôi chưa kiểm tra
 
-- **Văn bản cái kết ở 10 ngôn ngữ khác tiếng Hàn và tiếng Anh được dịch bằng máy và chưa được rà soát [chưa xác minh].** Khi chỉ có vài dòng trên màn hình, chất lượng bản dịch lộ ra ngay.
-- Hiệu ứng mờ dần chậm, chữ vàng và âm lượng tiếng chuông chưa được xem trên thiết bị thật [chưa xác minh].
-- Giao diện ở 375px và 320px chỉ được kiểm tra trong kiểm thử widget, mà phông chữ thử nghiệm rộng hơn nhiều so với phông thật [chưa xác minh].
+- **Văn bản cái kết ở 10 ngôn ngữ khác tiếng Hàn và tiếng Anh được dịch bằng máy và chưa được rà soát.** Khi chỉ có vài dòng trên màn hình, chất lượng bản dịch lộ ra ngay.
+- Hiệu ứng mờ dần chậm, chữ vàng và âm lượng tiếng chuông chưa được xem trên thiết bị thật.
+- Giao diện ở 375px và 320px chỉ được kiểm tra trong kiểm thử widget, mà phông chữ thử nghiệm rộng hơn nhiều so với phông thật.
 - Có mùa 2 hay không chưa được quyết định, và chưa có ngày phát hành.
 
 ## FAQ

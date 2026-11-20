@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, sinkronisasi antarperangkat, data simpanan, penggabun
 image_alt: Dua layar berukuran berbeda yang disambung seutas benang tipis, dengan pulau di kedua peta berwarna sama.
 ---
 
-Di Inkisle, game strategi penaklukan pulau kami untuk iOS, progres, tinta, dan pengaturan utama (bahasa dan nama panggilan) disamakan antarperangkat dengan Apple ID yang sama lewat penyimpanan key-value iCloud milik pemain sendiri. Sinkronisasi itu sudah ada. Yang kami lakukan pada 16 November bukan membangunnya, melainkan memindahkan jembatan buatan kami sendiri ke kit aplikasi bersama, dan kekhawatiran terbesarnya adalah jangan sampai satu pun nilai tersimpan hilang. Kami belum memeriksa pulang-pergi antara iPhone dan iPad sungguhan [belum diverifikasi]. Game ini masih dalam pengembangan dan belum dirilis.
+Di Inkisle, game strategi penaklukan pulau kami untuk iOS, progres, tinta, dan pengaturan utama (bahasa dan nama panggilan) disamakan antarperangkat dengan Apple ID yang sama lewat penyimpanan key-value iCloud milik pemain sendiri. Sinkronisasi itu sudah ada. Yang kami lakukan pada 16 November bukan membangunnya, melainkan memindahkan jembatan buatan kami sendiri ke kit aplikasi bersama, dan kekhawatiran terbesarnya adalah jangan sampai satu pun nilai tersimpan hilang. Kami belum memeriksa pulang-pergi antara iPhone dan iPad sungguhan. Game ini masih dalam pengembangan dan belum dirilis.
 
 ## Apa yang kami pindahkan
 
@@ -38,7 +38,7 @@ Ketika dua perangkat memiliki progres berbeda, kami mempertahankan penggabungan 
 
 Postingan sebelumnya mengatakan bahwa pembukaan tidak berpindah ke perangkat lain. Pekerjaan ini mengubahnya. Potongan sinkronisasi kini membawa tanda bahwa Buka Semua Laut sudah dibeli, dan perangkat lain yang membacanya ikut terbuka. Tanda itu **hanya bertambah.** Potongan tanpa tanda itu tidak mencabutnya; kami mengirimnya lagi.
 
-Ini perubahan desain mengikuti instruksi "sinkronisasi wajib" dari pemilik proyek, dan ada satu batasan: setelah tanda tersinkron, pengembalian dana tidak mencabutnya di perangkat lain. Cara memperlakukan pengembalian dana dibiarkan sebagai keputusan kebijakan. Alur pembelian itu sendiri juga belum dijalankan di perangkat sungguhan [belum diverifikasi].
+Ini perubahan desain mengikuti instruksi "sinkronisasi wajib" dari pemilik proyek, dan ada satu batasan: setelah tanda tersinkron, pengembalian dana tidak mencabutnya di perangkat lain. Cara memperlakukan pengembalian dana dibiarkan sebagai keputusan kebijakan. Alur pembelian itu sendiri juga belum dijalankan di perangkat sungguhan.
 
 ## Ukuran dan uji
 
@@ -46,7 +46,7 @@ Penyimpanan key-value iCloud memiliki batas total (1 MB). Potongan sinkronisasi 
 
 ## Apa yang belum kami periksa
 
-- **Sinkronisasi sungguhan antara iPhone dan iPad belum diperiksa [belum diverifikasi].** Hal ini hanya bisa dilihat di perangkat sungguhan atau TestFlight.
+- **Sinkronisasi sungguhan antara iPhone dan iPad belum diperiksa.** Hal ini hanya bisa dilihat di perangkat sungguhan atau TestFlight.
 - Penghapusan tidak berpindah ke perangkat lain, karena sinkronisasi ini hanya menggabungkan.
 - Android tidak berlaku. Data tetap di perangkat.
 - Jika build lama di perangkat lain menimpa kunci yang sama, tanda pembelian bisa sesaat hilang, dan build baru mengirimnya lagi.

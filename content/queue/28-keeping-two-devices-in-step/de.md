@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, geräteübergreifende Synchronisierung, Spielstand, Z
 image_alt: Zwei Bildschirme unterschiedlicher Größe, durch einen dünnen Faden verbunden, mit gleich gefärbten Inseln auf beiden Karten.
 ---
 
-In Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, werden Fortschritt, Tinte und wichtige Einstellungen (Sprache und Spitzname) über den eigenen iCloud-Schlüssel-Wert-Speicher des Spielers zwischen Geräten mit derselben Apple-ID abgeglichen. Diese Synchronisierung gab es schon. Am 16. November haben wir sie nicht gebaut, sondern eine selbst geschriebene Brücke in ein gemeinsames App-Kit verlegt, und die größte Sorge war, keinen einzigen gespeicherten Wert zu verlieren. Einen Round Trip zwischen einem echten iPhone und iPad haben wir noch nicht geprüft **[ungeprüft]**. Das Spiel ist in Entwicklung und nicht veröffentlicht.
+In Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, werden Fortschritt, Tinte und wichtige Einstellungen (Sprache und Spitzname) über den eigenen iCloud-Schlüssel-Wert-Speicher des Spielers zwischen Geräten mit derselben Apple-ID abgeglichen. Diese Synchronisierung gab es schon. Am 16. November haben wir sie nicht gebaut, sondern eine selbst geschriebene Brücke in ein gemeinsames App-Kit verlegt, und die größte Sorge war, keinen einzigen gespeicherten Wert zu verlieren. Einen Round Trip zwischen einem echten iPhone und iPad haben wir noch nicht geprüft. Das Spiel ist in Entwicklung und nicht veröffentlicht.
 
 ## Was wir verlegt haben
 
@@ -38,7 +38,7 @@ Wenn zwei Geräte unterschiedlichen Fortschritt haben, haben wir die eigene Zusa
 
 Ein früherer Beitrag sagte, dass die Freischaltung nicht auf ein anderes Gerät übergeht. Diese Arbeit hat das geändert. Der Sync-Block trägt jetzt eine Markierung, dass Alle Meere freischalten gekauft wurde, und ein anderes Gerät, das sie liest, öffnet ebenfalls. Die Markierung **wächst nur.** Ein Block ohne sie nimmt sie nicht weg; wir laden sie erneut hoch.
 
-Das ist eine Designänderung nach der Anweisung des Verantwortlichen zur „verpflichtenden Synchronisierung“, und sie hat eine Grenze: Ist die Markierung einmal synchronisiert, nimmt eine Erstattung sie auf anderen Geräten nicht zurück. Wie wir mit Erstattungen umgehen, bleibt eine Entscheidung der Richtlinie. Auch der Kaufablauf selbst wurde noch nicht auf einem echten Gerät durchgespielt **[ungeprüft]**.
+Das ist eine Designänderung nach der Anweisung des Verantwortlichen zur „verpflichtenden Synchronisierung“, und sie hat eine Grenze: Ist die Markierung einmal synchronisiert, nimmt eine Erstattung sie auf anderen Geräten nicht zurück. Wie wir mit Erstattungen umgehen, bleibt eine Entscheidung der Richtlinie. Auch der Kaufablauf selbst wurde noch nicht auf einem echten Gerät durchgespielt.
 
 ## Größe und Tests
 
@@ -46,7 +46,7 @@ Der iCloud-Schlüssel-Wert-Speicher hat ein Gesamtlimit (1 MB). Der Sync-Block f
 
 ## Was wir nicht geprüft haben
 
-- **Eine echte Synchronisierung zwischen iPhone und iPad wurde nicht geprüft [ungeprüft].** Sie lässt sich nur auf echten Geräten oder über TestFlight sehen.
+- **Eine echte Synchronisierung zwischen iPhone und iPad wurde nicht geprüft.** Sie lässt sich nur auf echten Geräten oder über TestFlight sehen.
 - Löschungen wandern nicht auf andere Geräte, weil diese Synchronisierung nur zusammenführt.
 - Android ist nicht betroffen. Die Daten bleiben auf dem Gerät.
 - Überschreibt ein alter Build auf einem anderen Gerät denselben Schlüssel, kann die Kaufmarkierung kurz verschwinden, und der neue Build lädt sie erneut hoch.

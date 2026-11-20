@@ -9,7 +9,7 @@ keywords: Inkisle, saltar nivel, dificultad, diseño de juegos, datos guardados,
 image_alt: Una carta náutica con una isla marcada por una pequeña bandera de coral y un camino punteado que pasa de largo hacia la siguiente isla.
 ---
 
-En Inkisle, nuestro juego de estrategia de conquista de islas para iOS, perder tres veces el mismo nivel hace aparecer una pregunta: «¿Saltar este nivel e intentarlo más tarde?». Saltar cuesta 3 Ink. El nivel saltado recibe una bandera en la carta y se puede jugar cuando se quiera. El juego sigue en desarrollo y no ha sido lanzado, y todavía no hemos visto este aviso en un dispositivo real [sin verificar].
+En Inkisle, nuestro juego de estrategia de conquista de islas para iOS, perder tres veces el mismo nivel hace aparecer una pregunta: «¿Saltar este nivel e intentarlo más tarde?». Saltar cuesta 3 Ink. El nivel saltado recibe una bandera en la carta y se puede jugar cuando se quiera. El juego sigue en desarrollo y no ha sido lanzado, y todavía no hemos visto este aviso en un dispositivo real.
 
 ## Por qué ofrecer un salto
 
@@ -50,9 +50,9 @@ En la fusión con iCloud se conserva el mayor número de derrotas, las listas de
 
 ## Lo que no hemos comprobado
 
-- El aviso y la bandera en un dispositivo real o simulador. Las pruebas de widgets con anchos de 375 y 320 px no encontraron desbordamiento en 16 columnas de idioma, pero no hemos mirado capturas de pantalla [sin verificar].
-- Si una versión antigua de la app que sobrescriba la instantánea de iCloud pierde las dos claves nuevas. Si ocurre, los niveles superados y las estrellas se conservan y solo se pierden las marcas de salto [sin verificar].
-- Las traducciones distintas del coreano y el inglés no han sido revisadas por hablantes nativos [sin verificar].
+- El aviso y la bandera en un dispositivo real o simulador. Las pruebas de widgets con anchos de 375 y 320 px no encontraron desbordamiento en 16 columnas de idioma, pero no hemos mirado capturas de pantalla.
+- Si una versión antigua de la app que sobrescriba la instantánea de iCloud pierde las dos claves nuevas. Si ocurre, los niveles superados y las estrellas se conservan y creemos que solo se perderían las marcas de salto.
+- Las traducciones distintas del coreano y el inglés no han sido revisadas por hablantes nativos.
 
 ## FAQ
 

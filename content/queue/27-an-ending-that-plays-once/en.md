@@ -47,9 +47,9 @@ The last line, in Korean, is "The deep water reflects." (「깊은 물이 비친
 
 ## What we have not checked
 
-- **The ending text in the 10 languages other than Korean and English is machine-translated and has not been reviewed [unverified].** With only a few lines on screen, the quality of a translation shows immediately.
-- The slow fade, the gold lettering and the bell volume have not been seen on a real device [unverified].
-- 375px and 320px renders were checked only in widget tests, whose test font is much wider than the real one [unverified].
+- **The ending text in the 10 languages other than Korean and English is machine-translated and has not been reviewed.** With only a few lines on screen, the quality of a translation shows immediately.
+- The slow fade, the gold lettering and the bell volume have not been seen on a real device.
+- 375px and 320px renders were checked only in widget tests, whose test font is much wider than the real one.
 - Whether there will be a season 2 is undecided, and no release date is set.
 
 ## FAQ

@@ -9,7 +9,7 @@ keywords: Inkisle, Level überspringen, Schwierigkeit, Spieldesign, Speicherdate
 image_alt: Eine Seekarte mit einer Insel, die eine kleine korallenrote Flagge trägt, und einem gepunkteten Weg an ihr vorbei zur nächsten Insel.
 ---
 
-In Inkisle, unserem Insel-Eroberungsspiel für iOS, erscheint nach drei Niederlagen im selben Level die Frage: „Dieses Level überspringen und später versuchen?“ Das Überspringen kostet 3 Ink. Das übersprungene Level bekommt auf der Seekarte eine Flagge und lässt sich jederzeit spielen. Das Spiel ist noch in Entwicklung und nicht veröffentlicht; das Popup haben wir noch nicht auf einem echten Gerät gesehen [ungeprüft].
+In Inkisle, unserem Insel-Eroberungsspiel für iOS, erscheint nach drei Niederlagen im selben Level die Frage: „Dieses Level überspringen und später versuchen?“ Das Überspringen kostet 3 Ink. Das übersprungene Level bekommt auf der Seekarte eine Flagge und lässt sich jederzeit spielen. Das Spiel ist noch in Entwicklung und nicht veröffentlicht; das Popup haben wir noch nicht auf einem echten Gerät gesehen.
 
 ## Warum überhaupt überspringen
 
@@ -50,9 +50,9 @@ Beim iCloud-Abgleich gilt die größere Fehlerzahl, übersprungene Listen werden
 
 ## Was wir nicht geprüft haben
 
-- Popup und Flagge auf einem echten Gerät oder Simulator. Widget-Tests mit 375 und 320 Breite fanden in 16 Sprachspalten keinen Überlauf, Screenshots haben wir aber nicht angesehen [ungeprüft].
-- Ob eine ältere App-Version, die den iCloud-Snapshot überschreibt, die beiden neuen Schlüssel verliert. Dann blieben geschaffte Level und Sterne erhalten, nur die Markierung ginge verloren [ungeprüft].
-- Übersetzungen außer Koreanisch und Englisch wurden nicht von Muttersprachlern geprüft [ungeprüft].
+- Popup und Flagge auf einem echten Gerät oder Simulator. Widget-Tests mit 375 und 320 Breite fanden in 16 Sprachspalten keinen Überlauf, Screenshots haben wir aber nicht angesehen.
+- Ob eine ältere App-Version, die den iCloud-Snapshot überschreibt, die beiden neuen Schlüssel verliert. Dann blieben geschaffte Level und Sterne erhalten, nur die Markierung ginge nach unserer Einschätzung verloren.
+- Übersetzungen außer Koreanisch und Englisch wurden nicht von Muttersprachlern geprüft.
 
 ## Häufige Fragen
 

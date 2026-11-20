@@ -28,7 +28,7 @@ Jadi hanya koneksi Game Center di iOS yang pindah ke kit, dan ID papan, nama pan
 
 ## Tes waktu goyah
 
-Dua kali di gerbang ini, tes yang mengukur waktu goyah saat beban tinggi. Tes anggaran bingkai yang menggambar 800 jalan gagal sekali ketika tes berjalan paralel, dan saat pekerjaan iCloud, tes anggaran performa gagal sekali. Keduanya lolos saat dijalankan sendiri atau saat seluruh rangkaian dijalankan lagi. Kami membacanya sebagai beban, bukan perubahan kami [belum diverifikasi; kami tidak menelusuri penyebabnya]. Kami tidak melonggarkan anggarannya.
+Dua kali di gerbang ini, tes yang mengukur waktu goyah saat beban tinggi. Tes anggaran bingkai yang menggambar 800 jalan gagal sekali ketika tes berjalan paralel, dan saat pekerjaan iCloud, tes anggaran performa gagal sekali. Keduanya lolos saat dijalankan sendiri atau saat seluruh rangkaian dijalankan lagi. Kami membacanya sebagai beban, bukan perubahan kami, tetapi kami tidak menelusuri penyebabnya. Kami tidak melonggarkan anggarannya.
 
 ## 19 November: dua file berubah
 
@@ -36,9 +36,9 @@ Versi 0.15.3 membiarkan API publik seperti semula; versi ini membuat penghitunga
 
 ## Yang belum kami periksa
 
-- **Masuk ke Game Center, pengiriman skor, layar papan peringkat, dan bolak-balik iCloud belum diperiksa di perangkat sungguhan [belum diverifikasi].** Kami akan melihatnya di TestFlight.
-- Tampilan 375px dan 320px tercakup oleh uji widget pada 320×568, bukan dilihat langsung [belum diverifikasi].
-- Kami tidak menemukan akar penyebab tes yang goyah saat beban tinggi [belum diverifikasi].
+- **Masuk ke Game Center, pengiriman skor, layar papan peringkat, dan bolak-balik iCloud belum diperiksa di perangkat sungguhan.** Kami akan melihatnya di TestFlight.
+- Tampilan 375px dan 320px tercakup oleh uji widget pada 320×568, bukan dilihat langsung.
+- Kami tidak menemukan akar penyebab tes yang goyah saat beban tinggi.
 - Angka di sini adalah hasil gerbang pada hari itu, dan jumlah tes akan berubah kemudian.
 
 ## Pertanyaan yang sering diajukan

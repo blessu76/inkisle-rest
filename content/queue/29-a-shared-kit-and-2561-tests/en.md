@@ -27,7 +27,7 @@ So only the iOS Game Center connection moved to the kit, and the board IDs, save
 
 ## Timing tests wobbled
 
-Twice in this gate, a test that measures time wobbled under load. A frame-budget test that draws 800 roads failed once when tests ran in parallel, and during the iCloud work a performance-budget test failed once. Both passed when run alone or when the full suite was run again. We read this as load, not our change [unverified; we did not trace the cause]. We did not loosen the budgets.
+Twice in this gate, a test that measures time wobbled under load. A frame-budget test that draws 800 roads failed once when tests ran in parallel, and during the iCloud work a performance-budget test failed once. Both passed when run alone or when the full suite was run again. We read this as load, not our change, though we did not trace the cause. We did not loosen the budgets.
 
 ## November 19: two files changed
 
@@ -35,9 +35,9 @@ Version 0.15.3 leaves the public API as it was; it makes a re-count in the iClou
 
 ## What we have not checked
 
-- **Game Center sign-in, score submission, the leaderboard screen and an iCloud round trip have not been checked on a real device [unverified].** We will look in TestFlight.
-- 375px and 320px renders were covered by widget tests at 320×568 rather than seen directly [unverified].
-- We did not find the root cause of the tests that wobbled under load [unverified].
+- **Game Center sign-in, score submission, the leaderboard screen and an iCloud round trip have not been checked on a real device.** We will look in TestFlight.
+- 375px and 320px renders were covered by widget tests at 320×568 rather than seen directly.
+- We did not find the root cause of the tests that wobbled under load.
 - The numbers here are that day's gate results, and the test count will change later.
 
 ## FAQ

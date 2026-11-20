@@ -8,7 +8,7 @@ keywords: Inkisle, performance, stutter, frame time, game design, mobile game, o
 image_alt: Four tall purple bars on the left and four short coral bars on the right, with an arrow between them and a dashed line marking the budget.
 ---
 
-Inkisle, our island-conquest strategy game for iOS, felt choppy on stage 5-8 during testing. The easy guess was that the game engine, the part that moves fleets and decides captures, had grown too heavy. We measured first. The engine was not the problem; the screen around it was. After the change, the cost of one frame on stage 5-8 dropped from 3.4 ms to 1.3 ms on our computer. The game is in development and not released, and these numbers do not come from a phone [unverified].
+Inkisle, our island-conquest strategy game for iOS, felt choppy on stage 5-8 during testing. The easy guess was that the game engine, the part that moves fleets and decides captures, had grown too heavy. We measured first. The engine was not the problem; the screen around it was. After the change, the cost of one frame on stage 5-8 dropped from 3.4 ms to 1.3 ms on our computer. The game is in development and not released, and these numbers do not come from a phone.
 
 ## What we measured
 
@@ -53,10 +53,10 @@ A headless benchmark for the engine, and a performance test with loose upper lim
 
 ## What we have not checked
 
-- **Frame rate on a real phone, at 60 or 120 frames per second, is unchecked [unverified].** Our numbers are screen-thread cost on a computer, not graphics cost on a device.
-- **The fog veil and band layers are not measured and not changed [unverified].** They are drawn with a full-screen blur, which costs the graphics chip rather than the processor. If stage 5-8 still stutters on a phone, this is our first suspect.
-- We did not look at a browser render at 320, 375, 768 and 1280 px, because no layout changed [unverified].
-- That input feels more responsive is only our expectation [unverified].
+- **Frame rate on a real phone, at 60 or 120 frames per second, is unchecked.** Our numbers are screen-thread cost on a computer, not graphics cost on a device.
+- **The fog veil and band layers are not measured and not changed.** They are drawn with a full-screen blur, which costs the graphics chip rather than the processor. If stage 5-8 still stutters on a phone, this is our first suspect.
+- We did not look at a browser render at 320, 375, 768 and 1280 px, because no layout changed.
+- That input feels more responsive is only our expectation.
 
 ## FAQ
 

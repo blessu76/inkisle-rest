@@ -9,7 +9,7 @@ keywords: Inkisle, lewati stage, tingkat kesulitan, desain game, data tersimpan,
 image_alt: Peta laut dengan satu pulau yang ditandai bendera karang kecil, dan jalur putus-putus yang melewatinya menuju pulau berikutnya.
 ---
 
-Di Inkisle, game strategi penaklukan pulau kami untuk iOS, kalah tiga kali di stage yang sama memunculkan pertanyaan: "Lewati stage ini dan coba lagi nanti?" Melewati butuh 3 Ink. Stage yang dilewati mendapat bendera di peta laut dan bisa dimainkan kapan saja. Game ini masih dalam pengembangan dan belum dirilis, dan kami belum melihat popup ini di perangkat nyata [belum diverifikasi].
+Di Inkisle, game strategi penaklukan pulau kami untuk iOS, kalah tiga kali di stage yang sama memunculkan pertanyaan: "Lewati stage ini dan coba lagi nanti?" Melewati butuh 3 Ink. Stage yang dilewati mendapat bendera di peta laut dan bisa dimainkan kapan saja. Game ini masih dalam pengembangan dan belum dirilis, dan kami belum melihat popup ini di perangkat nyata.
 
 ## Mengapa menawarkan lewati
 
@@ -50,9 +50,9 @@ Pada penggabungan iCloud, jumlah kegagalan yang lebih besar dipertahankan, dafta
 
 ## Yang belum kami periksa
 
-- Popup dan bendera di perangkat nyata atau simulator. Tes widget pada lebar 375 dan 320 px tidak menemukan overflow di 16 kolom bahasa, tetapi kami belum melihat tangkapan layar [belum diverifikasi].
-- Apakah versi app lama yang menimpa snapshot iCloud menghilangkan dua kunci baru itu. Jika ya, stage yang tamat dan bintang tetap ada, hanya tanda lewati yang hilang [belum diverifikasi].
-- Terjemahan selain bahasa Korea dan Inggris belum ditinjau penutur asli [belum diverifikasi].
+- Popup dan bendera di perangkat nyata atau simulator. Tes widget pada lebar 375 dan 320 px tidak menemukan overflow di 16 kolom bahasa, tetapi kami belum melihat tangkapan layar.
+- Apakah versi app lama yang menimpa snapshot iCloud menghilangkan dua kunci baru itu. Jika ya, stage yang tamat dan bintang tetap ada, kami perkirakan hanya tanda lewati yang hilang.
+- Terjemahan selain bahasa Korea dan Inggris belum ditinjau penutur asli.
 
 ## FAQ
 

@@ -9,7 +9,7 @@ keywords: Inkisle, performance, saccade, temps d'image, conception de jeu, jeu m
 image_alt: Quatre grandes barres violettes à gauche et quatre petites barres corail à droite, avec une flèche entre elles et une ligne en pointillés qui marque le budget.
 ---
 
-Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, saccadait au niveau 5-8 pendant les tests. L'hypothèse facile était que le moteur du jeu, la partie qui déplace les flottes et décide des captures, était devenu trop lourd. Nous avons d'abord mesuré. Le problème n'était pas le moteur, mais l'écran qui l'entoure. Après le changement, le coût d'une image au niveau 5-8 est passé de 3,4 ms à 1,3 ms sur notre ordinateur. Le jeu est en développement et n'est pas sorti, et ces chiffres ne viennent pas d'un téléphone [non vérifié].
+Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, saccadait au niveau 5-8 pendant les tests. L'hypothèse facile était que le moteur du jeu, la partie qui déplace les flottes et décide des captures, était devenu trop lourd. Nous avons d'abord mesuré. Le problème n'était pas le moteur, mais l'écran qui l'entoure. Après le changement, le coût d'une image au niveau 5-8 est passé de 3,4 ms à 1,3 ms sur notre ordinateur. Le jeu est en développement et n'est pas sorti, et ces chiffres ne viennent pas d'un téléphone.
 
 ## Ce que nous avons mesuré
 
@@ -54,10 +54,10 @@ Un benchmark du moteur sans écran, et un test de performance avec des limites s
 
 ## Ce que nous n'avons pas vérifié
 
-- **Le débit d'images sur un vrai téléphone, à 60 ou 120 images par seconde, n'est pas vérifié [non vérifié].** Nos chiffres sont un coût de fil d'écran sur un ordinateur, pas un coût graphique sur un appareil.
-- **Le voile de brouillard et les couches de bande ne sont ni mesurés ni modifiés [non vérifié].** Ils sont dessinés avec un flou plein écran, qui coûte à la puce graphique plutôt qu'au processeur. Si le niveau 5-8 saccade encore sur un téléphone, c'est notre premier suspect.
-- Nous n'avons pas regardé le rendu dans un navigateur à 320, 375, 768 et 1280 px, car aucune mise en page n'a changé [non vérifié].
-- Que la saisie paraisse plus réactive n'est qu'une attente de notre part [non vérifié].
+- **Le débit d'images sur un vrai téléphone, à 60 ou 120 images par seconde, n'est pas vérifié.** Nos chiffres sont un coût de fil d'écran sur un ordinateur, pas un coût graphique sur un appareil.
+- **Le voile de brouillard et les couches de bande ne sont ni mesurés ni modifiés.** Ils sont dessinés avec un flou plein écran, qui coûte à la puce graphique plutôt qu'au processeur. Si le niveau 5-8 saccade encore sur un téléphone, c'est notre premier suspect.
+- Nous n'avons pas regardé le rendu dans un navigateur à 320, 375, 768 et 1280 px, car aucune mise en page n'a changé.
+- Que la saisie paraisse plus réactive n'est qu'une attente de notre part.
 
 ## FAQ
 

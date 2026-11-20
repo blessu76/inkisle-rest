@@ -28,7 +28,7 @@ Vì vậy chỉ kết nối Game Center trên iOS được chuyển sang bộ c�
 
 ## Các bài kiểm thử về thời gian chao đảo
 
-Hai lần trong cổng kiểm tra này, một bài kiểm thử đo thời gian đã chao đảo khi tải nặng. Một bài kiểm thử ngân sách khung hình vẽ 800 con đường đã thất bại một lần khi các bài kiểm thử chạy song song, và trong lúc làm việc với iCloud, một bài kiểm thử ngân sách hiệu năng đã thất bại một lần. Cả hai đều qua khi chạy riêng hoặc khi chạy lại toàn bộ bộ kiểm thử. Chúng tôi coi đó là do tải, không phải do thay đổi của mình **[chưa xác minh; chúng tôi chưa truy ra nguyên nhân]**. Chúng tôi không nới lỏng các ngân sách.
+Hai lần trong cổng kiểm tra này, một bài kiểm thử đo thời gian đã chao đảo khi tải nặng. Một bài kiểm thử ngân sách khung hình vẽ 800 con đường đã thất bại một lần khi các bài kiểm thử chạy song song, và trong lúc làm việc với iCloud, một bài kiểm thử ngân sách hiệu năng đã thất bại một lần. Cả hai đều qua khi chạy riêng hoặc khi chạy lại toàn bộ bộ kiểm thử. Chúng tôi coi đó là do tải, không phải do thay đổi của mình, nhưng chúng tôi chưa truy ra nguyên nhân. Chúng tôi không nới lỏng các ngân sách.
 
 ## Ngày 19 tháng 11: hai tệp thay đổi
 
@@ -36,9 +36,9 @@ Phiên bản 0.15.3 giữ nguyên API công khai; nó làm cho việc đếm l�
 
 ## Những điều chúng tôi chưa kiểm tra
 
-- **Đăng nhập Game Center, gửi điểm, màn hình bảng xếp hạng và một vòng đi về của iCloud chưa được kiểm tra trên thiết bị thật [chưa xác minh].** Chúng tôi sẽ xem trong TestFlight.
-- Giao diện ở 375px và 320px được bao phủ bởi kiểm thử widget ở 320×568 thay vì được xem trực tiếp **[chưa xác minh]**.
-- Chúng tôi chưa tìm ra nguyên nhân gốc của các bài kiểm thử chao đảo khi tải nặng **[chưa xác minh]**.
+- **Đăng nhập Game Center, gửi điểm, màn hình bảng xếp hạng và một vòng đi về của iCloud chưa được kiểm tra trên thiết bị thật.** Chúng tôi sẽ xem trong TestFlight.
+- Giao diện ở 375px và 320px được bao phủ bởi kiểm thử widget ở 320×568 thay vì được xem trực tiếp.
+- Chúng tôi chưa tìm ra nguyên nhân gốc của các bài kiểm thử chao đảo khi tải nặng.
 - Các con số ở đây là kết quả cổng kiểm tra của ngày hôm đó, và số bài kiểm thử sẽ thay đổi về sau.
 
 ## Câu hỏi thường gặp

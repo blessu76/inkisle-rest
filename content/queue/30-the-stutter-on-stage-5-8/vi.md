@@ -9,7 +9,7 @@ keywords: Inkisle, hiệu năng, giật lag, thời gian khung hình, thiết k�
 image_alt: Bốn thanh màu tím cao ở bên trái và bốn thanh màu san hô thấp ở bên phải, ở giữa có một mũi tên và một đường nét đứt đánh dấu ngân sách.
 ---
 
-Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, bị giật ở màn 5-8 khi thử nghiệm. Phỏng đoán dễ nhất là engine game, phần di chuyển hạm đội và quyết định chiếm đảo, đã trở nên quá nặng. Chúng tôi đo trước. Vấn đề không phải engine mà là màn hình bao quanh nó. Sau thay đổi, chi phí một khung hình ở màn 5-8 giảm từ 3,4 ms xuống 1,3 ms trên máy tính của chúng tôi. Game vẫn đang được phát triển và chưa phát hành, và các con số này không đo trên điện thoại [chưa xác minh].
+Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, bị giật ở màn 5-8 khi thử nghiệm. Phỏng đoán dễ nhất là engine game, phần di chuyển hạm đội và quyết định chiếm đảo, đã trở nên quá nặng. Chúng tôi đo trước. Vấn đề không phải engine mà là màn hình bao quanh nó. Sau thay đổi, chi phí một khung hình ở màn 5-8 giảm từ 3,4 ms xuống 1,3 ms trên máy tính của chúng tôi. Game vẫn đang được phát triển và chưa phát hành, và các con số này không đo trên điện thoại.
 
 ## Chúng tôi đã đo gì
 
@@ -54,10 +54,10 @@ Một benchmark cho engine không cần màn hình, và một bài kiểm tra hi
 
 ## Những gì chúng tôi chưa kiểm tra
 
-- **Tốc độ khung hình trên điện thoại thật, ở 60 hay 120 khung hình mỗi giây, chưa được kiểm tra [chưa xác minh].** Con số của chúng tôi là chi phí luồng màn hình trên máy tính, không phải chi phí đồ họa trên thiết bị.
-- **Màn sương và các lớp dải chưa được đo và chưa được thay đổi [chưa xác minh].** Chúng được vẽ bằng làm mờ toàn màn hình, tốn ở chip đồ họa chứ không phải bộ xử lý. Nếu màn 5-8 vẫn giật trên điện thoại, đây là nghi phạm đầu tiên của chúng tôi.
-- Chúng tôi chưa xem kết xuất trên trình duyệt ở 320, 375, 768 và 1280 px, vì không bố cục nào thay đổi [chưa xác minh].
-- Việc thao tác nhạy hơn chỉ là kỳ vọng của chúng tôi [chưa xác minh].
+- **Tốc độ khung hình trên điện thoại thật, ở 60 hay 120 khung hình mỗi giây, chưa được kiểm tra.** Con số của chúng tôi là chi phí luồng màn hình trên máy tính, không phải chi phí đồ họa trên thiết bị.
+- **Màn sương và các lớp dải chưa được đo và chưa được thay đổi.** Chúng được vẽ bằng làm mờ toàn màn hình, tốn ở chip đồ họa chứ không phải bộ xử lý. Nếu màn 5-8 vẫn giật trên điện thoại, đây là nghi phạm đầu tiên của chúng tôi.
+- Chúng tôi chưa xem kết xuất trên trình duyệt ở 320, 375, 768 và 1280 px, vì không bố cục nào thay đổi.
+- Việc thao tác nhạy hơn chỉ là kỳ vọng của chúng tôi.
 
 ## FAQ
 

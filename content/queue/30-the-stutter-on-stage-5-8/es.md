@@ -9,7 +9,7 @@ keywords: Inkisle, rendimiento, tirones, tiempo de fotograma, diseño de juegos,
 image_alt: Cuatro barras moradas altas a la izquierda y cuatro barras coral bajas a la derecha, con una flecha en medio y una línea discontinua que marca el presupuesto.
 ---
 
-Inkisle, nuestro juego de estrategia de conquista de islas para iOS, iba a trompicones en el nivel 5-8 durante las pruebas. La suposición fácil era que el motor del juego, la parte que mueve las flotas y decide las capturas, se había vuelto demasiado pesado. Primero medimos. El problema no era el motor, sino la pantalla que lo rodea. Tras el cambio, el coste de un fotograma en el nivel 5-8 bajó de 3,4 ms a 1,3 ms en nuestro ordenador. El juego está en desarrollo y no se ha lanzado, y estas cifras no vienen de un móvil [sin verificar].
+Inkisle, nuestro juego de estrategia de conquista de islas para iOS, iba a trompicones en el nivel 5-8 durante las pruebas. La suposición fácil era que el motor del juego, la parte que mueve las flotas y decide las capturas, se había vuelto demasiado pesado. Primero medimos. El problema no era el motor, sino la pantalla que lo rodea. Tras el cambio, el coste de un fotograma en el nivel 5-8 bajó de 3,4 ms a 1,3 ms en nuestro ordenador. El juego está en desarrollo y no se ha lanzado, y estas cifras no vienen de un móvil.
 
 ## Qué medimos
 
@@ -54,10 +54,10 @@ Un benchmark del motor sin pantalla y una prueba de rendimiento con límites sup
 
 ## Qué no hemos comprobado
 
-- **La tasa de fotogramas en un móvil real, a 60 o 120 fotogramas por segundo, no está comprobada [sin verificar].** Nuestras cifras son coste del hilo de pantalla en un ordenador, no coste gráfico en un dispositivo.
-- **El velo de niebla y las capas de banda ni se han medido ni se han cambiado [sin verificar].** Se dibujan con un desenfoque a pantalla completa, que cuesta al chip gráfico y no al procesador. Si el nivel 5-8 sigue dando tirones en un móvil, es nuestro primer sospechoso.
-- No miramos el renderizado en el navegador a 320, 375, 768 y 1280 px, porque no cambió ningún diseño [sin verificar].
-- Que la entrada se sienta más ágil es solo una expectativa nuestra [sin verificar].
+- **La tasa de fotogramas en un móvil real, a 60 o 120 fotogramas por segundo, no está comprobada.** Nuestras cifras son coste del hilo de pantalla en un ordenador, no coste gráfico en un dispositivo.
+- **El velo de niebla y las capas de banda ni se han medido ni se han cambiado.** Se dibujan con un desenfoque a pantalla completa, que cuesta al chip gráfico y no al procesador. Si el nivel 5-8 sigue dando tirones en un móvil, es nuestro primer sospechoso.
+- No miramos el renderizado en el navegador a 320, 375, 768 y 1280 px, porque no cambió ningún diseño.
+- Que la entrada se sienta más ágil es solo una expectativa nuestra.
 
 ## FAQ
 

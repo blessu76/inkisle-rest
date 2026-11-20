@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, sincronização entre aparelhos, dados salvos, mescla
 image_alt: Duas telas de tamanhos diferentes unidas por um fio fino, com as ilhas dos dois mapas pintadas das mesmas cores.
 ---
 
-No Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, o progresso, a tinta e as configurações principais (idioma e apelido) são igualados entre aparelhos com o mesmo Apple ID por meio do armazenamento chave-valor do iCloud do próprio jogador. Essa sincronização já existia. O que fizemos em 16 de novembro não foi criá-la, mas mover para um kit de app compartilhado uma ponte que nós mesmos tínhamos escrito, e a maior preocupação era não perder nenhum valor salvo. Ainda não verificamos uma ida e volta entre um iPhone e um iPad reais [não verificado]. O jogo está em desenvolvimento e não foi lançado.
+No Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, o progresso, a tinta e as configurações principais (idioma e apelido) são igualados entre aparelhos com o mesmo Apple ID por meio do armazenamento chave-valor do iCloud do próprio jogador. Essa sincronização já existia. O que fizemos em 16 de novembro não foi criá-la, mas mover para um kit de app compartilhado uma ponte que nós mesmos tínhamos escrito, e a maior preocupação era não perder nenhum valor salvo. Ainda não verificamos uma ida e volta entre um iPhone e um iPad reais. O jogo está em desenvolvimento e não foi lançado.
 
 ## O que movemos
 
@@ -38,7 +38,7 @@ Quando dois aparelhos têm progresso diferente, mantivemos a mesclagem própria 
 
 Uma publicação anterior dizia que a liberação não passa para outro aparelho. Este trabalho mudou isso. O bloco de sincronização agora carrega uma marca de que Liberar todos os mares foi comprado, e outro aparelho que a lê também libera. A marca **só cresce.** Um bloco sem ela não a retira; nós a enviamos de novo.
 
-Isso é uma mudança de design seguindo a instrução de "sincronização obrigatória" do responsável, e tem um limite: depois que a marca é sincronizada, um reembolso não a retira em outros aparelhos. Como tratar reembolsos fica como decisão de política. O próprio fluxo de compra também ainda não foi executado em um aparelho real [não verificado].
+Isso é uma mudança de design seguindo a instrução de "sincronização obrigatória" do responsável, e tem um limite: depois que a marca é sincronizada, um reembolso não a retira em outros aparelhos. Como tratar reembolsos fica como decisão de política. O próprio fluxo de compra também ainda não foi executado em um aparelho real.
 
 ## Tamanho e testes
 
@@ -46,7 +46,7 @@ O armazenamento chave-valor do iCloud tem um limite total (1 MB). O bloco de sin
 
 ## O que não verificamos
 
-- **Uma sincronização real entre um iPhone e um iPad não foi verificada [não verificado].** Isso só pode ser visto em aparelhos reais ou no TestFlight.
+- **Uma sincronização real entre um iPhone e um iPad não foi verificada.** Isso só pode ser visto em aparelhos reais ou no TestFlight.
 - As exclusões não viajam para outros aparelhos, porque esta sincronização só mescla.
 - O Android não se aplica. Os dados ficam no aparelho.
 - Se uma build antiga em outro aparelho sobrescrever a mesma chave, a marca de compra pode sumir por um instante, e a build nova a envia de novo.

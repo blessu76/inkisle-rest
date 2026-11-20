@@ -9,7 +9,7 @@ keywords: Inkisle, Leistung, Ruckeln, Frame-Zeit, Spieldesign, Mobilspiel, Optim
 image_alt: Links vier hohe violette Balken, rechts vier niedrige korallenrote Balken, dazwischen ein Pfeil und eine gestrichelte Linie, die das Budget markiert.
 ---
 
-Inkisle, unser Inseleroberungs-Strategiespiel für iOS, ruckelte beim Testen in Level 5-8. Die naheliegende Vermutung war, dass die Spiel-Engine, die Flotten bewegt und Eroberungen entscheidet, zu schwer geworden war. Wir haben zuerst gemessen. Das Problem war nicht die Engine, sondern der Bildschirm um sie herum. Nach der Änderung sank der Aufwand eines Frames in Level 5-8 auf unserem Computer von 3,4 ms auf 1,3 ms. Das Spiel ist in Entwicklung und nicht veröffentlicht, und diese Zahlen stammen nicht von einem Handy [ungeprüft].
+Inkisle, unser Inseleroberungs-Strategiespiel für iOS, ruckelte beim Testen in Level 5-8. Die naheliegende Vermutung war, dass die Spiel-Engine, die Flotten bewegt und Eroberungen entscheidet, zu schwer geworden war. Wir haben zuerst gemessen. Das Problem war nicht die Engine, sondern der Bildschirm um sie herum. Nach der Änderung sank der Aufwand eines Frames in Level 5-8 auf unserem Computer von 3,4 ms auf 1,3 ms. Das Spiel ist in Entwicklung und nicht veröffentlicht, und diese Zahlen stammen nicht von einem Handy.
 
 ## Was wir gemessen haben
 
@@ -54,10 +54,10 @@ Einen Benchmark für die Engine ohne Bildschirm und einen Leistungstest mit lock
 
 ## Was wir nicht geprüft haben
 
-- **Die Bildrate auf einem echten Handy, bei 60 oder 120 Bildern pro Sekunde, ist ungeprüft [ungeprüft].** Unsere Zahlen sind Kosten des Bildschirm-Threads auf einem Computer, keine Grafikkosten auf einem Gerät.
-- **Der Nebelschleier und die Bandebenen sind weder gemessen noch geändert [ungeprüft].** Sie werden mit einer Vollbild-Unschärfe gezeichnet, die den Grafikchip und nicht den Prozessor belastet. Ruckelt Level 5-8 auf einem Handy weiterhin, ist das unser erster Verdächtiger.
-- Wir haben die Browser-Darstellung bei 320, 375, 768 und 1280 px nicht angesehen, weil sich kein Layout geändert hat [ungeprüft].
-- Dass sich die Eingabe reaktionsfreudiger anfühlt, ist nur unsere Erwartung [ungeprüft].
+- **Die Bildrate auf einem echten Handy, bei 60 oder 120 Bildern pro Sekunde, ist ungeprüft.** Unsere Zahlen sind Kosten des Bildschirm-Threads auf einem Computer, keine Grafikkosten auf einem Gerät.
+- **Der Nebelschleier und die Bandebenen sind weder gemessen noch geändert.** Sie werden mit einer Vollbild-Unschärfe gezeichnet, die den Grafikchip und nicht den Prozessor belastet. Ruckelt Level 5-8 auf einem Handy weiterhin, ist das unser erster Verdächtiger.
+- Wir haben die Browser-Darstellung bei 320, 375, 768 und 1280 px nicht angesehen, weil sich kein Layout geändert hat.
+- Dass sich die Eingabe reaktionsfreudiger anfühlt, ist nur unsere Erwartung.
 
 ## FAQ
 

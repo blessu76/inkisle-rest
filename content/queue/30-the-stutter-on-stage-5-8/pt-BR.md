@@ -9,7 +9,7 @@ keywords: Inkisle, desempenho, engasgo, tempo de quadro, design de jogos, jogo m
 image_alt: Quatro barras roxas altas à esquerda e quatro barras coral baixas à direita, com uma seta no meio e uma linha tracejada marcando o orçamento.
 ---
 
-O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, engasgava na fase 5-8 durante os testes. O palpite fácil era que o motor do jogo, a parte que move as frotas e decide as capturas, tinha ficado pesado demais. Medimos primeiro. O problema não era o motor, e sim a tela ao redor dele. Depois da mudança, o custo de um quadro na fase 5-8 caiu de 3,4 ms para 1,3 ms no nosso computador. O jogo está em desenvolvimento e não foi lançado, e esses números não vêm de um celular [não verificado].
+O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, engasgava na fase 5-8 durante os testes. O palpite fácil era que o motor do jogo, a parte que move as frotas e decide as capturas, tinha ficado pesado demais. Medimos primeiro. O problema não era o motor, e sim a tela ao redor dele. Depois da mudança, o custo de um quadro na fase 5-8 caiu de 3,4 ms para 1,3 ms no nosso computador. O jogo está em desenvolvimento e não foi lançado, e esses números não vêm de um celular.
 
 ## O que medimos
 
@@ -54,10 +54,10 @@ Um benchmark do motor sem tela e um teste de desempenho com limites superiores f
 
 ## O que não verificamos
 
-- **A taxa de quadros em um celular de verdade, a 60 ou 120 quadros por segundo, não foi verificada [não verificado].** Nossos números são custo da thread da tela em um computador, não custo gráfico em um dispositivo.
-- **O véu de névoa e as camadas de faixa não foram medidos nem alterados [não verificado].** Elas são desenhadas com um desfoque em tela cheia, que custa ao chip gráfico e não ao processador. Se a fase 5-8 ainda engasgar em um celular, é o nosso primeiro suspeito.
-- Não olhamos a renderização no navegador em 320, 375, 768 e 1280 px, porque nenhum layout mudou [não verificado].
-- Que a entrada fique mais responsiva é apenas uma expectativa nossa [não verificado].
+- **A taxa de quadros em um celular de verdade, a 60 ou 120 quadros por segundo, não foi verificada.** Nossos números são custo da thread da tela em um computador, não custo gráfico em um dispositivo.
+- **O véu de névoa e as camadas de faixa não foram medidos nem alterados.** Elas são desenhadas com um desfoque em tela cheia, que custa ao chip gráfico e não ao processador. Se a fase 5-8 ainda engasgar em um celular, é o nosso primeiro suspeito.
+- Não olhamos a renderização no navegador em 320, 375, 768 e 1280 px, porque nenhum layout mudou.
+- Que a entrada fique mais responsiva é apenas uma expectativa nossa.
 
 ## FAQ
 

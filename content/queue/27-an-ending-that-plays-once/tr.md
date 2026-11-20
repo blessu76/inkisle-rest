@@ -48,9 +48,9 @@ Son satır, Korece, "Derin su yansıtır." (「깊은 물이 비친다.」). Hi�
 
 ## Denetlemediklerimiz
 
-- **Korece ve İngilizce dışındaki 10 dildeki son metni makine çevirisi ve gözden geçirilmedi [doğrulanmadı].** Ekranda yalnızca birkaç satır olunca bir çevirinin kalitesi hemen belli olur.
-- Yavaş solma, altın harfler ve çan sesinin düzeyi gerçek bir cihazda görülmedi [doğrulanmadı].
-- 375px ve 320px görünümleri yalnızca widget testlerinde denetlendi ve bu testlerin yazı tipi gerçeğinden çok daha geniş [doğrulanmadı].
+- **Korece ve İngilizce dışındaki 10 dildeki son metni makine çevirisi ve gözden geçirilmedi.** Ekranda yalnızca birkaç satır olunca bir çevirinin kalitesi hemen belli olur.
+- Yavaş solma, altın harfler ve çan sesinin düzeyi gerçek bir cihazda görülmedi.
+- 375px ve 320px görünümleri yalnızca widget testlerinde denetlendi ve bu testlerin yazı tipi gerçeğinden çok daha geniş.
 - 2. sezonun olup olmayacağı belli değil ve çıkış tarihi yok.
 
 ## SSS

@@ -48,9 +48,9 @@ La dernière ligne, en coréen, est « L'eau profonde se reflète. » (「깊은
 
 ## Ce que nous n'avons pas vérifié
 
-- **Le texte de la fin dans les 10 langues autres que le coréen et l'anglais est traduit automatiquement et n'a pas été relu [non vérifié].** Avec seulement quelques lignes à l'écran, la qualité d'une traduction se voit tout de suite.
-- Le fondu lent, les lettres dorées et le volume de la cloche n'ont pas été vus sur un appareil réel [non vérifié].
-- Les rendus en 375px et 320px n'ont été vérifiés que dans des tests de widgets, dont la police de test est bien plus large que la vraie [non vérifié].
+- **Le texte de la fin dans les 10 langues autres que le coréen et l'anglais est traduit automatiquement et n'a pas été relu.** Avec seulement quelques lignes à l'écran, la qualité d'une traduction se voit tout de suite.
+- Le fondu lent, les lettres dorées et le volume de la cloche n'ont pas été vus sur un appareil réel.
+- Les rendus en 375px et 320px n'ont été vérifiés que dans des tests de widgets, dont la police de test est bien plus large que la vraie.
 - L'existence d'une saison 2 n'est pas décidée, et aucune date de sortie n'est fixée.
 
 ## FAQ

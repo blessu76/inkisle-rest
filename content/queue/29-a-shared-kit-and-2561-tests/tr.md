@@ -28,7 +28,7 @@ Yani yalnızca iOS Game Center bağlantısı kite taşındı; tablo kimlikleri, 
 
 ## Zaman testleri dalgalandı
 
-Bu kapıda iki kez, zamanı ölçen bir test yük altında dalgalandı. 800 yol çizen bir kare bütçesi testi, testler paralel çalışırken bir kez başarısız oldu ve iCloud çalışması sırasında bir performans bütçesi testi bir kez başarısız oldu. İkisi de tek başına çalıştırıldığında ya da tam paket yeniden çalıştırıldığında geçti. Bunu bizim değişikliğimiz olarak değil, yük olarak okuyoruz **[doğrulanmadı; nedeni izlemedik]**. Bütçeleri gevşetmedik.
+Bu kapıda iki kez, zamanı ölçen bir test yük altında dalgalandı. 800 yol çizen bir kare bütçesi testi, testler paralel çalışırken bir kez başarısız oldu ve iCloud çalışması sırasında bir performans bütçesi testi bir kez başarısız oldu. İkisi de tek başına çalıştırıldığında ya da tam paket yeniden çalıştırıldığında geçti. Bunu bizim değişikliğimiz olarak değil, yük olarak okuyoruz; ancak nedeni izlemedik. Bütçeleri gevşetmedik.
 
 ## 19 Kasım: iki dosya değişti
 
@@ -36,9 +36,9 @@ Bu kapıda iki kez, zamanı ölçen bir test yük altında dalgalandı. 800 yol 
 
 ## Neleri kontrol etmedik
 
-- **Game Center oturum açma, skor gönderme, lider tablosu ekranı ve bir iCloud gidiş dönüşü gerçek bir cihazda kontrol edilmedi [doğrulanmadı].** TestFlight'ta bakacağız.
-- 375px ve 320px görünümleri doğrudan görülmedi, 320×568'de widget testleriyle kapsandı **[doğrulanmadı]**.
-- Yük altında dalgalanan testlerin kök nedenini bulamadık **[doğrulanmadı]**.
+- **Game Center oturum açma, skor gönderme, lider tablosu ekranı ve bir iCloud gidiş dönüşü gerçek bir cihazda kontrol edilmedi.** TestFlight'ta bakacağız.
+- 375px ve 320px görünümleri doğrudan görülmedi, 320×568'de widget testleriyle kapsandı.
+- Yük altında dalgalanan testlerin kök nedenini bulamadık.
 - Buradaki sayılar o günkü kapı sonuçlarıdır ve test sayısı daha sonra değişecek.
 
 ## Sık sorulan sorular

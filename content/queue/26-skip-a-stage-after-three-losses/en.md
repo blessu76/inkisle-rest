@@ -8,7 +8,7 @@ keywords: Inkisle, skip stage, difficulty, game design, save data, mobile game
 image_alt: A sea chart with one island marked by a small coral flag, and a dotted path leading past it to the next island.
 ---
 
-In Inkisle, our island-conquest strategy game for iOS, losing the same stage three times brings up a question: "Skip this stage and try it later?" Skipping costs 3 Ink. The skipped stage gets a flag on the chart and can be played whenever you like. The game is still in development and not released, and we have not yet seen this popup on a real device [unverified].
+In Inkisle, our island-conquest strategy game for iOS, losing the same stage three times brings up a question: "Skip this stage and try it later?" Skipping costs 3 Ink. The skipped stage gets a flag on the chart and can be played whenever you like. The game is still in development and not released, and we have not yet seen this popup on a real device.
 
 ## Why offer a skip at all
 
@@ -49,9 +49,9 @@ For iCloud merging, the larger failure count is kept, skipped lists are joined, 
 
 ## What we have not checked
 
-- The popup and flag on a real device or simulator. Widget tests at 375 and 320 px width found no overflow in 16 language columns, but we did not look at screenshots [unverified].
-- Whether an older app version that overwrites the iCloud snapshot drops the two new keys. If so, cleared stages and stars stay, and only the skip marks are lost [unverified].
-- Translations other than Korean and English have no native-speaker review [unverified].
+- The popup and flag on a real device or simulator. Widget tests at 375 and 320 px width found no overflow in 16 language columns, but we did not look at screenshots.
+- Whether an older app version that overwrites the iCloud snapshot drops the two new keys. If so, cleared stages and stars stay, and we expect only the skip marks to be lost.
+- Translations other than Korean and English have no native-speaker review.
 
 ## FAQ
 

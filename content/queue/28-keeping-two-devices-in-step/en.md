@@ -8,7 +8,7 @@ keywords: Inkisle, iCloud, cross-device sync, save data, merge, mobile game
 image_alt: Two screens of different sizes joined by a thin thread, with the islands on both charts painted the same colors.
 ---
 
-In Inkisle, our island-conquest strategy game for iOS, progress, ink and key settings (language and nickname) are matched across devices on the same Apple ID through the player's own iCloud key-value storage. That sync already existed. What we did on November 16 was not to build it but to move a bridge we had written ourselves into a shared app kit, and the biggest worry was not losing a single saved value. We have not yet checked a round trip between a real iPhone and iPad [unverified]. The game is in development and not released.
+In Inkisle, our island-conquest strategy game for iOS, progress, ink and key settings (language and nickname) are matched across devices on the same Apple ID through the player's own iCloud key-value storage. That sync already existed. What we did on November 16 was not to build it but to move a bridge we had written ourselves into a shared app kit, and the biggest worry was not losing a single saved value. We have not yet checked a round trip between a real iPhone and iPad. The game is in development and not released.
 
 ## What we moved
 
@@ -37,7 +37,7 @@ When two devices hold different progress, we kept the app's own merge. The kit h
 
 An earlier post said that the unlock does not carry to another device. This work changed that. The sync chunk now carries a mark that "Unlock All Seas" was bought, and another device that reads it opens too. The mark **only grows.** A chunk without it does not take it away; we push it again.
 
-This is a design change following the owner's "mandatory sync" instruction, and it has one limit: once the mark is synced, a refund does not withdraw it on other devices. How to treat refunds is left as a policy decision. The purchase flow itself has not been run on a real device either [unverified].
+This is a design change following the owner's "mandatory sync" instruction, and it has one limit: once the mark is synced, a refund does not withdraw it on other devices. How to treat refunds is left as a policy decision. The purchase flow itself has not been run on a real device either.
 
 ## Size and tests
 
@@ -45,7 +45,7 @@ iCloud key-value storage has a total limit (1 MB). The sync chunk for a save wit
 
 ## What we have not checked
 
-- **A real sync between an iPhone and an iPad has not been checked [unverified].** It can only be seen on real devices or TestFlight.
+- **A real sync between an iPhone and an iPad has not been checked.** It can only be seen on real devices or TestFlight.
 - Deletions do not travel to other devices, because this sync only merges.
 - Android does not apply. Data stays on the device.
 - If an old build on another device overwrites the same key, the purchase mark can briefly disappear, and the new build pushes it again.

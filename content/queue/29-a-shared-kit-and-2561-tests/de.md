@@ -28,7 +28,7 @@ Also zog nur die iOS-Game-Center-Anbindung in das Kit um, und die Board-IDs, ges
 
 ## Zeittests wackelten
 
-Zweimal wackelte in diesem Gate ein Test, der Zeit misst, unter Last. Ein Frame-Budget-Test, der 800 Straßen zeichnet, schlug einmal fehl, als die Tests parallel liefen, und während der iCloud-Arbeit schlug ein Performance-Budget-Test einmal fehl. Beide bestanden, als sie allein oder als die ganze Suite erneut lief. Wir deuten das als Last, nicht als unsere Änderung [ungeprüft; die Ursache haben wir nicht nachverfolgt]. Die Budgets haben wir nicht gelockert.
+Zweimal wackelte in diesem Gate ein Test, der Zeit misst, unter Last. Ein Frame-Budget-Test, der 800 Straßen zeichnet, schlug einmal fehl, als die Tests parallel liefen, und während der iCloud-Arbeit schlug ein Performance-Budget-Test einmal fehl. Beide bestanden, als sie allein oder als die ganze Suite erneut lief. Wir deuten das als Last, nicht als unsere Änderung, auch wenn wir die Ursache nicht nachverfolgt haben. Die Budgets haben wir nicht gelockert.
 
 ## 19. November: zwei Dateien geändert
 
@@ -36,9 +36,9 @@ Version 0.15.3 lässt die öffentliche API, wie sie war; sie lässt eine Neuzäh
 
 ## Was wir nicht geprüft haben
 
-- **Game-Center-Anmeldung, Punkteübermittlung, Bestenlisten-Bildschirm und ein iCloud-Roundtrip wurden nicht auf einem echten Gerät geprüft [ungeprüft].** Wir schauen in TestFlight nach.
-- Die Darstellungen mit 375 px und 320 px wurden durch Widget-Tests bei 320×568 abgedeckt, nicht direkt angesehen [ungeprüft].
-- Die Ursache der unter Last wackelnden Tests haben wir nicht gefunden [ungeprüft].
+- **Game-Center-Anmeldung, Punkteübermittlung, Bestenlisten-Bildschirm und ein iCloud-Roundtrip wurden nicht auf einem echten Gerät geprüft.** Wir schauen in TestFlight nach.
+- Die Darstellungen mit 375 px und 320 px wurden durch Widget-Tests bei 320×568 abgedeckt, nicht direkt angesehen.
+- Die Ursache der unter Last wackelnden Tests haben wir nicht gefunden.
 - Die Zahlen hier sind die Gate-Ergebnisse dieses Tages, und die Testzahl wird sich später ändern.
 
 ## Häufige Fragen

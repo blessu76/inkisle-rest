@@ -28,7 +28,7 @@ Seule la connexion Game Center d'iOS est donc passée au kit, et les identifiant
 
 ## Des tests de temps ont vacillé
 
-À deux reprises dans cette barrière, un test qui mesure le temps a vacillé sous charge. Un test de budget d'images qui dessine 800 routes a échoué une fois quand les tests tournaient en parallèle, et pendant le travail sur iCloud, un test de budget de performance a échoué une fois. Les deux ont passé seuls ou quand la suite complète a été relancée. Nous y voyons de la charge, pas notre changement [non vérifié ; nous n'avons pas remonté jusqu'à la cause]. Nous n'avons pas assoupli les budgets.
+À deux reprises dans cette barrière, un test qui mesure le temps a vacillé sous charge. Un test de budget d'images qui dessine 800 routes a échoué une fois quand les tests tournaient en parallèle, et pendant le travail sur iCloud, un test de budget de performance a échoué une fois. Les deux ont passé seuls ou quand la suite complète a été relancée. Nous y voyons de la charge, pas notre changement, mais nous n'avons pas remonté jusqu'à la cause. Nous n'avons pas assoupli les budgets.
 
 ## 19 novembre : deux fichiers modifiés
 
@@ -36,9 +36,9 @@ La version 0.15.3 laisse l'API publique telle quelle ; elle fait qu'un recomptag
 
 ## Ce que nous n'avons pas vérifié
 
-- **La connexion à Game Center, l'envoi des scores, l'écran de classement et un aller-retour iCloud n'ont pas été vérifiés sur un appareil réel [non vérifié].** Nous regarderons dans TestFlight.
-- Les rendus en 375 px et 320 px ont été couverts par des tests de widgets à 320×568, et non vus directement [non vérifié].
-- Nous n'avons pas trouvé la cause racine des tests qui ont vacillé sous charge [non vérifié].
+- **La connexion à Game Center, l'envoi des scores, l'écran de classement et un aller-retour iCloud n'ont pas été vérifiés sur un appareil réel.** Nous regarderons dans TestFlight.
+- Les rendus en 375 px et 320 px ont été couverts par des tests de widgets à 320×568, et non vus directement.
+- Nous n'avons pas trouvé la cause racine des tests qui ont vacillé sous charge.
 - Les chiffres ici sont les résultats de la barrière ce jour-là, et le nombre de tests changera plus tard.
 
 ## Questions fréquentes

@@ -9,7 +9,7 @@ keywords: Inkisle, bỏ qua màn, độ khó, thiết kế game, dữ liệu lư
 image_alt: Một tấm hải đồ có một hòn đảo được đánh dấu bằng lá cờ san hô nhỏ, và một đường chấm chấm đi vòng qua nó để tới hòn đảo kế tiếp.
 ---
 
-Trong Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, thua cùng một màn ba lần sẽ hiện ra câu hỏi: "Bỏ qua màn này và thử lại sau?" Bỏ qua tốn 3 Ink. Màn bị bỏ qua có một lá cờ trên hải đồ và có thể chơi lại bất cứ lúc nào. Game vẫn đang được phát triển và chưa phát hành, và chúng tôi chưa thấy bảng hỏi này trên thiết bị thật [chưa xác minh].
+Trong Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, thua cùng một màn ba lần sẽ hiện ra câu hỏi: "Bỏ qua màn này và thử lại sau?" Bỏ qua tốn 3 Ink. Màn bị bỏ qua có một lá cờ trên hải đồ và có thể chơi lại bất cứ lúc nào. Game vẫn đang được phát triển và chưa phát hành, và chúng tôi chưa thấy bảng hỏi này trên thiết bị thật.
 
 ## Vì sao đề nghị bỏ qua
 
@@ -50,9 +50,9 @@ Khi gộp iCloud, số lần thất bại lớn hơn được giữ, danh sách 
 
 ## Những gì chúng tôi chưa kiểm tra
 
-- Bảng hỏi và lá cờ trên thiết bị thật hoặc trình giả lập. Kiểm tra widget ở chiều rộng 375 và 320 px không thấy tràn ở 16 cột ngôn ngữ, nhưng chúng tôi chưa xem ảnh chụp màn hình [chưa xác minh].
-- Liệu bản app cũ ghi đè bản chụp iCloud có làm mất hai khóa mới hay không. Nếu có, các màn đã qua và sao vẫn còn, chỉ mất dấu bỏ qua [chưa xác minh].
-- Các bản dịch ngoài tiếng Hàn và tiếng Anh chưa được người bản ngữ xem lại [chưa xác minh].
+- Bảng hỏi và lá cờ trên thiết bị thật hoặc trình giả lập. Kiểm tra widget ở chiều rộng 375 và 320 px không thấy tràn ở 16 cột ngôn ngữ, nhưng chúng tôi chưa xem ảnh chụp màn hình.
+- Liệu bản app cũ ghi đè bản chụp iCloud có làm mất hai khóa mới hay không. Nếu có, các màn đã qua và sao vẫn còn, chúng tôi cho rằng chỉ mất dấu bỏ qua.
+- Các bản dịch ngoài tiếng Hàn và tiếng Anh chưa được người bản ngữ xem lại.
 
 ## FAQ
 

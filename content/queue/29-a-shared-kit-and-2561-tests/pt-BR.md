@@ -28,7 +28,7 @@ Então só a conexão do Game Center no iOS passou para o kit, e os IDs dos quad
 
 ## Testes de tempo oscilaram
 
-Duas vezes neste portão, um teste que mede tempo oscilou sob carga. Um teste de orçamento de quadros que desenha 800 estradas falhou uma vez quando os testes rodavam em paralelo, e durante o trabalho com o iCloud um teste de orçamento de desempenho falhou uma vez. Ambos passaram quando rodados sozinhos ou quando a suíte completa foi executada de novo. Lemos isso como carga, não como nossa mudança [não verificado; não rastreamos a causa]. Não afrouxamos os orçamentos.
+Duas vezes neste portão, um teste que mede tempo oscilou sob carga. Um teste de orçamento de quadros que desenha 800 estradas falhou uma vez quando os testes rodavam em paralelo, e durante o trabalho com o iCloud um teste de orçamento de desempenho falhou uma vez. Ambos passaram quando rodados sozinhos ou quando a suíte completa foi executada de novo. Lemos isso como carga, não como nossa mudança, mas não rastreamos a causa. Não afrouxamos os orçamentos.
 
 ## 19 de novembro: dois arquivos mudaram
 
@@ -36,9 +36,9 @@ A versão 0.15.3 deixa a API pública como estava; ela faz uma recontagem na sin
 
 ## O que não verificamos
 
-- **Login no Game Center, envio de pontuação, tela de ranking e uma ida e volta do iCloud não foram verificados em um aparelho real [não verificado].** Vamos conferir no TestFlight.
-- As telas de 375px e 320px foram cobertas por testes de widget em 320×568, em vez de vistas diretamente [não verificado].
-- Não encontramos a causa raiz dos testes que oscilaram sob carga [não verificado].
+- **Login no Game Center, envio de pontuação, tela de ranking e uma ida e volta do iCloud não foram verificados em um aparelho real.** Vamos conferir no TestFlight.
+- As telas de 375px e 320px foram cobertas por testes de widget em 320×568, em vez de vistas diretamente.
+- Não encontramos a causa raiz dos testes que oscilaram sob carga.
 - Os números aqui são os resultados do portão naquele dia, e a contagem de testes vai mudar depois.
 
 ## Perguntas frequentes

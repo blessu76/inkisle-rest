@@ -48,9 +48,9 @@ A última linha, em coreano, é "A água profunda reflete." (「깊은 물이 �
 
 ## O que não verificamos
 
-- **O texto do final nos 10 idiomas além do coreano e do inglês é traduzido por máquina e não foi revisado [não verificado].** Com apenas algumas linhas na tela, a qualidade de uma tradução aparece de imediato.
-- O desvanecimento lento, as letras douradas e o volume do sino não foram vistos em um aparelho real [não verificado].
-- As telas de 375px e 320px foram verificadas apenas em testes de widget, cuja fonte de teste é muito mais larga que a real [não verificado].
+- **O texto do final nos 10 idiomas além do coreano e do inglês é traduzido por máquina e não foi revisado.** Com apenas algumas linhas na tela, a qualidade de uma tradução aparece de imediato.
+- O desvanecimento lento, as letras douradas e o volume do sino não foram vistos em um aparelho real.
+- As telas de 375px e 320px foram verificadas apenas em testes de widget, cuja fonte de teste é muito mais larga que a real.
 - Se haverá uma temporada 2 está indefinido, e nenhuma data de lançamento foi marcada.
 
 ## FAQ

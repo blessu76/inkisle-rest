@@ -6,8 +6,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 echo "== 0/4 kit"; python3 scripts/kit_lock.py check
 echo "== 1/4 sources"; python3 scripts/build_site.py --check ${1:+--require-all}
-echo "== 1b/4 queue has no internal 「[미검증]」 marker (published journal posts still carry it — not checked yet)"
-if grep -rn --include='*.md' '\[미검증' content/queue; then echo "content/queue must not contain 「[미검증]」 — reword as a plain limitation sentence"; exit 1; fi
+echo "== 1b/4 queue has no internal unverified marker in any of the 12 languages (published journal posts still carry it — not checked yet)"
+if grep -rnEi --include='*.md' '[[【](\[?)[^]】]{0,12}(미검증|unverified|ungeprüft|sin verificar|non vérifié|belum diverifikasi|未検証|未驗證|未验证|não verificado|ยังไม่ได้ตรวจสอบ|doğrulanmadı|chưa xác minh)' content/queue; then echo "content/queue must not contain a bracketed unverified marker in any language — reword as a plain limitation sentence"; exit 1; fi
 echo "== 2/4 unit tests"; python3 -m unittest discover -s tests -q
 echo "== 3/4 build is up to date"
 tmp="$(mktemp -d)"; trap 'rm -rf "$tmp"' EXIT

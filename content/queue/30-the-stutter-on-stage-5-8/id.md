@@ -9,7 +9,7 @@ keywords: Inkisle, performa, tersendat, waktu frame, desain game, game seluler, 
 image_alt: Empat batang ungu tinggi di kiri dan empat batang koral pendek di kanan, dengan panah di antaranya dan garis putus-putus yang menandai anggaran.
 ---
 
-Inkisle, game strategi penaklukan pulau kami untuk iOS, terasa tersendat di stage 5-8 saat pengujian. Dugaan yang mudah adalah mesin game, bagian yang menggerakkan armada dan memutuskan penaklukan, sudah menjadi terlalu berat. Kami mengukur dulu. Masalahnya bukan mesin, melainkan layar di sekelilingnya. Setelah perubahan, biaya satu frame di stage 5-8 turun dari 3,4 ms menjadi 1,3 ms di komputer kami. Game ini masih dalam pengembangan dan belum dirilis, dan angka-angka ini bukan dari ponsel [belum diverifikasi].
+Inkisle, game strategi penaklukan pulau kami untuk iOS, terasa tersendat di stage 5-8 saat pengujian. Dugaan yang mudah adalah mesin game, bagian yang menggerakkan armada dan memutuskan penaklukan, sudah menjadi terlalu berat. Kami mengukur dulu. Masalahnya bukan mesin, melainkan layar di sekelilingnya. Setelah perubahan, biaya satu frame di stage 5-8 turun dari 3,4 ms menjadi 1,3 ms di komputer kami. Game ini masih dalam pengembangan dan belum dirilis, dan angka-angka ini bukan dari ponsel.
 
 ## Apa yang kami ukur
 
@@ -54,10 +54,10 @@ Benchmark mesin tanpa layar, dan tes performa dengan batas atas yang longgar. Te
 
 ## Yang belum kami periksa
 
-- **Frame rate di ponsel sungguhan, pada 60 atau 120 frame per detik, belum diperiksa [belum diverifikasi].** Angka kami adalah biaya thread layar di komputer, bukan biaya grafis di perangkat.
-- **Tabir kabut dan lapisan pita belum diukur dan belum diubah [belum diverifikasi].** Keduanya digambar dengan blur layar penuh, yang membebani chip grafis, bukan prosesor. Jika stage 5-8 masih tersendat di ponsel, inilah tersangka pertama kami.
-- Kami tidak melihat render browser pada 320, 375, 768, dan 1280 px, karena tidak ada tata letak yang berubah [belum diverifikasi].
-- Bahwa input terasa lebih responsif hanyalah harapan kami [belum diverifikasi].
+- **Frame rate di ponsel sungguhan, pada 60 atau 120 frame per detik, belum diperiksa.** Angka kami adalah biaya thread layar di komputer, bukan biaya grafis di perangkat.
+- **Tabir kabut dan lapisan pita belum diukur dan belum diubah.** Keduanya digambar dengan blur layar penuh, yang membebani chip grafis, bukan prosesor. Jika stage 5-8 masih tersendat di ponsel, inilah tersangka pertama kami.
+- Kami tidak melihat render browser pada 320, 375, 768, dan 1280 px, karena tidak ada tata letak yang berubah.
+- Bahwa input terasa lebih responsif hanyalah harapan kami.
 
 ## FAQ
 

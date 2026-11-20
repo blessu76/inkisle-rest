@@ -48,9 +48,9 @@ Die letzte Zeile lautet auf Koreanisch „Die tiefe See spiegelt.“ (「깊은 
 
 ## Was wir nicht geprüft haben
 
-- **Der Endtext in den 10 Sprachen außer Koreanisch und Englisch ist maschinell übersetzt und nicht geprüft worden [ungeprüft].** Bei nur wenigen Zeilen auf dem Bildschirm fällt die Qualität einer Übersetzung sofort auf.
-- Das langsame Ausblenden, die goldene Schrift und die Lautstärke der Glocke wurden nicht auf einem echten Gerät gesehen [ungeprüft].
-- Die Darstellungen mit 375px und 320px wurden nur in Widget-Tests geprüft, deren Testschrift viel breiter ist als die echte [ungeprüft].
+- **Der Endtext in den 10 Sprachen außer Koreanisch und Englisch ist maschinell übersetzt und nicht geprüft worden.** Bei nur wenigen Zeilen auf dem Bildschirm fällt die Qualität einer Übersetzung sofort auf.
+- Das langsame Ausblenden, die goldene Schrift und die Lautstärke der Glocke wurden nicht auf einem echten Gerät gesehen.
+- Die Darstellungen mit 375px und 320px wurden nur in Widget-Tests geprüft, deren Testschrift viel breiter ist als die echte.
 - Ob es eine Staffel 2 geben wird, ist offen, und ein Veröffentlichungsdatum steht nicht fest.
 
 ## FAQ

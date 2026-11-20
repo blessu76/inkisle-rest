@@ -9,7 +9,7 @@ keywords: Inkisle, bölüm atlama, zorluk, oyun tasarımı, kayıtlı veri, mobi
 image_alt: Küçük bir mercan rengi bayrakla işaretlenmiş bir adanın bulunduğu deniz haritası ve o adanın yanından geçip bir sonraki adaya giden noktalı bir yol.
 ---
 
-iOS için yaptığımız ada fethi strateji oyunu Inkisle'da aynı bölümü üç kez kaybetmek şu soruyu getirir: "Bu bölümü atlayıp daha sonra mı denemek istersin?" Atlamanın bedeli 3 Ink'tir. Atlanan bölüm deniz haritasında bir bayrak alır ve istediğin zaman oynanabilir. Oyun hâlâ geliştirme aşamasında ve yayımlanmadı; bu açılır pencereyi gerçek bir cihazda henüz görmedik [doğrulanmadı].
+iOS için yaptığımız ada fethi strateji oyunu Inkisle'da aynı bölümü üç kez kaybetmek şu soruyu getirir: "Bu bölümü atlayıp daha sonra mı denemek istersin?" Atlamanın bedeli 3 Ink'tir. Atlanan bölüm deniz haritasında bir bayrak alır ve istediğin zaman oynanabilir. Oyun hâlâ geliştirme aşamasında ve yayımlanmadı; bu açılır pencereyi gerçek bir cihazda henüz görmedik.
 
 ## Neden atlama teklif ediyoruz
 
@@ -50,9 +50,9 @@ iCloud birleştirmesinde daha büyük başarısızlık sayısı korunur, atlama 
 
 ## Neleri kontrol etmedik
 
-- Açılır pencere ve bayrak gerçek bir cihazda veya simülatörde. 375 ve 320 px genişliğindeki widget testleri 16 dil sütununda taşma bulmadı, ancak ekran görüntülerine bakmadık [doğrulanmadı].
-- iCloud anlık görüntüsünün üzerine yazan eski bir uygulama sürümünün iki yeni anahtarı düşürüp düşürmediği. Düşürürse geçilen bölümler ve yıldızlar kalır, yalnızca atlama işaretleri kaybolur [doğrulanmadı].
-- Korece ve İngilizce dışındaki çeviriler ana dili konuşan biri tarafından gözden geçirilmedi [doğrulanmadı].
+- Açılır pencere ve bayrak gerçek bir cihazda veya simülatörde. 375 ve 320 px genişliğindeki widget testleri 16 dil sütununda taşma bulmadı, ancak ekran görüntülerine bakmadık.
+- iCloud anlık görüntüsünün üzerine yazan eski bir uygulama sürümünün iki yeni anahtarı düşürüp düşürmediği. Düşürürse geçilen bölümler ve yıldızlar kalır, yalnızca atlama işaretlerinin kaybolacağını düşünüyoruz.
+- Korece ve İngilizce dışındaki çeviriler ana dili konuşan biri tarafından gözden geçirilmedi.
 
 ## SSS
 

@@ -9,7 +9,7 @@ keywords: Inkisle, pular fase, dificuldade, design de jogos, dados salvos, jogo 
 image_alt: Uma carta náutica com uma ilha marcada por uma pequena bandeira de coral e um caminho pontilhado que passa por ela até a próxima ilha.
 ---
 
-No Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, perder três vezes a mesma fase faz aparecer uma pergunta: "Pular esta fase e tentar mais tarde?" Pular custa 3 Ink. A fase pulada ganha uma bandeira na carta e pode ser jogada quando você quiser. O jogo ainda está em desenvolvimento e não foi lançado, e ainda não vimos este aviso em um aparelho real [não verificado].
+No Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, perder três vezes a mesma fase faz aparecer uma pergunta: "Pular esta fase e tentar mais tarde?" Pular custa 3 Ink. A fase pulada ganha uma bandeira na carta e pode ser jogada quando você quiser. O jogo ainda está em desenvolvimento e não foi lançado, e ainda não vimos este aviso em um aparelho real.
 
 ## Por que oferecer um pulo
 
@@ -50,9 +50,9 @@ Na mesclagem com o iCloud, mantém-se a maior contagem de derrotas, as listas de
 
 ## O que não verificamos
 
-- O aviso e a bandeira em um aparelho real ou simulador. Testes de widget com largura de 375 e 320 px não encontraram estouro em 16 colunas de idioma, mas não olhamos capturas de tela [não verificado].
-- Se uma versão antiga do app que sobrescreva o snapshot do iCloud perde as duas chaves novas. Se perder, as fases concluídas e as estrelas permanecem e só as marcas de pulo se perdem [não verificado].
-- As traduções além do coreano e do inglês não passaram por revisão de falantes nativos [não verificado].
+- O aviso e a bandeira em um aparelho real ou simulador. Testes de widget com largura de 375 e 320 px não encontraram estouro em 16 colunas de idioma, mas não olhamos capturas de tela.
+- Se uma versão antiga do app que sobrescreva o snapshot do iCloud perde as duas chaves novas. Se perder, as fases concluídas e as estrelas permanecem e acreditamos que só as marcas de pulo se perderiam.
+- As traduções além do coreano e do inglês não passaram por revisão de falantes nativos.
 
 ## FAQ
 

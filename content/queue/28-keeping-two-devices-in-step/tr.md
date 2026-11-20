@@ -9,7 +9,7 @@ keywords: Inkisle, iCloud, cihazlar arası eşitleme, kayıt verisi, birleştirm
 image_alt: İnce bir iplikle birbirine bağlanmış, farklı boyutlarda iki ekran; iki haritadaki adalar aynı renklerle boyanmış.
 ---
 
-iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle'da ilerleme, mürekkep ve temel ayarlar (dil ve takma ad), aynı Apple Kimliği'ne sahip cihazlar arasında oyuncunun kendi iCloud anahtar-değer depolaması üzerinden eşleştirilir. Bu eşitleme zaten vardı. 16 Kasım'da yaptığımız şey onu kurmak değil, kendi yazdığımız bir köprüyü ortak bir uygulama kitine taşımaktı ve en büyük endişe kayıtlı tek bir değeri bile kaybetmemekti. Gerçek bir iPhone ile iPad arasında gidiş-dönüşü henüz kontrol etmedik **[doğrulanmadı]**. Oyun geliştirme aşamasında ve yayımlanmadı.
+iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle'da ilerleme, mürekkep ve temel ayarlar (dil ve takma ad), aynı Apple Kimliği'ne sahip cihazlar arasında oyuncunun kendi iCloud anahtar-değer depolaması üzerinden eşleştirilir. Bu eşitleme zaten vardı. 16 Kasım'da yaptığımız şey onu kurmak değil, kendi yazdığımız bir köprüyü ortak bir uygulama kitine taşımaktı ve en büyük endişe kayıtlı tek bir değeri bile kaybetmemekti. Gerçek bir iPhone ile iPad arasında gidiş-dönüşü henüz kontrol etmedik. Oyun geliştirme aşamasında ve yayımlanmadı.
 
 ## Neyi taşıdık
 
@@ -38,7 +38,7 @@ Anahtarlar ve biçimler aynı kaldığı için yeni derleme eskisinin yazdığı
 
 Önceki bir yazıda kilit açmanın başka bir cihaza geçmediği söylenmişti. Bu çalışma bunu değiştirdi. Eşitleme parçası artık Tüm Denizlerin Kilidini Aç'ın satın alındığına dair bir işaret taşıyor ve onu okuyan başka bir cihaz da açılıyor. İşaret **yalnızca büyür.** Onu içermeyen bir parça işareti geri almaz; biz yeniden göndeririz.
 
-Bu, sorumlunun "zorunlu eşitleme" talimatını izleyen bir tasarım değişikliği ve tek bir sınırı var: işaret bir kez eşitlendiğinde, iade onu diğer cihazlarda geri çekmez. İadelerin nasıl ele alınacağı bir politika kararı olarak bırakıldı. Satın alma akışının kendisi de henüz gerçek bir cihazda çalıştırılmadı **[doğrulanmadı]**.
+Bu, sorumlunun "zorunlu eşitleme" talimatını izleyen bir tasarım değişikliği ve tek bir sınırı var: işaret bir kez eşitlendiğinde, iade onu diğer cihazlarda geri çekmez. İadelerin nasıl ele alınacağı bir politika kararı olarak bırakıldı. Satın alma akışının kendisi de henüz gerçek bir cihazda çalıştırılmadı.
 
 ## Boyut ve testler
 
@@ -46,7 +46,7 @@ iCloud anahtar-değer depolamasının toplam bir sınırı var (1 MB). 240 aşam
 
 ## Neleri kontrol etmedik
 
-- **Bir iPhone ile iPad arasında gerçek bir eşitleme kontrol edilmedi [doğrulanmadı].** Yalnızca gerçek cihazlarda veya TestFlight'ta görülebilir.
+- **Bir iPhone ile iPad arasında gerçek bir eşitleme kontrol edilmedi.** Yalnızca gerçek cihazlarda veya TestFlight'ta görülebilir.
 - Silmeler diğer cihazlara geçmez, çünkü bu eşitleme yalnızca birleştirir.
 - Android için geçerli değil. Veriler cihazda kalır.
 - Başka bir cihazdaki eski bir derleme aynı anahtarın üzerine yazarsa satın alma işareti kısa süre kaybolabilir ve yeni derleme onu yeniden gönderir.
