@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, bölüm atlama, zorluk, oyun tasarımı, kayıtlı veri, mobil oyun
 image_alt: Küçük bir mercan rengi bayrakla işaretlenmiş bir adanın bulunduğu deniz haritası ve o adanın yanından geçip bir sonraki adaya giden noktalı bir yol.
+published: 2026-11-21T12:30+09:00
 ---
 
 iOS için yaptığımız ada fethi strateji oyunu Inkisle'da aynı bölümü üç kez kaybetmek şu soruyu getirir: "Bu bölümü atlayıp daha sonra mı denemek istersin?" Atlamanın bedeli 3 Ink'tir. Atlanan bölüm deniz haritasında bir bayrak alır ve istediğin zaman oynanabilir. Oyun hâlâ geliştirme aşamasında ve yayımlanmadı; bu açılır pencereyi gerçek bir cihazda henüz görmedik.

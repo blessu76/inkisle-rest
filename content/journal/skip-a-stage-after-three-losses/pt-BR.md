@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, pular fase, dificuldade, design de jogos, dados salvos, jogo mobile
 image_alt: Uma carta náutica com uma ilha marcada por uma pequena bandeira de coral e um caminho pontilhado que passa por ela até a próxima ilha.
+published: 2026-11-21T12:30+09:00
 ---
 
 No Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, perder três vezes a mesma fase faz aparecer uma pergunta: "Pular esta fase e tentar mais tarde?" Pular custa 3 Ink. A fase pulada ganha uma bandeira na carta e pode ser jogada quando você quiser. O jogo ainda está em desenvolvimento e não foi lançado, e ainda não vimos este aviso em um aparelho real.

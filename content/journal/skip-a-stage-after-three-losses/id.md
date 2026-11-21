@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, lewati stage, tingkat kesulitan, desain game, data tersimpan, game seluler
 image_alt: Peta laut dengan satu pulau yang ditandai bendera karang kecil, dan jalur putus-putus yang melewatinya menuju pulau berikutnya.
+published: 2026-11-21T12:30+09:00
 ---
 
 Di Inkisle, game strategi penaklukan pulau kami untuk iOS, kalah tiga kali di stage yang sama memunculkan pertanyaan: "Lewati stage ini dan coba lagi nanti?" Melewati butuh 3 Ink. Stage yang dilewati mendapat bendera di peta laut dan bisa dimainkan kapan saja. Game ini masih dalam pengembangan dan belum dirilis, dan kami belum melihat popup ini di perangkat nyata.

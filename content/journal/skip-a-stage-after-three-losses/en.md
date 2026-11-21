@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, skip stage, difficulty, game design, save data, mobile game
 image_alt: A sea chart with one island marked by a small coral flag, and a dotted path leading past it to the next island.
+published: 2026-11-21T12:30+09:00
 ---
 
 In Inkisle, our island-conquest strategy game for iOS, losing the same stage three times brings up a question: "Skip this stage and try it later?" Skipping costs 3 Ink. The skipped stage gets a flag on the chart and can be played whenever you like. The game is still in development and not released, and we have not yet seen this popup on a real device.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, passer un niveau, difficulté, game design, données de sauvegarde, jeu mobile
 image_alt: Une carte marine avec une île portant un petit drapeau corail et un chemin en pointillés qui la contourne vers l'île suivante.
+published: 2026-11-21T12:30+09:00
 ---
 
 Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, perdre trois fois le même niveau fait apparaître la question : « Passer ce niveau et réessayer plus tard ? » Passer coûte 3 Ink. Le niveau passé reçoit un drapeau sur la carte et reste jouable à tout moment. Le jeu est encore en développement et n'est pas sorti ; nous n'avons pas encore vu cette fenêtre sur un vrai appareil.

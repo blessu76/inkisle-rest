@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Level überspringen, Schwierigkeit, Spieldesign, Speicherdaten, Mobile Game
 image_alt: Eine Seekarte mit einer Insel, die eine kleine korallenrote Flagge trägt, und einem gepunkteten Weg an ihr vorbei zur nächsten Insel.
+published: 2026-11-21T12:30+09:00
 ---
 
 In Inkisle, unserem Insel-Eroberungsspiel für iOS, erscheint nach drei Niederlagen im selben Level die Frage: „Dieses Level überspringen und später versuchen?“ Das Überspringen kostet 3 Ink. Das übersprungene Level bekommt auf der Seekarte eine Flagge und lässt sich jederzeit spielen. Das Spiel ist noch in Entwicklung und nicht veröffentlicht; das Popup haben wir noch nicht auf einem echten Gerät gesehen.

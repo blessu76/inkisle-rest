@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, bỏ qua màn, độ khó, thiết kế game, dữ liệu lưu, game di động
 image_alt: Một tấm hải đồ có một hòn đảo được đánh dấu bằng lá cờ san hô nhỏ, và một đường chấm chấm đi vòng qua nó để tới hòn đảo kế tiếp.
+published: 2026-11-21T12:30+09:00
 ---
 
 Trong Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, thua cùng một màn ba lần sẽ hiện ra câu hỏi: "Bỏ qua màn này và thử lại sau?" Bỏ qua tốn 3 Ink. Màn bị bỏ qua có một lá cờ trên hải đồ và có thể chơi lại bất cứ lúc nào. Game vẫn đang được phát triển và chưa phát hành, và chúng tôi chưa thấy bảng hỏi này trên thiết bị thật.

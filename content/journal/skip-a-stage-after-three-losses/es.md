@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, saltar nivel, dificultad, diseño de juegos, datos guardados, juego móvil
 image_alt: Una carta náutica con una isla marcada por una pequeña bandera de coral y un camino punteado que pasa de largo hacia la siguiente isla.
+published: 2026-11-21T12:30+09:00
 ---
 
 En Inkisle, nuestro juego de estrategia de conquista de islas para iOS, perder tres veces el mismo nivel hace aparecer una pregunta: «¿Saltar este nivel e intentarlo más tarde?». Saltar cuesta 3 Ink. El nivel saltado recibe una bandera en la carta y se puede jugar cuando se quiera. El juego sigue en desarrollo y no ha sido lanzado, y todavía no hemos visto este aviso en un dispositivo real.
