@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, season 1, ending, open ending, lighthouse, game design, mobile game
 image_alt: A lone island on a calm sea with one lighthouse burning, and the chart route stopping in front of it.
+published: 2026-11-22T16:00+09:00
 ---
 
 The season 1 ending of Inkisle, our island-conquest strategy game for iOS, plays by itself once, the first time stage 8 of act 30 is cleared. To watch it again, the player taps the lighthouse at the top of act 30. The ending has no closing word; the only mark is "Inkisle · Season 1". This post is less about what the ending shows and more about when it plays and when it does not, and how we settled those rules. The game is in development and not released.

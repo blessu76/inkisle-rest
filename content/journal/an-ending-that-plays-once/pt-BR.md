@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, temporada 1, final, final aberto, farol, design de jogos, jogo mobile
 image_alt: Uma ilha solitária em um mar calmo com um farol aceso, e a rota da carta náutica parando diante dele.
+published: 2026-11-22T16:00+09:00
 ---
 
 O final da temporada 1 de Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, toca sozinho uma vez, na primeira vez que a fase 8 do ato 30 é concluída. Para assisti-lo de novo, o jogador toca o farol no topo do ato 30. O final não tem palavra de encerramento; a única marca é "Inkisle · Season 1". Este texto fala menos do que o final mostra e mais de quando ele toca e quando não toca, e de como definimos essas regras. O jogo está em desenvolvimento e não foi lançado.

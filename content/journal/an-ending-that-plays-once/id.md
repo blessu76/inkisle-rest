@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, season 1, akhir cerita, akhir terbuka, mercusuar, desain game, game mobile
 image_alt: Sebuah pulau sunyi di laut yang tenang dengan satu mercusuar menyala, dan rute peta laut berhenti di depannya.
+published: 2026-11-22T16:00+09:00
 ---
 
 Akhir season 1 Inkisle, game strategi penaklukan pulau kami untuk iOS, diputar sendiri satu kali, saat tahap 8 babak 30 pertama kali diselesaikan. Untuk menontonnya lagi, pemain mengetuk mercusuar di bagian atas babak 30. Akhir ini tidak punya kata penutup; satu-satunya tanda adalah "Inkisle · Season 1". Tulisan ini lebih membahas kapan akhir ini diputar dan kapan tidak, serta bagaimana kami menetapkan aturannya, ketimbang apa yang ditampilkannya. Game ini masih dalam pengembangan dan belum dirilis.

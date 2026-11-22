@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, saison 1, fin, fin ouverte, phare, game design, jeu mobile
 image_alt: Une île solitaire sur une mer calme avec un phare allumé, et la route de la carte marine qui s'arrête devant lui.
+published: 2026-11-22T16:00+09:00
 ---
 
 La fin de la saison 1 d'Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, se joue d'elle-même une fois, la première fois que l'étape 8 de l'acte 30 est réussie. Pour la revoir, le joueur touche le phare en haut de l'acte 30. La fin n'a pas de mot de clôture ; la seule marque est « Inkisle · Season 1 ». Cet article parle moins de ce que montre la fin que du moment où elle se joue et de celui où elle ne se joue pas, et de la façon dont nous avons fixé ces règles. Le jeu est en développement et n'est pas sorti.

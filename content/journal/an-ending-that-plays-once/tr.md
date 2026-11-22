@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 1. sezon, son, açık son, deniz feneri, oyun tasarımı, mobil oyun
 image_alt: Sakin bir denizde tek bir deniz feneri yanan yalnız bir ada ve önünde duran harita rotası.
+published: 2026-11-22T16:00+09:00
 ---
 
 iOS için ada fethi strateji oyunumuz Inkisle'ın 1. sezon sonu, 30. perdenin 8. aşaması ilk kez geçildiğinde kendiliğinden bir kez oynar. Tekrar izlemek için oyuncu 30. perdenin en üstündeki deniz fenerine dokunur. Sonda kapanış sözü yok; tek iz "Inkisle · Season 1". Bu yazı, sonun ne gösterdiğinden çok, ne zaman oynayıp ne zaman oynamadığı ve bu kuralları nasıl belirlediğimiz üzerine. Oyun geliştirme aşamasında ve çıkmadı.

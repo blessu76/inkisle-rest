@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, mùa 1, cái kết, kết mở, hải đăng, thiết kế game, game di động
 image_alt: Một hòn đảo đơn độc trên mặt biển lặng với một ngọn hải đăng đang sáng, và tuyến đường trên hải đồ dừng lại trước nó.
+published: 2026-11-22T16:00+09:00
 ---
 
 Cái kết mùa 1 của Inkisle, game chiến thuật chinh phục đảo của chúng tôi trên iOS, tự phát một lần, vào lần đầu qua màn 8 của hồi 30. Để xem lại, người chơi chạm vào ngọn hải đăng ở đầu hồi 30. Cái kết không có lời khép lại; dấu duy nhất là "Inkisle · Season 1". Bài viết này nói ít về những gì cái kết hiện ra, mà nhiều hơn về lúc nào nó phát và lúc nào không, và cách chúng tôi chốt các quy tắc đó. Game đang trong quá trình phát triển và chưa phát hành.

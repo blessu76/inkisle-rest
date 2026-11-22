@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Staffel 1, Ende, offenes Ende, Leuchtturm, Spieldesign, Mobile Game
 image_alt: Eine einsame Insel auf ruhiger See mit einem brennenden Leuchtturm, und die Seekartenroute endet vor ihm.
+published: 2026-11-22T16:00+09:00
 ---
 
 Das Ende von Staffel 1 von Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, läuft einmal von selbst, wenn Stufe 8 von Akt 30 zum ersten Mal geschafft wird. Um es noch einmal zu sehen, tippt der Spieler oben in Akt 30 auf den Leuchtturm. Das Ende hat kein Schlusswort; das einzige Zeichen ist „Inkisle · Season 1“. In diesem Beitrag geht es weniger darum, was das Ende zeigt, sondern wann es läuft und wann nicht, und wie wir diese Regeln festgelegt haben. Das Spiel ist in Entwicklung und nicht veröffentlicht.

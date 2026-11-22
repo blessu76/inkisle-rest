@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, temporada 1, final, final abierto, faro, diseño de juegos, juego móvil
 image_alt: Una isla solitaria en un mar en calma con un faro encendido, y la ruta de la carta náutica que se detiene frente a él.
+published: 2026-11-22T16:00+09:00
 ---
 
 El final de la temporada 1 de Inkisle, nuestro juego de estrategia de conquista de islas para iOS, se reproduce solo una vez, la primera vez que se supera la fase 8 del acto 30. Para verlo otra vez, el jugador toca el faro en la parte superior del acto 30. El final no tiene palabra de cierre; la única marca es «Inkisle · Season 1». Esta entrada trata menos de lo que muestra el final y más de cuándo se reproduce y cuándo no, y de cómo fijamos esas reglas. El juego está en desarrollo y no se ha lanzado.
