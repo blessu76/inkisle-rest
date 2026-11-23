@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, synchronisation entre appareils, données de sauvegarde, fusion, jeu mobile
 image_alt: Deux écrans de tailles différentes reliés par un fil mince, avec les îles des deux cartes peintes des mêmes couleurs.
+published: 2026-11-23T13:45+09:00
 ---
 
 Dans Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, la progression, l'encre et les réglages clés (langue et pseudo) sont alignés entre les appareils d'un même identifiant Apple grâce au stockage clé-valeur iCloud du joueur lui-même. Cette synchronisation existait déjà. Ce que nous avons fait le 16 novembre n'a pas été de la construire, mais de déplacer vers un kit d'application partagé un pont que nous avions écrit nous-mêmes, et la plus grande crainte était de ne perdre aucune valeur sauvegardée. Nous n'avons pas encore vérifié un aller-retour entre un vrai iPhone et un iPad. Le jeu est en développement et n'est pas sorti.

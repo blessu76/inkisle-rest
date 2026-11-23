@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, sincronización entre dispositivos, datos guardados, combinar, juego móvil
 image_alt: Dos pantallas de distinto tamaño unidas por un hilo fino, con las islas de ambos mapas pintadas de los mismos colores.
+published: 2026-11-23T13:45+09:00
 ---
 
 En Inkisle, nuestro juego de estrategia de conquista de islas para iOS, el progreso, la tinta y los ajustes clave (idioma y apodo) se igualan entre dispositivos con el mismo Apple ID mediante el almacenamiento clave-valor de iCloud del propio jugador. Esa sincronización ya existía. Lo que hicimos el 16 de noviembre no fue crearla, sino mover a un kit de app compartido un puente que habíamos escrito nosotros, y la mayor preocupación era no perder ni un solo valor guardado. Todavía no hemos comprobado un viaje de ida y vuelta entre un iPhone y un iPad reales. El juego está en desarrollo y no publicado.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, đồng bộ giữa các thiết bị, dữ liệu lưu, hợp nhất, game di động
 image_alt: Hai màn hình khác kích thước được nối bằng một sợi chỉ mảnh, các hòn đảo trên cả hai bản đồ được tô cùng màu.
+published: 2026-11-23T13:45+09:00
 ---
 
 Trong Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, tiến trình, mực và các cài đặt chính (ngôn ngữ và biệt danh) được khớp giữa các thiết bị cùng Apple ID thông qua kho khóa-giá trị iCloud của chính người chơi. Việc đồng bộ này đã có sẵn. Điều chúng tôi làm vào ngày 16 tháng 11 không phải là xây dựng nó, mà là chuyển một cây cầu do chính chúng tôi viết vào bộ ứng dụng dùng chung, và nỗi lo lớn nhất là không làm mất dù chỉ một giá trị đã lưu. Chúng tôi chưa kiểm tra vòng đi-về giữa một iPhone và một iPad thật. Trò chơi đang được phát triển và chưa phát hành.

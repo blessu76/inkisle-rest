@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, iCloud, cross-device sync, save data, merge, mobile game
 image_alt: Two screens of different sizes joined by a thin thread, with the islands on both charts painted the same colors.
+published: 2026-11-23T13:45+09:00
 ---
 
 In Inkisle, our island-conquest strategy game for iOS, progress, ink and key settings (language and nickname) are matched across devices on the same Apple ID through the player's own iCloud key-value storage. That sync already existed. What we did on November 16 was not to build it but to move a bridge we had written ourselves into a shared app kit, and the biggest worry was not losing a single saved value. We have not yet checked a round trip between a real iPhone and iPad. The game is in development and not released.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, geräteübergreifende Synchronisierung, Spielstand, Zusammenführen, Mobile Game
 image_alt: Zwei Bildschirme unterschiedlicher Größe, durch einen dünnen Faden verbunden, mit gleich gefärbten Inseln auf beiden Karten.
+published: 2026-11-23T13:45+09:00
 ---
 
 In Inkisle, unserem Strategiespiel über die Eroberung von Inseln für iOS, werden Fortschritt, Tinte und wichtige Einstellungen (Sprache und Spitzname) über den eigenen iCloud-Schlüssel-Wert-Speicher des Spielers zwischen Geräten mit derselben Apple-ID abgeglichen. Diese Synchronisierung gab es schon. Am 16. November haben wir sie nicht gebaut, sondern eine selbst geschriebene Brücke in ein gemeinsames App-Kit verlegt, und die größte Sorge war, keinen einzigen gespeicherten Wert zu verlieren. Einen Round Trip zwischen einem echten iPhone und iPad haben wir noch nicht geprüft. Das Spiel ist in Entwicklung und nicht veröffentlicht.

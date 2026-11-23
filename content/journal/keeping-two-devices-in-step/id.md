@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, sinkronisasi antarperangkat, data simpanan, penggabungan, game mobile
 image_alt: Dua layar berukuran berbeda yang disambung seutas benang tipis, dengan pulau di kedua peta berwarna sama.
+published: 2026-11-23T13:45+09:00
 ---
 
 Di Inkisle, game strategi penaklukan pulau kami untuk iOS, progres, tinta, dan pengaturan utama (bahasa dan nama panggilan) disamakan antarperangkat dengan Apple ID yang sama lewat penyimpanan key-value iCloud milik pemain sendiri. Sinkronisasi itu sudah ada. Yang kami lakukan pada 16 November bukan membangunnya, melainkan memindahkan jembatan buatan kami sendiri ke kit aplikasi bersama, dan kekhawatiran terbesarnya adalah jangan sampai satu pun nilai tersimpan hilang. Kami belum memeriksa pulang-pergi antara iPhone dan iPad sungguhan. Game ini masih dalam pengembangan dan belum dirilis.

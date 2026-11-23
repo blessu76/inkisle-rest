@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, iCloud, cihazlar arası eşitleme, kayıt verisi, birleştirme, mobil oyun
 image_alt: İnce bir iplikle birbirine bağlanmış, farklı boyutlarda iki ekran; iki haritadaki adalar aynı renklerle boyanmış.
+published: 2026-11-23T13:45+09:00
 ---
 
 iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle'da ilerleme, mürekkep ve temel ayarlar (dil ve takma ad), aynı Apple Kimliği'ne sahip cihazlar arasında oyuncunun kendi iCloud anahtar-değer depolaması üzerinden eşleştirilir. Bu eşitleme zaten vardı. 16 Kasım'da yaptığımız şey onu kurmak değil, kendi yazdığımız bir köprüyü ortak bir uygulama kitine taşımaktı ve en büyük endişe kayıtlı tek bir değeri bile kaybetmemekti. Gerçek bir iPhone ile iPad arasında gidiş-dönüşü henüz kontrol etmedik. Oyun geliştirme aşamasında ve yayımlanmadı.
