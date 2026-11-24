@@ -196,6 +196,47 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertEqual(again.returncode, 0, again.stdout + again.stderr)
         self.assertEqual(sorted(self.pending.parent.glob("publish-pages.pending.corrupt-*")), backups)
 
+    def test_pending_directory_rename_failure_allows_new_and_retried_pushes(self):
+        env = self.pages_stubs()
+        self.pending.mkdir()
+        original = self.pending / "original"
+        original.write_text("directory contents")
+        # Inject the filesystem error into the Python processes started by the daily script.
+        (self.tmp / "sitecustomize.py").write_text(
+            "from pathlib import Path\n"
+            "rename = Path.rename\n"
+            "def rename_pending(path, target):\n"
+            "    if path == Path('.git/publish-pages.pending'):\n"
+            "        raise PermissionError('injected rename failure')\n"
+            "    return rename(path, target)\n"
+            "Path.rename = rename_pending\n"
+        )
+        env["PYTHONPATH"] = str(self.tmp)
+        before = self.origin_head()
+        first = self.run_script(**env)
+        self.assertEqual(first.returncode, 0, first.stdout + first.stderr)
+        self.assertIn("pushed next-one", first.stdout)
+        self.assertNotEqual(before, self.origin_head())
+
+        # Leave a publication commit locally to exercise the earlier-push path on the next tick.
+        page = self.clone / "journal/earlier-post/index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text("earlier publication")
+        git(self.clone, "add", str(page))
+        git(self.clone, "commit", "-qm", "earlier publication")
+        second = self.run_script(**env)
+        self.assertEqual(second.returncode, 0, second.stdout + second.stderr)
+        self.assertIn("pushed earlier publication commit(s)", second.stdout)
+        self.assertEqual(self.head(), self.origin_head())
+
+        for result in (first, second):
+            self.assertIn("WARN — could not move Pages state directory", result.stdout)
+            self.assertIn("injected rename failure", result.stdout)
+            self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(original.read_text(), "directory contents")
+        self.assertFalse(self.pages_trace.exists())
+        self.assertEqual(list(self.pending.parent.glob("publish-pages.pending.corrupt-*")), [])
+
     def test_invalid_pending_entries_are_skipped_before_retrying_push(self):
         env = self.pages_stubs()
         hook = self.origin / "hooks" / "pre-receive"
@@ -686,7 +727,7 @@ class PublishPages(unittest.TestCase):
             publish_pages.remember(self.lock, ["journal/test-post/index.html"])
         self.assertEqual(set(json.loads(self.pending.read_text())), {self.url})
         self.assertEqual(list(self.pending.parent.glob("publish-pages.pending.corrupt-*")), [])
-        log.assert_not_called()
+        log.assert_called_once_with("WARN — Pages state file is empty; starting with no pending URLs")
 
     def test_pending_json_must_be_an_object(self):
         for original in (b"[]", b'["url"]', b'"text"', b"5", b"false", b"null"):
@@ -768,6 +809,28 @@ class PublishPages(unittest.TestCase):
             original = backup / "original" if index % 2 else backup
             self.assertEqual(original.read_text(), str(index))
         self.assertEqual(unrelated.read_text(), "operator note")
+
+    def test_backup_listing_failure_does_not_block_remembering_urls(self):
+        self.pending.mkdir()
+        with mock.patch.object(Path, "iterdir", side_effect=PermissionError("listing denied")), \
+             mock.patch.object(publish_pages, "log") as log:
+            publish_pages.remember(self.lock, ["journal/test-post/index.html"])
+        self.assertIn("could not list old Pages state backups", log.call_args.args[0])
+        self.assertEqual(set(json.loads(self.pending.read_text())), {self.url})
+        backup, = self.pending.parent.glob("publish-pages.pending.corrupt-*")
+        self.assertTrue(backup.is_dir())
+
+    def test_backup_deletion_failure_does_not_block_remembering_urls(self):
+        self.pending.mkdir()
+        for index in range(publish_pages.BACKUP_LIMIT):
+            self.pending.with_name(f"{self.pending.name}.corrupt-20000101-000000-{index:06d}").mkdir()
+        with mock.patch.object(publish_pages.shutil, "rmtree", side_effect=PermissionError("deletion denied")), \
+             mock.patch.object(publish_pages, "log") as log:
+            publish_pages.remember(self.lock, ["journal/test-post/index.html"])
+        self.assertIn("could not remove old Pages state backup", log.call_args.args[0])
+        self.assertEqual(set(json.loads(self.pending.read_text())), {self.url})
+        self.assertEqual(len(list(self.pending.parent.glob("publish-pages.pending.corrupt-*"))),
+                         publish_pages.BACKUP_LIMIT + 1)
 
     def test_pending_urls_expire_at_exactly_72_hours(self):
         now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)

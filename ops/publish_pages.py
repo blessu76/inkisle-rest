@@ -28,6 +28,10 @@ class PendingURL:
     last_submit_day: str = ""
 
 
+class PendingShapeError(ValueError):
+    pass
+
+
 def log(message):
     print(f"[{dt.datetime.now(KST):%Y-%m-%d %H:%M:%S} KST] publish_daily: {message}", flush=True)
 
@@ -54,7 +58,11 @@ def recover_pending(lock, original, pending, reason):
         timestamp += dt.timedelta(microseconds=1)
         backup = PENDING.with_name(f"{PENDING.name}.corrupt-{timestamp:%Y%m%d-%H%M%S-%f}")
     if original is None:
-        PENDING.rename(backup)
+        try:
+            PENDING.rename(backup)
+        except OSError as error:
+            log(f"WARN — could not move Pages state directory {PENDING} to {backup}: {error}; skipping Pages follow-up")
+            return None
     else:
         backup.write_bytes(original)
     log(f"WARN — corrupt Pages state ({reason}); backed up as {backup}")
@@ -62,8 +70,13 @@ def recover_pending(lock, original, pending, reason):
         save_pending(lock, pending)
 
     # Keep this recovery even if the clock moved back since an earlier backup.
-    earlier = sorted((path for path in PENDING.parent.glob(f"{PENDING.name}.corrupt-*")
-                      if path != backup and BACKUP_SUFFIX.fullmatch(path.name[len(PENDING.name):])), reverse=True)
+    try:
+        earlier = sorted((path for path in PENDING.parent.iterdir()
+                          if path != backup and path.name.startswith(PENDING.name)
+                          and BACKUP_SUFFIX.fullmatch(path.name[len(PENDING.name):])), reverse=True)
+    except OSError as error:
+        log(f"WARN — could not list old Pages state backups in {PENDING.parent}: {error}")
+        return pending
     for path in earlier[BACKUP_LIMIT - 1:]:
         try:
             if not path.is_symlink() and path.is_dir():
@@ -72,6 +85,7 @@ def recover_pending(lock, original, pending, reason):
                 path.unlink(missing_ok=True)
         except OSError as error:
             log(f"WARN — could not remove old Pages state backup {path}: {error}")
+    return pending
 
 
 def parse_pending(content):
@@ -84,28 +98,27 @@ def parse_pending(content):
         recorded_at = int(PENDING.stat().st_mtime)
         return ((url, pending_entry({"recorded_at": recorded_at})) for url in content.splitlines() if url)
     if not isinstance(data, dict):
-        raise TypeError("expected a JSON object")
+        raise PendingShapeError("expected a JSON object")
     return ((url, pending_entry(fields)) for url, fields in data.items())
 
 
 def load_pending(lock):
+    """Return the pending URLs, or None if the state directory could not be moved."""
     try:
         original = PENDING.read_bytes()
     except FileNotFoundError:
         return {}
     except IsADirectoryError:
-        recover_pending(lock, None, {}, "state path is a directory")
-        return {}
+        return recover_pending(lock, None, {}, "state path is a directory")
     if not original:
+        log("WARN — Pages state file is empty; starting with no pending URLs")
         return {}
     try:
         entries = parse_pending(original.decode("utf-8"))
+    except PendingShapeError as error:
+        return recover_pending(lock, original, {}, str(error))
     except (ValueError, RecursionError):
-        recover_pending(lock, original, {}, "malformed JSON or UTF-8")
-        return {}
-    except TypeError as error:
-        recover_pending(lock, original, {}, str(error))
-        return {}
+        return recover_pending(lock, original, {}, "malformed JSON or UTF-8")
 
     pending = {}
     invalid = 0
@@ -125,7 +138,7 @@ def load_pending(lock):
     if future:
         reasons.append(f"expired {future} URL entry(s) with future recorded_at")
     if reasons:
-        recover_pending(lock, original, pending, "; ".join(reasons))
+        return recover_pending(lock, original, pending, "; ".join(reasons))
     return pending
 
 
@@ -145,6 +158,8 @@ def remember(lock, paths):
     if not urls:
         return
     pending = load_pending(lock)
+    if pending is None:
+        return
     recorded_at = int(dt.datetime.now(KST).timestamp())
     for url in urls:
         pending.setdefault(url, PendingURL(recorded_at))
