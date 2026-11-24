@@ -7,9 +7,11 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 import helpers
 from helpers import REPO
+from ops import publish_pages
 
 SCRIPT = REPO / "ops" / "publish_daily.sh"
 PAST = "2026-10-01T19:00+09:00"
@@ -153,6 +155,56 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertEqual(sum(line.startswith("dispatch ") for line in trace), 2)
         self.assertEqual(sum(line.startswith("indexnow ") for line in trace), 1)
 
+    def test_truncated_pending_json_is_backed_up_before_pushing_new_post(self):
+        env = self.pages_stubs()
+        original = b'{"https://inkisle.ipe.rest/journal/alpha-post/":'
+        self.pending.write_bytes(original)
+        before = self.origin_head()
+
+        result = self.run_script(**env)
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("WARN — corrupt Pages state (malformed JSON or UTF-8)", result.stdout)
+        self.assertIn("pushed next-one", result.stdout)
+        self.assertIn("IndexNow submitted", result.stdout)
+        self.assertNotEqual(before, self.origin_head())
+        self.assertEqual(self.head(), self.origin_head())
+        self.assertFalse(self.pending.exists())
+        self.assertEqual([p.read_bytes() for p in self.pending.parent.glob("publish-pages.pending.corrupt-*")], [original])
+
+    def test_invalid_pending_entries_are_skipped_before_retrying_push(self):
+        env = self.pages_stubs()
+        hook = self.origin / "hooks" / "pre-receive"
+        hook.write_text("#!/bin/sh\nexit 1\n")
+        hook.chmod(0o755)
+        before = self.origin_head()
+        first = self.run_script(**env)
+        self.assertIn("commit kept locally", first.stdout)
+        hook.unlink()
+
+        now = int(dt.datetime.now(dt.timezone.utc).timestamp())
+        old = "https://inkisle.ipe.rest/journal/alpha-post/"
+        pending = json.loads(self.pending.read_text())
+        pending[old] = {"recorded_at": now}
+        pending["https://inkisle.ipe.rest/ko/journal/alpha-post/"] = {"recorded_at": now, "unknown": True}
+        pending["https://inkisle.ipe.rest/en/journal/alpha-post/"] = {"recorded_at": "invalid"}
+        original = json.dumps(pending).encode("utf-8")
+        self.pending.write_bytes(original)
+
+        result = self.run_script(**env, PAGES_BLOCKED=old)
+
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)  # old page still pending
+        self.assertIn("WARN — corrupt Pages state (skipped 2 invalid URL entry(s))", result.stdout)
+        self.assertIn("pushed earlier publication commit(s)", result.stdout)
+        self.assertIn("IndexNow submitted", result.stdout)
+        self.assertIn("PAGES_NOT_LIVE", result.stdout)
+        self.assertNotEqual(before, self.origin_head())
+        self.assertEqual(self.head(), self.origin_head())
+        self.assertEqual(json.loads(self.pending.read_text()), {
+            old: {"recorded_at": now, "pages_live": False, "last_submit_day": ""},
+        })
+        self.assertEqual([p.read_bytes() for p in self.pending.parent.glob("publish-pages.pending.corrupt-*")], [original])
+
     def test_next_tick_checks_pending_urls_when_nothing_is_due(self):
         env = self.pages_stubs(live_after=3)
         first = self.run_script(**env)
@@ -260,15 +312,15 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
 
     def test_indexnow_client_error_is_dropped_from_retry(self):
         env = self.pages_stubs()
-        result = self.run_script(**env, INDEXNOW_STATUS="429")
+        result = self.run_script(**env, INDEXNOW_STATUS="403")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("IndexNow HTTP 429; dropping 2 URL(s)", result.stdout)
+        self.assertIn("IndexNow HTTP 403; dropping 2 URL(s)", result.stdout)
         self.assertNotIn("INDEXNOW_PENDING", result.stdout)
         self.assertIn("Pages follow-up complete", result.stdout)
         self.assertFalse(self.pending.exists())
         self.pages_trace.write_text("")
 
-        later = self.run_script(**env, INDEXNOW_STATUS="429")
+        later = self.run_script(**env, INDEXNOW_STATUS="403")
         self.assertEqual(later.returncode, 0, later.stdout + later.stderr)
         self.assertEqual(self.pages_trace.read_text(), "")
 
@@ -587,6 +639,77 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         r = self.run_script(publish_dir=self.tmp)
         self.assertEqual(r.returncode, 0)
         self.assertIn("SKIP", r.stdout)
+
+
+class PublishPages(unittest.TestCase):
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory(prefix="inkisle-pages-")
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        self.addCleanup(os.chdir, Path.cwd())
+        os.chdir(root)
+        self.lock = root / ".git" / "publish.lock"
+        self.lock.mkdir(parents=True)
+        self.url = "https://inkisle.ipe.rest/journal/test-post/"
+        post = Path("journal/test-post/index.html")
+        post.parent.mkdir(parents=True)
+        post.touch()
+        self.pending = publish_pages.PENDING
+
+    def test_pending_urls_expire_at_exactly_72_hours(self):
+        now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)
+        recorded_at = int(now.timestamp()) - 3 * 24 * 60 * 60 + 1
+        expiry = now + dt.timedelta(seconds=1)
+        with mock.patch.object(publish_pages.dt, "datetime", wraps=dt.datetime) as clock, \
+             mock.patch.object(publish_pages, "pages_are_live", return_value=False) as probe, \
+             mock.patch.object(publish_pages.subprocess, "run") as submit:
+            for pages_live in (False, True):
+                with self.subTest(pages_live=pages_live):
+                    entry = {"recorded_at": recorded_at, "pages_live": pages_live, "last_submit_day": "2026-11-25"}
+                    self.pending.write_text(json.dumps({self.url: entry}))
+                    clock.now.return_value = now
+                    self.assertEqual(publish_pages.verify(self.lock), 0 if pages_live else 1)
+                    self.assertEqual(json.loads(self.pending.read_text()), {self.url: entry})
+                    probe.reset_mock()
+
+                    clock.now.return_value = expiry
+                    self.assertEqual(publish_pages.verify(self.lock), 0)
+                    self.assertFalse(self.pending.exists())
+                    probe.assert_not_called()
+            submit.assert_not_called()
+
+    def assert_retries_indexnow_next_kst_day(self, failure):
+        now = dt.datetime(2026, 11, 25, 23, 59, 58, tzinfo=publish_pages.KST)
+        same_day = now + dt.timedelta(seconds=1)
+        next_day = now + dt.timedelta(seconds=2)
+        self.pending.write_text(json.dumps({self.url: {"recorded_at": int(now.timestamp()), "pages_live": True}}))
+        success = subprocess.CompletedProcess([], 0, stdout="", stderr="")
+        with mock.patch.object(publish_pages.dt, "datetime", wraps=dt.datetime) as clock, \
+             mock.patch.object(publish_pages, "pages_are_live") as probe, \
+             mock.patch.object(publish_pages.subprocess, "run", side_effect=[failure, success]) as submit:
+            clock.now.return_value = now
+            self.assertEqual(publish_pages.verify(self.lock), 0)
+            clock.now.assert_called_with(publish_pages.KST)
+            self.assertEqual(json.loads(self.pending.read_text())[self.url]["last_submit_day"], "2026-11-25")
+            self.assertEqual(submit.call_count, 1)
+
+            clock.now.return_value = same_day
+            self.assertEqual(publish_pages.verify(self.lock), 0)
+            self.assertEqual(submit.call_count, 1)
+
+            clock.now.return_value = next_day
+            self.assertEqual(publish_pages.verify(self.lock), 0)
+            self.assertEqual(submit.call_count, 2)
+            self.assertFalse(self.pending.exists())
+            probe.assert_not_called()
+
+    def test_indexnow_network_error_is_retried_on_next_kst_day(self):
+        failure = subprocess.CompletedProcess([], 1, stdout="", stderr="URLError: timed out\n")
+        self.assert_retries_indexnow_next_kst_day(failure)
+
+    def test_indexnow_rate_limit_is_retried_on_next_kst_day(self):
+        failure = subprocess.CompletedProcess([], 1, stdout="IndexNow inkisle.ipe.rest: HTTP 429 (3 URLs)\n", stderr="")
+        self.assert_retries_indexnow_next_kst_day(failure)
 
 
 class OpsFiles(unittest.TestCase):

@@ -113,6 +113,12 @@ class SlotGate(unittest.TestCase):
         self.run_gate("2026-11-13 13:15")
         self.assertEqual(self.n_calls(), 1)
 
+    def test_successful_retry_of_earlier_push_completes_slot(self):
+        self.write(date="2026-11-13", time="13:00", published=False)
+        result = self.run_gate("2026-11-13 13:00", publish="echo 'publish_daily: pushed earlier publication commit(s)'")
+        self.assertIn("slot done", result.stdout)
+        self.assertTrue(self.state()["published"])
+
     def test_hard_cutoff_at_1800(self):
         self.write(date="2026-11-13", time="13:00", published=False)
         self.run_gate("2026-11-13 18:00")

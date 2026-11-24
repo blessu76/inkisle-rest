@@ -14,6 +14,7 @@ PENDING = Path(".git/publish-pages.pending")
 POST_PATH = re.compile(r"((?:[A-Za-z0-9-]+/)?journal/[a-z0-9-]+/)index\.html")
 INDEXNOW_4XX = re.compile(r"^IndexNow inkisle\.ipe\.rest: HTTP (4[0-9]{2}) \([0-9]+ URLs\)$", re.M)
 MAX_AGE = dt.timedelta(days=3).total_seconds()
+MAX_TIMESTAMP = 253402300799  # Last whole second of year 9999 (UTC).
 KST = dt.timezone(dt.timedelta(hours=9))
 
 
@@ -28,16 +29,57 @@ def log(message):
     print(f"[{dt.datetime.now(KST):%Y-%m-%d %H:%M:%S} KST] publish_daily: {message}", flush=True)
 
 
-def load_pending():
+def pending_entry(fields):
     try:
-        content = PENDING.read_text(encoding="utf-8")
+        entry = PendingURL(**fields)
+        if type(entry.recorded_at) is not int or not 0 <= entry.recorded_at <= MAX_TIMESTAMP:
+            return None
+        if type(entry.pages_live) is not bool:
+            return None
+        day = entry.last_submit_day
+        if day != "" and dt.date.fromisoformat(day).isoformat() != day:
+            return None
+    except (TypeError, ValueError):
+        return None
+    return entry
+
+
+def recover_pending(lock, original, pending, reason):
+    timestamp = dt.datetime.now(KST).strftime("%Y%m%d-%H%M%S-%f")
+    backup = PENDING.with_name(f"{PENDING.name}.corrupt-{timestamp}")
+    backup.write_bytes(original)
+    log(f"WARN — corrupt Pages state ({reason}); backed up as {backup}")
+    save_pending(lock, pending)
+
+
+def load_pending(lock):
+    try:
+        original = PENDING.read_bytes()
     except FileNotFoundError:
         return {}
-    if content.lstrip().startswith("{"):
-        return {url: PendingURL(**fields) for url, fields in json.loads(content).items()}
-    # The old URL-only file has no timestamps per URL. Its mtime is the last known update.
-    recorded_at = int(PENDING.stat().st_mtime)
-    return {url: PendingURL(recorded_at) for url in content.splitlines() if url}
+    try:
+        content = original.decode("utf-8")
+        if content.lstrip().startswith("{"):
+            entries = ((url, pending_entry(fields)) for url, fields in json.loads(content).items())
+        else:
+            # The URL-only format used the file's mtime as the last known update.
+            recorded_at = int(PENDING.stat().st_mtime)
+            entries = ((url, PendingURL(recorded_at)) for url in content.splitlines() if url)
+    except (ValueError, RecursionError):
+        recover_pending(lock, original, {}, "malformed JSON or UTF-8")
+        return {}
+
+    pending = {}
+    invalid = 0
+    for url, entry in entries:
+        path = url[len(SITE) + 1:] + "index.html"
+        if entry is not None and url.startswith(f"{SITE}/") and POST_PATH.fullmatch(path):
+            pending[url] = entry
+        else:
+            invalid += 1
+    if invalid:
+        recover_pending(lock, original, pending, f"skipped {invalid} invalid URL entry(s)")
+    return pending
 
 
 def save_pending(lock, pending):
@@ -55,7 +97,7 @@ def remember(lock, paths):
     urls = [f"{SITE}/{match[1]}" for match in matches if match]
     if not urls:
         return
-    pending = load_pending()
+    pending = load_pending(lock)
     recorded_at = int(dt.datetime.now(KST).timestamp())
     for url in urls:
         pending.setdefault(url, PendingURL(recorded_at))
@@ -120,7 +162,7 @@ def submit_ready(lock, pending, today):
     rejected = INDEXNOW_4XX.search(result.stdout)
     if result.returncode == 0:
         log(f"IndexNow submitted — {len(urls)} journal URL(s)")
-    elif rejected:
+    elif rejected and rejected[1] != "429":
         log(f"WARN — IndexNow HTTP {rejected[1]}; dropping {len(urls)} URL(s) from submission retry")
     else:
         log(f"WARN — INDEXNOW_PENDING; {len(urls)} URL(s) eligible for submission on a later KST day before expiry")
@@ -131,13 +173,13 @@ def submit_ready(lock, pending, today):
 
 
 def verify(lock):
-    pending = load_pending()
+    pending = load_pending(lock)
     if not pending:
         return 0
     now = dt.datetime.now(KST)
     for url, entry in list(pending.items()):
         path = url[len(SITE) + 1:] + "index.html"
-        if not url.startswith(f"{SITE}/") or not POST_PATH.fullmatch(path) or not Path(path).is_file():
+        if not Path(path).is_file():
             del pending[url]
         elif now.timestamp() - entry.recorded_at >= MAX_AGE:
             log(f"WARN — pending URL expired after 72 hours; dropping from follow-up: {url}")

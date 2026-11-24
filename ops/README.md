@@ -22,8 +22,9 @@ the script ran (HH:MM KST); a future time is refused.
 - One run at a time (`.git/publish.lock`; a lock from a dead process or older than 3 h is taken over). A second run logs `SKIP — another publish run is in progress`.
 - Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
 - push 직전 새 글의 언어별 URL을 발행 클론의 `.git/publish-pages.pending`에 저장한다. 새 글을 push한 뒤와 각 배포 재요청 뒤 120초를 기다리고, 새 `?v=` 쿼리로 HTTP 200 응답을 30초 간격으로 최대 7회 확인한다. 이 구간에 페이지가 열리지 않으면 `gh workflow run 'Deploy to GitHub Pages' --ref main`으로 배포를 최대 두 번 새로 요청한다.
-- 글별로 대기 중인 URL의 HTTP 200을 확인하고, 열린 글의 원본 URL과 `/`, `/journal/`을 IndexNow에 제출한다. `PAGES_NOT_LIVE`인 글은 큐가 비어 있어도 다음 발행 가능 틱에 배포 재요청이나 대기 없이 확인한다. 대기 URL은 최초 기록 후 72시간이 지나면 로그를 남기고 폐기한다. 기존 URL 전용 파일은 마지막 수정 시각을 최초 기록 시각으로 사용한다.
-- IndexNow 제출은 대기 중인 저널 URL당 KST 날짜 기준 하루 한 번으로 제한한다. 성공(200·202)하거나 4xx를 받으면 제출 대기에서 제거한다. 그 밖의 실패는 `INDEXNOW_PENDING`을 기록한다. Pages 확인을 마쳤다면 슬롯은 완료된다. 다음 KST 발행일에 아직 만료되지 않은 URL을 Pages 재확인 없이 제출한다.
+- 글별로 대기 중인 URL의 HTTP 200을 확인하고, 열린 글의 원본 URL과 `/`, `/journal/`을 IndexNow에 제출한다. `PAGES_NOT_LIVE`인 글은 큐가 비어 있어도 다음 발행 가능 틱에 배포 재요청이나 대기 없이 확인한다. 대기 URL은 최초 기록 후 72시간에 만료된다. 기존 URL 전용 파일은 마지막 수정 시각을 최초 기록 시각으로 사용한다.
+- 상태 파일에 손상이 있으면 `WARN`을 기록하고 원본을 `.git/publish-pages.pending.corrupt-<시각>`에 백업한다. 읽을 수 있는 유효한 항목을 보존한 뒤 발행을 계속한다.
+- IndexNow 제출은 대기 중인 저널 URL당 KST 날짜 기준 하루 한 번으로 제한한다. 성공(200·202) 또는 429를 제외한 4xx 응답을 받으면 제출 대기에서 제거한다. HTTP 429와 그 밖의 실패는 `INDEXNOW_PENDING`을 기록한다. Pages 확인을 마쳤다면 슬롯은 완료된다. 다음 KST 발행일에 아직 만료되지 않은 URL을 Pages 재확인 없이 제출한다.
 
 ## Install (by the maintainer, once; the repo never does this itself)
 
