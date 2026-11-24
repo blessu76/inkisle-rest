@@ -23,7 +23,7 @@ Nous avons aussi examiné ce qui était lu deux fois. Un bouton qui règle la pr
 
 ### Est-ce que cela a été testé avec un lecteur d’écran sur un téléphone ?
 
-Les tests de widgets ont vérifié les libellés et les actions d’accessibilité. Nous n’avons pas encore vérifié les changements sur un téléphone avec VoiceOver ou TalkBack.
+Les tests de widgets ont vérifié les libellés et les actions d’accessibilité. Nous n’avons pas encore vérifié les changements avec VoiceOver sur un iPhone.
 
 ### À quoi sert le phare sur la carte ?
 

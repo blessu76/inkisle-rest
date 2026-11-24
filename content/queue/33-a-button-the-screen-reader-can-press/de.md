@@ -23,7 +23,7 @@ Wir haben auch geprüft, was doppelt vorgelesen wurde. Eine Taste für den Antei
 
 ### Wurde das mit einem Screenreader auf einem Telefon getestet?
 
-Die Widget-Tests haben die Beschriftungen und Bedienaktionen geprüft. Auf einem Telefon haben wir die Änderungen mit VoiceOver oder TalkBack noch nicht überprüft.
+Die Widget-Tests haben die Beschriftungen und Bedienaktionen geprüft. Auf einem iPhone haben wir die Änderungen mit VoiceOver noch nicht überprüft.
 
 ### Wozu dient der Leuchtturm auf der Karte?
 

@@ -81,6 +81,27 @@ class SlotGate(unittest.TestCase):
         self.run_gate("2026-11-13 13:30", publish="echo 'publish_daily: nothing to publish'")
         self.assertTrue(self.state()["published"])
 
+    def test_pending_pages_keeps_slot_open_until_verification_even_with_an_empty_queue(self):
+        self.write(date="2026-11-13", time="13:00", published=False)
+        first = self.run_gate(
+            "2026-11-13 13:00",
+            publish="echo 'publish_daily: pushed some-slug'; echo 'publish_daily: FAIL — PAGES_NOT_LIVE'; exit 1",
+        )
+        self.assertFalse(self.state()["published"])
+        self.assertIn("push complete — Pages verification pending", first.stdout)
+        indexnow = self.run_gate(
+            "2026-11-13 13:15",
+            publish="echo 'publish_daily: QUEUE_EMPTY'; echo 'publish_daily: FAIL — INDEXNOW_PENDING'; exit 1",
+        )
+        self.assertFalse(self.state()["published"])
+        self.assertIn("Pages live — IndexNow submission pending", indexnow.stdout)
+        self.run_gate(
+            "2026-11-13 13:30",
+            publish="echo 'publish_daily: QUEUE_EMPTY'; echo 'publish_daily: Pages verified — IndexNow submitted'",
+        )
+        self.assertTrue(self.state()["published"])
+        self.assertEqual(self.n_calls(), 3)
+
     def test_hard_cutoff_at_1800(self):
         self.write(date="2026-11-13", time="13:00", published=False)
         self.run_gate("2026-11-13 18:00")

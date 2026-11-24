@@ -5,7 +5,7 @@ the script ran (HH:MM KST); a future time is refused.
 
 | File | Role |
 |---|---|
-| `slot_gate.sh` / `slot_gate.py` | launchd entry, every 15 min 12:00–18:45 KST: draws today's slot (`~/.ipe/queue/inkisle/slot.json`, override `INKISLE_SLOT_FILE`), runs `publish_daily.sh` once the time has come; `published` becomes true only on `pushed <slug>` / `nothing to publish` (SKIP, QUEUE_EMPTY, FAIL retry on the next tick; nothing after 18:45). Tests: `tests/test_slot_gate.py` |
+| `slot_gate.sh` / `slot_gate.py` | launchd entry, every 15 min 12:00–18:45 KST: draws today's slot (`~/.ipe/queue/inkisle/slot.json`, override `INKISLE_SLOT_FILE`). Runs `publish_daily.sh` at eligible ticks before 18:00. Only a successful run that logs `pushed <slug>`, `nothing to publish`, or `Pages verified` completes the slot. Tests: `tests/test_slot_gate.py` |
 | `publish_daily.sh` | safety checks → push leftovers → `publish_post.py --daily` → green gate → commit → push → live check → IndexNow |
 | `rest.ipe.inkisle-publish.plist.template` | launchd job template (`__HOME__` placeholder; launchd does not expand `~`), every 15 min 12:00–18:45 → `slot_gate.sh`, log `~/Library/Logs/inkisle-publish.log` |
 | `install_launchd.sh` | renders the template for the current user, `plutil -lint`, writes `~/Library/LaunchAgents/…plist` — does **not** load it |
@@ -16,13 +16,13 @@ the script ran (HH:MM KST); a future time is refused.
   must not be a place where anyone (or any agent) works on feature branches. On any other branch, or with uncommitted changes, the run logs `SKIP` and exits 0.
 - A previous failed push is retried first (`origin/main..HEAD`), even when nothing new is due — but only if those commits touch nothing outside the publish set; otherwise they are kept on a `backup/stray-<time>` branch, the clone is reset to origin/main and the day's post still publishes (a local work-in-progress commit never rides along to main; 11-19 the old `SKIP` blocked every tick).
 - A `vendor/ipe_web_kit` that does not match `vendor/ipe_web_kit.lock` (`vendor/` is gitignored, so a pull that moves the lock does not move it) is re-synced from `INKISLE_KIT_DIR` (default `~/Developer/ipe_web_kit`) before publishing; if that fails the run logs `KIT_MISMATCH`, shows a macOS notification and exits 1 without touching the tree.
-- An empty queue logs `QUEUE_EMPTY` (exit 0). Check the log for `SKIP`/`FAIL`/`QUEUE_EMPTY` regularly — they do not alert anyone.
+- An empty queue logs `QUEUE_EMPTY` and checks any pending Pages URLs. Check the log for `SKIP`/`FAIL`/`QUEUE_EMPTY` regularly.
 - Publishing is atomic: if `publish_post.py` (build + sitemap check), the green gate or the path check fails, the tree is reset to where it started
   (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
 - One run at a time (`.git/publish.lock`; a lock from a dead process or older than 3 h is taken over). A second run logs `SKIP — another publish run is in progress`.
 - Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
-- 게시 커밋을 push하면 새 글의 각 언어 URL이 HTTP 200을 반환하는지 30초 간격으로 확인한다. 약 5분 내 열리지 않으면 `gh workflow run 'Deploy to GitHub Pages' --ref main`으로 새 실행을 최대 두 번 요청한다. 같은 실행을 rerun하면 Pages 아티팩트가 중복될 수 있다.
-- 모든 새 글 URL이 200이면 그 URL과 `/`, `/journal/`을 IndexNow에 제출한다. 재시도 후에도 열리지 않으면 `PAGES_NOT_LIVE`를 기록하고 IndexNow를 건너뛴다. 이미 push된 발행 커밋은 main에 남는다.
+- push 직전 새 글의 언어별 URL을 발행 클론의 `.git/publish-pages.pending`에 저장한다. 새 글을 push한 뒤와 각 배포 재요청 뒤 120초를 기다리고, 새 `?v=` 쿼리로 HTTP 200 응답을 30초 간격으로 최대 7회 확인한다. 이 구간에 페이지가 열리지 않으면 `gh workflow run 'Deploy to GitHub Pages' --ref main`으로 배포를 최대 두 번 새로 요청한다.
+- 모든 대기 URL이 200이면 쿼리 없는 원본 URL과 `/`, `/journal/`을 IndexNow에 제출한다. 성공하면 대기 파일을 지운다. `PAGES_NOT_LIVE` 또는 `INDEXNOW_PENDING`이면 발행 커밋은 main에 남고 대기 파일을 유지한다. 다음 발행 가능 틱에는 새 글이 없거나 큐가 비어 있어도 저장된 URL을 한 차례 확인하고, 모두 열리면 IndexNow를 다시 제출한다. 추가 배포 요청은 새 글을 push한 실행에만 허용한다.
 
 ## Install (by the maintainer, once; the repo never does this itself)
 

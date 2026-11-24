@@ -1,6 +1,6 @@
 ---
-title: Un tablero tranquilo bajo las mismas estrellas
-description: En el acto 26, las islas se reflejan entre sí. En el nivel intermedio hay que tomar las islas neutrales. Usamos la disposición del tablero para darle una pausa a la temporada.
+title: Un tablero tranquilo bajo las mismas estrellas en el nivel 26-4
+description: El nivel 26-4 ofrece una breve pausa en el acto 26. En un tablero de islas simétricas, el único objetivo es tomar todas las islas neutrales.
 slug: a-quiet-board-under-the-same-stars
 lang: es
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, diseño de niveles, simetría, islas neutrales, La misma estr
 image_alt: Dos grupos de islas se miran desde ambos lados de un mar oscuro, con una estrella sobre el centro.
 ---
 
-El acto 26 de Inkisle se llama La misma estrella. El juego sigue en desarrollo y la primera temporada tiene 30 actos y 240 niveles. Aquí queríamos que el otro lado del mar pareciera estar bajo el mismo cielo. Estamos desarrollando el juego para iOS.
+El acto 26 de Inkisle se llama La misma estrella. El juego sigue en desarrollo y la primera temporada tiene 30 actos y 240 niveles. Aquí queríamos que el otro lado del mar pareciera estar bajo el mismo cielo. En el nivel 26-4 hicimos una pausa para que puedas centrarte en tomar todas las islas neutrales. Estamos desarrollando el juego para iOS.
 
 ## Un tablero que se puede girar
 

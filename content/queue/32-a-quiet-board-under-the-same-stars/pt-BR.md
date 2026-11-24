@@ -1,6 +1,6 @@
 ---
-title: Um tabuleiro tranquilo sob as mesmas estrelas
-description: No ato 26, as ilhas se espelham. Na fase do meio, o objetivo é tomar as ilhas neutras. Usamos a disposição das ilhas para dar uma pausa à temporada.
+title: Uma pausa sob as mesmas estrelas na fase 26-4
+description: A fase 26-4 oferece uma pausa breve no ato 26. As ilhas se espelham e o único objetivo é tomar todas as ilhas neutras.
 slug: a-quiet-board-under-the-same-stars
 lang: pt-BR
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, design de fases, simetria, ilhas neutras, A mesma estrela
 image_alt: Dois grupos de ilhas se encaram sobre um mar escuro, com uma estrela acima do centro.
 ---
 
-O ato 26 de Inkisle se chama A mesma estrela. O jogo ainda está em desenvolvimento e a primeira temporada tem 30 atos e 240 fases. Aqui, queríamos que o outro lado do mar parecesse estar sob o mesmo céu. Estamos desenvolvendo o jogo para iOS.
+O ato 26 de Inkisle se chama A mesma estrela. O jogo ainda está em desenvolvimento e a primeira temporada tem 30 atos e 240 fases. Aqui, queríamos que o outro lado do mar parecesse estar sob o mesmo céu. Na fase 26-4, fizemos uma pausa para que você possa se concentrar em tomar todas as ilhas neutras. Estamos desenvolvendo o jogo para iOS.
 
 ## Um tabuleiro que dá para girar
 

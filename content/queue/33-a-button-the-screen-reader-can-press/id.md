@@ -23,7 +23,7 @@ Kami juga memeriksa informasi yang dibacakan dua kali. Tombol pengatur proporsi 
 
 ### Apakah ini sudah diuji dengan pembaca layar di ponsel?
 
-Uji widget memeriksa label dan aksi aksesibilitas. Kami belum memeriksa perubahan tersebut di ponsel dengan VoiceOver atau TalkBack.
+Uji widget memeriksa label dan aksi aksesibilitas. Kami belum memeriksa perubahan itu dengan VoiceOver di iPhone.
 
 ### Apa fungsi mercusuar di peta?
 

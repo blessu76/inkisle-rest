@@ -60,9 +60,9 @@ for arg do url=$arg; done
 printf 'probe %s\n' "$url" >> "$PAGES_TRACE"
 dispatched=$(grep -c '^dispatch ' "$PAGES_TRACE")
 case "$url" in
-  */ko/*) [ "$dispatched" -ge "$LIVE_AFTER" ] && printf 200 || printf 404 ;;
-  *) printf 200 ;;
-esac
+  */ko/*) [ "${PAGES_READY:-0}" = 1 ] || [ "$dispatched" -ge "$LIVE_AFTER" ] ;;
+  *) true ;;
+esac && printf 200 || printf 404
 ''',
             "gh": '''
 printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
@@ -77,6 +77,7 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         (self.clone / "scripts/indexnow.py").write_text(
             "import os, sys\nwith open(os.environ['PAGES_TRACE'], 'a') as f:\n"
             "    f.write('indexnow ' + ' '.join(sys.argv[1:]) + '\\n')\n"
+            "sys.exit(int(os.environ.get('INDEXNOW_ERROR', '0')))\n"
         )
         git(self.clone, "commit", "-qam", "stub IndexNow")
         git(self.clone, "push", "-q", "origin", "main")
@@ -87,9 +88,11 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         r = self.run_script(**self.pages_stubs())
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         trace = self.pages_trace.read_text().splitlines()
-        self.assertEqual(trace, [
-            "probe https://inkisle.ipe.rest/journal/next-one/",
-            "probe https://inkisle.ipe.rest/ko/journal/next-one/",
+        self.assertEqual(trace[0], "sleep 120")
+        self.assertRegex(trace[1], r"^probe https://inkisle\.ipe\.rest/journal/next-one/\?v=\d+-\d+-0-1$")
+        cache_query = trace[1].split("?", 1)[1]
+        self.assertEqual(trace[2:], [
+            f"probe https://inkisle.ipe.rest/ko/journal/next-one/?{cache_query}",
             "indexnow https://inkisle.ipe.rest/journal/next-one/ https://inkisle.ipe.rest/ko/journal/next-one/ "
             "https://inkisle.ipe.rest/ https://inkisle.ipe.rest/journal/",
         ])
@@ -100,8 +103,12 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         trace = self.pages_trace.read_text().splitlines()
         dispatch = "dispatch [workflow][run][Deploy to GitHub Pages][--ref][main]"
         self.assertEqual([line for line in trace if line.startswith("dispatch ")], [dispatch])
-        self.assertEqual(trace.count("sleep 30"), 10)
-        self.assertEqual(trace[-2], "probe https://inkisle.ipe.rest/ko/journal/next-one/")
+        self.assertEqual(trace.count("sleep 30"), 6)
+        self.assertEqual(trace[trace.index(dispatch) + 1], "sleep 120")
+        probes = [line for line in trace if line.startswith("probe https://inkisle.ipe.rest/ko/")]
+        self.assertEqual(len(probes), 8)
+        self.assertEqual(len(set(probes)), 8)  # even when fake sleep leaves probes in the same second
+        self.assertRegex(probes[-1], r"/next-one/\?v=\d+-\d+-1-1$")
         self.assertTrue(trace[-1].startswith("indexnow "))
 
     def test_pages_retries_stop_after_two_even_if_dispatch_fails(self):
@@ -111,7 +118,9 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertEqual(r.stdout.count("dispatch failed"), 2)
         trace = self.pages_trace.read_text().splitlines()
         self.assertEqual(sum(line.startswith("dispatch ") for line in trace), 2)
-        self.assertEqual(trace.count("sleep 30"), 30)
+        self.assertEqual(trace.count("sleep 30"), 18)
+        self.assertEqual(trace.count("sleep 120"), 3)
+        self.assertTrue(all(trace[i + 1] == "sleep 120" for i, line in enumerate(trace) if line.startswith("dispatch ")))
         self.assertFalse(any(line.startswith("indexnow ") for line in trace))
         self.assertEqual(self.head(), self.origin_head())
         self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
@@ -133,6 +142,77 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         trace = self.pages_trace.read_text().splitlines()
         self.assertEqual(sum(line.startswith("dispatch ") for line in trace), 2)
         self.assertEqual(sum(line.startswith("indexnow ") for line in trace), 1)
+
+    def test_next_tick_checks_pending_urls_when_nothing_is_due(self):
+        env = self.pages_stubs(live_after=3)
+        first = self.run_script(**env)
+        self.assertEqual(first.returncode, 1, first.stdout + first.stderr)
+        self.assertIn("PAGES_NOT_LIVE", first.stdout)
+        published = self.origin_head()
+        self.pages_trace.write_text("")
+
+        pending = self.run_script(**env)
+        self.assertEqual(pending.returncode, 1, pending.stdout + pending.stderr)
+        self.assertIn("nothing to publish", pending.stdout)
+        self.assertIn("PAGES_NOT_LIVE", pending.stdout)
+        self.assertNotIn("ROLLBACK", pending.stdout)
+        self.assertEqual(len(self.pages_trace.read_text().splitlines()), 2)
+        self.assertTrue(all(line.startswith("probe ") for line in self.pages_trace.read_text().splitlines()))
+        self.pages_trace.write_text("")
+
+        ready = self.run_script(**env, PAGES_READY="1")
+        self.assertEqual(ready.returncode, 0, ready.stdout + ready.stderr)
+        self.assertIn("Pages verified", ready.stdout)
+        self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()], ["probe", "probe", "indexnow"])
+        self.assertEqual(self.origin_head(), published)
+        self.pages_trace.write_text("")
+        self.assertEqual(self.run_script(**env).returncode, 0)
+        self.assertEqual(self.pages_trace.read_text(), "")
+
+    def test_empty_queue_verifies_the_recovered_push_and_retries_indexnow(self):
+        env = self.pages_stubs()
+        git(self.clone, "rm", "-qr", "content/queue/02-next-two")
+        git(self.clone, "commit", "-qm", "one queued post left")
+        git(self.clone, "push", "-q", "origin", "main")
+        hook = self.origin / "hooks" / "pre-receive"
+        hook.write_text("#!/bin/sh\nexit 1\n")
+        hook.chmod(0o755)
+        first = self.run_script(**env)
+        self.assertIn("commit kept locally", first.stdout)
+        self.assertFalse(self.pages_trace.exists())
+        hook.unlink()
+
+        recovered = self.run_script(**env, INDEXNOW_ERROR="1")
+        self.assertEqual(recovered.returncode, 1, recovered.stdout + recovered.stderr)
+        self.assertIn("QUEUE_EMPTY", recovered.stdout)
+        self.assertIn("INDEXNOW_PENDING", recovered.stdout)
+        self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()],
+                         ["sleep", "probe", "probe", "indexnow"])
+        published = self.origin_head()
+        self.pages_trace.write_text("")
+
+        ready = self.run_script(**env)
+        self.assertEqual(ready.returncode, 0, ready.stdout + ready.stderr)
+        self.assertIn("QUEUE_EMPTY", ready.stdout)
+        self.assertIn("Pages verified", ready.stdout)
+        self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()],
+                         ["probe", "probe", "indexnow"])
+        self.assertEqual(self.origin_head(), published)
+
+    def test_removed_url_does_not_block_the_remaining_pending_urls(self):
+        env = self.pages_stubs(live_after=3)
+        r = self.run_script(**env)
+        self.assertIn("PAGES_NOT_LIVE", r.stdout)
+        git(self.clone, "rm", "-q", "ko/journal/next-one/index.html")
+        git(self.clone, "commit", "-qm", "remove localized page")
+        git(self.clone, "push", "-q", "origin", "main")
+        self.pages_trace.write_text("")
+
+        r = self.run_script(**env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        trace = self.pages_trace.read_text().splitlines()
+        self.assertEqual([line.split()[0] for line in trace], ["probe", "indexnow"])
+        self.assertFalse(any("/ko/" in line for line in trace))
 
     def test_default_publish_dir_comes_from_home_and_tests_never_see_the_real_one(self):
         # Regression: the tests must not be able to reach the real publish clone / log. With HOME isolated and no INKISLE_PUBLISH_DIR the script

@@ -23,7 +23,7 @@ Chúng tôi cũng kiểm tra thông tin nào được đọc hai lần. Nút ch�
 
 ### Đã kiểm thử bằng trình đọc màn hình trên điện thoại chưa?
 
-Các bài kiểm thử widget đã kiểm tra nhãn và thao tác trợ năng. Chúng tôi chưa xác minh những thay đổi trên điện thoại bằng VoiceOver hoặc TalkBack.
+Các bài kiểm thử widget đã kiểm tra nhãn và thao tác trợ năng. Chúng tôi chưa xác minh những thay đổi này bằng VoiceOver trên iPhone thật.
 
 ### Ngọn hải đăng trên hải đồ dùng để làm gì?
 

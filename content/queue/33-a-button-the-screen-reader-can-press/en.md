@@ -22,7 +22,7 @@ We also checked what gets read twice. A fleet ratio button was exposing the same
 
 ### Has this been tested with a screen reader on a phone?
 
-The widget tests checked the labels and accessibility actions. We have not verified the changes on a phone with VoiceOver or TalkBack.
+The widget tests checked the labels and accessibility actions. We haven’t verified the changes with VoiceOver on an iPhone yet.
 
 ### What does the lighthouse let you do?
 

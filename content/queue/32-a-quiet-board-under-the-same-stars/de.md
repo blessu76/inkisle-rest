@@ -1,6 +1,6 @@
 ---
-title: Ein ruhiges Spielfeld unter denselben Sternen
-description: In Akt 26 spiegeln sich die Inseln. Im mittleren Level gilt es, die neutralen Inseln einzunehmen. Mit der Anordnung gönnen wir der Staffel eine kleine Pause.
+title: Eine Pause unter denselben Sternen in Level 26-4
+description: In Level 26-4 sollst du alle neutralen Inseln einnehmen. Dieses eine Ziel schafft eine kurze Pause mitten in Akt 26, dessen Inseln sich spiegeln.
 slug: a-quiet-board-under-the-same-stars
 lang: de
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, Leveldesign, Symmetrie, neutrale Inseln, Derselbe Stern
 image_alt: Zwei Inselgruppen liegen sich über dunklem Wasser gegenüber. Über der Mitte steht ein Stern.
 ---
 
-Akt 26 von Inkisle heißt Derselbe Stern. Das Spiel ist noch in Entwicklung. Staffel 1 umfasst 30 Akte und 240 Level. Wir wollten, dass die andere Seite des Meers aussieht, als läge sie unter demselben Himmel. Wir entwickeln das Spiel für iOS.
+Akt 26 von Inkisle heißt Derselbe Stern. Das Spiel ist noch in Entwicklung. Staffel 1 umfasst 30 Akte und 240 Level. Wir wollten, dass die andere Seite des Meers aussieht, als läge sie unter demselben Himmel. Genau in Level 26-4 kommt eine kurze Pause. Dort geht es allein darum, alle neutralen Inseln einzunehmen. Wir entwickeln das Spiel für iOS.
 
 ## Ein Spielfeld zum Drehen
 

@@ -1,6 +1,6 @@
 ---
-title: Một bàn chơi yên ả dưới cùng một vì sao
-description: Ở màn 26, các đảo được xếp đối xứng. Ải ở giữa yêu cầu chiếm các đảo trung lập. Cách bố trí này tạo một khoảng nghỉ trong mùa.
+title: Một nhịp nghỉ dưới cùng một vì sao ở ải 26-4
+description: Ải 26-4 là một nhịp nghỉ ngắn giữa màn 26. Các đảo được xếp đối xứng và mục tiêu duy nhất là chiếm tất cả đảo trung lập.
 slug: a-quiet-board-under-the-same-stars
 lang: vi
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, thiết kế ải, đối xứng, đảo trung lập, Cùng m
 image_alt: Hai cụm đảo nhìn sang nhau qua vùng biển tối, với một vì sao phía trên ở giữa.
 ---
 
-Màn 26 của Inkisle có tên Cùng một vì sao. Trò chơi vẫn đang được phát triển, và Mùa 1 có 30 màn, 240 ải. Ở đây, chúng tôi muốn phía bên kia biển trông như cũng nằm dưới cùng một bầu trời. Chúng tôi đang phát triển trò chơi cho iOS.
+Màn 26 của Inkisle có tên Cùng một vì sao. Trò chơi vẫn đang được phát triển, và Mùa 1 có 30 màn, 240 ải. Ở đây, chúng tôi muốn phía bên kia biển trông như cũng nằm dưới cùng một bầu trời. Ở ải 26-4, chúng tôi dành một nhịp nghỉ để người chơi tập trung chiếm tất cả đảo trung lập. Chúng tôi đang phát triển trò chơi cho iOS.
 
 ## Thử xoay bàn chơi nửa vòng
 

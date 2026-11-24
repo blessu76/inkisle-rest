@@ -32,44 +32,76 @@ PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llm
 SITE="https://inkisle.ipe.rest"
 
 pages_are_live() {
-  local url status
+  local url status cache_key
+  cache_key="$(date +%s)-$$-$1"
+  shift
   for url in "$@"; do
-    if ! status="$(curl --disable --silent --max-time 10 --output /dev/null --write-out '%{http_code}' --header 'Cache-Control: no-cache' "$url")" || [ "$status" != 200 ]; then
+    if ! status="$(curl --disable --silent --max-time 10 --output /dev/null --write-out '%{http_code}' --header 'Cache-Control: no-cache' "$url?v=$cache_key")" || [ "$status" != 200 ]; then
       log "Pages pending (HTTP ${status:-unknown}): $url"
       return 1
     fi
   done
 }
 
+# Save canonical URLs before pushing, so an interrupted run can recover even if main already has the commit.
+remember_pages() {
+  [ "${INKISLE_SKIP_NET:-0}" = "1" ] && return 0
+  local paths new_urls
+  paths="$(git diff --no-renames --diff-filter=A --name-only "$1" HEAD -- $PUBLISH_PATHS)" || return 1
+  new_urls="$(printf '%s\n' "$paths" | sed -nE 's#^(([[:alnum:]-]+/)?journal/[a-z0-9-]+/)index\.html$#'"$SITE"'/\1#p')"
+  [ -n "$new_urls" ] || return 0
+  {
+    if [ -f "$pending_pages" ]; then cat "$pending_pages"; fi
+    printf '%s\n' "$new_urls"
+  } | LC_ALL=C sort -u > "$lock/pages.pending"
+  mv "$lock/pages.pending" "$pending_pages"
+  pages_pushed=1
+}
+
 verify_pages() {
   [ "${INKISLE_SKIP_NET:-0}" = "1" ] && return 0
-  local paths url attempt probe
-  local urls=()
-  paths="$(git diff --no-renames --diff-filter=A --name-only "$1" HEAD -- $PUBLISH_PATHS)" || return 1
+  [ -s "$pending_pages" ] || return 0
+  local url path attempt probe probes=1
+  local urls=() attempts=(0)
   while IFS= read -r url; do
-    urls+=("$url")
-  done < <(printf '%s\n' "$paths" | sed -nE 's#^(([[:alnum:]-]+/)?journal/[a-z0-9-]+/)index\.html$#'"$SITE"'/\1#p')
-  # Some recovered pushes contain only updates to existing pages.
-  [ "${#urls[@]}" -gt 0 ] || return 0
+    path="${url#"$SITE/"}index.html"
+    if [ -f "$path" ]; then urls+=("$url"); fi
+  done < "$pending_pages"
+  # A reverted or removed page no longer belongs to the deployed site.
+  if [ "${#urls[@]}" -eq 0 ]; then
+    rm "$pending_pages"
+    return 0
+  fi
 
-  # Give both the push-triggered deployment and each fresh run time to build and go live.
-  for attempt in 0 1 2; do
+  # Only a push of new pages opens a retry window. Later ticks probe once, without further dispatches.
+  if [ "$pages_pushed" = 1 ]; then
+    attempts=(0 1 2)
+    probes=7
+  fi
+
+  for attempt in "${attempts[@]}"; do
     if [ "$attempt" -gt 0 ]; then
       log "Pages retry $attempt/2 — dispatching a fresh workflow on main"
       if ! gh workflow run 'Deploy to GitHub Pages' --ref main; then
         log "WARN — Pages retry $attempt/2 dispatch failed (check gh and Actions permissions)"
       fi
     fi
-    for probe in {1..11}; do
-      if pages_are_live "${urls[@]}"; then
+    if [ "$pages_pushed" = 1 ]; then sleep 120; fi
+    for ((probe = 1; probe <= probes; probe++)); do
+      if pages_are_live "$attempt-$probe" "${urls[@]}"; then
         log "Pages live — ${#urls[@]} new URL(s) returned HTTP 200"
-        python3 scripts/indexnow.py "${urls[@]}" "$SITE/" "$SITE/journal/" || log "IndexNow failed (not critical)"
+        if ! python3 scripts/indexnow.py "${urls[@]}" "$SITE/" "$SITE/journal/"; then
+          log "FAIL — INDEXNOW_PENDING; Pages are live, submission will be retried"
+          return 1
+        fi
+        rm "$pending_pages"
+        log "Pages verified — IndexNow submitted"
         return 0
       fi
-      [ "$probe" -eq 11 ] || sleep 30
+      [ "$probe" -eq "$probes" ] || sleep 30
     done
   done
-  log "FAIL — PAGES_NOT_LIVE after two retries; the publication commit is on main"
+  log "FAIL — PAGES_NOT_LIVE; the publication commit is on main, URLs kept for the next check"
   return 1
 }
 
@@ -125,9 +157,10 @@ git rebase -q origin/main || {
   exit 1
 }
 
-pages_base=""
+pending_pages="$REPO/.git/publish-pages.pending"
+pages_pushed=0
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
-  pages_base="$(git rev-parse origin/main)"
+  remember_pages origin/main
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
 fi
@@ -151,7 +184,7 @@ fi
 # An empty queue ends the daily post series silently, so make it loud in the log (still exit 0: it is not an error).
 if [ -z "$(find content/queue -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]; then
   log "QUEUE_EMPTY — no post left in content/queue/; add content/queue/NN-slug/{en,ko}.md (+ translations) or the daily publishing stops"
-  verify_pages "${pages_base:-HEAD}"
+  verify_pages
   exit 0
 fi
 
@@ -181,7 +214,8 @@ fi
 echo "$out"
 if [ -z "$(git status --porcelain)" ]; then
   log "nothing to publish"
-  verify_pages "${pages_base:-HEAD}"
+  stage=verify
+  verify_pages
   exit 0
 fi
 slug="$(echo "$out" | sed -n 's/^publish_post: \([^ ]*\) at .*/\1/p' | head -1)"
@@ -203,8 +237,9 @@ git diff --cached --stat | tail -1
 git commit -q -m "journal: publish ${slug} ($(date '+%Y-%m-%d %H:%M') KST)"
 stage=committed                                                  # from now on a failure keeps the commit; the next run pushes it first
 log "committed ${slug}"
+remember_pages "$base"
 git push -q origin HEAD:main || { log "FAIL — push (commit kept locally; the next run pushes it first)"; exit 1; }
 log "pushed ${slug}"
 
 # Include any recovered pushes in the same check without delaying today's publication.
-verify_pages "${pages_base:-$base}"
+verify_pages

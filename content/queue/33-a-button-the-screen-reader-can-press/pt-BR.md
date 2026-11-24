@@ -23,7 +23,7 @@ Também verificamos o que era lido duas vezes. Um botão que define a proporçã
 
 ### Isso foi testado em um celular com leitor de tela?
 
-Os testes de widgets verificaram os rótulos e as ações de acessibilidade. Ainda não verificamos as mudanças em um celular com VoiceOver ou TalkBack.
+Os testes de widgets verificaram os rótulos e as ações de acessibilidade. Ainda não verificamos as mudanças com o VoiceOver em um iPhone.
 
 ### Para que serve o farol no mapa?
 

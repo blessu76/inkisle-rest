@@ -1,6 +1,6 @@
 ---
-title: A quiet board under the same stars
-description: In Act 26, the islands mirror one another. In its middle stage, the task is to take the neutral islands. We used the layout to give the season a pause.
+title: A quiet board under the same stars in stage 26-4
+description: Stage 26-4 gives you a brief pause in Act 26. On this board, the islands mirror one another and taking all the neutral islands is your only goal.
 slug: a-quiet-board-under-the-same-stars
 lang: en
 category: making-of
@@ -8,7 +8,7 @@ keywords: Inkisle, level design, symmetry, neutral islands, The Same Star
 image_alt: Two groups of islands facing one another across dark water, with a star above the middle.
 ---
 
-Act 26 of Inkisle is called The Same Star. The game is still in development, and Season 1 comprises 30 acts and 240 stages. Here we wanted the other side of the sea to look as if it were under the same sky. We’re developing the game for iOS.
+Act 26 of Inkisle is called The Same Star. The game is still in development, and Season 1 comprises 30 acts and 240 stages. Here we wanted the other side of the sea to look as if it were under the same sky. We gave stage 26-4 a quieter board, where you can focus on taking all the neutral islands. We’re developing the game for iOS.
 
 ## A board you can turn around
 

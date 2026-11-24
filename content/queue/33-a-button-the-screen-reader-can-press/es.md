@@ -23,7 +23,7 @@ También comprobamos qué se leía dos veces. Un botón de proporción de flota 
 
 ### ¿Se ha probado con un lector de pantalla en un teléfono?
 
-Las pruebas de widgets comprobaron las etiquetas y las acciones de accesibilidad. Todavía no hemos verificado los cambios en un teléfono con VoiceOver o TalkBack.
+Las pruebas de widgets comprobaron las etiquetas y las acciones de accesibilidad. Todavía no hemos verificado los cambios con VoiceOver en un iPhone.
 
 ### ¿Para qué sirve el faro del mapa?
 

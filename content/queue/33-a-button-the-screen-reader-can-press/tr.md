@@ -23,7 +23,7 @@ Nelerin iki kez okunduğuna da baktık. Filo oranı düğmesi, etiketinde ve gö
 
 ### Bu değişiklikler telefonda ekran okuyucuyla denendi mi?
 
-Widget testleri etiketleri ve erişilebilirlik eylemlerini kontrol etti. Değişiklikleri henüz telefonda VoiceOver veya TalkBack ile doğrulamadık.
+Widget testleri etiketleri ve erişilebilirlik eylemlerini kontrol etti. Değişiklikleri henüz bir iPhone’da VoiceOver ile doğrulamadık.
 
 ### Haritadaki deniz feneri ne işe yarar?
 

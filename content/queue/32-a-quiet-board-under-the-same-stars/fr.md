@@ -1,6 +1,6 @@
 ---
-title: Un plateau paisible sous les mêmes étoiles
-description: Dans l’acte 26, les îles se reflètent. Au milieu, l’objectif est de prendre les îles neutres. La disposition du plateau donne un temps de pause à la saison.
+title: Une pause sous les mêmes étoiles au niveau 26-4
+description: Le niveau 26-4 offre un bref répit au milieu de l’acte 26. Les îles se reflètent et le seul objectif est de prendre toutes les îles neutres.
 slug: a-quiet-board-under-the-same-stars
 lang: fr
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, conception de niveaux, symétrie, îles neutres, La même ét
 image_alt: Deux groupes d’îles se font face de part et d’autre d’une mer sombre, sous une étoile au centre de l’image.
 ---
 
-L’acte 26 d’Inkisle s’appelle La même étoile. Le jeu est encore en développement et la saison 1 compte 30 actes et 240 niveaux. Nous voulions que l’autre côté de la mer semble éclairé par le même ciel. Nous développons le jeu pour iOS.
+L’acte 26 d’Inkisle s’appelle La même étoile. Le jeu est encore en développement et la saison 1 compte 30 actes et 240 niveaux. Nous voulions que l’autre côté de la mer semble éclairé par le même ciel. Au niveau 26-4, on souffle un peu en se concentrant sur la prise de toutes les îles neutres. Nous développons le jeu pour iOS.
 
 ## Un plateau à faire pivoter
 

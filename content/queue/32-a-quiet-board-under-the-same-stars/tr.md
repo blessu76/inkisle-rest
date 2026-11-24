@@ -1,6 +1,6 @@
 ---
-title: Aynı yıldızların altında sakin bir tahta
-description: 26. perdede adalar birbirini yansıtıyor. Ortadaki bölümde amaç tarafsız adaları almak. Adaların yerleşimi sezona kısa bir mola veriyor.
+title: 26-4 bölümünde aynı yıldızların altında bir mola
+description: 26-4 bölümü, 26. perdenin ortasında kısa bir mola sunuyor. Adalar simetrik diziliyor ve tek hedef tüm tarafsız adaları ele geçirmek.
 slug: a-quiet-board-under-the-same-stars
 lang: tr
 translation_of: en
@@ -9,7 +9,7 @@ keywords: Inkisle, bölüm tasarımı, simetri, tarafsız adalar, Aynı Yıldız
 image_alt: Koyu renkli denizin iki yanında karşı karşıya gelen ada grupları ve ortanın üzerinde bir yıldız.
 ---
 
-Inkisle’ın 26. perdesinin adı Aynı Yıldız. Oyun hâlâ geliştirme aşamasında ve 1. sezon 30 perde, 240 bölümden oluşuyor. Bu perdede denizin öte yakası da aynı göğün altındaymış gibi görünsün istedik. Oyunu iOS için geliştiriyoruz.
+Inkisle’ın 26. perdesinin adı Aynı Yıldız. Oyun hâlâ geliştirme aşamasında ve 1. sezon 30 perde, 240 bölümden oluşuyor. Bu perdede denizin öte yakası da aynı göğün altındaymış gibi görünsün istedik. 26-4 bölümünde tüm tarafsız adaları ele geçirmeye odaklanabileceğin kısa bir mola verdik. Oyunu iOS için geliştiriyoruz.
 
 ## Yarım tur dönen tahta
 
