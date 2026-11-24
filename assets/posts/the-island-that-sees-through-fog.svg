@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true">
+  <defs>
+    <linearGradient id="sea" x2="0" y2="1">
+      <stop stop-color="#cae2dc"/><stop offset="1" stop-color="#74aeb3"/>
+    </linearGradient>
+    <linearGradient id="fog">
+      <stop stop-color="#ebeee1" stop-opacity="0"/><stop offset="1" stop-color="#ebeee1"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#sea)"/>
+  <path d="M0 87Q155 65 315 86T640 81M0 262q155-23 315 0t325-5" fill="none" stroke="#eaf3df" stroke-width="2" stroke-dasharray="4 11"/>
+  <path d="M46 211Q178 125 291 172T568 137M43 286q126-87 248-60t270 42" fill="none" stroke="#385484" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 11"/>
+  <path d="M388 109q115-45 252-22v231q-128 14-252-48Z" fill="url(#fog)"/>
+  <path d="M236 217q-4-26 23-43t82-11q56 5 64 29 11 27-29 46t-96 12q-40-10-44-33Z" fill="#67887d"/>
+  <path d="M236 210q-4-26 23-43t82-11q56 5 64 29 11 27-29 46t-96 12q-40-10-44-33Z" fill="#f1e2c6"/>
+  <path d="M320 197v-91" stroke="#293e57" stroke-width="5" stroke-linecap="round"/>
+  <path d="M323 110q27-15 54-1l-21 15 21 14q-29-14-54 1Z" fill="#cf5d53"/>
+  <circle cx="149" cy="166" r="7" fill="#385484" stroke="#f4efdd" stroke-width="2"/>
+  <circle cx="184" cy="226" r="7" fill="#385484" stroke="#f4efdd" stroke-width="2"/>
+</svg>

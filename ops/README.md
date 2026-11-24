@@ -21,7 +21,8 @@ the script ran (HH:MM KST); a future time is refused.
   (`ROLLBACK` in the log), so no stamp for today is left behind and the next run can retry.
 - One run at a time (`.git/publish.lock`; a lock from a dead process or older than 3 h is taken over). A second run logs `SKIP — another publish run is in progress`.
 - Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
-- IndexNow gets the new post in every published language plus `/` and `/journal/`.
+- 게시 커밋을 push하면 새 글의 각 언어 URL이 HTTP 200을 반환하는지 30초 간격으로 확인한다. 약 5분 내 열리지 않으면 `gh workflow run 'Deploy to GitHub Pages' --ref main`으로 새 실행을 최대 두 번 요청한다. 같은 실행을 rerun하면 Pages 아티팩트가 중복될 수 있다.
+- 모든 새 글 URL이 200이면 그 URL과 `/`, `/journal/`을 IndexNow에 제출한다. 재시도 후에도 열리지 않으면 `PAGES_NOT_LIVE`를 기록하고 IndexNow를 건너뛴다. 이미 push된 발행 커밋은 main에 남는다.
 
 ## Install (by the maintainer, once; the repo never does this itself)
 
@@ -34,6 +35,7 @@ git -C ~/Developer/inkisle-rest push --dry-run origin HEAD:main     # must succe
 ```
 
    [Whether the keychain is reachable from the LaunchAgent session itself is only proven by the first real run — watch the log that day.]
+   Pages 재시도에는 LaunchAgent의 PATH에 있는 `gh`, 프롬프트 없이 읽을 수 있는 로그인, 저장소의 Actions 워크플로 실행 권한이 필요하다.
 4. Install and load:
 
 ```

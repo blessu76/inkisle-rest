@@ -44,10 +44,95 @@ class PublishDaily(unittest.TestCase):
 
     def run_script(self, check_cmd=None, publish_dir=None, **extra):
         # The fixture clone has no vendor/ipe_web_kit.lock, so the kit check is stubbed out unless a test supplies its own.
-        extra = {"INKISLE_KIT_CHECK_CMD": "true", **extra}
+        extra = {"INKISLE_KIT_CHECK_CMD": "true", "INKISLE_SKIP_NET": "1", **extra}
         env = helpers.isolated_env(self.home, INKISLE_PUBLISH_DIR=str(publish_dir or self.clone), INKISLE_CHECK_CMD=check_cmd or self.check_cmd,
-                                   **extra, INKISLE_SKIP_NET="1", GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
+                                   **extra, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@t", GIT_COMMITTER_NAME="t", GIT_COMMITTER_EMAIL="t@t")
         return subprocess.run(["bash", str(SCRIPT)], capture_output=True, text=True, env=env)
+
+    def pages_stubs(self, live_after=0, dispatch_error=False):
+        """Replace every network and sleep command in the post-push path inside the fixture."""
+        bin_dir = self.tmp / "bin"
+        bin_dir.mkdir()
+        self.pages_trace = self.tmp / "pages.log"
+        commands = {
+            "curl": '''
+for arg do url=$arg; done
+printf 'probe %s\n' "$url" >> "$PAGES_TRACE"
+dispatched=$(grep -c '^dispatch ' "$PAGES_TRACE")
+case "$url" in
+  */ko/*) [ "$dispatched" -ge "$LIVE_AFTER" ] && printf 200 || printf 404 ;;
+  *) printf 200 ;;
+esac
+''',
+            "gh": '''
+printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
+[ "$GH_PROMPT_DISABLED" = 1 ] && [ "$DISPATCH_ERROR" = 0 ]
+''',
+            "sleep": '''printf 'sleep %s\n' "$*" >> "$PAGES_TRACE"\n''',
+        }
+        for name, command in commands.items():
+            stub = bin_dir / name
+            stub.write_text("#!/bin/sh\n" + command)
+            stub.chmod(0o755)
+        (self.clone / "scripts/indexnow.py").write_text(
+            "import os, sys\nwith open(os.environ['PAGES_TRACE'], 'a') as f:\n"
+            "    f.write('indexnow ' + ' '.join(sys.argv[1:]) + '\\n')\n"
+        )
+        git(self.clone, "commit", "-qam", "stub IndexNow")
+        git(self.clone, "push", "-q", "origin", "main")
+        return dict(INKISLE_SKIP_NET="0", PATH=str(bin_dir) + os.pathsep + os.environ["PATH"],
+                    PAGES_TRACE=str(self.pages_trace), LIVE_AFTER=str(live_after), DISPATCH_ERROR=str(int(dispatch_error)))
+
+    def test_pages_live_after_push_needs_no_dispatch(self):
+        r = self.run_script(**self.pages_stubs())
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        trace = self.pages_trace.read_text().splitlines()
+        self.assertEqual(trace, [
+            "probe https://inkisle.ipe.rest/journal/next-one/",
+            "probe https://inkisle.ipe.rest/ko/journal/next-one/",
+            "indexnow https://inkisle.ipe.rest/journal/next-one/ https://inkisle.ipe.rest/ko/journal/next-one/ "
+            "https://inkisle.ipe.rest/ https://inkisle.ipe.rest/journal/",
+        ])
+
+    def test_missing_localized_page_dispatches_a_fresh_run_before_indexnow(self):
+        r = self.run_script(**self.pages_stubs(live_after=1))
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        trace = self.pages_trace.read_text().splitlines()
+        dispatch = "dispatch [workflow][run][Deploy to GitHub Pages][--ref][main]"
+        self.assertEqual([line for line in trace if line.startswith("dispatch ")], [dispatch])
+        self.assertEqual(trace.count("sleep 30"), 10)
+        self.assertEqual(trace[-2], "probe https://inkisle.ipe.rest/ko/journal/next-one/")
+        self.assertTrue(trace[-1].startswith("indexnow "))
+
+    def test_pages_retries_stop_after_two_even_if_dispatch_fails(self):
+        r = self.run_script(**self.pages_stubs(live_after=3, dispatch_error=True))
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+        self.assertIn("PAGES_NOT_LIVE", r.stdout)
+        self.assertEqual(r.stdout.count("dispatch failed"), 2)
+        trace = self.pages_trace.read_text().splitlines()
+        self.assertEqual(sum(line.startswith("dispatch ") for line in trace), 2)
+        self.assertEqual(trace.count("sleep 30"), 30)
+        self.assertFalse(any(line.startswith("indexnow ") for line in trace))
+        self.assertEqual(self.head(), self.origin_head())
+        self.assertEqual(git(self.clone, "status", "--porcelain").stdout, "")
+        self.assertFalse((self.clone / ".git" / "publish.lock").exists())
+
+    def test_recovered_push_also_verifies_pages_when_today_has_a_post(self):
+        env = self.pages_stubs(live_after=2)
+        hook = self.origin / "hooks" / "pre-receive"
+        hook.write_text("#!/bin/sh\nexit 1\n")
+        hook.chmod(0o755)
+        first = self.run_script(**env)
+        self.assertIn("commit kept locally", first.stdout)
+        self.assertFalse(self.pages_trace.exists())
+        hook.unlink()
+        second = self.run_script(**env)
+        self.assertEqual(second.returncode, 0, second.stdout + second.stderr)
+        self.assertIn("nothing to publish", second.stdout)
+        self.assertIn("Pages live", second.stdout)
+        trace = self.pages_trace.read_text().splitlines()
+        self.assertEqual(sum(line.startswith("dispatch ") for line in trace), 2)
+        self.assertEqual(sum(line.startswith("indexnow ") for line in trace), 1)
 
     def test_default_publish_dir_comes_from_home_and_tests_never_see_the_real_one(self):
         # Regression: the tests must not be able to reach the real publish clone / log. With HOME isolated and no INKISLE_PUBLISH_DIR the script

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Daily publish (one post a day, in a random afternoon slot picked by ops/slot_gate.sh): pull -> push leftovers -> publish_post --daily -> green gate -> commit -> push -> live check -> IndexNow.
-# Install notes: ops/README.md. Needs: python3, git (non-interactive push access to origin), network for IndexNow.
+# Install notes: ops/README.md. Needs: python3, git (non-interactive push access to origin), curl, and authenticated gh for Pages retries.
 #
 # Safety rules
 #   - Runs only in a dedicated publish clone (INKISLE_PUBLISH_DIR, default ~/Developer/inkisle-rest) that is checked out on `main` with a clean tree;
@@ -17,6 +17,7 @@
 set -euo pipefail
 export TZ=Asia/Seoul
 export GIT_TERMINAL_PROMPT=0     # under launchd nobody can type a password: fail instead of hanging
+export GH_PROMPT_DISABLED=1
 log() { echo "[$(date '+%Y-%m-%d %H:%M:%S') KST] publish_daily: $*"; }
 skip() { log "SKIP — $*"; exit 0; }
 
@@ -28,6 +29,49 @@ KIT_SYNC_CMD="${INKISLE_KIT_SYNC_CMD:-python3 scripts/kit_lock.py sync --kit \"$
 # Everything publish_post.py + build_site.py may create or change. Anything else in the tree after a publish means abort.
 # The language dirs must be exactly the non-English languages of build_site.LANGS (en lives at the root) — tests/test_publish_daily.py fails when they drift.
 PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh-Hant es fr de pt-BR id th vi tr"
+SITE="https://inkisle.ipe.rest"
+
+pages_are_live() {
+  local url status
+  for url in "$@"; do
+    if ! status="$(curl --disable --silent --max-time 10 --output /dev/null --write-out '%{http_code}' --header 'Cache-Control: no-cache' "$url")" || [ "$status" != 200 ]; then
+      log "Pages pending (HTTP ${status:-unknown}): $url"
+      return 1
+    fi
+  done
+}
+
+verify_pages() {
+  [ "${INKISLE_SKIP_NET:-0}" = "1" ] && return 0
+  local paths url attempt probe
+  local urls=()
+  paths="$(git diff --no-renames --diff-filter=A --name-only "$1" HEAD -- $PUBLISH_PATHS)" || return 1
+  while IFS= read -r url; do
+    urls+=("$url")
+  done < <(printf '%s\n' "$paths" | sed -nE 's#^(([[:alnum:]-]+/)?journal/[a-z0-9-]+/)index\.html$#'"$SITE"'/\1#p')
+  # Some recovered pushes contain only updates to existing pages.
+  [ "${#urls[@]}" -gt 0 ] || return 0
+
+  # Give both the push-triggered deployment and each fresh run time to build and go live.
+  for attempt in 0 1 2; do
+    if [ "$attempt" -gt 0 ]; then
+      log "Pages retry $attempt/2 — dispatching a fresh workflow on main"
+      if ! gh workflow run 'Deploy to GitHub Pages' --ref main; then
+        log "WARN — Pages retry $attempt/2 dispatch failed (check gh and Actions permissions)"
+      fi
+    fi
+    for probe in {1..11}; do
+      if pages_are_live "${urls[@]}"; then
+        log "Pages live — ${#urls[@]} new URL(s) returned HTTP 200"
+        python3 scripts/indexnow.py "${urls[@]}" "$SITE/" "$SITE/journal/" || log "IndexNow failed (not critical)"
+        return 0
+      fi
+      [ "$probe" -eq 11 ] || sleep 30
+    done
+  done
+  log "FAIL — PAGES_NOT_LIVE after two retries; the publication commit is on main"
+  return 1
+}
 
 [ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
 cd "$REPO"
@@ -81,7 +125,9 @@ git rebase -q origin/main || {
   exit 1
 }
 
+pages_base=""
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
+  pages_base="$(git rev-parse origin/main)"
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
 fi
@@ -105,6 +151,7 @@ fi
 # An empty queue ends the daily post series silently, so make it loud in the log (still exit 0: it is not an error).
 if [ -z "$(find content/queue -mindepth 1 -maxdepth 1 -type d 2>/dev/null)" ]; then
   log "QUEUE_EMPTY — no post left in content/queue/; add content/queue/NN-slug/{en,ko}.md (+ translations) or the daily publishing stops"
+  verify_pages "${pages_base:-HEAD}"
   exit 0
 fi
 
@@ -132,7 +179,11 @@ if ! out="$(python3 scripts/publish_post.py --daily 2>&1)"; then
   echo "$out"; rollback; log "FAIL — publish_post"; exit 1
 fi
 echo "$out"
-if [ -z "$(git status --porcelain)" ]; then log "nothing to publish"; exit 0; fi
+if [ -z "$(git status --porcelain)" ]; then
+  log "nothing to publish"
+  verify_pages "${pages_base:-HEAD}"
+  exit 0
+fi
 slug="$(echo "$out" | sed -n 's/^publish_post: \([^ ]*\) at .*/\1/p' | head -1)"
 [ -n "$slug" ] || { rollback; log "FAIL — changes without a published slug"; exit 1; }
 
@@ -155,10 +206,5 @@ log "committed ${slug}"
 git push -q origin HEAD:main || { log "FAIL — push (commit kept locally; the next run pushes it first)"; exit 1; }
 log "pushed ${slug}"
 
-[ "${INKISLE_SKIP_NET:-0}" = "1" ] && exit 0
-# IndexNow only after the deploy is live: wait for Pages, then submit the new post in every language plus the home and journal pages.
-sleep 120
-python3 scripts/check_sitemap.py --live || log "live check failed — retry later: python3 scripts/check_sitemap.py --live"
-urls="$(echo "$out" | sed -n 's/^  \(https:\/\/[^ ]*\)$/\1/p') https://inkisle.ipe.rest/ https://inkisle.ipe.rest/journal/"
-# shellcheck disable=SC2086
-python3 scripts/indexnow.py $urls || log "IndexNow failed (not critical)"
+# Include any recovered pushes in the same check without delaying today's publication.
+verify_pages "${pages_base:-$base}"
