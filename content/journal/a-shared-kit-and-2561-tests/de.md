@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, gemeinsames Kit, Tests, Game Center, Upgrade, Mobile Game
 image_alt: Mehrere kleine Blöcke gleicher Form in einem Rahmen, über die ein einzelner grüner Punkt wandert.
+published: 2026-11-24T12:45+09:00
 ---
 
 Inkisle, unser Strategiespiel über die Eroberung von Inseln für iOS, nutzt ein gemeinsames Kit, auf das sich mehrere unserer Apps stützen. Jedes Mal, wenn wir die Version des Kits erhöhen, führt ein Gate vor dem Commit Format, statische Analyse und die vollständige Testsuite aus. Am 19. November haben wir das Kit von 0.15.2 auf 0.15.3 gehoben: Das Gate bestand 2.561 Tests (8 übersprungen), und nur zwei Dateien änderten sich, `pubspec.yaml` und `pubspec.lock`. Dieser Beitrag handelt davon, wie diese Zahl gehalten wird und was dabei gewackelt hat. Das Spiel ist in Entwicklung und nicht veröffentlicht.

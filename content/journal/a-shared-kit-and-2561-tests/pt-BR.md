@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kit compartilhado, testes, Game Center, atualização, jogo mobile
 image_alt: Vários blocos pequenos de mesmo formato dentro de uma moldura, com um único ponto verde passando por cima deles.
+published: 2026-11-24T12:45+09:00
 ---
 
 O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, usa um kit compartilhado em que vários dos nossos apps se apoiam. Toda vez que subimos a versão do kit, um portão executa formato, análise estática e a suíte completa de testes antes do commit. Em 19 de novembro passamos o kit de 0.15.2 para 0.15.3: o portão passou por 2.561 testes (8 ignorados), e apenas dois arquivos mudaram, `pubspec.yaml` e `pubspec.lock`. Este post trata de como esse número é mantido e do que oscilou pelo caminho. O jogo está em desenvolvimento e não foi lançado.

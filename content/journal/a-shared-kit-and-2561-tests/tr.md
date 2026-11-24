@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, ortak kit, testler, Game Center, yükseltme, mobil oyun
 image_alt: Aynı biçimdeki birkaç küçük blok tek bir çerçevenin içinde duruyor ve üzerlerinden tek bir yeşil nokta geçiyor.
+published: 2026-11-24T12:45+09:00
 ---
 
 iOS için geliştirdiğimiz ada fethi strateji oyunu Inkisle, birkaç uygulamamızın dayandığı ortak bir kit kullanıyor. Kitin sürümünü her yükselttiğimizde, commit öncesinde tek bir kapı biçimi, statik analizi ve tüm test paketini çalıştırıyor. 19 Kasım'da kiti 0.15.2'den 0.15.3'e taşıdık: kapı 2.561 testi geçti (8 atlandı) ve yalnızca iki dosya değişti, `pubspec.yaml` ve `pubspec.lock`. Bu yazı o sayının nasıl korunduğunu ve yolda nelerin dalgalandığını anlatıyor. Oyun geliştirme aşamasında ve yayımlanmadı.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kit partagé, tests, Game Center, mise à jour, jeu mobile
 image_alt: Plusieurs petits blocs de même forme dans un cadre, avec un unique point vert qui passe devant eux.
+published: 2026-11-24T12:45+09:00
 ---
 
 Inkisle, notre jeu de stratégie de conquête d'îles pour iOS, utilise un kit partagé sur lequel s'appuient plusieurs de nos applications. Chaque fois que nous relevons la version du kit, une barrière exécute le format, l'analyse statique et toute la suite de tests avant le commit. Le 19 novembre, nous avons fait passer le kit de 0.15.2 à 0.15.3 : la barrière a validé 2 561 tests (8 ignorés), et seuls deux fichiers ont changé, `pubspec.yaml` et `pubspec.lock`. Cet article raconte comment ce chiffre est tenu et ce qui a vacillé en chemin. Le jeu est en développement et n'est pas sorti.

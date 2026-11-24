@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, shared kit, tests, Game Center, upgrade, mobile game
 image_alt: Several small blocks of the same shape sitting in one frame, with a single green dot passing across them.
+published: 2026-11-24T12:45+09:00
 ---
 
 Inkisle, our island-conquest strategy game for iOS, uses a shared kit that several of our apps rely on. Each time we raise the kit's version, one gate runs format, static analysis and the full test suite before we commit. On November 19 we moved the kit from 0.15.2 to 0.15.3: the gate passed 2,561 tests (8 skipped), and only two files changed, `pubspec.yaml` and `pubspec.lock`. This post is about how that number is kept and what wobbled along the way. The game is in development and not released.

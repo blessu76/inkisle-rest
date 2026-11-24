@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, bộ công cụ dùng chung, kiểm thử, Game Center, nâng cấp, game di động
 image_alt: Vài khối nhỏ cùng hình dạng nằm trong một khung, với một chấm xanh lá duy nhất lướt qua phía trên chúng.
+published: 2026-11-24T12:45+09:00
 ---
 
 Inkisle, game chiến lược chinh phục đảo của chúng tôi trên iOS, dùng một bộ công cụ dùng chung mà nhiều ứng dụng của chúng tôi dựa vào. Mỗi lần chúng tôi nâng phiên bản của bộ công cụ, một cổng kiểm tra chạy định dạng, phân tích tĩnh và toàn bộ bộ kiểm thử trước khi commit. Ngày 19 tháng 11, chúng tôi chuyển bộ công cụ từ 0.15.2 lên 0.15.3: cổng kiểm tra đã qua 2.561 bài kiểm thử (bỏ qua 8), và chỉ hai tệp thay đổi, `pubspec.yaml` và `pubspec.lock`. Bài viết này nói về cách con số đó được giữ vững và điều gì đã chao đảo trên đường đi. Trò chơi đang trong quá trình phát triển và chưa phát hành.

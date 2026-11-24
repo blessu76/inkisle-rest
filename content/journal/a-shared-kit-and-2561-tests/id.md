@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, kit bersama, tes, Game Center, peningkatan versi, game mobile
 image_alt: Beberapa balok kecil berbentuk sama dalam satu bingkai, dengan satu titik hijau yang melintas di atasnya.
+published: 2026-11-24T12:45+09:00
 ---
 
 Inkisle, game strategi penaklukan pulau kami untuk iOS, memakai kit bersama yang diandalkan beberapa aplikasi kami. Setiap kali kami menaikkan versi kit, satu gerbang menjalankan format, analisis statis, dan seluruh rangkaian tes sebelum kami melakukan commit. Pada 19 November kami memindahkan kit dari 0.15.2 ke 0.15.3: gerbang meloloskan 2.561 tes (8 dilewati), dan hanya dua file yang berubah, `pubspec.yaml` dan `pubspec.lock`. Tulisan ini membahas bagaimana angka itu dijaga dan apa yang goyah di sepanjang jalan. Game ini masih dalam pengembangan dan belum dirilis.
