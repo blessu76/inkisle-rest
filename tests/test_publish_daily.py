@@ -1,4 +1,6 @@
 """ops/publish_daily.sh safety rules, run against a throw-away origin + publish clone (no network, no real check.sh)."""
+import datetime as dt
+import json
 import os
 import shutil
 import subprocess
@@ -35,6 +37,7 @@ class PublishDaily(unittest.TestCase):
         self.origin = self.tmp / "origin.git"
         git(self.tmp, "init", "-q", "--bare", "-b", "main", str(self.origin))
         self.clone = site
+        self.pending = self.clone / ".git" / "publish-pages.pending"
         git(site, "init", "-q", "-b", "main")
         git(site, "add", "-A")
         git(site, "commit", "-q", "-m", "init")
@@ -59,6 +62,10 @@ class PublishDaily(unittest.TestCase):
 for arg do url=$arg; done
 printf 'probe %s\n' "$url" >> "$PAGES_TRACE"
 dispatched=$(grep -c '^dispatch ' "$PAGES_TRACE")
+if [ -n "${PAGES_BLOCKED:-}" ] && [ "${url%%[?]*}" = "$PAGES_BLOCKED" ]; then
+  printf 404
+  exit 0
+fi
 case "$url" in
   */ko/*) [ "${PAGES_READY:-0}" = 1 ] || [ "$dispatched" -ge "$LIVE_AFTER" ] ;;
   *) true ;;
@@ -77,6 +84,9 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         (self.clone / "scripts/indexnow.py").write_text(
             "import os, sys\nwith open(os.environ['PAGES_TRACE'], 'a') as f:\n"
             "    f.write('indexnow ' + ' '.join(sys.argv[1:]) + '\\n')\n"
+            "if status := os.environ.get('INDEXNOW_STATUS'):\n"
+            "    print(f'IndexNow inkisle.ipe.rest: HTTP {status} ({len(sys.argv) - 1} URLs)')\n"
+            "    sys.exit(int(status not in ('200', '202')))\n"
             "sys.exit(int(os.environ.get('INDEXNOW_ERROR', '0')))\n"
         )
         git(self.clone, "commit", "-qam", "stub IndexNow")
@@ -162,14 +172,14 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
 
         ready = self.run_script(**env, PAGES_READY="1")
         self.assertEqual(ready.returncode, 0, ready.stdout + ready.stderr)
-        self.assertIn("Pages verified", ready.stdout)
+        self.assertIn("Pages follow-up complete", ready.stdout)
         self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()], ["probe", "probe", "indexnow"])
         self.assertEqual(self.origin_head(), published)
         self.pages_trace.write_text("")
         self.assertEqual(self.run_script(**env).returncode, 0)
         self.assertEqual(self.pages_trace.read_text(), "")
 
-    def test_empty_queue_verifies_the_recovered_push_and_retries_indexnow(self):
+    def test_empty_queue_retries_indexnow_on_a_later_day_without_rechecking_pages(self):
         env = self.pages_stubs()
         git(self.clone, "rm", "-qr", "content/queue/02-next-two")
         git(self.clone, "commit", "-qm", "one queued post left")
@@ -182,22 +192,85 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertFalse(self.pages_trace.exists())
         hook.unlink()
 
-        recovered = self.run_script(**env, INDEXNOW_ERROR="1")
-        self.assertEqual(recovered.returncode, 1, recovered.stdout + recovered.stderr)
+        recovered = self.run_script(**env, INDEXNOW_STATUS="503")
+        self.assertEqual(recovered.returncode, 0, recovered.stdout + recovered.stderr)
         self.assertIn("QUEUE_EMPTY", recovered.stdout)
         self.assertIn("INDEXNOW_PENDING", recovered.stdout)
+        self.assertIn("Pages follow-up complete", recovered.stdout)
         self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()],
                          ["sleep", "probe", "probe", "indexnow"])
         published = self.origin_head()
         self.pages_trace.write_text("")
 
+        for _ in range(2):
+            same_day = self.run_script(**env, INDEXNOW_STATUS="503")
+            self.assertEqual(same_day.returncode, 0, same_day.stdout + same_day.stderr)
+            self.assertIn("Pages follow-up complete", same_day.stdout)
+            self.assertEqual(self.pages_trace.read_text(), "")
+
+        pending = json.loads(self.pending.read_text())
+        for entry in pending.values():
+            last_submit_day = dt.date.fromisoformat(entry["last_submit_day"])
+            entry["last_submit_day"] = (last_submit_day - dt.timedelta(days=1)).isoformat()
+        self.pending.write_text(json.dumps(pending))
         ready = self.run_script(**env)
         self.assertEqual(ready.returncode, 0, ready.stdout + ready.stderr)
         self.assertIn("QUEUE_EMPTY", ready.stdout)
-        self.assertIn("Pages verified", ready.stdout)
-        self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()],
-                         ["probe", "probe", "indexnow"])
+        self.assertIn("IndexNow submitted", ready.stdout)
+        self.assertEqual([line.split()[0] for line in self.pages_trace.read_text().splitlines()], ["indexnow"])
+        self.assertFalse(self.pending.exists())
         self.assertEqual(self.origin_head(), published)
+
+    def test_expired_pending_urls_are_dropped_without_a_probe(self):
+        env = self.pages_stubs(live_after=3)
+        first = self.run_script(**env)
+        self.assertIn("PAGES_NOT_LIVE", first.stdout)
+        pending = json.loads(self.pending.read_text())
+        for entry in pending.values():
+            entry["recorded_at"] -= 3 * 24 * 60 * 60
+        self.pending.write_text(json.dumps(pending))
+        self.pages_trace.write_text("")
+
+        later = self.run_script(**env)
+        self.assertEqual(later.returncode, 0, later.stdout + later.stderr)
+        self.assertEqual(later.stdout.count("pending URL expired after 72 hours"), 2)
+        self.assertFalse(self.pending.exists())
+        self.assertEqual(self.pages_trace.read_text(), "")
+
+    def test_old_blocked_post_cannot_block_indexnow_for_a_new_post(self):
+        env = self.pages_stubs()
+        old_url = "https://inkisle.ipe.rest/ko/journal/alpha-post/"
+        self.pending.write_text(old_url + "\n")
+        recorded_at = int(self.pending.stat().st_mtime) - 24 * 60 * 60
+        os.utime(self.pending, (recorded_at, recorded_at))
+
+        result = self.run_script(**env, PAGES_BLOCKED=old_url)
+        self.assertIn("PAGES_NOT_LIVE", result.stdout)
+        trace = self.pages_trace.read_text().splitlines()
+        self.assertTrue(any(line.startswith(f"probe {old_url}?") for line in trace))
+        self.assertFalse(any(line.startswith("dispatch ") for line in trace))
+        self.assertEqual([line for line in trace if line.startswith("indexnow ")], [
+            "indexnow https://inkisle.ipe.rest/journal/next-one/ https://inkisle.ipe.rest/ko/journal/next-one/ "
+            "https://inkisle.ipe.rest/ https://inkisle.ipe.rest/journal/",
+        ])
+        self.assertEqual(json.loads(self.pending.read_text()), {
+            old_url: {"recorded_at": recorded_at, "pages_live": False, "last_submit_day": ""},
+        })
+        self.assertEqual(self.head(), self.origin_head())
+
+    def test_indexnow_client_error_is_dropped_from_retry(self):
+        env = self.pages_stubs()
+        result = self.run_script(**env, INDEXNOW_STATUS="429")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("IndexNow HTTP 429; dropping 2 URL(s)", result.stdout)
+        self.assertNotIn("INDEXNOW_PENDING", result.stdout)
+        self.assertIn("Pages follow-up complete", result.stdout)
+        self.assertFalse(self.pending.exists())
+        self.pages_trace.write_text("")
+
+        later = self.run_script(**env, INDEXNOW_STATUS="429")
+        self.assertEqual(later.returncode, 0, later.stdout + later.stderr)
+        self.assertEqual(self.pages_trace.read_text(), "")
 
     def test_removed_url_does_not_block_the_remaining_pending_urls(self):
         env = self.pages_stubs(live_after=3)

@@ -22,6 +22,7 @@ log() { echo "[$(date '+%Y-%m-%d %H:%M:%S') KST] publish_daily: $*"; }
 skip() { log "SKIP — $*"; exit 0; }
 
 REPO="${INKISLE_PUBLISH_DIR:-$HOME/Developer/inkisle-rest}"
+PAGES_HELPER="$(cd "$(dirname "$0")" && pwd)/publish_pages.py"
 CHECK_CMD="${INKISLE_CHECK_CMD:-bash scripts/check.sh}"
 KIT_DIR="${INKISLE_KIT_DIR:-$HOME/Developer/ipe_web_kit}"
 KIT_CHECK_CMD="${INKISLE_KIT_CHECK_CMD:-python3 scripts/kit_lock.py check}"
@@ -29,80 +30,18 @@ KIT_SYNC_CMD="${INKISLE_KIT_SYNC_CMD:-python3 scripts/kit_lock.py sync --kit \"$
 # Everything publish_post.py + build_site.py may create or change. Anything else in the tree after a publish means abort.
 # The language dirs must be exactly the non-English languages of build_site.LANGS (en lives at the root) — tests/test_publish_daily.py fails when they drift.
 PUBLISH_PATHS="content/journal content/queue index.html 404.html sitemap.xml llms.txt robots.txt journal ko ja zh-Hant es fr de pt-BR id th vi tr"
-SITE="https://inkisle.ipe.rest"
-
-pages_are_live() {
-  local url status cache_key
-  cache_key="$(date +%s)-$$-$1"
-  shift
-  for url in "$@"; do
-    if ! status="$(curl --disable --silent --max-time 10 --output /dev/null --write-out '%{http_code}' --header 'Cache-Control: no-cache' "$url?v=$cache_key")" || [ "$status" != 200 ]; then
-      log "Pages pending (HTTP ${status:-unknown}): $url"
-      return 1
-    fi
-  done
-}
 
 # Save canonical URLs before pushing, so an interrupted run can recover even if main already has the commit.
 remember_pages() {
   [ "${INKISLE_SKIP_NET:-0}" = "1" ] && return 0
-  local paths new_urls
+  local paths
   paths="$(git diff --no-renames --diff-filter=A --name-only "$1" HEAD -- $PUBLISH_PATHS)" || return 1
-  new_urls="$(printf '%s\n' "$paths" | sed -nE 's#^(([[:alnum:]-]+/)?journal/[a-z0-9-]+/)index\.html$#'"$SITE"'/\1#p')"
-  [ -n "$new_urls" ] || return 0
-  {
-    if [ -f "$pending_pages" ]; then cat "$pending_pages"; fi
-    printf '%s\n' "$new_urls"
-  } | LC_ALL=C sort -u > "$lock/pages.pending"
-  mv "$lock/pages.pending" "$pending_pages"
-  pages_pushed=1
+  printf '%s\n' "$paths" | python3 "$PAGES_HELPER" remember "$lock"
 }
 
 verify_pages() {
   [ "${INKISLE_SKIP_NET:-0}" = "1" ] && return 0
-  [ -s "$pending_pages" ] || return 0
-  local url path attempt probe probes=1
-  local urls=() attempts=(0)
-  while IFS= read -r url; do
-    path="${url#"$SITE/"}index.html"
-    if [ -f "$path" ]; then urls+=("$url"); fi
-  done < "$pending_pages"
-  # A reverted or removed page no longer belongs to the deployed site.
-  if [ "${#urls[@]}" -eq 0 ]; then
-    rm "$pending_pages"
-    return 0
-  fi
-
-  # Only a push of new pages opens a retry window. Later ticks probe once, without further dispatches.
-  if [ "$pages_pushed" = 1 ]; then
-    attempts=(0 1 2)
-    probes=7
-  fi
-
-  for attempt in "${attempts[@]}"; do
-    if [ "$attempt" -gt 0 ]; then
-      log "Pages retry $attempt/2 — dispatching a fresh workflow on main"
-      if ! gh workflow run 'Deploy to GitHub Pages' --ref main; then
-        log "WARN — Pages retry $attempt/2 dispatch failed (check gh and Actions permissions)"
-      fi
-    fi
-    if [ "$pages_pushed" = 1 ]; then sleep 120; fi
-    for ((probe = 1; probe <= probes; probe++)); do
-      if pages_are_live "$attempt-$probe" "${urls[@]}"; then
-        log "Pages live — ${#urls[@]} new URL(s) returned HTTP 200"
-        if ! python3 scripts/indexnow.py "${urls[@]}" "$SITE/" "$SITE/journal/"; then
-          log "FAIL — INDEXNOW_PENDING; Pages are live, submission will be retried"
-          return 1
-        fi
-        rm "$pending_pages"
-        log "Pages verified — IndexNow submitted"
-        return 0
-      fi
-      [ "$probe" -eq "$probes" ] || sleep 30
-    done
-  done
-  log "FAIL — PAGES_NOT_LIVE; the publication commit is on main, URLs kept for the next check"
-  return 1
+  python3 "$PAGES_HELPER" verify "$lock"
 }
 
 [ -d "$REPO/.git" ] || skip "$REPO is not a git clone"
@@ -157,12 +96,11 @@ git rebase -q origin/main || {
   exit 1
 }
 
-pending_pages="$REPO/.git/publish-pages.pending"
-pages_pushed=0
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
   remember_pages origin/main
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
+  log "pushed earlier publication commit(s)"
 fi
 
 # vendor/ipe_web_kit must be the locked kit version (vendor/ is gitignored, so a pull that moves the lock does not move it). Re-sync from the local kit clone;

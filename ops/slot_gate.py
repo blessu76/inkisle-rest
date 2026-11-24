@@ -19,7 +19,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 CUTOFF = "18:00"             # hard cutoff: at/after this the gate never publishes (a missed day is skipped, not retried in the evening)
 LAST_SLOT_MINUTE_17 = 29     # 17:xx draws only minutes 0-29 so >= 2 ticks (e.g. 17:30, 17:45) fit before the cutoff
-DONE_RE = re.compile(r"publish_daily: (pushed \S+|nothing to publish|Pages verified)")
+PUSH_RE = re.compile(r"publish_daily: pushed \S+")
+DONE_RE = re.compile(r"publish_daily: (nothing to publish|Pages verified|Pages follow-up complete)")
 
 
 def now_kst():
@@ -75,14 +76,14 @@ def main():
     r = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     output = r.stdout + r.stderr
     sys.stdout.write(output)
-    if r.returncode == 0 and DONE_RE.search(output):
+    pushed = PUSH_RE.search(output)
+    if r.returncode == 0 and (pushed or DONE_RE.search(output)):
         st["published"] = True
         save(path, st)
         log("slot done for %s" % today, now)
     elif "publish_daily: FAIL — PAGES_NOT_LIVE" in output:
-        log("push complete — Pages verification pending; check next eligible tick", now)
-    elif "publish_daily: FAIL — INDEXNOW_PENDING" in output:
-        log("Pages live — IndexNow submission pending; check next eligible tick", now)
+        push = "push complete" if pushed else "earlier push"
+        log(f"{push} — Pages verification pending; check next eligible tick", now)
     else:
         log("not published (rc=%d) — retry next tick" % r.returncode, now)
     return 0
