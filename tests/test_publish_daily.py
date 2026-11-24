@@ -172,6 +172,30 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertFalse(self.pending.exists())
         self.assertEqual([p.read_bytes() for p in self.pending.parent.glob("publish-pages.pending.corrupt-*")], [original])
 
+    def test_pending_directory_is_moved_before_pushing_new_post(self):
+        env = self.pages_stubs()
+        nested = self.pending / "nested"
+        nested.mkdir(parents=True)
+        (nested / "original").write_bytes(b"directory contents")
+        before = self.origin_head()
+
+        result = self.run_script(**env)
+
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("WARN — corrupt Pages state (state path is a directory)", result.stdout)
+        self.assertIn("pushed next-one", result.stdout)
+        self.assertIn("IndexNow submitted", result.stdout)
+        self.assertNotEqual(before, self.origin_head())
+        self.assertEqual(self.head(), self.origin_head())
+        self.assertFalse(self.pending.exists())
+        backups = sorted(self.pending.parent.glob("publish-pages.pending.corrupt-*"))
+        self.assertEqual(len(backups), 1)
+        self.assertEqual((backups[0] / "nested" / "original").read_bytes(), b"directory contents")
+
+        again = self.run_script(**env)
+        self.assertEqual(again.returncode, 0, again.stdout + again.stderr)
+        self.assertEqual(sorted(self.pending.parent.glob("publish-pages.pending.corrupt-*")), backups)
+
     def test_invalid_pending_entries_are_skipped_before_retrying_push(self):
         env = self.pages_stubs()
         hook = self.origin / "hooks" / "pre-receive"
@@ -655,6 +679,95 @@ class PublishPages(unittest.TestCase):
         post.parent.mkdir(parents=True)
         post.touch()
         self.pending = publish_pages.PENDING
+
+    def test_empty_pending_file_can_be_reused_without_a_backup(self):
+        self.pending.touch()
+        with mock.patch.object(publish_pages, "log") as log:
+            publish_pages.remember(self.lock, ["journal/test-post/index.html"])
+        self.assertEqual(set(json.loads(self.pending.read_text())), {self.url})
+        self.assertEqual(list(self.pending.parent.glob("publish-pages.pending.corrupt-*")), [])
+        log.assert_not_called()
+
+    def test_pending_json_must_be_an_object(self):
+        for original in (b"[]", b'["url"]', b'"text"', b"5", b"false", b"null"):
+            with self.subTest(original=original):
+                self.assert_recovers_unreadable_pending(original, "expected a JSON object")
+
+    def test_pending_invalid_utf8_is_backed_up(self):
+        self.assert_recovers_unreadable_pending(b"{\xff}", "malformed JSON or UTF-8")
+
+    def test_deeply_nested_pending_json_is_backed_up(self):
+        original = b'{"nested":' + b"[" * 10000 + b"0" + b"]" * 10000 + b"}"
+        self.assert_recovers_unreadable_pending(original, "malformed JSON or UTF-8")
+
+    def assert_recovers_unreadable_pending(self, original, reason):
+        self.pending.write_bytes(original)
+        with mock.patch.object(publish_pages, "log") as log:
+            self.assertEqual(publish_pages.load_pending(self.lock), {})
+        self.assertIn(f"corrupt Pages state ({reason})", log.call_args.args[0])
+        self.assertFalse(self.pending.exists())
+        backup, = self.pending.parent.glob("publish-pages.pending.corrupt-*")
+        self.assertEqual(backup.read_bytes(), original)
+        backup.unlink()
+
+    def test_pending_future_timestamp_beyond_tolerance_is_dropped_before_probe(self):
+        now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)
+        cutoff = int(now.timestamp()) + 5 * 60
+        future_path = Path("ko/journal/test-post/index.html")
+        future_path.parent.mkdir(parents=True)
+        future_path.touch()
+        future_url = "https://inkisle.ipe.rest/ko/journal/test-post/"
+        valid = {"recorded_at": cutoff, "pages_live": False, "last_submit_day": ""}
+        original = json.dumps({self.url: valid, future_url: {"recorded_at": cutoff + 1}}).encode("utf-8")
+        self.pending.write_bytes(original)
+        with mock.patch.object(publish_pages.dt, "datetime", wraps=dt.datetime) as clock, \
+             mock.patch.object(publish_pages, "pages_are_live", return_value=False) as probe, \
+             mock.patch.object(publish_pages, "log") as log:
+            clock.now.return_value = now
+            self.assertEqual(publish_pages.verify(self.lock), 1)  # only the valid URL remains pending
+        probe.assert_called_once_with([self.url], mock.ANY)
+        self.assertIn("expired 1 URL entry(s) with future recorded_at", log.call_args_list[0].args[0])
+        self.assertEqual(json.loads(self.pending.read_text()), {self.url: valid})
+        self.assertEqual([p.read_bytes() for p in self.pending.parent.glob("publish-pages.pending.corrupt-*")], [original])
+
+    def test_legacy_pending_file_also_expires_a_future_mtime(self):
+        now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)
+        self.pending.write_text(self.url + "\n")
+        future = int(now.timestamp()) + 5 * 60 + 1
+        os.utime(self.pending, (future, future))
+        with mock.patch.object(publish_pages.dt, "datetime", wraps=dt.datetime) as clock, \
+             mock.patch.object(publish_pages, "log") as log:
+            clock.now.return_value = now
+            self.assertEqual(publish_pages.load_pending(self.lock), {})
+        self.assertIn("future recorded_at", log.call_args.args[0])
+        self.assertFalse(self.pending.exists())
+
+    def test_recovery_keeps_only_the_five_newest_file_or_directory_backups(self):
+        now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)
+        unrelated = self.pending.with_name("publish-pages.pending.corrupt-manual")
+        unrelated.write_text("operator note")
+        backups = []
+        with mock.patch.object(publish_pages.dt, "datetime", wraps=dt.datetime) as clock, \
+             mock.patch.object(publish_pages, "log"):
+            for index in range(7):
+                clock.now.return_value = now + dt.timedelta(seconds=index // 2)
+                if index % 2:
+                    self.pending.mkdir()
+                    (self.pending / "original").write_text(str(index))
+                else:
+                    self.pending.write_text(f"{index}")  # wrong JSON root type
+                self.assertEqual(publish_pages.load_pending(self.lock), {})
+                backups.append(max(path for path in self.pending.parent.glob("publish-pages.pending.corrupt-*")
+                                   if path != unrelated))
+
+        remaining = sorted(path for path in self.pending.parent.glob("publish-pages.pending.corrupt-*")
+                           if path != unrelated)
+        self.assertEqual(remaining, backups[2:])
+        self.assertEqual(len(remaining), 5)
+        for index, backup in enumerate(remaining, start=2):
+            original = backup / "original" if index % 2 else backup
+            self.assertEqual(original.read_text(), str(index))
+        self.assertEqual(unrelated.read_text(), "operator note")
 
     def test_pending_urls_expire_at_exactly_72_hours(self):
         now = dt.datetime(2026, 11, 25, 12, tzinfo=publish_pages.KST)

@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from collections import defaultdict
@@ -14,7 +15,9 @@ PENDING = Path(".git/publish-pages.pending")
 POST_PATH = re.compile(r"((?:[A-Za-z0-9-]+/)?journal/[a-z0-9-]+/)index\.html")
 INDEXNOW_4XX = re.compile(r"^IndexNow inkisle\.ipe\.rest: HTTP (4[0-9]{2}) \([0-9]+ URLs\)$", re.M)
 MAX_AGE = dt.timedelta(days=3).total_seconds()
-MAX_TIMESTAMP = 253402300799  # Last whole second of year 9999 (UTC).
+MAX_CLOCK_SKEW = 5 * 60  # seconds
+BACKUP_LIMIT = 5
+BACKUP_SUFFIX = re.compile(r"\.corrupt-[0-9]{8}-[0-9]{6}-[0-9]{6}")
 KST = dt.timezone(dt.timedelta(hours=9))
 
 
@@ -32,7 +35,7 @@ def log(message):
 def pending_entry(fields):
     try:
         entry = PendingURL(**fields)
-        if type(entry.recorded_at) is not int or not 0 <= entry.recorded_at <= MAX_TIMESTAMP:
+        if type(entry.recorded_at) is not int or entry.recorded_at < 0:
             return None
         if type(entry.pages_live) is not bool:
             return None
@@ -45,11 +48,44 @@ def pending_entry(fields):
 
 
 def recover_pending(lock, original, pending, reason):
-    timestamp = dt.datetime.now(KST).strftime("%Y%m%d-%H%M%S-%f")
-    backup = PENDING.with_name(f"{PENDING.name}.corrupt-{timestamp}")
-    backup.write_bytes(original)
+    timestamp = dt.datetime.now(KST)
+    backup = PENDING.with_name(f"{PENDING.name}.corrupt-{timestamp:%Y%m%d-%H%M%S-%f}")
+    while backup.exists() or backup.is_symlink():
+        timestamp += dt.timedelta(microseconds=1)
+        backup = PENDING.with_name(f"{PENDING.name}.corrupt-{timestamp:%Y%m%d-%H%M%S-%f}")
+    if original is None:
+        PENDING.rename(backup)
+    else:
+        backup.write_bytes(original)
     log(f"WARN — corrupt Pages state ({reason}); backed up as {backup}")
-    save_pending(lock, pending)
+    if original is not None:
+        save_pending(lock, pending)
+
+    # Keep this recovery even if the clock moved back since an earlier backup.
+    earlier = sorted((path for path in PENDING.parent.glob(f"{PENDING.name}.corrupt-*")
+                      if path != backup and BACKUP_SUFFIX.fullmatch(path.name[len(PENDING.name):])), reverse=True)
+    for path in earlier[BACKUP_LIMIT - 1:]:
+        try:
+            if not path.is_symlink() and path.is_dir():
+                shutil.rmtree(path)
+            else:
+                path.unlink(missing_ok=True)
+        except OSError as error:
+            log(f"WARN — could not remove old Pages state backup {path}: {error}")
+
+
+def parse_pending(content):
+    try:
+        data = json.loads(content)
+    except json.JSONDecodeError:
+        if content.lstrip().startswith("{"):
+            raise
+        # The URL-only format used the file's mtime as the last known update.
+        recorded_at = int(PENDING.stat().st_mtime)
+        return ((url, pending_entry({"recorded_at": recorded_at})) for url in content.splitlines() if url)
+    if not isinstance(data, dict):
+        raise TypeError("expected a JSON object")
+    return ((url, pending_entry(fields)) for url, fields in data.items())
 
 
 def load_pending(lock):
@@ -57,28 +93,39 @@ def load_pending(lock):
         original = PENDING.read_bytes()
     except FileNotFoundError:
         return {}
+    except IsADirectoryError:
+        recover_pending(lock, None, {}, "state path is a directory")
+        return {}
+    if not original:
+        return {}
     try:
-        content = original.decode("utf-8")
-        if content.lstrip().startswith("{"):
-            entries = ((url, pending_entry(fields)) for url, fields in json.loads(content).items())
-        else:
-            # The URL-only format used the file's mtime as the last known update.
-            recorded_at = int(PENDING.stat().st_mtime)
-            entries = ((url, PendingURL(recorded_at)) for url in content.splitlines() if url)
+        entries = parse_pending(original.decode("utf-8"))
     except (ValueError, RecursionError):
         recover_pending(lock, original, {}, "malformed JSON or UTF-8")
+        return {}
+    except TypeError as error:
+        recover_pending(lock, original, {}, str(error))
         return {}
 
     pending = {}
     invalid = 0
+    future = 0
+    latest = int(dt.datetime.now(KST).timestamp()) + MAX_CLOCK_SKEW
     for url, entry in entries:
         path = url[len(SITE) + 1:] + "index.html"
-        if entry is not None and url.startswith(f"{SITE}/") and POST_PATH.fullmatch(path):
-            pending[url] = entry
-        else:
+        if entry is None or not url.startswith(f"{SITE}/") or not POST_PATH.fullmatch(path):
             invalid += 1
+        elif entry.recorded_at > latest:
+            future += 1
+        else:
+            pending[url] = entry
+    reasons = []
     if invalid:
-        recover_pending(lock, original, pending, f"skipped {invalid} invalid URL entry(s)")
+        reasons.append(f"skipped {invalid} invalid URL entry(s)")
+    if future:
+        reasons.append(f"expired {future} URL entry(s) with future recorded_at")
+    if reasons:
+        recover_pending(lock, original, pending, "; ".join(reasons))
     return pending
 
 
