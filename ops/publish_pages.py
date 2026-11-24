@@ -112,6 +112,7 @@ def load_pending(lock):
         return recover_pending(lock, None, {}, "state path is a directory")
     if not original:
         log("WARN — Pages state file is empty; starting with no pending URLs")
+        PENDING.unlink(missing_ok=True)
         return {}
     try:
         entries = parse_pending(original.decode("utf-8"))
@@ -275,9 +276,15 @@ def verify(lock):
 
 if __name__ == "__main__":
     action, lock_path = sys.argv[1:]
-    if action == "remember":
-        remember(Path(lock_path), sys.stdin.read().splitlines())
-    elif action == "verify":
-        sys.exit(verify(Path(lock_path)))
-    else:
+    if action not in {"remember", "verify"}:
         sys.exit(f"unknown Pages action: {action}")
+    try:
+        if action == "remember":
+            remember(Path(lock_path), sys.stdin.read().splitlines())
+        else:
+            sys.exit(verify(Path(lock_path)))
+    except OSError as error:
+        if action == "remember":
+            sys.exit(f"Pages state error: {error}")
+        # State I/O errors stop follow-up for this run. The explicit PAGES_NOT_LIVE exit still propagates.
+        log(f"WARN — could not finish Pages/IndexNow follow-up: {error}")

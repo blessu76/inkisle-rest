@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -236,6 +237,63 @@ printf 'dispatch [%s][%s][%s][%s][%s]\n' "$@" >> "$PAGES_TRACE"
         self.assertEqual(original.read_text(), "directory contents")
         self.assertFalse(self.pages_trace.exists())
         self.assertEqual(list(self.pending.parent.glob("publish-pages.pending.corrupt-*")), [])
+
+        verify_only = self.run_script(**env)
+        self.assertEqual(verify_only.returncode, 0, verify_only.stdout + verify_only.stderr)
+        self.assertIn("nothing to publish", verify_only.stdout)
+        self.assertEqual(verify_only.stdout.count("WARN — could not move Pages state directory"), 1)
+        self.assertNotIn("Traceback", verify_only.stderr)
+        self.assertFalse(self.pages_trace.exists())
+
+    def assert_push_continues_on_pending_file_error(self, result, push_log):
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("WARN — could not record Pages URLs; continuing push", result.stdout)
+        self.assertIn(push_log, result.stdout)
+        self.assertIn("WARN — could not finish Pages/IndexNow follow-up", result.stdout)
+        self.assertIn("publish-pages.pending", result.stderr)
+        self.assertNotIn("Traceback", result.stderr)
+        self.assertEqual(self.head(), self.origin_head())
+        self.assertFalse(self.pages_trace.exists())
+
+    @unittest.skipUnless(sys.platform == "darwin", "requires macOS chflags")
+    def test_immutable_pending_file_allows_new_and_retried_pushes(self):
+        env = self.pages_stubs()
+        original = json.dumps({"https://inkisle.ipe.rest/journal/alpha-post/": {
+            "recorded_at": int(dt.datetime.now(dt.timezone.utc).timestamp()), "pages_live": True,
+        }})
+        self.pending.write_text(original)
+        subprocess.run(["chflags", "uchg", str(self.pending)], check=True)
+        self.addCleanup(subprocess.run, ["chflags", "nouchg", str(self.pending)], check=True)
+        before = self.origin_head()
+
+        first = self.run_script(**env)
+        self.assert_push_continues_on_pending_file_error(first, "pushed next-one")
+        self.assertNotEqual(before, self.origin_head())
+
+        page = self.clone / "journal/earlier-post/index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text("earlier publication")
+        git(self.clone, "add", str(page))
+        git(self.clone, "commit", "-qm", "earlier publication")
+        second = self.run_script(**env)
+        self.assert_push_continues_on_pending_file_error(second, "pushed earlier publication commit(s)")
+        self.assertEqual(self.pending.read_text(), original)
+
+    @unittest.skipIf(os.geteuid() == 0, "root can read files with mode 000")
+    def test_unreadable_pending_file_allows_new_push(self):
+        env = self.pages_stubs()
+        self.pending.write_text("{}")
+        mode = self.pending.stat().st_mode & 0o777
+        before = self.origin_head()
+        self.pending.chmod(0)
+        try:
+            result = self.run_script(**env)
+        finally:
+            self.pending.chmod(mode)
+
+        self.assert_push_continues_on_pending_file_error(result, "pushed next-one")
+        self.assertNotEqual(before, self.origin_head())
+        self.assertEqual(self.pending.read_text(), "{}")
 
     def test_invalid_pending_entries_are_skipped_before_retrying_push(self):
         env = self.pages_stubs()
@@ -727,6 +785,14 @@ class PublishPages(unittest.TestCase):
             publish_pages.remember(self.lock, ["journal/test-post/index.html"])
         self.assertEqual(set(json.loads(self.pending.read_text())), {self.url})
         self.assertEqual(list(self.pending.parent.glob("publish-pages.pending.corrupt-*")), [])
+        log.assert_called_once_with("WARN — Pages state file is empty; starting with no pending URLs")
+
+    def test_verify_removes_empty_pending_file_after_one_warning(self):
+        self.pending.touch()
+        with mock.patch.object(publish_pages, "log") as log:
+            self.assertEqual(publish_pages.verify(self.lock), 0)
+            self.assertFalse(self.pending.exists())
+            self.assertEqual(publish_pages.verify(self.lock), 0)
         log.assert_called_once_with("WARN — Pages state file is empty; starting with no pending URLs")
 
     def test_pending_json_must_be_an_object(self):

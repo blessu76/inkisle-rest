@@ -23,8 +23,8 @@ the script ran (HH:MM KST); a future time is refused.
 - Only the publish set is staged (`content/journal`, `content/queue`, generated pages); anything else in the tree aborts the run. Never `git add -A`.
 - push 직전 새 글의 언어별 URL을 발행 클론의 `.git/publish-pages.pending`에 저장한다. 새 글을 push한 뒤와 각 배포 재요청 뒤 120초를 기다리고, 새 `?v=` 쿼리로 HTTP 200 응답을 30초 간격으로 최대 7회 확인한다. 이 구간에 페이지가 열리지 않으면 `gh workflow run 'Deploy to GitHub Pages' --ref main`으로 배포를 최대 두 번 새로 요청한다.
 - 글별로 대기 중인 URL의 HTTP 200을 확인하고, 열린 글의 원본 URL과 `/`, `/journal/`을 IndexNow에 제출한다. `PAGES_NOT_LIVE`인 글은 큐가 비어 있어도 다음 발행 가능 틱에 배포 재요청이나 대기 없이 확인한다. 대기 URL은 최초 기록 후 72시간에 만료된다. 기존 URL 전용 파일은 마지막 수정 시각을 최초 기록 시각으로 사용한다.
-- 상태 파일에 손상이 있으면 `WARN`을 기록하고 원본을 백업한다. 읽을 수 있는 유효한 항목을 보존하되, 최초 기록 시각이 현재보다 5분 넘게 미래인 URL은 만료시킨다. 빈 파일은 경고를 기록하고 빈 목록으로 읽는다.
-- 상태 경로가 디렉터리면 통째로 백업 경로로 옮긴다. 옮길 수 없으면 원본을 그대로 두고 `WARN`을 기록한다. 발행 푸시는 계속하며, 상태 경로를 쓸 수 있을 때만 Pages 확인용 URL을 저장하고 후속 확인 및 IndexNow 제출을 진행한다.
+- 상태 파일에 손상이 있으면 `WARN`을 기록하고 원본을 백업한다. 읽을 수 있는 유효한 항목을 보존하되, 최초 기록 시각이 현재보다 5분 넘게 미래인 URL은 만료시킨다. 빈 파일은 경고를 기록하고 삭제한다.
+- 상태 경로가 디렉터리면 통째로 백업 경로로 옮긴다. 옮길 수 없으면 원본을 그대로 두고 `WARN`을 기록한다. 상태 파일을 읽거나 저장할 수 없을 때도 `WARN`을 기록하고 발행 푸시를 계속한다. Pages 확인과 IndexNow 제출은 상태 오류가 발생한 단계에서 중단된다.
 - 백업을 만든 뒤 `.git/publish-pages.pending.corrupt-YYYYMMDD-HHMMSS-ffffff` 이름에 맞는 백업 중 방금 만든 것과 이름 시각(KST) 기준 최신 4개를 보관한다. 정리 중 오류는 경고를 남긴다. 수동 백업은 정리 대상이 되지 않도록 다른 이름을 쓴다.
 - IndexNow 제출은 대기 중인 저널 URL당 KST 날짜 기준 하루 한 번으로 제한한다. 성공(200·202) 또는 429를 제외한 4xx 응답을 받으면 제출 대기에서 제거한다. HTTP 429와 그 밖의 실패는 `INDEXNOW_PENDING`을 기록한다. Pages 확인을 마쳤다면 슬롯은 완료된다. 다음 KST 발행일에 아직 만료되지 않은 URL을 Pages 재확인 없이 제출한다.
 

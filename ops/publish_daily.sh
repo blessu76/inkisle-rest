@@ -97,7 +97,7 @@ git rebase -q origin/main || {
 }
 
 if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
-  remember_pages origin/main
+  remember_pages origin/main || log "WARN — could not record Pages URLs; continuing push"
   log "pushing $(git rev-list --count origin/main..HEAD) unpushed commit(s)"
   git push -q origin HEAD:main || { log "FAIL — push of unpushed commits"; exit 1; }
   log "pushed earlier publication commit(s)"
@@ -175,7 +175,7 @@ git diff --cached --stat | tail -1
 git commit -q -m "journal: publish ${slug} ($(date '+%Y-%m-%d %H:%M') KST)"
 stage=committed                                                  # from now on a failure keeps the commit; the next run pushes it first
 log "committed ${slug}"
-remember_pages "$base"
+remember_pages "$base" || log "WARN — could not record Pages URLs; continuing push"
 git push -q origin HEAD:main || { log "FAIL — push (commit kept locally; the next run pushes it first)"; exit 1; }
 log "pushed ${slug}"
 
