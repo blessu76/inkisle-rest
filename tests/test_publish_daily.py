@@ -804,17 +804,24 @@ class PublishPages(unittest.TestCase):
         self.assert_recovers_unreadable_pending(b"{\xff}", "malformed JSON or UTF-8")
 
     def test_deeply_nested_pending_json_is_backed_up(self):
-        original = b'{"nested":' + b"[" * 10000 + b"0" + b"]" * 10000 + b"}"
-        self.assert_recovers_unreadable_pending(original, "malformed JSON or UTF-8")
+        key = json.dumps(self.url).encode("utf-8")
+        original = b"{" + key + b":" + b"[" * 10000 + b"0" + b"]" * 10000 + b"}"
+        # The decoder can reject the nesting before validation rejects the array entry.
+        self.assert_recovers_unreadable_pending(
+            original, "malformed JSON or UTF-8", "skipped 1 invalid URL entry(s)"
+        )
 
-    def assert_recovers_unreadable_pending(self, original, reason):
+    def assert_recovers_unreadable_pending(self, original, *reasons):
         self.pending.write_bytes(original)
         with mock.patch.object(publish_pages, "log") as log:
             self.assertEqual(publish_pages.load_pending(self.lock), {})
-        self.assertIn(f"corrupt Pages state ({reason})", log.call_args.args[0])
         self.assertFalse(self.pending.exists())
         backup, = self.pending.parent.glob("publish-pages.pending.corrupt-*")
         self.assertEqual(backup.read_bytes(), original)
+        log.assert_called_once()
+        self.assertIn(log.call_args.args[0], [
+            f"WARN — corrupt Pages state ({reason}); backed up as {backup}" for reason in reasons
+        ])
         backup.unlink()
 
     def test_pending_future_timestamp_beyond_tolerance_is_dropped_before_probe(self):
