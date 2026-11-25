@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, performance, stutter, frame time, game design, mobile game, optimization
 image_alt: Four tall purple bars on the left and four short coral bars on the right, with an arrow between them and a dashed line marking the budget.
+published: 2026-11-25T15:15+09:00
 ---
 
 Inkisle, our island-conquest strategy game for iOS, felt choppy on stage 5-8 during testing. The easy guess was that the game engine, the part that moves fleets and decides captures, had grown too heavy. We measured first. The engine was not the problem; the screen around it was. After the change, the cost of one frame on stage 5-8 dropped from 3.4 ms to 1.3 ms on our computer. The game is in development and not released, and these numbers do not come from a phone.

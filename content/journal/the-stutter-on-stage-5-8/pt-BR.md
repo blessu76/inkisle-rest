@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, desempenho, engasgo, tempo de quadro, design de jogos, jogo mobile, otimização
 image_alt: Quatro barras roxas altas à esquerda e quatro barras coral baixas à direita, com uma seta no meio e uma linha tracejada marcando o orçamento.
+published: 2026-11-25T15:15+09:00
 ---
 
 O Inkisle, nosso jogo de estratégia de conquista de ilhas para iOS, engasgava na fase 5-8 durante os testes. O palpite fácil era que o motor do jogo, a parte que move as frotas e decide as capturas, tinha ficado pesado demais. Medimos primeiro. O problema não era o motor, e sim a tela ao redor dele. Depois da mudança, o custo de um quadro na fase 5-8 caiu de 3,4 ms para 1,3 ms no nosso computador. O jogo está em desenvolvimento e não foi lançado, e esses números não vêm de um celular.

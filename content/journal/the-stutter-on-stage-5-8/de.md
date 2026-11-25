@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Leistung, Ruckeln, Frame-Zeit, Spieldesign, Mobilspiel, Optimierung
 image_alt: Links vier hohe violette Balken, rechts vier niedrige korallenrote Balken, dazwischen ein Pfeil und eine gestrichelte Linie, die das Budget markiert.
+published: 2026-11-25T15:15+09:00
 ---
 
 Inkisle, unser Inseleroberungs-Strategiespiel für iOS, ruckelte beim Testen in Level 5-8. Die naheliegende Vermutung war, dass die Spiel-Engine, die Flotten bewegt und Eroberungen entscheidet, zu schwer geworden war. Wir haben zuerst gemessen. Das Problem war nicht die Engine, sondern der Bildschirm um sie herum. Nach der Änderung sank der Aufwand eines Frames in Level 5-8 auf unserem Computer von 3,4 ms auf 1,3 ms. Das Spiel ist in Entwicklung und nicht veröffentlicht, und diese Zahlen stammen nicht von einem Handy.

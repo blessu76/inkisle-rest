@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, hiệu năng, giật lag, thời gian khung hình, thiết kế game, game di động, tối ưu hóa
 image_alt: Bốn thanh màu tím cao ở bên trái và bốn thanh màu san hô thấp ở bên phải, ở giữa có một mũi tên và một đường nét đứt đánh dấu ngân sách.
+published: 2026-11-25T15:15+09:00
 ---
 
 Inkisle, game chiến thuật chinh phục đảo cho iOS của chúng tôi, bị giật ở màn 5-8 khi thử nghiệm. Phỏng đoán dễ nhất là engine game, phần di chuyển hạm đội và quyết định chiếm đảo, đã trở nên quá nặng. Chúng tôi đo trước. Vấn đề không phải engine mà là màn hình bao quanh nó. Sau thay đổi, chi phí một khung hình ở màn 5-8 giảm từ 3,4 ms xuống 1,3 ms trên máy tính của chúng tôi. Game vẫn đang được phát triển và chưa phát hành, và các con số này không đo trên điện thoại.

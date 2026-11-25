@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, performa, tersendat, waktu frame, desain game, game seluler, optimasi
 image_alt: Empat batang ungu tinggi di kiri dan empat batang koral pendek di kanan, dengan panah di antaranya dan garis putus-putus yang menandai anggaran.
+published: 2026-11-25T15:15+09:00
 ---
 
 Inkisle, game strategi penaklukan pulau kami untuk iOS, terasa tersendat di stage 5-8 saat pengujian. Dugaan yang mudah adalah mesin game, bagian yang menggerakkan armada dan memutuskan penaklukan, sudah menjadi terlalu berat. Kami mengukur dulu. Masalahnya bukan mesin, melainkan layar di sekelilingnya. Setelah perubahan, biaya satu frame di stage 5-8 turun dari 3,4 ms menjadi 1,3 ms di komputer kami. Game ini masih dalam pengembangan dan belum dirilis, dan angka-angka ini bukan dari ponsel.

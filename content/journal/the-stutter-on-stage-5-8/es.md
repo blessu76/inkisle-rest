@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, rendimiento, tirones, tiempo de fotograma, diseño de juegos, juego móvil, optimización
 image_alt: Cuatro barras moradas altas a la izquierda y cuatro barras coral bajas a la derecha, con una flecha en medio y una línea discontinua que marca el presupuesto.
+published: 2026-11-25T15:15+09:00
 ---
 
 Inkisle, nuestro juego de estrategia de conquista de islas para iOS, iba a trompicones en el nivel 5-8 durante las pruebas. La suposición fácil era que el motor del juego, la parte que mueve las flotas y decide las capturas, se había vuelto demasiado pesado. Primero medimos. El problema no era el motor, sino la pantalla que lo rodea. Tras el cambio, el coste de un fotograma en el nivel 5-8 bajó de 3,4 ms a 1,3 ms en nuestro ordenador. El juego está en desarrollo y no se ha lanzado, y estas cifras no vienen de un móvil.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, performans, takılma, kare süresi, oyun tasarımı, mobil oyun, optimizasyon
 image_alt: Solda dört uzun mor çubuk, sağda dört kısa mercan rengi çubuk; aralarında bir ok ve bütçeyi gösteren kesikli bir çizgi var.
+published: 2026-11-25T15:15+09:00
 ---
 
 iOS için yaptığımız ada fethi strateji oyunu Inkisle, testler sırasında 5-8. bölümde takılıyordu. Kolay tahmin, filoları hareket ettiren ve ele geçirmeleri belirleyen oyun motorunun fazla ağırlaştığıydı. Önce ölçtük. Sorun motor değil, onu çevreleyen ekrandı. Değişiklikten sonra 5-8. bölümde bir karenin maliyeti bilgisayarımızda 3,4 ms'den 1,3 ms'ye düştü. Oyun geliştirme aşamasında ve yayımlanmadı; bu sayılar bir telefondan gelmiyor.
