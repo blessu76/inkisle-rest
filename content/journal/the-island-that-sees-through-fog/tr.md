@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, oyun tasarımı, sis, bayraklı ada, filolar
 image_alt: İki filo rotasının arasındaki adada mercan renginde bir bayrak var. Rotalardan biri sisin içinde kayboluyor.
+published: 2026-11-26T14:15+09:00
 ---
 
 Geliştirilmekte olan ada fetih strateji oyunu Inkisle’ın 24. perdesinde bir bayrak, filo göndermeden önce hesaba katmaya değer bir adayı işaretler. 1. sezon 30 perde ve 240 bölümden oluşuyor. Oyunu iOS için geliştiriyoruz.

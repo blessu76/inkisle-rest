@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, thiết kế trò chơi, sương mù, đảo cờ, hạm đội
 image_alt: Lá cờ màu san hô trên một hòn đảo giữa hai tuyến hạm đội, với một tuyến mờ dần trong sương.
+published: 2026-11-26T14:15+09:00
 ---
 
 Ở màn 24 của Inkisle, trò chơi chiến thuật chiếm đảo đang được phát triển, lá cờ đánh dấu một đảo đáng cân nhắc trước khi điều hạm đội. Mùa 1 có 30 màn và 240 ải. Chúng tôi đang phát triển trò chơi cho iOS.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Spieldesign, Nebel, Flaggeninsel, Flotten
 image_alt: Eine korallfarbene Flagge auf einer Insel zwischen zwei Flottenrouten, von denen eine im Nebel verschwindet.
+published: 2026-11-26T14:15+09:00
 ---
 
 In Akt 24 von Inkisle, einem Strategiespiel zur Eroberung von Inseln, das sich noch in Entwicklung befindet, markiert eine Flagge eine Insel, über die sich vor dem Aussenden einer Flotte nachzudenken lohnt. Staffel 1 umfasst 30 Akte und 240 Level. Wir entwickeln das Spiel für iOS.

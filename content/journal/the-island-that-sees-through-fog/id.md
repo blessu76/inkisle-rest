@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, desain gim, kabut, pulau berbendera, armada
 image_alt: Bendera berwarna koral di sebuah pulau di antara dua jalur armada, dengan salah satu jalur memudar ke dalam kabut.
+published: 2026-11-26T14:15+09:00
 ---
 
 Pada Babak 24 Inkisle, gim strategi penaklukan pulau yang sedang dikembangkan, sebuah bendera menandai pulau yang patut dipertimbangkan sebelum kamu mengirim armada. Musim 1 terdiri dari 30 babak dan 240 tahap. Kami mengembangkan gim ini untuk iOS.

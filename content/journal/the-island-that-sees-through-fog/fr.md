@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, conception de jeu, brume, île à drapeau, flottes
 image_alt: Un drapeau corail sur une île entre deux routes maritimes, dont l’une se perd dans la brume.
+published: 2026-11-26T14:15+09:00
 ---
 
 Dans l’acte 24 d’Inkisle, un jeu de stratégie et de conquête d’îles en développement, un drapeau indique une île à examiner avant d’envoyer une flotte. La saison 1 compte 30 actes et 240 niveaux. Nous développons le jeu pour iOS.

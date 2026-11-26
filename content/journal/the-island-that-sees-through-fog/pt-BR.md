@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, design de jogos, névoa, ilha com bandeira, frotas
 image_alt: Uma bandeira cor de coral numa ilha entre duas rotas de frotas, com uma delas sumindo na névoa.
+published: 2026-11-26T14:15+09:00
 ---
 
 No ato 24 de Inkisle, um jogo de estratégia e conquista de ilhas em desenvolvimento, uma bandeira marca uma ilha que vale considerar antes de enviar uma frota. A primeira temporada tem 30 atos e 240 fases. Estamos desenvolvendo o jogo para iOS.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, 遊戲設計, 迷霧, 旗幟島, 艦隊
 image_alt: 珊瑚色旗幟立在兩條艦隊航線之間的島上，其中一條航線逐漸隱入霧中。
+published: 2026-11-26T14:15+09:00
 ---
 
 正在開發的島嶼征服策略遊戲 Inkisle，在第 24 幕安排了一座插旗的島。派出艦隊之前，值得先想想要怎麼處理這座島。第一季共有 30 幕、240 關。 我們正在為 iOS 開發這款遊戲。

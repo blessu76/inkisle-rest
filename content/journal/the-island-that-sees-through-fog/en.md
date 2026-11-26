@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, game design, fog, flag island, fleets
 image_alt: A coral flag on an island between two fleet routes, with one route fading into the fog.
+published: 2026-11-26T14:15+09:00
 ---
 
 In Act 24 of Inkisle, an island-conquest strategy game in development, a flag marks an island worth thinking about before you send a fleet. The act is one of 30 acts and 240 stages in Season 1. We’re developing the game for iOS.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, diseño de juegos, niebla, isla con bandera, flotas
 image_alt: Una bandera coral en una isla entre dos rutas navales, una de las cuales se pierde en la niebla.
+published: 2026-11-26T14:15+09:00
 ---
 
 En el acto 24 de Inkisle, un juego de estrategia y conquista de islas en desarrollo, una bandera marca una isla que conviene tener en cuenta antes de enviar una flota. La primera temporada tiene 30 actos y 240 niveles. Estamos desarrollando el juego para iOS.
