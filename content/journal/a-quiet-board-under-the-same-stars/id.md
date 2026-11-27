@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, desain tahap, simetri, pulau netral, Bintang yang Sama
 image_alt: Dua gugus pulau saling berhadapan di seberang laut gelap, dengan satu bintang di atas bagian tengah.
+published: 2026-11-27T17:15+09:00
 ---
 
 Babak 26 Inkisle berjudul Bintang yang Sama. Gim ini masih dikembangkan, dan Musim 1 terdiri dari 30 babak dan 240 tahap. Kami ingin sisi lain laut ini terlihat seakan berada di bawah langit yang sama. Di tahap 26-4, kami memberi jeda singkat agar kamu bisa fokus merebut semua pulau netral. Kami mengembangkan gim ini untuk iOS.

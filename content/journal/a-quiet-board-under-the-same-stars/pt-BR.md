@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, design de fases, simetria, ilhas neutras, A mesma estrela
 image_alt: Dois grupos de ilhas se encaram sobre um mar escuro, com uma estrela acima do centro.
+published: 2026-11-27T17:15+09:00
 ---
 
 O ato 26 de Inkisle se chama A mesma estrela. O jogo ainda está em desenvolvimento e a primeira temporada tem 30 atos e 240 fases. Aqui, queríamos que o outro lado do mar parecesse estar sob o mesmo céu. Na fase 26-4, fizemos uma pausa para que você possa se concentrar em tomar todas as ilhas neutras. Estamos desenvolvendo o jogo para iOS.

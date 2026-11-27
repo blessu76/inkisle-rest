@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, bölüm tasarımı, simetri, tarafsız adalar, Aynı Yıldız
 image_alt: Koyu renkli denizin iki yanında karşı karşıya gelen ada grupları ve ortanın üzerinde bir yıldız.
+published: 2026-11-27T17:15+09:00
 ---
 
 Inkisle’ın 26. perdesinin adı Aynı Yıldız. Oyun hâlâ geliştirme aşamasında ve 1. sezon 30 perde, 240 bölümden oluşuyor. Bu perdede denizin öte yakası da aynı göğün altındaymış gibi görünsün istedik. 26-4 bölümünde tüm tarafsız adaları ele geçirmeye odaklanabileceğin kısa bir mola verdik. Oyunu iOS için geliştiriyoruz.

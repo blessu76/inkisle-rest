@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, diseño de niveles, simetría, islas neutrales, La misma estrella
 image_alt: Dos grupos de islas se miran desde ambos lados de un mar oscuro, con una estrella sobre el centro.
+published: 2026-11-27T17:15+09:00
 ---
 
 El acto 26 de Inkisle se llama La misma estrella. El juego sigue en desarrollo y la primera temporada tiene 30 actos y 240 niveles. Aquí queríamos que el otro lado del mar pareciera estar bajo el mismo cielo. En el nivel 26-4 hicimos una pausa para que puedas centrarte en tomar todas las islas neutrales. Estamos desarrollando el juego para iOS.

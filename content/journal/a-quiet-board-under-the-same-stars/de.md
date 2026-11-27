@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Leveldesign, Symmetrie, neutrale Inseln, Derselbe Stern
 image_alt: Zwei Inselgruppen liegen sich über dunklem Wasser gegenüber. Über der Mitte steht ein Stern.
+published: 2026-11-27T17:15+09:00
 ---
 
 Akt 26 von Inkisle heißt Derselbe Stern. Das Spiel ist noch in Entwicklung. Staffel 1 umfasst 30 Akte und 240 Level. Wir wollten, dass die andere Seite des Meers aussieht, als läge sie unter demselben Himmel. Genau in Level 26-4 kommt eine kurze Pause. Dort geht es allein darum, alle neutralen Inseln einzunehmen. Wir entwickeln das Spiel für iOS.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, thiết kế ải, đối xứng, đảo trung lập, Cùng một vì sao
 image_alt: Hai cụm đảo nhìn sang nhau qua vùng biển tối, với một vì sao phía trên ở giữa.
+published: 2026-11-27T17:15+09:00
 ---
 
 Màn 26 của Inkisle có tên Cùng một vì sao. Trò chơi vẫn đang được phát triển, và Mùa 1 có 30 màn, 240 ải. Ở đây, chúng tôi muốn phía bên kia biển trông như cũng nằm dưới cùng một bầu trời. Ở ải 26-4, chúng tôi dành một nhịp nghỉ để người chơi tập trung chiếm tất cả đảo trung lập. Chúng tôi đang phát triển trò chơi cho iOS.

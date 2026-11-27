@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, conception de niveaux, symétrie, îles neutres, La même étoile
 image_alt: Deux groupes d’îles se font face de part et d’autre d’une mer sombre, sous une étoile au centre de l’image.
+published: 2026-11-27T17:15+09:00
 ---
 
 L’acte 26 d’Inkisle s’appelle La même étoile. Le jeu est encore en développement et la saison 1 compte 30 actes et 240 niveaux. Nous voulions que l’autre côté de la mer semble éclairé par le même ciel. Au niveau 26-4, on souffle un peu en se concentrant sur la prise de toutes les îles neutres. Nous développons le jeu pour iOS.

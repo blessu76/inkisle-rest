@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, level design, symmetry, neutral islands, The Same Star
 image_alt: Two groups of islands facing one another across dark water, with a star above the middle.
+published: 2026-11-27T17:15+09:00
 ---
 
 Act 26 of Inkisle is called The Same Star. The game is still in development, and Season 1 comprises 30 acts and 240 stages. Here we wanted the other side of the sea to look as if it were under the same sky. We gave stage 26-4 a quieter board, where you can focus on taking all the neutral islands. We’re developing the game for iOS.
