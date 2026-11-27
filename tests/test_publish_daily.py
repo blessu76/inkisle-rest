@@ -969,6 +969,28 @@ class OpsFiles(unittest.TestCase):
         check = y.split("  check:")[1].split("  deploy:")[0]
         self.assertIn("permissions:\n      contents: read", check)
 
+    def test_deploy_waits_for_and_reuses_the_uploaded_artifact(self):
+        workflow = (REPO / ".github" / "workflows" / "deploy.yml").read_text(encoding="utf-8")
+        check, deploy = workflow.split("\n  deploy:\n")
+        self.assertIn("\n    needs: check\n", deploy)
+        self.assertIn("artifact_name=github-pages-${GITHUB_RUN_ATTEMPT}", check)
+        self.assertIn("\n      artifact_name: ${{ steps.site.outputs.artifact_name }}\n", check)
+        self.assertIn("\n          name: ${{ steps.site.outputs.artifact_name }}\n", check)
+        self.assertIn("include-hidden-files: true", check)
+        self.assertLess(
+            check.index("run: bash scripts/check.sh"), check.index("uses: actions/upload-pages-artifact@")
+        )
+
+        first, retry = deploy.split("\n      - name: Retry deployment\n")
+        artifact_input = "artifact_name: ${{ needs.check.outputs.artifact_name }}"
+        for attempt in (first, retry):
+            self.assertIn("uses: actions/deploy-pages@", attempt)
+            self.assertIn(artifact_input, attempt)
+        self.assertIn("continue-on-error: true", first)
+        self.assertIn("if: steps.deployment.outcome == 'failure'\n        run: sleep 25", first)
+        self.assertIn("if: steps.deployment.outcome == 'failure'", retry)
+        self.assertNotIn("continue-on-error:", retry)
+
     def test_plist_template_has_no_personal_paths_and_renders(self):
         t = (REPO / "ops" / "rest.ipe.inkisle-publish.plist.template").read_text(encoding="utf-8")
         self.assertNotIn("/Users/", t)

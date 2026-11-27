@@ -5,11 +5,6 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -19,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pages: read
+    outputs:
+      artifact_name: ${{ steps.site.outputs.artifact_name }}
     steps:
       - uses: actions/checkout@v4
       - name: Install the private ipe_web_kit (pinned by vendor/ipe_web_kit.lock)
@@ -28,30 +26,50 @@ jobs:
       - name: Green gate (sources, tests, up-to-date build, sitemap)
         run: bash scripts/check.sh
 
-  deploy:
-    needs: check
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Assemble site (repo root minus sources)
+        id: site
         # content/ (post sources + queue), scripts/, tests/, docs/, ops/, vendor/ and community.json (kit pin; the private kit source is never committed) are build-time only — never public raw URLs.
         run: |
           mkdir -p "$RUNNER_TEMP/site"
           rsync -a --exclude='.git' --exclude='.github' --exclude='content' --exclude='scripts' --exclude='tests' --exclude='docs' --exclude='ops' --exclude='vendor' --exclude='community.json' --exclude='*.md' ./ "$RUNNER_TEMP/site/"
+          echo "artifact_name=github-pages-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
 
       - name: Upload site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
+          name: ${{ steps.site.outputs.artifact_name }}
           path: ${{ runner.temp }}/site
+          include-hidden-files: true # Preserve the site's .nojekyll marker.
 
+  deploy:
+    # Let the job finalize the upload before Pages looks up the artifact.
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment_retry.outputs.page_url || steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ needs.check.outputs.artifact_name }}
+        continue-on-error: true
+
+      # Allow time for an uploaded artifact to become visible to Pages.
+      - name: Wait before retrying deployment
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 25
+
+      - name: Retry deployment
+        if: steps.deployment.outcome == 'failure'
+        id: deployment_retry
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ needs.check.outputs.artifact_name }}
