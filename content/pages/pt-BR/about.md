@@ -24,8 +24,8 @@ Inkisle (escrito InkIsle no logotipo, lido "ink-ISLE") é um jogo de estratégia
 
 ## Por que um diário
 
-Construímos às claras. O [Diário](/pt/journal/) publica um post por dia enquanto o jogo é feito: decisões, protótipos, erros e números. Os posts dizem com franqueza o que foi medido e o que não foi.
+Construímos às claras. O [Diário](/pt-BR/journal/) publica um post por dia enquanto o jogo é feito: decisões, protótipos, erros e números. Os posts dizem com franqueza o que foi medido e o que não foi.
 
 ## Quem faz
 
-O Inkisle é feito pela ipe(). Veja [ipe.rest](https://ipe.rest/) para conhecer o estúdio e seus outros projetos. Para dúvidas, escreva para {{EMAIL}}. Como este site trata os seus dados está descrito na [Política de Privacidade](/pt/privacy/).
+O Inkisle é feito pela ipe(). Veja [ipe.rest](https://ipe.rest/) para conhecer o estúdio e seus outros projetos. Para dúvidas, escreva para {{EMAIL}}. Como este site trata os seus dados está descrito na [Política de Privacidade](/pt-BR/privacy/).

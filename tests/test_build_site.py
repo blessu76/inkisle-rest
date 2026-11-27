@@ -3,9 +3,22 @@ import json
 import re
 import shutil
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 from helpers import NOW, REPO, bs, build, jsonld, make_site, post_text
+
+
+class LinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.hrefs = set()
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name == "href" and value and value.startswith("/") and not value.startswith("//"):
+                self.hrefs.add(value)
 
 
 class Markdown(unittest.TestCase):
@@ -243,6 +256,26 @@ class RealRepo(unittest.TestCase):
 
     def test_asset_version_in_pages_matches(self):
         self.assertTrue(bs.ASSET_V)
+
+    def test_generated_html_internal_links_exist(self):
+        marker = "<!-- %s -->" % bs.GEN_MARK
+        broken = []
+        for page in sorted(REPO.rglob("*.html")):
+            html = page.read_text(encoding="utf-8")
+            if marker not in html:
+                continue
+            parser = LinkParser()
+            parser.feed(html)
+            parser.close()
+            for href in sorted(parser.hrefs):
+                path = unquote(urlsplit(href).path)
+                target = REPO / path.lstrip("/")
+                candidates = [target / "index.html"]
+                if not path.endswith("/"):
+                    candidates.append(target)
+                if not any(f.is_file() and REPO in f.resolve().parents for f in candidates):
+                    broken.append(f"{page.relative_to(REPO)} -> {href}")
+        self.assertFalse(broken, "Broken internal links:\n" + "\n".join(broken))
 
     def test_indexnow_key_file(self):
         keys = [p for p in REPO.glob("*.txt") if re.fullmatch(r"[0-9a-f]{32}\.txt", p.name)]
