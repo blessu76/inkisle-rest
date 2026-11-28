@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, Barrierefreiheit, Screenreader, Oberfläche, Widget-Tests
 image_alt: Auf zwei kleinen Karten stehen ein X und ein Leuchtturm. Ein Fokusring umgibt jedes Symbol.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle ist ein Strategiespiel zur Eroberung von Inseln, das noch in Entwicklung ist. Bei einer Prüfung der Barrierefreiheit haben wir untersucht, wie das Spiel seine Bedienelemente an einen Screenreader übermittelt. Zwei fielen auf: das X zum Schließen eines Fensters und der Leuchtturm auf der Karte, über den man ein Ende erneut abspielen kann. Wir entwickeln das Spiel für iOS.

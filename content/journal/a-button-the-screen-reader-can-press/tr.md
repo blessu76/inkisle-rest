@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, erişilebilirlik, ekran okuyucu, arayüz, widget testleri
 image_alt: İki küçük kartta bir çarpı ve bir deniz feneri simgesi var. İki denetimin de çevresinde odak halkası bulunuyor.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle, geliştirilmekte olan bir ada fetih strateji oyunu. Erişilebilirlik çalışmasında oyunun denetimleri ekran okuyucuya nasıl tanıttığına baktık. İki denetim öne çıktı: paneli kapatan çarpı ve haritada son sahneyi yeniden açan deniz feneri. Oyunu iOS için geliştiriyoruz.

@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, aksesibilitas, pembaca layar, antarmuka, uji widget
 image_alt: Tanda X dan ikon mercusuar pada dua kartu kecil, masing-masing dikelilingi garis penanda fokus.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle adalah gim strategi penaklukan pulau yang sedang dikembangkan. Saat meninjau aksesibilitas, kami memeriksa cara gim menyampaikan informasi tentang kontrol kepada pembaca layar. Ada dua kontrol yang menarik perhatian: tanda X untuk menutup panel dan mercusuar di peta yang memutar ulang akhir cerita. Kami mengembangkan gim ini untuk iOS.

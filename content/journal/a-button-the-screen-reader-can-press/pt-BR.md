@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, acessibilidade, leitor de tela, interface, testes de widgets
 image_alt: Um X e um ícone de farol em dois cartões pequenos, com um contorno de foco ao redor de cada controle.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle é um jogo de estratégia e conquista de ilhas em desenvolvimento. Em uma revisão de acessibilidade, examinamos como o jogo descreve seus controles para um leitor de tela. Dois chamaram a atenção: o X que fecha um painel e o farol do mapa que permite rever um final. Estamos desenvolvendo o jogo para iOS.

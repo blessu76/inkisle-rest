@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, trợ năng, trình đọc màn hình, giao diện, kiểm thử widget
 image_alt: Hai tấm thẻ nhỏ có dấu X và biểu tượng hải đăng, mỗi nút được viền đánh dấu tiêu điểm.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle là trò chơi chiến thuật chiếm đảo đang được phát triển. Khi rà soát trợ năng, chúng tôi xem trò chơi mô tả các nút như thế nào cho trình đọc màn hình. Hai nút đáng chú ý là dấu X để đóng bảng và ngọn hải đăng trên hải đồ để phát lại đoạn kết. Chúng tôi đang phát triển trò chơi cho iOS.

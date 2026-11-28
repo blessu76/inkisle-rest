@@ -7,6 +7,7 @@ translation_of: en
 category: making-of
 keywords: Inkisle, accessibilité, lecteur d’écran, interface, tests de widgets
 image_alt: Une croix et une icône de phare sur deux petites cartes, avec un contour de focus autour de chaque commande.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle est un jeu de stratégie et de conquête d’îles en développement. Lors d’un contrôle d’accessibilité, nous avons examiné la manière dont le jeu décrit ses commandes à un lecteur d’écran. Deux ont retenu notre attention : la croix qui ferme un panneau et le phare sur la carte qui permet de revoir une fin. Nous développons le jeu pour iOS.

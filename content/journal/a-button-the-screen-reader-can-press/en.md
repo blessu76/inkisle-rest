@@ -6,6 +6,7 @@ lang: en
 category: making-of
 keywords: Inkisle, accessibility, screen reader, interface, widget tests
 image_alt: An X and a lighthouse icon on two small cards, with focus rings around both controls.
+published: 2026-11-28T13:15+09:00
 ---
 
 Inkisle is an island-conquest strategy game in development. During an accessibility pass, we examined how the game describes its controls to a screen reader. Two controls stood out: the X that closes a panel and the lighthouse on the chart that replays an ending. We’re developing the game for iOS.
